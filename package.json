@@ -1,0 +1,35 @@
+{
+  "name": "nfs-world-offline",
+  "version": "1.0.0",
+  "description": "A Backend for Need for Speed World made by Lawin.",
+  "main": "index.js",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.18.2",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lawin0129/NFS-World-Offline.git"
+  },
+  "keywords": [
+    "node.js",
+    "node",
+    "js",
+    "need",
+    "for",
+    "speed",
+    "world",
+    "offline"
+  ],
+  "author": "Lawin0129",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Lawin0129/NFS-World-Offline/issues"
+  },
+  "homepage": "https://github.com/Lawin0129/NFS-World-Offline#readme"
+}
