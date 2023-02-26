@@ -1,0 +1,23 @@
+<ArrayOfProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>Repairs your car</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>2002411042</Hash>
+		<Icon/>
+		<Level>0</Level>
+		<LongDescription>Repairs your car</LongDescription>
+		<Price>150.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-REPAIR</ProductId>
+		<ProductTitle>REPAIR</ProductTitle>
+		<ProductType>REPAIR</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+</ArrayOfProductTrans>

@@ -1,0 +1,1241 @@
+<ArrayOfProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>SLINGSHOT COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-651404759</Hash>
+		<Icon>128_skill_perseverance</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Slingshot by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL1</ProductId>
+		<ProductTitle>PERSEVERENCE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>EVADE COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>718660058</Hash>
+		<Icon>128_skill_reload</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Emergency Evade by {0:s}</LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL2</ProductId>
+		<ProductTitle>RELOAD</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>SLINGSHOT POWER</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>790466659</Hash>
+		<Icon>128_skill_aerodynamic</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the performance boost from Slingshot by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL3</ProductId>
+		<ProductTitle>AERODYNAMIC</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>PERFECT START DURATION</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>227082963</Hash>
+		<Icon>128_skill_headstart</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the duration of the Perfect Start boost by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL4</ProductId>
+		<ProductTitle>HEADSTART</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>NITROUS COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1532511385</Hash>
+		<Icon>128_skill_rapid_fire</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Nitrous by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL5</ProductId>
+		<ProductTitle>RAPID FIRE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>EXPLORE CASH</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-261284782</Hash>
+		<Icon>128_skill_explorer</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL6</ProductId>
+		<ProductTitle>EXPLORER</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>NITROUS DURATION</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>144856670</Hash>
+		<Icon>128_skill_extended_nos</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the duration of Nitrous by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL7</ProductId>
+		<ProductTitle>EXTENDED NOS</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>JUGGERNAUT DURATION</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1072621028</Hash>
+		<Icon>128_skill_rampage</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the duration of Juggernaut by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL8</ProductId>
+		<ProductTitle>RAMPAGE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>LAUNCH GRIP</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>966334247</Hash>
+		<Icon>128_skill_take_off</Icon>
+		<Level>0</Level>
+		<LongDescription>Improves initial launch speed by {0:s} in Drag races</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL9</ProductId>
+		<ProductTitle>TAKEOFF</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>RUN FLATS COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1470082411</Hash>
+		<Icon>128_skill_rapid_refill</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Run Flats by {0:s}</LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL10</ProductId>
+		<ProductTitle>RAPID REFILL</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>PERFORMANCE BOOST</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-477917459</Hash>
+		<Icon>128_skill_catchup</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases your acceleration by {0:s} if you're third place or lower</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL11</ProductId>
+		<ProductTitle>CATCH UP</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>READY COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1951098126</Hash>
+		<Icon>128_skill_lightning_reflex</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Ready by {0:s}</LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL12</ProductId>
+		<ProductTitle>LIGHTNING REFLEX</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>COLLISION FORCE</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1768657079</Hash>
+		<Icon>128_skill_ram</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the weight of your car in collisions by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL13</ProductId>
+		<ProductTitle>RAM</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>SHIELD DURATION</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1271611681</Hash>
+		<Icon>128_skill_rolling_fortress</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the duration of Shield by {0:s}</LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL14</ProductId>
+		<ProductTitle>ROLLING FORTRESS</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>PERFECT START RPM</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1378911342</Hash>
+		<Icon>128_skill_redline</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the RPM range to get a Perfect Start by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL15</ProductId>
+		<ProductTitle>REDLINE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>EMERGENCY EVADE RANGE</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-158949060</Hash>
+		<Icon>128_skill_overdrive</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the range of Emergency Evade by {0:s}</LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL16</ProductId>
+		<ProductTitle>OVERDRIVE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>PURSUIT COOLDOWN TIME</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>11672024</Hash>
+		<Icon>128_skill_cooldown</Icon>
+		<Level>0</Level>
+		<LongDescription>Decreases the time required to escape a pursuit by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL17</ProductId>
+		<ProductTitle>COOLDOWN</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>JUGGERNAUT COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-965220316</Hash>
+		<Icon>128_skill_unrelenting_force</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Juggernaut by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL18</ProductId>
+		<ProductTitle>UNRELENTING FORCE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>COP RADAR</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-359007468</Hash>
+		<Icon>128_skill_radar</Icon>
+		<Level>0</Level>
+		<LongDescription>Detects all Cops within {0:s} on the map</LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL19</ProductId>
+		<ProductTitle>RADAR</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>EARLY POWERUPS</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>364535566</Hash>
+		<Icon>128_skill_jumpstart</Icon>
+		<Level>0</Level>
+		<LongDescription>Allows powerups to be used {0:s} sooner at race start </LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL20</ProductId>
+		<ProductTitle>JUMPSTART</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>JUGGERNAUT POWER</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-749436304</Hash>
+		<Icon>128_skill_demolition</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the force of Juggernaut by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL21</ProductId>
+		<ProductTitle>DEMOLITION</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>EVADE POWER</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-78277877</Hash>
+		<Icon>128_skill_evasion</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the power of Emergency Evade by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL22</ProductId>
+		<ProductTitle>EVASION</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>TRAFFIC MAGNET COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-96727800</Hash>
+		<Icon>128_skill_traffic_cop</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Traffic Magnet by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL23</ProductId>
+		<ProductTitle>TRAFFIC COP</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>TRAFFIC MAGNET DURATION</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>576682447</Hash>
+		<Icon>128_skill_magnetized</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the duration of Traffic Magnet on opponents by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL24</ProductId>
+		<ProductTitle>MAGNETIZED</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>PURSUIT CASH</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1618683071</Hash>
+		<Icon>128_skill_bounty_hunter</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL25</ProductId>
+		<ProductTitle>BOUNTY HUNTER</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>SHIELD COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-2147068664</Hash>
+		<Icon>128_skill_safety_first</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Shield by {0:s}</LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL26</ProductId>
+		<ProductTitle>SAFETY FIRST</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>SLINGSHOT DURATION</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1292825910</Hash>
+		<Icon>128_skill_momentum</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the duration of Slingshot by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL27</ProductId>
+		<ProductTitle>MOMENTUM</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>RACE CASH</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>761092816</Hash>
+		<Icon>128_skill_socialite</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL28</ProductId>
+		<ProductTitle>SOCIALITE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>NITROUS POWER</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-284053055</Hash>
+		<Icon>128_skill_super_shot</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the acceleration boost from Nitrous by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL29</ProductId>
+		<ProductTitle>SUPER SHOT</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GEAR RATIO ENHANCEMENT</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1430900435</Hash>
+		<Icon>128_skill_well_oiled_machine</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases Good and Perfect Shift ranges by {0:s} in Drag Races</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL30</ProductId>
+		<ProductTitle>WELL OILED MACHINE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>PERFECT START DURATION</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1703462600</Hash>
+		<Icon>128_skill_headstart</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the duration of the Perfect Start boost by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL31</ProductId>
+		<ProductTitle>HEADSTART</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>EXPLORE CASH</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>3490763625</Hash>
+		<Icon>128_skill_explorer</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL32</ProductId>
+		<ProductTitle>EXPLORER</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>PURSUIT CASH</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>3898438128</Hash>
+		<Icon>128_skill_bounty_hunter</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL33</ProductId>
+		<ProductTitle>BOUNTY HUNTER</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>RACE CASH</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>3041422387</Hash>
+		<Icon>128_skill_socialite</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL34</ProductId>
+		<ProductTitle>SOCIALITE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>PERFORMANCE BOOST</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>3001087885</Hash>
+		<Icon>128_skill_catchup</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases your acceleration by {0:s} if you're third place or lower</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL35</ProductId>
+		<ProductTitle>CATCH UP</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>COLLISION FORCE</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1809978564</Hash>
+		<Icon>128_skill_ram</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the weight of your car in collisions by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL36</ProductId>
+		<ProductTitle>RAM</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>PURSUIT COOLDOWN TIME</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>3514524548</Hash>
+		<Icon>128_skill_cooldown</Icon>
+		<Level>0</Level>
+		<LongDescription>Decreases the time required to escape a pursuit by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL37</ProductId>
+		<ProductTitle>COOLDOWN</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>EVADE COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1464879259</Hash>
+		<Icon>128_skill_reload</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Emergency Evade by {0:s}</LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL38</ProductId>
+		<ProductTitle>RELOAD</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>EVADE POWER</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>3898960043</Hash>
+		<Icon>128_skill_evasion</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the power of Emergency Evade by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL39</ProductId>
+		<ProductTitle>EVASION</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>EMERGENCY EVADE RANGE</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>3489621432</Hash>
+		<Icon>128_skill_overdrive</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the range of Emergency Evade by {0:s}</LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL40</ProductId>
+		<ProductTitle>OVERDRIVE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GEAR RATIO ENHANCEMENT</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>2778804998</Hash>
+		<Icon>128_skill_well_oiled_machine</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases Good and Perfect Shift ranges by {0:s} in Drag Races</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL41</ProductId>
+		<ProductTitle>WELL OILED MACHINE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>JUGGERNAUT COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1252208692</Hash>
+		<Icon>128_skill_unrelenting_force</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Juggernaut by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL42</ProductId>
+		<ProductTitle>UNRELENTING FORCE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>JUGGERNAUT DURATION</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>3942232397</Hash>
+		<Icon>128_skill_rampage</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the duration of Juggernaut by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL43</ProductId>
+		<ProductTitle>RAMPAGE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>JUGGERNAUT POWER</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>857487601</Hash>
+		<Icon>128_skill_demolition</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the force of Juggernaut by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL44</ProductId>
+		<ProductTitle>DEMOLITION</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>EARLY POWERUPS</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>195863236</Hash>
+		<Icon>128_skill_jumpstart</Icon>
+		<Level>0</Level>
+		<LongDescription>Allows powerups to be used {0:s} sooner at race start </LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL45</ProductId>
+		<ProductTitle>JUMPSTART</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>LAUNCH GRIP</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>3558874443</Hash>
+		<Icon>128_skill_take_off</Icon>
+		<Level>0</Level>
+		<LongDescription>Improves initial launch speed by {0:s} in Drag races</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL46</ProductId>
+		<ProductTitle>TAKEOFF</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>NITROUS COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>3787899359</Hash>
+		<Icon>128_skill_rapid_fire</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Nitrous by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL47</ProductId>
+		<ProductTitle>RAPID FIRE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>NITROUS DURATION</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>44864311</Hash>
+		<Icon>128_skill_extended_nos</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the duration of Nitrous by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL48</ProductId>
+		<ProductTitle>EXTENDED NOS</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>NITROUS POWER</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>3293851247</Hash>
+		<Icon>128_skill_super_shot</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the acceleration boost from Nitrous by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL49</ProductId>
+		<ProductTitle>SUPER SHOT</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>COP RADAR</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>969608442</Hash>
+		<Icon>128_skill_radar</Icon>
+		<Level>0</Level>
+		<LongDescription>Detects all Cops within {0:s} on the map</LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL50</ProductId>
+		<ProductTitle>RADAR</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>READY COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>147881768</Hash>
+		<Icon>128_skill_lightning_reflex</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Ready by {0:s}</LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL51</ProductId>
+		<ProductTitle>LIGHTNING REFLEX</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>RUN FLATS COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>158225102</Hash>
+		<Icon>128_skill_rapid_refill</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Run Flats by {0:s}</LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL52</ProductId>
+		<ProductTitle>RAPID REFILL</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>SHIELD COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>550995685</Hash>
+		<Icon>128_skill_safety_first</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Shield by {0:s}</LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL53</ProductId>
+		<ProductTitle>SAFETY FIRST</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>SHIELD DURATION</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>3362077963</Hash>
+		<Icon>128_skill_rolling_fortress</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the duration of Shield by {0:s}</LongDescription>
+		<Price>7500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL54</ProductId>
+		<ProductTitle>ROLLING FORTRESS</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>SLINGSHOT COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>583063544</Hash>
+		<Icon>128_skill_perseverance</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Slingshot by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL55</ProductId>
+		<ProductTitle>PERSEVERENCE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>SLINGSHOT DURATION</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>3013219734</Hash>
+		<Icon>128_skill_momentum</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the duration of Slingshot by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL56</ProductId>
+		<ProductTitle>MOMENTUM</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>SLINGSHOT POWER</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>2006880696</Hash>
+		<Icon>128_skill_aerodynamic</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the performance boost from Slingshot by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL57</ProductId>
+		<ProductTitle>AERODYNAMIC</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>TRAFFIC MAGNET COOLDOWN</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>2412762132</Hash>
+		<Icon>128_skill_traffic_cop</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the cooldown speed of Traffic Magnet by {0:s}</LongDescription>
+		<Price>10000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL58</ProductId>
+		<ProductTitle>TRAFFIC COP</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>TRAFFIC MAGNET DURATION</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>3946170024</Hash>
+		<Icon>128_skill_magnetized</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases the duration of Traffic Magnet on opponents by {0:s}</LongDescription>
+		<Price>12500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-SKILL59</ProductId>
+		<ProductTitle>MAGNETIZED</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+</ArrayOfProductTrans>

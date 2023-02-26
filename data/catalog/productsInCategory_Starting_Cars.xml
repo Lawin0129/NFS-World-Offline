@@ -1,0 +1,170 @@
+<ArrayOfProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-2136324513</Hash>
+		<Icon>White_64x64</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>175000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CAR181</ProductId>
+		<ProductTitle>WHITE</ProductTitle>
+		<ProductType>PRESETCAR</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>805750582</Hash>
+		<Icon>Red_64x64</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>175000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CAR173</ProductId>
+		<ProductTitle>RED</ProductTitle>
+		<ProductType>PRESETCAR</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1188734455</Hash>
+		<Icon>White_64x64</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>175000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CAR159</ProductId>
+		<ProductTitle>WHITE</ProductTitle>
+		<ProductType>PRESETCAR</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1876343443</Hash>
+		<Icon>Red_64x64</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>200000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CAR40</ProductId>
+		<ProductTitle>RED</ProductTitle>
+		<ProductType>PRESETCAR</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1342182250</Hash>
+		<Icon>Black_64x64</Icon>
+		<Level>1</Level>
+		<LongDescription/>
+		<Price>150000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CAR154</ProductId>
+		<ProductTitle>BLACK</ProductTitle>
+		<ProductType>PRESETCAR</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1102268022</Hash>
+		<Icon>Red_64x64</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>200000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CAR141</ProductId>
+		<ProductTitle>RED</ProductTitle>
+		<ProductType>PRESETCAR</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1016727685</Hash>
+		<Icon>Green_64x64</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>125000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CAR165</ProductId>
+		<ProductTitle>GREEN</ProductTitle>
+		<ProductType>PRESETCAR</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1133182666</Hash>
+		<Icon>Black_64x64</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>200000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CAR151</ProductId>
+		<ProductTitle>BLACK</ProductTitle>
+		<ProductType>PRESETCAR</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+</ArrayOfProductTrans>

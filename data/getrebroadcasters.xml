@@ -1,0 +1,6 @@
+<ArrayOfUdpRelayInfo>
+	<UdpRelayInfo>
+		<Host>localhost</Host>
+		<Port>9999</Port>
+	</UdpRelayInfo>
+</ArrayOfUdpRelayInfo>

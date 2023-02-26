@@ -1,0 +1,9 @@
+<SocialSettings>
+	<AppearOffline>false</AppearOffline>
+	<DeclineGroupInvite>0</DeclineGroupInvite>
+	<DeclineIncommingFriendRequests>false</DeclineIncommingFriendRequests>
+	<DeclinePrivateInvite>0</DeclinePrivateInvite>
+	<HideOfflineFriends>false</HideOfflineFriends>
+	<ShowNewsOnSignIn>false</ShowNewsOnSignIn>
+	<ShowOnlyPlayersInSameChatChannel>false</ShowOnlyPlayersInSameChatChannel>
+</SocialSettings>

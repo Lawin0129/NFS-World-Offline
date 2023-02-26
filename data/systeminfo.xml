@@ -1,0 +1,20 @@
+<SystemInfo>
+	<Branch>main</Branch>
+	<ChangeList>0</ChangeList>
+	<ClientVersion>0</ClientVersion>
+	<ClientVersionCheck>false</ClientVersionCheck>
+	<Deployed>2023-02-22T13:27:51+0000</Deployed>
+	<EntitlementsToDownload>true</EntitlementsToDownload>
+	<ForcePermanentSession>true</ForcePermanentSession>
+	<JidPrepender>nfsw</JidPrepender>
+	<LauncherServiceUrl>http://localhost</LauncherServiceUrl>
+	<NucleusNamespace>nfsw-live</NucleusNamespace>
+	<NucleusNamespaceWeb>nfs_web</NucleusNamespaceWeb>
+	<PersonaCacheTimeout>900</PersonaCacheTimeout>
+	<PortalDomain>localhost</PortalDomain>
+	<PortalStoreFailurePage>localhost</PortalStoreFailurePage>
+	<PortalTimeOut>6000</PortalTimeOut>
+	<ShardName>APEX</ShardName>
+	<Time>2023-02-25T16:31:44.760+01:00</Time>
+	<Version>0</Version>
+</SystemInfo>

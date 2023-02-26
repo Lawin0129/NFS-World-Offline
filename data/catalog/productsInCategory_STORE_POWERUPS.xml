@@ -1,0 +1,254 @@
+<ArrayOfProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>Reinflate your burst tires after running over a spike strip.</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-537557654</Hash>
+		<Icon>prod_powerup_stack_runfl</Icon>
+		<Level>0</Level>
+		<LongDescription>Instantly reinflate your burst tires after running over a spike strip during a Pursuit.</LongDescription>
+		<Price>100.0000</Price>
+		<Priority>39</Priority>
+		<ProductId>SRV-POWERUP0</ProductId>
+		<ProductTitle>RUN FLATS x15</ProductTitle>
+		<ProductType>POWERUP</ProductType>
+		<SecondaryIcon/>
+		<UseCount>15</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>Using this during a Race sends traffic cars into the leader.</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>125509666</Hash>
+		<Icon>prod_powerup_stack_magne</Icon>
+		<Level>0</Level>
+		<LongDescription>Using this during a Race redirects traffic cars into the race leader's path.</LongDescription>
+		<Price>100.0000</Price>
+		<Priority>32</Priority>
+		<ProductId>SRV-POWERUP1</ProductId>
+		<ProductTitle>TRAFFIC MAGNET x15</ProductTitle>
+		<ProductType>POWERUP</ProductType>
+		<SecondaryIcon/>
+		<UseCount>15</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>Instantly end a Pursuit when you are in Cooldown.</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1692359144</Hash>
+		<Icon>prod_powerup_stack_coold</Icon>
+		<Level>0</Level>
+		<LongDescription>Instantly end a Pursuit by playing this Powerup when you are in Cooldown mode.</LongDescription>
+		<Price>100.0000</Price>
+		<Priority>38</Priority>
+		<ProductId>SRV-POWERUP2</ProductId>
+		<ProductTitle>INSTANT COOLDOWN x15</ProductTitle>
+		<ProductType>POWERUP</ProductType>
+		<SecondaryIcon/>
+		<UseCount>15</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>Protect yourself from Traffic Magnets.</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-364944936</Hash>
+		<Icon>prod_powerup_stack_shiel</Icon>
+		<Level>0</Level>
+		<LongDescription>Use the Shield to protect yourself against the Traffic Magnet Powerup.</LongDescription>
+		<Price>100.0000</Price>
+		<Priority>40</Priority>
+		<ProductId>SRV-POWERUP3</ProductId>
+		<ProductTitle>SHIELD x15</ProductTitle>
+		<ProductType>POWERUP</ProductType>
+		<SecondaryIcon/>
+		<UseCount>15</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>Catch the leaders with a burst of speed.</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>2236629</Hash>
+		<Icon>prod_powerup_stack_sling</Icon>
+		<Level>0</Level>
+		<LongDescription>Boosts your car's performance when you are in 2nd place or lower.</LongDescription>
+		<Price>100.0000</Price>
+		<Priority>36</Priority>
+		<ProductId>SRV-POWERUP4</ProductId>
+		<ProductTitle>SLINGSHOT x15</ProductTitle>
+		<ProductType>POWERUP</ProductType>
+		<SecondaryIcon/>
+		<UseCount>15</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>Ready all Powerups for immediate use.</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>957701799</Hash>
+		<Icon>prod_powerup_stack_ready</Icon>
+		<Level>0</Level>
+		<LongDescription>Resets the timer on all Powerups so you can use them again instantly.</LongDescription>
+		<Price>100.0000</Price>
+		<Priority>33</Priority>
+		<ProductId>SRV-POWERUP5</ProductId>
+		<ProductTitle>READY! x15</ProductTitle>
+		<ProductType>POWERUP</ProductType>
+		<SecondaryIcon/>
+		<UseCount>15</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>Knock cars out of the way with ramming speed.</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1805681994</Hash>
+		<Icon>prod_powerup_stack_jugge</Icon>
+		<Level>0</Level>
+		<LongDescription>Choose Juggernaut when you want to drive through traffic; not round it. </LongDescription>
+		<Price>100.0000</Price>
+		<Priority>34</Priority>
+		<ProductId>SRV-POWERUP6</ProductId>
+		<ProductTitle>JUGGERNAUT x15</ProductTitle>
+		<ProductType>POWERUP</ProductType>
+		<SecondaryIcon/>
+		<UseCount>15</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>Push Cops away from you to get a better chance to escape.</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-611661916</Hash>
+		<Icon>prod_powerup_stack_evade</Icon>
+		<Level>0</Level>
+		<LongDescription>Use this Powerup to push Cops away from you and give you a better chance to escape.</LongDescription>
+		<Price>100.0000</Price>
+		<Priority>37</Priority>
+		<ProductId>SRV-POWERUP7</ProductId>
+		<ProductTitle>EMERGENCY EVADE x15</ProductTitle>
+		<ProductType>POWERUP</ProductType>
+		<SecondaryIcon/>
+		<UseCount>15</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>Triggers an Emergency Evade for your entire team</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1564932069</Hash>
+		<Icon>product_evade_multi_x1</Icon>
+		<Level>0</Level>
+		<LongDescription>Triggers an Emergency Evade for your entire team</LongDescription>
+		<Price>200.0000</Price>
+		<Priority>22</Priority>
+		<ProductId>SRV-POWERUP8</ProductId>
+		<ProductTitle>TEAM EMERGENCY EVADE x15</ProductTitle>
+		<ProductType>POWERUP</ProductType>
+		<SecondaryIcon/>
+		<UseCount>15</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>Increase your speed to catch up to the leader or escape the cops.</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1681514783</Hash>
+		<Icon>prod_powerup_stack_nos__</Icon>
+		<Level>0</Level>
+		<LongDescription>Increases your speed briefly to help catch up to the leader or escape the Cops</LongDescription>
+		<Price>100.0000</Price>
+		<Priority>31</Priority>
+		<ProductId>SRV-POWERUP9</ProductId>
+		<ProductTitle>NITROUS x15</ProductTitle>
+		<ProductType>POWERUP</ProductType>
+		<SecondaryIcon/>
+		<UseCount>15</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>Adds another lap to a multiple-lap Race. Usable only once per Race.</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1627606782</Hash>
+		<Icon>prod_powerup_stack_onemo</Icon>
+		<Level>0</Level>
+		<LongDescription>Adds another lap to a multiple-lap Race (like Circuit) but it can only be used once per Race.</LongDescription>
+		<Price>100.0000</Price>
+		<Priority>35</Priority>
+		<ProductId>SRV-POWERUP10</ProductId>
+		<ProductTitle>ONE MORE LAP x15</ProductTitle>
+		<ProductType>POWERUP</ProductType>
+		<SecondaryIcon/>
+		<UseCount>15</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>Gives your team a short boost in speed.</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1113720384</Hash>
+		<Icon>product_slingshot_multi_x1</Icon>
+		<Level>0</Level>
+		<LongDescription>Gives your team a short boost in speed.</LongDescription>
+		<Price>200.0000</Price>
+		<Priority>21</Priority>
+		<ProductId>SRV-POWERUP11</ProductId>
+		<ProductTitle>TEAM SLINGSHOT x15</ProductTitle>
+		<ProductType>POWERUP</ProductType>
+		<SecondaryIcon/>
+		<UseCount>15</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+</ArrayOfProductTrans>

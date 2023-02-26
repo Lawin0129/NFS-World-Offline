@@ -1,0 +1,23 @@
+<ArrayOfProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>Adds a car slot</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1143680669</Hash>
+		<Icon/>
+		<Level>0</Level>
+		<LongDescription>Adds a car slot</LongDescription>
+		<Price>100.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARSLOT</ProductId>
+		<ProductTitle>CAR SLOT X1</ProductTitle>
+		<ProductType>CARSLOT</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+</ArrayOfProductTrans>

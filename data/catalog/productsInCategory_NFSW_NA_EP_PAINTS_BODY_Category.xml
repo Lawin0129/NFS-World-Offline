@@ -1,0 +1,149 @@
+<ArrayOfProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1419025149</Hash>
+		<Icon/>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>2000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-PBODY1</ProductId>
+		<ProductTitle/>
+		<ProductType>PAINT_BODY</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>54610746</Hash>
+		<Icon/>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>1000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-PBODY2</ProductId>
+		<ProductTitle/>
+		<ProductType>PAINT_BODY</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>42744494</Hash>
+		<Icon/>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>2000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-PBODY3</ProductId>
+		<ProductTitle/>
+		<ProductType>PAINT_BODY</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1773701481</Hash>
+		<Icon/>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>2000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-PBODY4</ProductId>
+		<ProductTitle/>
+		<ProductType>PAINT_BODY</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>595033610</Hash>
+		<Icon/>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>1000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-PBODY5</ProductId>
+		<ProductTitle/>
+		<ProductType>PAINT_BODY</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>47885063</Hash>
+		<Icon/>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>500.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-PBODY6</ProductId>
+		<ProductTitle/>
+		<ProductType>PAINT_BODY</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>58291507</Hash>
+		<Icon/>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>2000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-PBODY7</ProductId>
+		<ProductTitle/>
+		<ProductType>PAINT_BODY</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+</ArrayOfProductTrans>

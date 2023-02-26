@@ -1,0 +1,23 @@
+<ArrayOfProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description/>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1199055767</Hash>
+		<Icon/>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>1000.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-THREVIVE</ProductId>
+		<ProductTitle/>
+		<ProductType>AMPLIFIER</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+</ArrayOfProductTrans>

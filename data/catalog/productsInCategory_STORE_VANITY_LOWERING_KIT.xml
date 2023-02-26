@@ -1,0 +1,65 @@
+<ArrayOfProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>ALL CARS</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1654998252</Hash>
+		<Icon>PART_R2_LK_1</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>10.0000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-LOWKIT1</ProductId>
+		<ProductTitle>STAGE 1 LOWERING KIT</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>ALL CARS</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1674761484</Hash>
+		<Icon>PART_R2_LK_2</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>10.0000</Price>
+		<Priority>2</Priority>
+		<ProductId>SRV-LOWKIT2</ProductId>
+		<ProductTitle>STAGE 2 LOWERING KIT</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>_NS</Currency>
+		<Description>ALL CARS</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-273819714</Hash>
+		<Icon>PART_R2_LK_3</Icon>
+		<Level>0</Level>
+		<LongDescription/>
+		<Price>10.0000</Price>
+		<Priority>3</Priority>
+		<ProductId>SRV-LOWKIT3</ProductId>
+		<ProductTitle>STAGE 3 LOWERING KIT</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+</ArrayOfProductTrans>
