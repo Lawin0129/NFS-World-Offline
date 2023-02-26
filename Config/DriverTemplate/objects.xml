@@ -1,0 +1,9 @@
+<InventoryTrans>
+	<InventoryItems/>
+	<PerformancePartsCapacity>600</PerformancePartsCapacity>
+	<PerformancePartsUsedSlotCount>0</PerformancePartsUsedSlotCount>
+	<SkillModPartsCapacity>600</SkillModPartsCapacity>
+	<SkillModPartsUsedSlotCount>0</SkillModPartsUsedSlotCount>
+	<VisualPartsCapacity>600</VisualPartsCapacity>
+	<VisualPartsUsedSlotCount>0</VisualPartsUsedSlotCount>
+</InventoryTrans>
