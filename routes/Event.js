@@ -37,78 +37,6 @@ app.put("/matchmaking/*/:eventId", compression({ threshold: 0 }), (req, res) => 
     res.status(200).end();
 });
 
-// Finish event
-app.post("/event/arbitration", compression({ threshold: 0 }), (req, res) => {
-    res.type("application/xml");
-
-    let file = `./drivers/${global.activeDriver.driver}/carslots.xml`;
-
-    if (!global.activeDriver.driver) return res.status(404).send("<EngineError><Message>No active persona</Message></EngineError>");
-
-    let carslots = fs.readFileSync(file).toString();
-    let body = req.body;
-
-    parser.parseString(carslots, (err, result) => carslots = result);
-    parser.parseString(body, (err, result) => body = result);
-
-    let bodyStanza;
-    for (let i in body) bodyStanza = i;
-
-    if (!bodyStanza) return res.status(403).end();
-
-    let defaultIdx = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
-    let calculateHeat = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Heat[0];
-    let durability = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability[0];
-
-    if (body[bodyStanza].Heat) calculateHeat = body[bodyStanza].Heat[0];
-    
-    carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Heat = [calculateHeat];
-
-    let calculateDurability = Number(durability);
-
-    if (bodyStanza == "PursuitArbitrationPacket" || bodyStanza == "RouteArbitrationPacket") calculateDurability -= 5;
-    if (bodyStanza == "DragArbitrationPacket") calculateDurability -= 2;
-
-    if (calculateDurability < 0) calculateDurability = 0;
-
-    carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability = [`${calculateDurability}`];
-
-    fs.writeFileSync(file, builder.buildObject(carslots));
-
-    let respStanza;
-    if (bodyStanza == "PursuitArbitrationPacket") respStanza = "PursuitEventResult";
-    if (bodyStanza == "RouteArbitrationPacket") respStanza = "RouteEventResult";
-    if (bodyStanza == "DragArbitrationPacket") respStanza = "DragEventResult";
-
-    if (!respStanza) return res.status(403).end();
-
-    let finishTemplate = {
-        [respStanza]: {
-            Accolades: [{ HasLeveledUp: ["false"] }],
-            Durability: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability,
-            EventSessionId: [req.query.eventSessionId],
-            ExitPath: ["ExitToFreeroam"],
-            InviteLifetimeInMilliseconds: ["0"],
-            LobbyInviteId: ["0"],
-            PersonaId: [global.activeDriver.personaId],
-            Heat: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Heat,
-            Entrants: [{
-                RouteEntrantResult: [{
-                    EventDurationInMilliseconds: body[bodyStanza].EventDurationInMilliseconds,
-                    EventSessionId: [req.query.eventSessionId],
-                    FinishReason: body[bodyStanza].FinishReason,
-                    PersonaId: [global.activeDriver.personaId],
-                    Ranking: body[bodyStanza].Rank,
-                    BestLapDurationInMilliseconds: body[bodyStanza].BestLapDurationInMilliseconds,
-                    TopSpeed: body[bodyStanza].TopSpeed
-                }]
-            }]
-        }
-    }
-
-    res.status(200).send(builder.buildObject(finishTemplate));
-});
-
 // Busted in pursuit
 app.post("/event/bust", compression({ threshold: 0 }), (req, res) => {
     res.type("application/xml");
@@ -142,6 +70,75 @@ app.post("/event/bust", compression({ threshold: 0 }), (req, res) => {
             LobbyInviteId: ["0"],
             PersonaId: [global.activeDriver.personaId],
             Heat: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Heat
+        }
+    }
+
+    res.status(200).send(builder.buildObject(finishTemplate));
+});
+
+// Finish event
+app.post("/event/:eventAction", compression({ threshold: 0 }), (req, res) => {
+    res.type("application/xml");
+
+    let file = `./drivers/${global.activeDriver.driver}/carslots.xml`;
+
+    if (!global.activeDriver.driver) return res.status(404).send("<EngineError><Message>No active persona</Message></EngineError>");
+
+    let carslots = fs.readFileSync(file).toString();
+    let body = req.body;
+
+    parser.parseString(carslots, (err, result) => carslots = result);
+    parser.parseString(body, (err, result) => body = result);
+
+    let bodyStanza;
+    let event;
+
+    for (let i in body) bodyStanza = i;
+
+    if (!bodyStanza) return res.status(403).end();
+
+    event = `${bodyStanza.split("Arbitration")[0]}`;
+
+    let defaultIdx = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
+    let calculateHeat = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Heat[0];
+    let durability = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability[0];
+
+    if (body[bodyStanza].Heat) calculateHeat = body[bodyStanza].Heat[0];
+    
+    carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Heat = [calculateHeat];
+
+    let calculateDurability = Number(durability);
+
+    if (event == "Pursuit" || event == "Route" || event == "TeamEscape") calculateDurability -= 5;
+    if (event == "Drag") calculateDurability -= 2;
+
+    if (calculateDurability < 0) calculateDurability = 0;
+
+    carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability = [`${calculateDurability}`];
+
+    fs.writeFileSync(file, builder.buildObject(carslots));
+
+    let finishTemplate = {
+        [`${event}EventResult`]: {
+            Accolades: [{ HasLeveledUp: ["false"] }],
+            Durability: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability,
+            EventSessionId: [req.query.eventSessionId],
+            ExitPath: ["ExitToFreeroam"],
+            InviteLifetimeInMilliseconds: ["0"],
+            LobbyInviteId: ["0"],
+            PersonaId: [global.activeDriver.personaId],
+            Heat: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Heat,
+            Entrants: [{
+                RouteEntrantResult: [{
+                    EventDurationInMilliseconds: body[bodyStanza].EventDurationInMilliseconds,
+                    EventSessionId: [req.query.eventSessionId],
+                    FinishReason: body[bodyStanza].FinishReason,
+                    PersonaId: [global.activeDriver.personaId],
+                    Ranking: body[bodyStanza].Rank,
+                    BestLapDurationInMilliseconds: body[bodyStanza].BestLapDurationInMilliseconds,
+                    TopSpeed: body[bodyStanza].TopSpeed
+                }]
+            }]
         }
     }
 
