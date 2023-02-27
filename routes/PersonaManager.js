@@ -90,16 +90,18 @@ app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), (req, re
             GetPersonaInfo.ProfileData.PersonaId = [newPersonaId];
             loadall.AchievementsPacket.PersonaId = [newPersonaId];
 
-            GetPersonaInfo = builder.buildObject(GetPersonaInfo);
             loadall = builder.buildObject(loadall);
 
             fs.writeFileSync(`${driverPath}/carslots.xml`, carslots);
-            fs.writeFileSync(`${driverPath}/GetPersonaInfo.xml`, GetPersonaInfo);
+            fs.writeFileSync(`${driverPath}/GetPersonaInfo.xml`, builder.buildObject(GetPersonaInfo));
             fs.writeFileSync(`${driverPath}/gettreasurehunteventsession.xml`, gettreasurehunteventsession);
             fs.writeFileSync(`${driverPath}/loadall.xml`, loadall);
             fs.writeFileSync(`${driverPath}/objects.xml`, objects);
 
-            return res.send(GetPersonaInfo);
+            // enable tutorial
+            GetPersonaInfo.ProfileData.Level = ["1"];
+
+            return res.send(builder.buildObject(GetPersonaInfo));
         }
     }
 
