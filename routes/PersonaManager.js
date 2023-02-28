@@ -100,6 +100,7 @@ app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), (req, re
 
             // enable tutorial
             GetPersonaInfo.ProfileData.Level = ["1"];
+            global.newDriver = { personaId: newPersonaId, numOfReqs: 0 };
 
             return res.send(builder.buildObject(GetPersonaInfo));
         }

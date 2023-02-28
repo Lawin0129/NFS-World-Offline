@@ -469,11 +469,15 @@ app.get("/DriverPersona/GetPersonaInfo", compression({ threshold: 0 }), (req, re
                 if (!fs.existsSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml"))) continue;
 
                 let PersonaInfo = fs.readFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml")).toString();
-                let parsedJson;
-                parser.parseString(PersonaInfo, (err, result) => parsedJson = result);
+                parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
 
-                if (parsedJson.ProfileData.PersonaId[0] == req.query.personaId) {
-                    return res.send(PersonaInfo);
+                if (PersonaInfo.ProfileData.PersonaId[0] == req.query.personaId) {
+                    if (global.newDriver && global.newDriver.personaId == req.query.personaId && global.newDriver.numOfReqs < 2) {
+                        PersonaInfo.ProfileData.Level = ["1"];
+                        global.newDriver.numOfReqs += 1;
+                    }
+
+                    return res.send(builder.buildObject(PersonaInfo));
                 }
 
                 drivers += 1;
