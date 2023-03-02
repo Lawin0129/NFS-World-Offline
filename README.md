@@ -36,3 +36,8 @@ You can find out more here: [https://nfs.fandom.com/wiki/Need_for_Speed:_World](
         - Paints Customization.
 # Issues
 * Powerups WILL NOT work due to unfinished XMPP server.
+# Credits
+| Name | Helped with |
+| --------------- | ----------- |
+| Lawin | Creator |
+| sbrw-race-offline-1.9.0<br/>by berkay2578 & Nilzao | For catalog and baskets files |
