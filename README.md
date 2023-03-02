@@ -36,6 +36,7 @@ You can find out more here: [https://nfs.fandom.com/wiki/Need_for_Speed:_World](
         - Paints Customization.
 # Issues
 * Powerups WILL NOT work due to unfinished XMPP server.
+* Launching using launch args will not work as it gives "Error Code 7", you will have to use the Soapbox Race World Launcher.
 # Credits
 | Name | Helped with |
 | --------------- | ----------- |
