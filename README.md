@@ -4,14 +4,14 @@ It was a multiplayer racing game that was published by Electronic Arts and co-de
 
 You can find out more here: [https://nfs.fandom.com/wiki/Need_for_Speed:_World](https://nfs.fandom.com/wiki/Need_for_Speed:_World)
 # Features
-- Achievements:
-	- All original achievements that once existed in nfs world.
-	- Setting your achievement badges in achievements log.
-- Events:
-  - Launching single player races.
-  - Original car durability loss:
-		- Sprints: -5% durability loss.
-		- Circuits: -5% durability loss.
-		- Pursuits: -5% durability loss.
-		- Team Escapes: -5% durability loss.
-		- Drags: -2% durability loss.
+* Achievements:
+    + All original achievements that once existed in nfs world.
+    + Setting your achievement badges in achievements log.
+* Events:
+    + Launching single player races.
+    + Original car durability loss:
+        - Sprints: -5% durability loss.
+        - Circuits: -5% durability loss.
+        - Pursuits: -5% durability loss.
+        - Team Escapes: -5% durability loss.
+        - Drags: -2% durability loss.
