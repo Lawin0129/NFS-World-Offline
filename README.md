@@ -7,11 +7,32 @@ You can find out more here: [https://nfs.fandom.com/wiki/Need_for_Speed:_World](
 * Achievements:
     + All original achievements that once existed in nfs world.
     + Setting your achievement badges in achievements log.
+* Drivers:
+    + Creating Drivers (original functionality like "name exists?" also included).
+    + Deleting Drivers.
+    + Changing Drivers.
+    + Editing/Adding Motto.
 * Events:
-    + Launching single player races.
-    + Original car durability loss:
-        - Sprints: -5% durability loss.
-        - Circuits: -5% durability loss.
-        - Pursuits: -5% durability loss.
-        - Team Escapes: -5% durability loss.
-        - Drags: -2% durability loss.
+    + All original events that once existed in nfs world.
+    + Launching single player events.
+    + Pursuit heat saves on current car.
+    + Pursuit heat resets to 1 if busted.
+    + Original Car Durability Loss:
+        - Sprints: -5% Durability Loss.
+        - Circuits: -5% Durability Loss.
+        - Pursuits: -5% Durability Loss.
+        - Team Escapes: -5% Durability Loss.
+        - Drags: -2% Durability Loss.
+* Cars
+    + Changing your car.
+    + Repairing your car.
+    + Purchasing cars.
+    + Selling cars.
+    + Car Customization:
+        - Skill Mods Customization.
+        - Aftermarket Customization.
+        - Performance Customization.
+        - Vinyls Customization.
+        - Paints Customization.
+# Issues
+* Powerups WILL NOT work due to unfinished XMPP server.
