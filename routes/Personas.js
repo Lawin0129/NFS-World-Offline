@@ -29,17 +29,17 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), (req, r
 
     let dirFiles = fs.readdirSync(driversDir);
 
-    for (let i in dirFiles) {
+    for (let file of dirFiles) {
         if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, dirFiles[i])).isDirectory() && dirFiles[i].startsWith("driver") && Number(dirFiles[i].replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(`./drivers/${dirFiles[i]}/carslots.xml`)) continue;
+            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
+                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
+                if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml")).toString();
+                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
                 parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let carslots = fs.readFileSync(`./drivers/${dirFiles[i]}/carslots.xml`).toString();
+                    let carslots = fs.readFileSync(`./drivers/${file}/carslots.xml`).toString();
 
                     if (req.params.carsType == "carslots") {
                         return res.send(carslots);
@@ -88,9 +88,7 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), (req, r
         } else if (req.params.carsType == "cars" || req.params.carsType == "defaultcar") {
             let filePath = `./data/personas/${req.query.personaId}/${req.params.carsType}.xml`;
 
-            if (fs.existsSync(filePath)) {
-                return res.send(fs.readFileSync(filePath).toString());
-            }
+            if (fs.existsSync(filePath)) return res.send(fs.readFileSync(filePath).toString());
         }
     }
 
@@ -106,24 +104,24 @@ app.put("/personas/:personaId/defaultcar/:carId", compression({ threshold: 0 }),
 
     let dirFiles = fs.readdirSync(driversDir);
 
-    for (let i in dirFiles) {
+    for (let file of dirFiles) {
         if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, dirFiles[i])).isDirectory() && dirFiles[i].startsWith("driver") && Number(dirFiles[i].replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(`./drivers/${dirFiles[i]}/carslots.xml`)) continue;
+            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
+                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
+                if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml")).toString();
+                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
                 parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let carslots = fs.readFileSync(`./drivers/${dirFiles[i]}/carslots.xml`).toString();
+                    let carslots = fs.readFileSync(`./drivers/${file}/carslots.xml`).toString();
                     parser.parseString(carslots, (err, result) => carslots = result);
                     
                     let findCarIndex = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.findIndex(i => i.Id[0] == req.params.carId);
                     if (typeof findCarIndex == "number" && findCarIndex >= 0) {
                         carslots.CarSlotInfoTrans.DefaultOwnedCarIndex = [];
                         carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0] = `${findCarIndex}`;
-                        fs.writeFileSync(`./drivers/${dirFiles[i]}/carslots.xml`, builder.buildObject(carslots));
+                        fs.writeFileSync(`./drivers/${file}/carslots.xml`, builder.buildObject(carslots));
 
                         return res.status(200).end();
                     }
@@ -146,17 +144,17 @@ app.post("/personas/:personaId/cars", compression({ threshold: 0 }), (req, res) 
 
     let dirFiles = fs.readdirSync(driversDir);
 
-    for (let i in dirFiles) {
+    for (let file of dirFiles) {
         if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, dirFiles[i])).isDirectory() && dirFiles[i].startsWith("driver") && Number(dirFiles[i].replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(`./drivers/${dirFiles[i]}/carslots.xml`)) continue;
+            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
+                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
+                if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml")).toString();
+                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
                 parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let carslots = fs.readFileSync(`./drivers/${dirFiles[i]}/carslots.xml`).toString();
+                    let carslots = fs.readFileSync(`./drivers/${file}/carslots.xml`).toString();
                     parser.parseString(carslots, (err, result) => carslots = result);
 
                     if (carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.length <= 1) break;
@@ -172,7 +170,7 @@ app.post("/personas/:personaId/cars", compression({ threshold: 0 }), (req, res) 
                         if (!carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx]) carslots.CarSlotInfoTrans.DefaultOwnedCarIndex = [`${newIndex}`];
                         else newIndex = defaultIdx;
 
-                        fs.writeFileSync(`./drivers/${dirFiles[i]}/carslots.xml`, builder.buildObject(carslots));
+                        fs.writeFileSync(`./drivers/${file}/carslots.xml`, builder.buildObject(carslots));
 
                         return res.status(200).send(builder.buildObject({
                             OwnedCarTrans: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[newIndex]
@@ -198,17 +196,17 @@ app.put("/personas/:personaId/cars", compression({ threshold: 0 }), (req, res) =
 
     let dirFiles = fs.readdirSync(driversDir);
 
-    for (let i in dirFiles) {
+    for (let file of dirFiles) {
         if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, dirFiles[i])).isDirectory() && dirFiles[i].startsWith("driver") && Number(dirFiles[i].replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(`./drivers/${dirFiles[i]}/carslots.xml`)) continue;
+            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
+                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
+                if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml")).toString();
+                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
                 parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let carslots = fs.readFileSync(`./drivers/${dirFiles[i]}/carslots.xml`).toString();
+                    let carslots = fs.readFileSync(`./drivers/${file}/carslots.xml`).toString();
                     parser.parseString(carslots, (err, result) => carslots = result);
                     
                     let defaultCarIndex = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
@@ -235,17 +233,17 @@ app.post("/personas/:personaId/commerce", compression({ threshold: 0 }), (req, r
 
     let dirFiles = fs.readdirSync(driversDir);
 
-    for (let i in dirFiles) {
+    for (let file of dirFiles) {
         if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, dirFiles[i])).isDirectory() && dirFiles[i].startsWith("driver") && Number(dirFiles[i].replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(`./drivers/${dirFiles[i]}/carslots.xml`)) continue;
+            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
+                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
+                if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml")).toString();
+                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
                 parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let carslots = fs.readFileSync(`./drivers/${dirFiles[i]}/carslots.xml`).toString();
+                    let carslots = fs.readFileSync(`./drivers/${file}/carslots.xml`).toString();
                     let body = req.body;
                     parser.parseString(carslots, (err, result) => carslots = result);
                     parser.parseString(body, (err, result) => body = result);
@@ -261,7 +259,7 @@ app.post("/personas/:personaId/commerce", compression({ threshold: 0 }), (req, r
                     car.Vinyls = newCar.Vinyls;
                     car.VisualParts = newCar.VisualParts;
 
-                    fs.writeFileSync(`./drivers/${dirFiles[i]}/carslots.xml`, builder.buildObject(carslots));
+                    fs.writeFileSync(`./drivers/${file}/carslots.xml`, builder.buildObject(carslots));
 
                     return res.status(200).send(builder.buildObject({
                         CommerceSessionResultTrans: {
@@ -345,7 +343,7 @@ app.post("/personas/:personaId/baskets", compression({ threshold: 0 }), (req, re
                                     CustomCar: basket.OwnedCarTrans.CustomCar,
                                     Durability: ["100"],
                                     Heat: ["1"],
-                                    Id: [functions.MakeCarID()],
+                                    Id: [functions.MakeID()],
                                     OwnershipType: ["CustomizedCar"]
                                 }
 
@@ -382,24 +380,24 @@ app.get("/car/repair", compression({ threshold: 0 }), (req, res) => {
 
     let dirFiles = fs.readdirSync(driversDir);
 
-    for (let i in dirFiles) {
+    for (let file of dirFiles) {
         if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, dirFiles[i])).isDirectory() && dirFiles[i].startsWith("driver") && Number(dirFiles[i].replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(`./drivers/${dirFiles[i]}/carslots.xml`)) continue;
+            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
+                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
+                if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml")).toString();
+                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
                 parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.query.personaId) {
-                    let carslots = fs.readFileSync(`./drivers/${dirFiles[i]}/carslots.xml`).toString();
+                    let carslots = fs.readFileSync(`./drivers/${file}/carslots.xml`).toString();
                     parser.parseString(carslots, (err, result) => carslots = result);
                     
                     let defaultCarIndex = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
 
                     carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex].Durability = ["100"];
 
-                    fs.writeFileSync(`./drivers/${dirFiles[i]}/carslots.xml`, builder.buildObject(carslots));
+                    fs.writeFileSync(`./drivers/${file}/carslots.xml`, builder.buildObject(carslots));
 
                     return res.status(200).send("<int>100</int>");
                 }
@@ -424,19 +422,19 @@ app.post("/DriverPersona/UpdateStatusMessage", compression({ threshold: 0 }), (r
     let body = req.body;
     parser.parseString(body, (err, result) => body = result);
 
-    for (let i in dirFiles) {
+    for (let file of dirFiles) {
         if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, dirFiles[i])).isDirectory() && dirFiles[i].startsWith("driver") && Number(dirFiles[i].replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml"))) continue;
+            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
+                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml")).toString();
+                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
                 parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == body.PersonaMotto.personaId[0]) {
                     PersonaInfo.ProfileData.Motto = [];
                     PersonaInfo.ProfileData.Motto[0] = body.PersonaMotto.message[0];
 
-                    fs.writeFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml"), builder.buildObject(PersonaInfo));
+                    fs.writeFileSync(path.join(driversDir, file, "GetPersonaInfo.xml"), builder.buildObject(PersonaInfo));
 
                     return res.status(200).send(
                             `<PersonaMotto>
@@ -463,12 +461,12 @@ app.get("/DriverPersona/GetPersonaInfo", compression({ threshold: 0 }), (req, re
 
     let dirFiles = fs.readdirSync(driversDir);
 
-    for (let i in dirFiles) {
+    for (let file of dirFiles) {
         if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, dirFiles[i])).isDirectory() && dirFiles[i].startsWith("driver") && Number(dirFiles[i].replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml"))) continue;
+            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
+                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml")).toString();
+                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
                 parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.query.personaId) {
@@ -514,12 +512,12 @@ app.post("/DriverPersona/GetPersonaBaseFromList", compression({ threshold: 0 }),
     for (let x in body.PersonaIdArray.PersonaIds) {
         let drivers = 0;
 
-        for (let i in dirFiles) {
+        for (let file of dirFiles) {
             if (drivers < 3) {
-                if (fs.statSync(path.join(driversDir, dirFiles[i])).isDirectory() && dirFiles[i].startsWith("driver") && Number(dirFiles[i].replace("driver", ""))) {
-                    if (!fs.existsSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml"))) continue;
+                if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
+                    if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
 
-                    let PersonaInfo = fs.readFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml")).toString();
+                    let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
                     parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
 
                     if (PersonaInfo.ProfileData.PersonaId[0] == body.PersonaIdArray.PersonaIds[0]["array:long"][x]) {

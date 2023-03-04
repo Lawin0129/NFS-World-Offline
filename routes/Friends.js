@@ -35,12 +35,12 @@ app.get("/getfriendlistfromuserid", compression({ threshold: 0 }), (req, res, ne
 
     let dirFiles = fs.readdirSync(driversDir);
 
-    for (let i in dirFiles) {
+    for (let file of dirFiles) {
         if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, dirFiles[i])).isDirectory() && dirFiles[i].startsWith("driver") && Number(dirFiles[i].replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml"))) continue;
+            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
+                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml")).toString();
+                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
                 parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
 
                 friendsTemplate.PersonaFriendsList.friendPersona[0].FriendPersona.push({

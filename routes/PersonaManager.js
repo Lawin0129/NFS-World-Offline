@@ -17,12 +17,12 @@ app.post("/DriverPersona/ReserveName", compression({ threshold: 0 }), (req, res)
 
     let dirFiles = fs.readdirSync(driversDir);
 
-    for (let i in dirFiles) {
+    for (let file of dirFiles) {
         if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, dirFiles[i])).isDirectory() && dirFiles[i].startsWith("driver") && Number(dirFiles[i].replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml"))) continue;
+            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
+                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml")).toString();
+                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
                 parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
 
                 if (PersonaInfo.ProfileData.Name[0].toLowerCase() == req.query.name.toLowerCase()) {
@@ -49,10 +49,10 @@ app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), (req, re
     let driverNameTaken = false;
     let driverFolderName;
 
-    for (let i in dirFiles) {
+    for (let file of dirFiles) {
         if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, dirFiles[i])).isDirectory() && dirFiles[i].startsWith("driver") && Number(dirFiles[i].replace("driver", ""))) {
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml")).toString();
+            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
+                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
                 parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
 
                 if (PersonaInfo.ProfileData.Name[0].toLowerCase() == req.query.name.toLowerCase()) driverNameTaken = true;
@@ -63,7 +63,7 @@ app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), (req, re
     }
 
     if (!driverNameTaken && req.query.name.length >= 3) {
-        let newPersonaId = functions.MakeCarID();
+        let newPersonaId = functions.MakeID();
         let newIconIndex = req.query.iconIndex;
         let newName = req.query.name;
         
@@ -118,16 +118,16 @@ app.post("/DriverPersona/DeletePersona", compression({ threshold: 0 }), (req, re
 
     let dirFiles = fs.readdirSync(driversDir);
 
-    for (let i in dirFiles) {
+    for (let file of dirFiles) {
         if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, dirFiles[i])).isDirectory() && dirFiles[i].startsWith("driver") && Number(dirFiles[i].replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml"))) continue;
+            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
+                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, dirFiles[i], "GetPersonaInfo.xml")).toString();
+                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
                 parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.query.personaId) {
-                    fs.rmSync(path.join(driversDir, dirFiles[i]), { recursive: true });
+                    fs.rmSync(path.join(driversDir, file), { recursive: true });
 
                     return res.send("<long>0</long>");
                 }
