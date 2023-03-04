@@ -129,6 +129,8 @@ app.post("/DriverPersona/DeletePersona", compression({ threshold: 0 }), (req, re
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.query.personaId) {
                     fs.rmSync(path.join(driversDir, file), { recursive: true });
 
+                    fs.writeFileSync("./drivers/DefaultPersonaIdx.xml", "<UserInfo><defaultPersonaIdx>0</defaultPersonaIdx></UserInfo>");
+
                     return res.send("<long>0</long>");
                 }
 

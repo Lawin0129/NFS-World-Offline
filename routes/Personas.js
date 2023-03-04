@@ -436,12 +436,12 @@ app.post("/DriverPersona/UpdateStatusMessage", compression({ threshold: 0 }), (r
 
                     fs.writeFileSync(path.join(driversDir, file, "GetPersonaInfo.xml"), builder.buildObject(PersonaInfo));
 
-                    return res.status(200).send(
-                            `<PersonaMotto>
-                                <message>${body.PersonaMotto.message[0]}</message>
-                                <personaId>${body.PersonaMotto.personaId[0]}</personaId>
-                            </PersonaMotto>`
-                    );
+                    return res.status(200).send(builder.buildObject({
+                        PersonaMotto: {
+                            message: PersonaInfo.ProfileData.Motto,
+                            personaId: PersonaInfo.ProfileData.PersonaId
+                        }
+                    }));
                 }
 
                 drivers += 1;

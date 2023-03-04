@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const fs = require("fs");
+const config = require("./Config/config.json");
 
 const functions = require("./structs/functions.js");
 const PORT = 3550;
@@ -11,6 +12,12 @@ app.use((req, res, next) => {
     req.body = "";
     req.on("data", (chunk) => req.body += chunk);
     req.on("end", () => next());
+});
+
+app.use((req, res, next) => {
+    if (config.LogRequests) console.log(`${req.body ? "\n" : ""}${req.method}`, req.url, req.body ? `${req.body}\n` : "");
+
+    return next();
 });
 
 fs.readdirSync("./routes").forEach(fileName => {

@@ -16,9 +16,12 @@ app.post("/User/GetPermanentSession", compression({ threshold: 0 }), (req, res) 
     let driversDir = path.join(__dirname, "..", "drivers");
     let drivers = 0;
 
+    let DefaultPersonaIdx = fs.readFileSync("./drivers/DefaultPersonaIdx.xml").toString();
+    parser.parseString(DefaultPersonaIdx, (err, result) => DefaultPersonaIdx = result);
+
     let SessionTemplate = {
         UserInfo: {
-            defaultPersonaIdx: ["0"],
+            defaultPersonaIdx: DefaultPersonaIdx.UserInfo.defaultPersonaIdx,
             personas: [{ ProfileData: [] }],
             user: [{
                 fullGameAccess: ["false"],
@@ -68,6 +71,8 @@ app.post("/User/SecureLoginPersona", (req, res) => {
 
             if (PersonaInfo.ProfileData.PersonaId[0] == req.query.personaId) {
                 global.activeDriver = { driver: file, personaId: PersonaInfo.ProfileData.PersonaId[0] };
+
+                fs.writeFileSync("./drivers/DefaultPersonaIdx.xml", `<UserInfo><defaultPersonaIdx>${drivers}</defaultPersonaIdx></UserInfo>`);
 
                 return res.status(200).end();
             }
