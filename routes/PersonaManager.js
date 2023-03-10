@@ -62,7 +62,7 @@ app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), (req, re
         }
     }
 
-    if (!driverNameTaken && req.query.name.length >= 3) {
+    if (!driverNameTaken && req.query.name.length >= 3 && req.query.name.length <= 14) {
         let newPersonaId = functions.MakeID();
         let newIconIndex = req.query.iconIndex;
         let newName = req.query.name;

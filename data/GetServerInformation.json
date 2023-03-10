@@ -13,11 +13,16 @@
   "numberOfRegistered": 1,
   "secondsToShutDown": 28800,
   "allowedCountries": "",
-  "activatedHolidaySceneryGroups": [],
-  "disactivatedHolidaySceneryGroups": [],
+  "activatedHolidaySceneryGroups": [
+    "SCENERY_GROUP_NORMAL"
+  ],
+  "disactivatedHolidaySceneryGroups": [
+    "SCENERY_GROUP_NORMAL_DISABLE"
+  ],
   "onlineNumber": 0,
   "requireTicket": false,
   "playerCountRewardMultiplier": 1,
+  "enforceLauncherProxy": true,
   "webSignupUrl": "",
   "webRecoveryUrl": "",
   "webPanelUrl": "",

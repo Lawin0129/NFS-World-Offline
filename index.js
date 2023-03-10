@@ -28,12 +28,14 @@ fs.readdirSync("./routes").forEach(fileName => {
 
 app.use("/Engine.svc", require("./routes/Main.js"));
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
     console.log(`NFS World Offline Server by Lawin started listening on port ${PORT}`);
     console.log(`\nLaunch the game either by:\n1) Adding the server to the Soapbox Race World Launcher by the url "http://localhost:${PORT}/Engine.svc".`
                 + `\n2) or by using these launch args "nfsw.exe US http://localhost:${PORT}/Engine.svc a 1" (not working, use soapbox launcher).\n`);
 
-    require("./xmpp/xmpp.js");
+    await require("./xmpp");
+    
+    require("./commands");
 }).on("error", async (err) => {
     if (err.code == "EADDRINUSE") {
         console.log(`Port ${PORT} is already in use!\nClosing in 3 seconds...`);
