@@ -11,10 +11,11 @@
 	<NucleusNamespace>nfsw-live</NucleusNamespace>
 	<NucleusNamespaceWeb>nfs_web</NucleusNamespaceWeb>
 	<PersonaCacheTimeout>900</PersonaCacheTimeout>
-	<PortalDomain>localhost</PortalDomain>
-	<PortalStoreFailurePage>localhost</PortalStoreFailurePage>
+	<PortalDomain>github.com/Lawin0129/NFS-World-Offline?fakepath=</PortalDomain>
+	<PortalSecureDomain>github.com/Lawin0129/NFS-World-Offline?fakepath=</PortalSecureDomain>
+	<PortalStoreFailurePage>github.com/Lawin0129/NFS-World-Offline?fakepath=</PortalStoreFailurePage>
 	<PortalTimeOut>6000</PortalTimeOut>
 	<ShardName>APEX</ShardName>
-	<Time>2023-02-25T16:31:44.760+01:00</Time>
-	<Version>0</Version>
+	<Time>2023-02-25T00:00:00.000+00:00</Time>
+	<Version>LAWIN-OFFLINE</Version>
 </SystemInfo>

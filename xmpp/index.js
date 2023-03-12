@@ -14,7 +14,7 @@ const tcpServer = net.createServer((socket) => {
 
     socket.on("close", () => socket.destroy());
     socket.on("end", () => console.log('\nXMPP Client disconnected.\n'));
-    socket.on("error", (err) => console.log(`\nXMPP Socket Error: ${err.message}`));
+    socket.on("error", (err) => { console.log(`\nXMPP Socket Error: ${err.message}`); socket.destroy(); });
 });
 
 tcpServer.on("error", async (err) => {

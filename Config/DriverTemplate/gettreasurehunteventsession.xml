@@ -1,5 +1,5 @@
 <TreasureHuntEventSession>
-	<CoinsCollected>0</CoinsCollected>
+	<CoinsCollected>32767</CoinsCollected>
 	<IsStreakBroken>false</IsStreakBroken>
 	<NumCoins>15</NumCoins>
 	<Seed>411499253</Seed>

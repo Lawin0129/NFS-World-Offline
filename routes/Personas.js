@@ -52,6 +52,8 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), (req, r
 
                         parser.parseString(carslots, (err, result) => carslots = result);
 
+                        if (!carslots.CarSlotInfoTrans.CarsOwnedByPersona) carslots.CarSlotInfoTrans.CarsOwnedByPersona = [{ OwnedCarTrans: [] }];
+
                         carsTemplate.ArrayOfOwnedCarTrans = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0];
 
                         return res.send(builder.buildObject(carsTemplate));
@@ -61,6 +63,8 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), (req, r
                         }
 
                         parser.parseString(carslots, (err, result) => carslots = result);
+
+                        if (!carslots.CarSlotInfoTrans.CarsOwnedByPersona) carslots.CarSlotInfoTrans.CarsOwnedByPersona = [{ OwnedCarTrans: [] }];
 
                         if (carslots.CarSlotInfoTrans.CarsOwnedByPersona.delEmpty().length <= 0) {
                             defaultCar.OwnedCarTrans = {
@@ -75,7 +79,7 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), (req, r
                         let defaultIndex = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
                         let defaultItem = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIndex];
 
-                        defaultCar.OwnedCarTrans = defaultItem;
+                        defaultCar.OwnedCarTrans = defaultItem || {};
 
                         return res.send(builder.buildObject(defaultCar));
                     } else {
@@ -347,6 +351,7 @@ app.post("/personas/:personaId/baskets", compression({ threshold: 0 }), (req, re
                                     OwnershipType: ["CustomizedCar"]
                                 }
 
+                                if (!carslots.CarSlotInfoTrans.CarsOwnedByPersona) carslots.CarSlotInfoTrans.CarsOwnedByPersona = [{ OwnedCarTrans: [] }];
                                 if (!carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans) carslots.CarSlotInfoTrans.CarsOwnedByPersona = [{ OwnedCarTrans: [] }];
 
                                 let carindex = (carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.push(carTemplate)) - 1;
@@ -471,7 +476,7 @@ app.get("/DriverPersona/GetPersonaInfo", compression({ threshold: 0 }), (req, re
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.query.personaId) {
                     if (global.newDriver && global.newDriver.personaId == req.query.personaId && global.newDriver.numOfReqs < 2) {
-                        PersonaInfo.ProfileData.Level = ["1"];
+                        if (global.newDriver.numOfReqs == 1) PersonaInfo.ProfileData.Level = ["1"];
                         global.newDriver.numOfReqs += 1;
                     }
 
