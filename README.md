@@ -39,7 +39,7 @@ This program is a server emulator/backend written in Node.js for NFS World which
 * Treasure Hunt
 # Issues
 * Powerups WILL NOT work due to unfinished XMPP server.
-* Launching using launch args will not work as it gives "Error Code 7", you will have to use the Soapbox Race World Launcher.
+* Launching using launch args will not work as it gives "Error Code 7", you will have to use the Soapbox Race World Launcher (do not disable the proxy).
 # How to use this nfs world server emulator?
 1) Install [NodeJS](https://nodejs.org/en/).
 2) Download and Extract NFS World Offline to a safe location.
@@ -51,4 +51,4 @@ This program is a server emulator/backend written in Node.js for NFS World which
 | Name | Helped with |
 | --------------- | ----------- |
 | Lawin | Creator |
-| sbrw-race-offline-1.9.0<br/>by berkay2578 & Nilzao | For catalog and baskets files |
+| soapbox-race-offline-1.9.0<br/>by berkay2578 & Nilzao | For catalog and baskets files |
