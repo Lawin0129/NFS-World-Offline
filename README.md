@@ -4,7 +4,7 @@ It was a multiplayer racing game that was published by Electronic Arts and co-de
 
 You can find out more here: [https://nfs.fandom.com/wiki/Need_for_Speed:_World](https://nfs.fandom.com/wiki/Need_for_Speed:_World)
 # About this program
-This program is a server emulator/backend for NFS World which allows you to play it.
+This program is a server emulator/backend written in Node.js for NFS World which allows you to play it.
 # Features
 * Achievements:
     + All original achievements that once existed in nfs world.
