@@ -1,7 +1,7 @@
 const express = require("express");
+const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
-const app = express.Router();
 
 // Get catalog by category name
 app.get("/catalog/*", compression({ threshold: 0 }), (req, res) => {

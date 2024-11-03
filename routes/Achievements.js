@@ -1,10 +1,8 @@
 const express = require("express");
+const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
-const xml2js = require("xml2js");
-const parser = new xml2js.Parser();
-const builder = new xml2js.Builder({ renderOpts: { pretty: false }, headless: true });
-const app = express.Router();
+const xmlParser = require("../structs/xmlParser");
 
 // Get achievements from persona
 app.get("/achievements/loadall", compression({ threshold: 0 }), (req, res) => {
@@ -19,7 +17,7 @@ app.get("/achievements/loadall", compression({ threshold: 0 }), (req, res) => {
 });
 
 // Set achievement badges
-app.put("/badges/set", compression({ threshold: 0 }), (req, res) => {
+app.put("/badges/set", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let file = `./drivers/${global.activeDriver.driver}/GetPersonaInfo.xml`;
@@ -32,12 +30,9 @@ app.put("/badges/set", compression({ threshold: 0 }), (req, res) => {
     if (!global.activeDriver.driver) return res.status(404).send("<EngineError><Message>No active persona</Message></EngineError>");
     if (!fs.existsSync(achievementFile)) return res.status(404).send("<EngineError><Message>No achievements file found in persona</Message></EngineError>");
 
-    let PersonaInfo = fs.readFileSync(file).toString();
-    let Achievements = fs.readFileSync(achievementFile).toString();
-    let body = req.body;
-    parser.parseString(body, (err, result) => body = result);
-    parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
-    parser.parseString(Achievements, (err, result) => Achievements = result);
+    let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(file).toString());
+    let Achievements = await xmlParser.parseXML(fs.readFileSync(achievementFile).toString());
+    let body = await xmlParser.parseXML(req.body);
 
     for (let i in body.BadgeBundle.Badges[0].BadgeInput) {
         let badge = Achievements.AchievementsPacket.Definitions[0].AchievementDefinitionPacket.find(x => x.BadgeDefinitionId[0] == body.BadgeBundle.Badges[0].BadgeInput[i].BadgeDefinitionId[0]);
@@ -54,7 +49,7 @@ app.put("/badges/set", compression({ threshold: 0 }), (req, res) => {
 
     PersonaInfo.ProfileData.Badges = badgesTemplate.Badges;
 
-    fs.writeFileSync(file, builder.buildObject(PersonaInfo));
+    fs.writeFileSync(file, xmlParser.buildXML(PersonaInfo));
     
     res.status(200).end();
 });

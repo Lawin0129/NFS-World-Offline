@@ -1,15 +1,13 @@
 const express = require("express");
+const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
-const xml2js = require("xml2js");
-const parser = new xml2js.Parser();
-const builder = new xml2js.Builder({ renderOpts: { pretty: false }, headless: true });
-const app = express.Router();
-const functions = require("../structs/functions.js");
+const xmlParser = require("../structs/xmlParser");
+const functions = require("../structs/functions");
 
 // Check if name is available
-app.post("/DriverPersona/ReserveName", compression({ threshold: 0 }), (req, res) => {
+app.post("/DriverPersona/ReserveName", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let driversDir = path.join(__dirname, "..", "drivers");
@@ -22,8 +20,7 @@ app.post("/DriverPersona/ReserveName", compression({ threshold: 0 }), (req, res)
             if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
                 if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
-                parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
+                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
 
                 if (PersonaInfo.ProfileData.Name[0].toLowerCase() == req.query.name.toLowerCase()) {
                     return res.send("<ArrayOfString><string>NONE</string></ArrayOfString>");
@@ -38,7 +35,7 @@ app.post("/DriverPersona/ReserveName", compression({ threshold: 0 }), (req, res)
 });
 
 // Create driver (persona)
-app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), (req, res) => {
+app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let driversDir = path.join(__dirname, "..", "drivers");
@@ -52,8 +49,7 @@ app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), (req, re
     for (let file of dirFiles) {
         if (drivers < 3) {
             if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
-                parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
+                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
 
                 if (PersonaInfo.ProfileData.Name[0].toLowerCase() == req.query.name.toLowerCase()) driverNameTaken = true;
 
@@ -68,13 +64,10 @@ app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), (req, re
         let newName = req.query.name;
         
         let carslots = fs.readFileSync("./Config/DriverTemplate/carslots.xml").toString();
-        let GetPersonaInfo = fs.readFileSync("./Config/DriverTemplate/GetPersonaInfo.xml").toString();
+        let GetPersonaInfo = await xmlParser.parseXML(fs.readFileSync("./Config/DriverTemplate/GetPersonaInfo.xml").toString());
         let gettreasurehunteventsession = fs.readFileSync("./Config/DriverTemplate/gettreasurehunteventsession.xml").toString();
-        let loadall = fs.readFileSync("./Config/DriverTemplate/loadall.xml").toString();
+        let loadall = await xmlParser.parseXML(fs.readFileSync("./Config/DriverTemplate/loadall.xml").toString());
         let objects = fs.readFileSync("./Config/DriverTemplate/objects.xml").toString();
-
-        parser.parseString(GetPersonaInfo, (err, result) => GetPersonaInfo = result);
-        parser.parseString(loadall, (err, result) => loadall = result);
 
         if (!fs.existsSync("./drivers/driver1")) driverFolderName = "driver1";
         if (!driverFolderName && !fs.existsSync("./drivers/driver2")) driverFolderName = "driver2";
@@ -90,10 +83,10 @@ app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), (req, re
             GetPersonaInfo.ProfileData.PersonaId = [newPersonaId];
             loadall.AchievementsPacket.PersonaId = [newPersonaId];
 
-            loadall = builder.buildObject(loadall);
+            loadall = xmlParser.buildXML(loadall);
 
             fs.writeFileSync(`${driverPath}/carslots.xml`, carslots);
-            fs.writeFileSync(`${driverPath}/GetPersonaInfo.xml`, builder.buildObject(GetPersonaInfo));
+            fs.writeFileSync(`${driverPath}/GetPersonaInfo.xml`, xmlParser.buildXML(GetPersonaInfo));
             fs.writeFileSync(`${driverPath}/gettreasurehunteventsession.xml`, gettreasurehunteventsession);
             fs.writeFileSync(`${driverPath}/loadall.xml`, loadall);
             fs.writeFileSync(`${driverPath}/objects.xml`, objects);
@@ -102,7 +95,7 @@ app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), (req, re
             GetPersonaInfo.ProfileData.Level = ["1"];
             global.newDriver = { personaId: newPersonaId, numOfReqs: 0 };
 
-            return res.send(builder.buildObject(GetPersonaInfo));
+            return res.send(xmlParser.buildXML(GetPersonaInfo));
         }
     }
 
@@ -110,7 +103,7 @@ app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), (req, re
 });
 
 // Delete driver (persona)
-app.post("/DriverPersona/DeletePersona", compression({ threshold: 0 }), (req, res) => {
+app.post("/DriverPersona/DeletePersona", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let driversDir = path.join(__dirname, "..", "drivers");
@@ -123,8 +116,7 @@ app.post("/DriverPersona/DeletePersona", compression({ threshold: 0 }), (req, re
             if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
                 if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
-                parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
+                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.query.personaId) {
                     fs.rmSync(path.join(driversDir, file), { recursive: true });

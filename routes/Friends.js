@@ -1,14 +1,12 @@
 const express = require("express");
+const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
-const xml2js = require("xml2js");
-const parser = new xml2js.Parser();
-const builder = new xml2js.Builder({ renderOpts: { pretty: false }, headless: true });
-const app = express.Router();
+const xmlParser = require("../structs/xmlParser");
 
 // Get friends list
-app.get("/getfriendlistfromuserid", compression({ threshold: 0 }), (req, res, next) => {
+app.get("/getfriendlistfromuserid", compression({ threshold: 0 }), async (req, res, next) => {
     if (fs.existsSync("./data/getfriendlistfromuserid.xml")) return next();
 
     res.type("application/xml");
@@ -40,8 +38,7 @@ app.get("/getfriendlistfromuserid", compression({ threshold: 0 }), (req, res, ne
             if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
                 if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
-                parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
+                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
 
                 friendsTemplate.PersonaFriendsList.friendPersona[0].FriendPersona.push({
                     iconIndex: PersonaInfo.ProfileData.IconIndex,
@@ -59,7 +56,7 @@ app.get("/getfriendlistfromuserid", compression({ threshold: 0 }), (req, res, ne
         }
     }
 
-    res.status(200).send(builder.buildObject(friendsTemplate));
+    res.status(200).send(xmlParser.buildXML(friendsTemplate));
 });
 
 module.exports = app;

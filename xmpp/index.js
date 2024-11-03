@@ -1,10 +1,10 @@
 const net = require("net");
-const functions = require("../structs/functions.js");
+const functions = require("../structs/functions");
 
 const PORT = 5222;
 
 const tcpServer = net.createServer((socket) => {
-    console.log("\nA new XMPP client has connected.\n");
+    console.log("\nA new XMPP client has connected.");
 
     socket.on("data", (data) => {
         if (Buffer.isBuffer(data)) data = data.toString();
@@ -13,7 +13,7 @@ const tcpServer = net.createServer((socket) => {
     });
 
     socket.on("close", () => socket.destroy());
-    socket.on("end", () => console.log('\nXMPP Client disconnected.\n'));
+    socket.on("end", () => console.log('\nXMPP Client disconnected.'));
     socket.on("error", (err) => { console.log(`\nXMPP Socket Error: ${err.message}`); socket.destroy(); });
 });
 

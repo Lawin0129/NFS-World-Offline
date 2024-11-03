@@ -1,10 +1,8 @@
 const express = require("express");
+const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
-const xml2js = require("xml2js");
-const parser = new xml2js.Parser();
-const builder = new xml2js.Builder({ renderOpts: { pretty: false }, headless: true });
-const app = express.Router();
+const xmlParser = require("../structs/xmlParser");
 
 // Get news
 app.get("/LoginAnnouncements", compression({ threshold: 0 }), (req, res, next) => {
@@ -38,7 +36,7 @@ app.get("/LoginAnnouncements", compression({ threshold: 0 }), (req, res, next) =
         id += 1;
     }
 
-    res.send(builder.buildObject(newsTemplate));
+    res.send(xmlParser.buildXML(newsTemplate));
 });
 
 // Get image from news folder

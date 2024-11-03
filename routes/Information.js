@@ -1,6 +1,6 @@
 const express = require("express");
-const fs = require("fs");
 const app = express.Router();
+const fs = require("fs");
 
 // Get Soapbox server information
 app.get("/GetServerInformation", (req, res) => {

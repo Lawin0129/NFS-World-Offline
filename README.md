@@ -10,7 +10,7 @@ This program is a server emulator/backend written in Node.js for NFS World which
     + All original achievements that once existed in nfs world.
     + Setting your achievement badges in achievements log.
 * Drivers:
-    + Creating Drivers (original functionality like "name exists?" also included).
+    + Creating Drivers (functionality like "name taken?" also included).
     + Deleting Drivers.
     + Changing Drivers.
     + Editing/Adding Motto.

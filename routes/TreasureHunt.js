@@ -1,7 +1,7 @@
 const express = require("express");
+const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
-const app = express.Router();
 
 // Get treasure hunt info from persona
 app.get("/events/gettreasurehunteventsession", compression({ threshold: 0 }), (req, res) => {

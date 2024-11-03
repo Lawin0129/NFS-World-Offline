@@ -1,7 +1,5 @@
 const fs = require("fs");
-const xml2js = require("xml2js");
-const parser = new xml2js.Parser();
-const builder = new xml2js.Builder({ renderOpts: { pretty: true }, headless: true });
+const xmlParser = require("../../structs/xmlParser");
 
 module.exports = {
     commandInfo: {
@@ -9,7 +7,7 @@ module.exports = {
         helpInfo: "Valid holiday types:\n- Normal\n- All (some holiday types conflict with each other in-game)\n- Christmas\n- Halloween\n- NewYears\n- Valentines\n- Oktoberfest",
         name: `holiday [type]`,
     },
-    execute: (args) => {
+    execute: async (args) => {
         let holidayTypesList = {
             normal: { activated: ["SCENERY_GROUP_NORMAL"], disactivated: ["SCENERY_GROUP_NORMAL_DISABLE"], activeHolidayIds: ["0"] },
             christmas: { activated: ["SCENERY_GROUP_CHRISTMAS"], disactivated: ["SCENERY_GROUP_CHRISTMAS_DISABLE"], activeHolidayIds: ["3"] },
@@ -28,9 +26,8 @@ module.exports = {
 
         if (!holidayTypesList[holidayType] && holidayType != "all") return console.log("\nThe holiday type you specified does not exist, please try again with a valid holiday type.");
 
-        let UserSettings = fs.readFileSync("./data/getusersettings.xml").toString();
+        let UserSettings = await xmlParser.parseXML(fs.readFileSync("./data/getusersettings.xml").toString());
         let ServerInformation = JSON.parse(fs.readFileSync("./data/GetServerInformation.json").toString());
-        parser.parseString(UserSettings, (err, result) => UserSettings = result);
 
         let activated = [];
         let disactivated = [];
@@ -58,7 +55,7 @@ module.exports = {
 
         console.log(`\nSuccessfully set ${holidayType} holiday type. Launch the game and play!`);
 
-        fs.writeFileSync("./data/getusersettings.xml", builder.buildObject(UserSettings));
+        fs.writeFileSync("./data/getusersettings.xml", xmlParser.buildXML(UserSettings));
         fs.writeFileSync("./data/GetServerInformation.json", JSON.stringify(ServerInformation, null, 2));
     }
 }

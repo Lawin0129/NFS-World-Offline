@@ -1,12 +1,10 @@
 const express = require("express");
+const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
-const functions = require("../structs/functions.js");
-const xml2js = require("xml2js");
-const parser = new xml2js.Parser();
-const builder = new xml2js.Builder({ renderOpts: { pretty: false }, headless: true });
-const app = express.Router();
+const xmlParser = require("../structs/xmlParser");
+const functions = require("../structs/functions");
 
 Object.defineProperty(Array.prototype, 'delEmpty', {
     value: function() {
@@ -19,7 +17,7 @@ Object.defineProperty(Array.prototype, 'delEmpty', {
 });
 
 // Get Cars from Persona
-app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), (req, res, next) => {
+app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), async (req, res, next) => {
     if (req.params.carsType == "objects") return next();
 
     res.type("application/xml");
@@ -35,8 +33,7 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), (req, r
                 if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
                 if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
-                parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
+                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
                     let carslots = fs.readFileSync(`./drivers/${file}/carslots.xml`).toString();
@@ -50,19 +47,19 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), (req, r
                             }
                         }
 
-                        parser.parseString(carslots, (err, result) => carslots = result);
+                        carslots = await xmlParser.parseXML(carslots);
 
                         if (!carslots.CarSlotInfoTrans.CarsOwnedByPersona) carslots.CarSlotInfoTrans.CarsOwnedByPersona = [{ OwnedCarTrans: [] }];
 
                         carsTemplate.ArrayOfOwnedCarTrans = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0];
 
-                        return res.send(builder.buildObject(carsTemplate));
+                        return res.send(xmlParser.buildXML(carsTemplate));
                     } else if (req.params.carsType == "defaultcar") {
                         let defaultCar = {
                             OwnedCarTrans: {}
                         }
 
-                        parser.parseString(carslots, (err, result) => carslots = result);
+                        carslots = await xmlParser.parseXML(carslots);
 
                         if (!carslots.CarSlotInfoTrans.CarsOwnedByPersona) carslots.CarSlotInfoTrans.CarsOwnedByPersona = [{ OwnedCarTrans: [] }];
 
@@ -73,7 +70,7 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), (req, r
                                 Id: ["0"]
                             }
 
-                            return res.send(builder.buildObject(defaultCar));
+                            return res.send(xmlParser.buildXML(defaultCar));
                         }
 
                         let defaultIndex = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
@@ -81,7 +78,7 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), (req, r
 
                         defaultCar.OwnedCarTrans = defaultItem || {};
 
-                        return res.send(builder.buildObject(defaultCar));
+                        return res.send(xmlParser.buildXML(defaultCar));
                     } else {
                         return res.status(403).send("<EngineError><Message>Invalid cars type</Message></EngineError>");
                     }
@@ -100,7 +97,7 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), (req, r
 });
 
 // Set Default Car
-app.put("/personas/:personaId/defaultcar/:carId", compression({ threshold: 0 }), (req, res) => {
+app.put("/personas/:personaId/defaultcar/:carId", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let driversDir = path.join(__dirname, "..", "drivers");
@@ -114,18 +111,16 @@ app.put("/personas/:personaId/defaultcar/:carId", compression({ threshold: 0 }),
                 if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
                 if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
-                parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
+                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let carslots = fs.readFileSync(`./drivers/${file}/carslots.xml`).toString();
-                    parser.parseString(carslots, (err, result) => carslots = result);
+                    let carslots = await xmlParser.parseXML(fs.readFileSync(`./drivers/${file}/carslots.xml`).toString());
                     
                     let findCarIndex = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.findIndex(i => i.Id[0] == req.params.carId);
                     if (typeof findCarIndex == "number" && findCarIndex >= 0) {
                         carslots.CarSlotInfoTrans.DefaultOwnedCarIndex = [];
                         carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0] = `${findCarIndex}`;
-                        fs.writeFileSync(`./drivers/${file}/carslots.xml`, builder.buildObject(carslots));
+                        fs.writeFileSync(`./drivers/${file}/carslots.xml`, xmlParser.buildXML(carslots));
 
                         return res.status(200).end();
                     }
@@ -140,7 +135,7 @@ app.put("/personas/:personaId/defaultcar/:carId", compression({ threshold: 0 }),
 });
 
 // Sell Car
-app.post("/personas/:personaId/cars", compression({ threshold: 0 }), (req, res) => {
+app.post("/personas/:personaId/cars", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let driversDir = path.join(__dirname, "..", "drivers");
@@ -154,12 +149,10 @@ app.post("/personas/:personaId/cars", compression({ threshold: 0 }), (req, res) 
                 if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
                 if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
-                parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
+                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let carslots = fs.readFileSync(`./drivers/${file}/carslots.xml`).toString();
-                    parser.parseString(carslots, (err, result) => carslots = result);
+                    let carslots = await xmlParser.parseXML(fs.readFileSync(`./drivers/${file}/carslots.xml`).toString());
 
                     if (carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.length <= 1) break;
                     
@@ -174,9 +167,9 @@ app.post("/personas/:personaId/cars", compression({ threshold: 0 }), (req, res) 
                         if (!carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx]) carslots.CarSlotInfoTrans.DefaultOwnedCarIndex = [`${newIndex}`];
                         else newIndex = defaultIdx;
 
-                        fs.writeFileSync(`./drivers/${file}/carslots.xml`, builder.buildObject(carslots));
+                        fs.writeFileSync(`./drivers/${file}/carslots.xml`, xmlParser.buildXML(carslots));
 
-                        return res.status(200).send(builder.buildObject({
+                        return res.status(200).send(xmlParser.buildXML({
                             OwnedCarTrans: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[newIndex]
                         }));
                     }
@@ -192,7 +185,7 @@ app.post("/personas/:personaId/cars", compression({ threshold: 0 }), (req, res) 
 
 // dont even know what this is for, my guess would be initializing the car?
 // from what I know this gets requested when you save car customization changes
-app.put("/personas/:personaId/cars", compression({ threshold: 0 }), (req, res) => {
+app.put("/personas/:personaId/cars", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let driversDir = path.join(__dirname, "..", "drivers");
@@ -206,16 +199,14 @@ app.put("/personas/:personaId/cars", compression({ threshold: 0 }), (req, res) =
                 if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
                 if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
-                parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
+                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let carslots = fs.readFileSync(`./drivers/${file}/carslots.xml`).toString();
-                    parser.parseString(carslots, (err, result) => carslots = result);
+                    let carslots = await xmlParser.parseXML(fs.readFileSync(`./drivers/${file}/carslots.xml`).toString());
                     
                     let defaultCarIndex = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
 
-                    return res.status(200).send(builder.buildObject({
+                    return res.status(200).send(xmlParser.buildXML({
                         OwnedCarTrans: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex]
                     }));
                 }
@@ -229,7 +220,7 @@ app.put("/personas/:personaId/cars", compression({ threshold: 0 }), (req, res) =
 });
 
 // Customize Car
-app.post("/personas/:personaId/commerce", compression({ threshold: 0 }), (req, res) => {
+app.post("/personas/:personaId/commerce", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let driversDir = path.join(__dirname, "..", "drivers");
@@ -243,14 +234,11 @@ app.post("/personas/:personaId/commerce", compression({ threshold: 0 }), (req, r
                 if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
                 if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
-                parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
+                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let carslots = fs.readFileSync(`./drivers/${file}/carslots.xml`).toString();
-                    let body = req.body;
-                    parser.parseString(carslots, (err, result) => carslots = result);
-                    parser.parseString(body, (err, result) => body = result);
+                    let carslots = await xmlParser.parseXML(fs.readFileSync(`./drivers/${file}/carslots.xml`).toString());
+                    let body = await xmlParser.parseXML(req.body);
                     
                     let defaultCarIndex = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
 
@@ -263,9 +251,9 @@ app.post("/personas/:personaId/commerce", compression({ threshold: 0 }), (req, r
                     car.Vinyls = newCar.Vinyls;
                     car.VisualParts = newCar.VisualParts;
 
-                    fs.writeFileSync(`./drivers/${file}/carslots.xml`, builder.buildObject(carslots));
+                    fs.writeFileSync(`./drivers/${file}/carslots.xml`, xmlParser.buildXML(carslots));
 
-                    return res.status(200).send(builder.buildObject({
+                    return res.status(200).send(xmlParser.buildXML({
                         CommerceSessionResultTrans: {
                             Status: ["Success"],
                             UpdatedCar: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex]
@@ -294,7 +282,7 @@ app.get("/personas/inventory/objects", compression({ threshold: 0 }), (req, res)
 });
 
 // Purchasing (cars, etc...)
-app.post("/personas/:personaId/baskets", compression({ threshold: 0 }), (req, res) => {
+app.post("/personas/:personaId/baskets", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let driversDir = path.join(__dirname, "..", "drivers");
@@ -302,8 +290,7 @@ app.post("/personas/:personaId/baskets", compression({ threshold: 0 }), (req, re
 
     let dirFiles = fs.readdirSync(driversDir);
 
-    let body = req.body;
-    parser.parseString(body, (err, result) => body = result);
+    let body = await xmlParser.parseXML(req.body);
 
     for (let file of dirFiles) {
         if (drivers < 3) {
@@ -311,8 +298,7 @@ app.post("/personas/:personaId/baskets", compression({ threshold: 0 }), (req, re
                 if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
                 if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
-                parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
+                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
                     let basketFile = `./data/basket/${body.BasketTrans.Items[0].BasketItemTrans[0].ProductId[0]}.xml`;
@@ -332,16 +318,13 @@ app.post("/personas/:personaId/baskets", compression({ threshold: 0 }), (req, re
                     }
 
                     if (fs.existsSync(basketFile)) {
-                        let basket = fs.readFileSync(basketFile).toString();
-                        parser.parseString(basket, (err, result) => basket = result);
+                        let basket = await xmlParser.parseXML(fs.readFileSync(basketFile).toString());
                         
-                        let stanza;
-                        for (let i in basket) stanza = i;
+                        let stanza = xmlParser.getRootName(basket);
 
                         switch (stanza) {
                             case "OwnedCarTrans":
-                                let carslots = fs.readFileSync(`./drivers/${file}/carslots.xml`).toString();
-                                parser.parseString(carslots, (err, result) => carslots = result);
+                                let carslots = await xmlParser.parseXML(fs.readFileSync(`./drivers/${file}/carslots.xml`).toString());
 
                                 let carTemplate = {
                                     CustomCar: basket.OwnedCarTrans.CustomCar,
@@ -358,14 +341,14 @@ app.post("/personas/:personaId/baskets", compression({ threshold: 0 }), (req, re
 
                                 carslots.CarSlotInfoTrans.DefaultOwnedCarIndex = [`${carindex}`];
 
-                                fs.writeFileSync(`./drivers/${file}/carslots.xml`, builder.buildObject(carslots));
+                                fs.writeFileSync(`./drivers/${file}/carslots.xml`, xmlParser.buildXML(carslots));
 
                                 commerceTemplate.CommerceResultTrans.PurchasedCars = [{ OwnedCarTrans: [carTemplate] }];
                             break;
                         }
                     }
 
-                    return res.status(200).send(builder.buildObject(commerceTemplate));
+                    return res.status(200).send(xmlParser.buildXML(commerceTemplate));
                 }
 
                 drivers += 1;
@@ -377,7 +360,7 @@ app.post("/personas/:personaId/baskets", compression({ threshold: 0 }), (req, re
 });
 
 // Repair Car
-app.get("/car/repair", compression({ threshold: 0 }), (req, res) => {
+app.get("/car/repair", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let driversDir = path.join(__dirname, "..", "drivers");
@@ -391,18 +374,16 @@ app.get("/car/repair", compression({ threshold: 0 }), (req, res) => {
                 if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
                 if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
-                parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
+                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.query.personaId) {
-                    let carslots = fs.readFileSync(`./drivers/${file}/carslots.xml`).toString();
-                    parser.parseString(carslots, (err, result) => carslots = result);
+                    let carslots = await xmlParser.parseXML(fs.readFileSync(`./drivers/${file}/carslots.xml`).toString());
                     
                     let defaultCarIndex = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
 
                     carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex].Durability = ["100"];
 
-                    fs.writeFileSync(`./drivers/${file}/carslots.xml`, builder.buildObject(carslots));
+                    fs.writeFileSync(`./drivers/${file}/carslots.xml`, xmlParser.buildXML(carslots));
 
                     return res.status(200).send("<int>100</int>");
                 }
@@ -416,7 +397,7 @@ app.get("/car/repair", compression({ threshold: 0 }), (req, res) => {
 });
 
 // Edit Motto
-app.post("/DriverPersona/UpdateStatusMessage", compression({ threshold: 0 }), (req, res) => {
+app.post("/DriverPersona/UpdateStatusMessage", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let driversDir = path.join(__dirname, "..", "drivers");
@@ -424,24 +405,22 @@ app.post("/DriverPersona/UpdateStatusMessage", compression({ threshold: 0 }), (r
 
     let dirFiles = fs.readdirSync(driversDir);
 
-    let body = req.body;
-    parser.parseString(body, (err, result) => body = result);
+    let body = await xmlParser.parseXML(req.body);
 
     for (let file of dirFiles) {
         if (drivers < 3) {
             if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
                 if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
-                parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
+                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == body.PersonaMotto.personaId[0]) {
                     PersonaInfo.ProfileData.Motto = [];
                     PersonaInfo.ProfileData.Motto[0] = body.PersonaMotto.message[0];
 
-                    fs.writeFileSync(path.join(driversDir, file, "GetPersonaInfo.xml"), builder.buildObject(PersonaInfo));
+                    fs.writeFileSync(path.join(driversDir, file, "GetPersonaInfo.xml"), xmlParser.buildXML(PersonaInfo));
 
-                    return res.status(200).send(builder.buildObject({
+                    return res.status(200).send(xmlParser.buildXML({
                         PersonaMotto: {
                             message: PersonaInfo.ProfileData.Motto,
                             personaId: PersonaInfo.ProfileData.PersonaId
@@ -458,7 +437,7 @@ app.post("/DriverPersona/UpdateStatusMessage", compression({ threshold: 0 }), (r
 });
 
 // Get driver information
-app.get("/DriverPersona/GetPersonaInfo", compression({ threshold: 0 }), (req, res) => {
+app.get("/DriverPersona/GetPersonaInfo", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let driversDir = path.join(__dirname, "..", "drivers");
@@ -471,8 +450,7 @@ app.get("/DriverPersona/GetPersonaInfo", compression({ threshold: 0 }), (req, re
             if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
                 if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
 
-                let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
-                parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
+                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
 
                 if (PersonaInfo.ProfileData.PersonaId[0] == req.query.personaId) {
                     if (global.newDriver && global.newDriver.personaId == req.query.personaId && global.newDriver.numOfReqs < 2) {
@@ -480,7 +458,7 @@ app.get("/DriverPersona/GetPersonaInfo", compression({ threshold: 0 }), (req, re
                         global.newDriver.numOfReqs += 1;
                     }
 
-                    return res.send(builder.buildObject(PersonaInfo));
+                    return res.send(xmlParser.buildXML(PersonaInfo));
                 }
 
                 drivers += 1;
@@ -498,7 +476,7 @@ app.get("/DriverPersona/GetPersonaInfo", compression({ threshold: 0 }), (req, re
 });
 
 // Get base driver information
-app.post("/DriverPersona/GetPersonaBaseFromList", compression({ threshold: 0 }), (req, res) => {
+app.post("/DriverPersona/GetPersonaBaseFromList", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let driversDir = path.join(__dirname, "..", "drivers");
@@ -511,8 +489,7 @@ app.post("/DriverPersona/GetPersonaBaseFromList", compression({ threshold: 0 }),
         }
     }
 
-    let body = req.body;
-    parser.parseString(body, (err, result) => body = result);
+    let body = await xmlParser.parseXML(req.body);
 
     for (let x in body.PersonaIdArray.PersonaIds) {
         let drivers = 0;
@@ -522,8 +499,7 @@ app.post("/DriverPersona/GetPersonaBaseFromList", compression({ threshold: 0 }),
                 if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
                     if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
 
-                    let PersonaInfo = fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString();
-                    parser.parseString(PersonaInfo, (err, result) => PersonaInfo = result);
+                    let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
 
                     if (PersonaInfo.ProfileData.PersonaId[0] == body.PersonaIdArray.PersonaIds[0]["array:long"][x]) {
                         baseTemplate.ArrayOfPersonaBase.PersonaBase.push({ Presence: ["1"], UserId: ["1"], ...PersonaInfo.ProfileData});
@@ -536,21 +512,21 @@ app.post("/DriverPersona/GetPersonaBaseFromList", compression({ threshold: 0 }),
                 let otherPath = `./data/personas/${body.PersonaIdArray.PersonaIds[0]["array:long"][x]}/GetPersonaBaseFromList.xml`;
 
                 if (fs.existsSync(filePath)) {
-                    parser.parseString(filePath, (err, result) => filePath = result);
+                    let fileRead = await xmlParser.parseXML(fs.readFileSync(filePath).toString());
 
-                    baseTemplate.ArrayOfPersonaBase.PersonaBase = baseTemplate.ArrayOfPersonaBase.PersonaBase.concat(filePath.ArrayOfPersonaBase.PersonaBase);
+                    baseTemplate.ArrayOfPersonaBase.PersonaBase = baseTemplate.ArrayOfPersonaBase.PersonaBase.concat(fileRead.ArrayOfPersonaBase.PersonaBase);
                 }
 
                 if (fs.existsSync(otherPath)) {
-                    parser.parseString(otherPath, (err, result) => otherPath = result);
+                    let otherFileRead = await xmlParser.parseXML(fs.readFileSync(otherPath).toString());
 
-                    baseTemplate.ArrayOfPersonaBase.PersonaBase = baseTemplate.ArrayOfPersonaBase.PersonaBase.concat(otherPath.ArrayOfPersonaBase.PersonaBase);
+                    baseTemplate.ArrayOfPersonaBase.PersonaBase = baseTemplate.ArrayOfPersonaBase.PersonaBase.concat(otherFileRead.ArrayOfPersonaBase.PersonaBase);
                 }
             }
         }
     }
 
-    res.status(200).send(builder.buildObject(baseTemplate));
+    res.status(200).send(xmlParser.buildXML(baseTemplate));
 });
 
 module.exports = app;

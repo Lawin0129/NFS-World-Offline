@@ -1,10 +1,8 @@
 const express = require("express");
+const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
-const xml2js = require("xml2js");
-const parser = new xml2js.Parser();
-const builder = new xml2js.Builder({ renderOpts: { pretty: false }, headless: true });
-const app = express.Router();
+const xmlParser = require("../structs/xmlParser");
 
 let eventId;
 
@@ -23,7 +21,7 @@ app.get("/matchmaking/launchevent/:eventId", compression({ threshold: 0 }), (req
 
     eventId = "";
 
-    res.status(200).send(builder.buildObject(eventTemplate));
+    res.status(200).send(xmlParser.buildXML(eventTemplate));
 });
 
 // Multiplayer and Private event
@@ -32,21 +30,20 @@ app.put("/matchmaking/*/:eventId", compression({ threshold: 0 }), (req, res) => 
 
     eventId = req.params.eventId;
 
-    console.log(`\nMultiplayer/private event detected (eventId: ${req.params.eventId}), launch a single player event to launch this event.\n`);
+    console.log(`\nMultiplayer/private event detected (eventId: ${req.params.eventId}), launch a single player event to launch this event.`);
 
     res.status(200).end();
 });
 
 // Busted in pursuit
-app.post("/event/bust", compression({ threshold: 0 }), (req, res) => {
+app.post("/event/bust", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let file = `./drivers/${global.activeDriver.driver}/carslots.xml`;
 
     if (!global.activeDriver.driver) return res.status(404).send("<EngineError><Message>No active persona</Message></EngineError>");
 
-    let carslots = fs.readFileSync(file).toString();
-    parser.parseString(carslots, (err, result) => carslots = result);
+    let carslots = await xmlParser.parseXML(fs.readFileSync(file).toString());
 
     let defaultIdx = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
     let durability = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability[0];
@@ -58,7 +55,7 @@ app.post("/event/bust", compression({ threshold: 0 }), (req, res) => {
 
     carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability = [`${calculateDurability}`];
 
-    fs.writeFileSync(file, builder.buildObject(carslots));
+    fs.writeFileSync(file, xmlParser.buildXML(carslots));
 
     let finishTemplate = {
         PursuitEventResult: {
@@ -73,27 +70,22 @@ app.post("/event/bust", compression({ threshold: 0 }), (req, res) => {
         }
     }
 
-    res.status(200).send(builder.buildObject(finishTemplate));
+    res.status(200).send(xmlParser.buildXML(finishTemplate));
 });
 
 // Finish event
-app.post("/event/:eventAction", compression({ threshold: 0 }), (req, res) => {
+app.post("/event/:eventAction", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     let file = `./drivers/${global.activeDriver.driver}/carslots.xml`;
 
     if (!global.activeDriver.driver) return res.status(404).send("<EngineError><Message>No active persona</Message></EngineError>");
 
-    let carslots = fs.readFileSync(file).toString();
-    let body = req.body;
+    let carslots = await xmlParser.parseXML(fs.readFileSync(file).toString());
+    let body = await xmlParser.parseXML(req.body);
 
-    parser.parseString(carslots, (err, result) => carslots = result);
-    parser.parseString(body, (err, result) => body = result);
-
-    let bodyStanza;
+    let bodyStanza = xmlParser.getRootName(body);
     let event;
-
-    for (let i in body) bodyStanza = i;
 
     if (!bodyStanza) return res.status(403).end();
 
@@ -116,7 +108,7 @@ app.post("/event/:eventAction", compression({ threshold: 0 }), (req, res) => {
 
     carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability = [`${calculateDurability}`];
 
-    fs.writeFileSync(file, builder.buildObject(carslots));
+    fs.writeFileSync(file, xmlParser.buildXML(carslots));
 
     let finishTemplate = {
         [`${event}EventResult`]: {
@@ -142,7 +134,7 @@ app.post("/event/:eventAction", compression({ threshold: 0 }), (req, res) => {
         }
     }
 
-    res.status(200).send(builder.buildObject(finishTemplate));
+    res.status(200).send(xmlParser.buildXML(finishTemplate));
 });
 
 module.exports = app;
