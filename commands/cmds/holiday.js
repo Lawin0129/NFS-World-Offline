@@ -1,5 +1,5 @@
 const fs = require("fs");
-const xmlParser = require("../../structs/xmlParser");
+const xmlParser = require("../../utils/xmlParser");
 
 module.exports = {
     commandInfo: {

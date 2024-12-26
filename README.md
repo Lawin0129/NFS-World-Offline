@@ -37,6 +37,9 @@ This program is a server emulator/backend written in Node.js for NFS World which
         - Vinyls Customization.
         - Paints Customization.
 * Treasure Hunt
+# Command Line Commands
+- `> help {commandName}` - Outputs a list of commands, `commandName` parameter is optional and can be used to show more information about a specific command.
+- `> holiday {type}` - Sets the current Need for Speed World holiday type.
 # Issues
 * Powerups WILL NOT work due to unfinished XMPP server.
 * Launching using launch args will not work as it gives "Error Code 7", you will have to use the Soapbox Race World Launcher (do not disable the proxy).
@@ -46,7 +49,8 @@ This program is a server emulator/backend written in Node.js for NFS World which
 3) Run "install_packages.bat" to install all the required modules.
 4) Run "start.bat", if there is no errors, it should work.
 5) Add the server to the Soapbox Race World Launcher by the url "http://localhost:3550/Engine.svc".
-6) When you launch the game, just create your driver and play.
+6) Select the server, enter any email and password then press login.
+7) Once the game has launched, create your driver and play!
 # Credits
 | Name | Helped with |
 | --------------- | ----------- |

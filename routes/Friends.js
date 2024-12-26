@@ -3,7 +3,7 @@ const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
-const xmlParser = require("../structs/xmlParser");
+const xmlParser = require("../utils/xmlParser");
 
 // Get friends list
 app.get("/getfriendlistfromuserid", compression({ threshold: 0 }), async (req, res, next) => {

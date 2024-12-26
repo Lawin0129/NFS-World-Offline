@@ -3,7 +3,7 @@ const app = express();
 const fs = require("fs");
 const config = require("./Config/config.json");
 
-const functions = require("./structs/functions");
+const functions = require("./utils/functions");
 const PORT = 3550;
 
 global.activeDriver = { driver: "", personaId: "" };

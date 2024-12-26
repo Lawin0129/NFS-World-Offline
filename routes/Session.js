@@ -3,7 +3,7 @@ const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
-const xmlParser = require("../structs/xmlParser");
+const xmlParser = require("../utils/xmlParser");
 
 // Get session info
 app.post("/User/GetPermanentSession", compression({ threshold: 0 }), async (req, res) => {

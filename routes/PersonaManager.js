@@ -3,8 +3,8 @@ const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
-const xmlParser = require("../structs/xmlParser");
-const functions = require("../structs/functions");
+const xmlParser = require("../utils/xmlParser");
+const functions = require("../utils/functions");
 
 // Check if name is available
 app.post("/DriverPersona/ReserveName", compression({ threshold: 0 }), async (req, res) => {

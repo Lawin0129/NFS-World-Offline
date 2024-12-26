@@ -2,7 +2,7 @@ const express = require("express");
 const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
-const xmlParser = require("../structs/xmlParser");
+const xmlParser = require("../utils/xmlParser");
 
 let eventId;
 

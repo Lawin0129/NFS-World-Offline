@@ -1,5 +1,5 @@
 const net = require("net");
-const functions = require("../structs/functions");
+const functions = require("../utils/functions");
 
 const PORT = 5222;
 
