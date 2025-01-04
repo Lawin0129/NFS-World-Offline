@@ -1,7 +1,8 @@
 const fs = require("fs");
+const path = require("path");
 const xmlParser = require("../../utils/xmlParser");
 
-module.exports = {
+let self = module.exports = {
     commandInfo: {
         info: "This command sets the current Need for Speed World holiday type.",
         helpInfo: "Valid holiday types:\n- Normal\n- All (some holiday types conflict with each other in-game)\n- Christmas\n- Halloween\n- NewYears\n- Valentines\n- Oktoberfest",
@@ -16,34 +17,45 @@ module.exports = {
             valentines: { activated: ["SCENERY_GROUP_VALENTINES"], disactivated: ["SCENERY_GROUP_VALENTINES_DISABLE"], activeHolidayIds: ["4"] },
             oktoberfest: { activated: ["SCENERY_GROUP_OKTOBERFEST"], disactivated: ["SCENERY_GROUP_OKTOBERFEST_DISABLE"], activeHolidayIds: ["1"] }
         };
-        let holidayType = "";
 
         if (!args[0]) {
-            console.log("\nHoliday type not specified, setting holiday type to normal...");
-            holidayType = "normal"
+            console.log(`\n${self.commandInfo.info}\n\n${self.commandInfo.name}\n\n${self.commandInfo.helpInfo}`);
+            return;
         }
-        else holidayType = args[0].toLowerCase();
+        
+        let holidayType = args[0].toLowerCase();
+        let holidayData = holidayTypesList[holidayType];
 
-        if (!holidayTypesList[holidayType] && holidayType != "all") return console.log("\nThe holiday type you specified does not exist, please try again with a valid holiday type.");
+        if ((!holidayData) && (holidayType != "all")) {
+            console.log("\nThe holiday type you specified does not exist, please try again with a valid holiday type.");
+            return;
+        }
 
-        let UserSettings = await xmlParser.parseXML(fs.readFileSync("./data/getusersettings.xml").toString());
-        let ServerInformation = JSON.parse(fs.readFileSync("./data/GetServerInformation.json").toString());
+        let dataDirectory = path.join(__dirname, "..", "..", "data");
+        let getusersettingsPath = path.join(dataDirectory, "getusersettings.xml");
+        let GetServerInformationPath = path.join(dataDirectory, "GetServerInformation.json");
+
+        let UserSettings = await xmlParser.parseXML(fs.readFileSync(getusersettingsPath).toString());
+        let ServerInformation = JSON.parse(fs.readFileSync(GetServerInformationPath).toString());
 
         let activated = [];
         let disactivated = [];
         let holidayIds = [];
 
         if (holidayType == "all") {
-            for (let holiday in holidayTypesList) {
-                if (holiday == "normal") continue;
-                activated = activated.concat(holidayTypesList[holiday].activated);
-                disactivated = disactivated.concat(holidayTypesList[holiday].disactivated);
-                holidayIds = holidayIds.concat(holidayTypesList[holiday].activeHolidayIds);
+            for (let holidayKey of Object.keys(holidayTypesList)) {
+                if (holidayKey == "normal") continue;
+                
+                holidayData = holidayTypesList[holidayKey];
+                
+                activated = activated.concat(holidayData.activated);
+                disactivated = disactivated.concat(holidayData.disactivated);
+                holidayIds = holidayIds.concat(holidayData.activeHolidayIds);
             }
         } else {
-            activated = holidayTypesList[holidayType].activated;
-            disactivated = holidayTypesList[holidayType].disactivated;
-            holidayIds = holidayTypesList[holidayType].activeHolidayIds;
+            activated = holidayData.activated;
+            disactivated = holidayData.disactivated;
+            holidayIds = holidayData.activeHolidayIds;
         }
 
         UserSettings.User_Settings.activatedHolidaySceneryGroups = [{ string: activated }];
@@ -55,7 +67,7 @@ module.exports = {
 
         console.log(`\nSuccessfully set ${holidayType} holiday type. Launch the game and play!`);
 
-        fs.writeFileSync("./data/getusersettings.xml", xmlParser.buildXML(UserSettings));
-        fs.writeFileSync("./data/GetServerInformation.json", JSON.stringify(ServerInformation, null, 2));
+        fs.writeFileSync(getusersettingsPath, xmlParser.buildXML(UserSettings));
+        fs.writeFileSync(GetServerInformationPath, JSON.stringify(ServerInformation, null, 2));
     }
 }

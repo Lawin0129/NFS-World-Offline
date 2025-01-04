@@ -12,8 +12,16 @@ function MakeID() {
     return `${between(100000000, 999999999)}`;
 }
 
+function createResponse(success, data) {
+    return {
+        success,
+        data
+    }
+}
+
 module.exports = {
     sleep,
     between,
-    MakeID
+    MakeID,
+    createResponse
 }

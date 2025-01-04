@@ -1,28 +1,35 @@
 const fs = require("fs");
+const path = require("path");
 
-module.exports = {
+let self = module.exports = {
     commandInfo: {
         info: "Outputs a list of commands.",
         helpInfo: "commandName - Provides help information for the specified command.",
         name: "help [commandName]",
     },
     execute: (args) => {
-        let msg = "";
+        let msg;
+        
+        if (!args[0]) {
+            msg = 'For more information on a specific command, type "help commandName"\n';
 
-        fs.readdirSync("./commands/cmds").forEach(file => {
-            const cmd = require(`./${file}`);
-
-            if (!args[0]) {
-                if (!msg) msg = '\nFor more information on a specific command, type "help commandName"\n';
-
+            for (let file of fs.readdirSync(__dirname)) {
+                let cmd = require(`./${file}`);
+                
                 msg += `\n${cmd.commandInfo.name} - ${cmd.commandInfo.info}`;
-            } else {
-                if (file.toLowerCase() != `${args[0].toLowerCase()}.js`) return;
-
-                msg = `\n${cmd.commandInfo.info}\n\n${cmd.commandInfo.name}\n\n${cmd.commandInfo.helpInfo}`;
             }
-        });
+        } else {
+            const commandPath = path.join(__dirname, `${args[0]}.js`);
 
-        console.log(msg || "\nInvalid command.");
+            if (fs.existsSync(commandPath)) {
+                let cmd = require(commandPath);
+
+                msg = `${cmd.commandInfo.info}\n\n${cmd.commandInfo.name}\n\n${cmd.commandInfo.helpInfo}`;
+            } else {
+                msg = `Invalid command specified.`;
+            }
+        }
+
+        console.log(`\n${msg}`);
     }
 }

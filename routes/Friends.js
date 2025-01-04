@@ -7,13 +7,8 @@ const xmlParser = require("../utils/xmlParser");
 
 // Get friends list
 app.get("/getfriendlistfromuserid", compression({ threshold: 0 }), async (req, res, next) => {
-    if (fs.existsSync("./data/getfriendlistfromuserid.xml")) return next();
-
-    res.type("application/xml");
-
-    let driversDir = path.join(__dirname, "..", "drivers");
-    let drivers = 0;
-
+    if (fs.existsSync(path.join(__dirname, "..", "data", "getfriendlistfromuserid.xml"))) return next();
+    
     let friendsTemplate = {
         PersonaFriendsList: {
             friendPersona: [{
@@ -31,32 +26,7 @@ app.get("/getfriendlistfromuserid", compression({ threshold: 0 }), async (req, r
         }
     }
 
-    let dirFiles = fs.readdirSync(driversDir);
-
-    for (let file of dirFiles) {
-        if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
-
-                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
-
-                friendsTemplate.PersonaFriendsList.friendPersona[0].FriendPersona.push({
-                    iconIndex: PersonaInfo.ProfileData.IconIndex,
-                    level: PersonaInfo.ProfileData.Level,
-                    name: PersonaInfo.ProfileData.Name,
-                    originalName: ["test"],
-                    personaId: PersonaInfo.ProfileData.PersonaId,
-                    presence: ["0"],
-                    socialNetwork: ["0"],
-                    userId: ["1"]
-                });
-
-                drivers += 1;
-            }
-        }
-    }
-
-    res.status(200).send(xmlParser.buildXML(friendsTemplate));
+    res.type("application/xml").send(xmlParser.buildXML(friendsTemplate));
 });
 
 module.exports = app;

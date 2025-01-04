@@ -4,183 +4,88 @@ const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
 const xmlParser = require("../utils/xmlParser");
-const functions = require("../utils/functions");
-
-Object.defineProperty(Array.prototype, 'delEmpty', {
-    value: function() {
-        for (let i in this) {
-            if (!this[i]) this.splice(Number(i), 1);
-        }
-
-        return this;
-    }
-});
+const personaManager = require("../services/personaManager");
+const carManager = require("../services/carManager");
+const purchaseManager = require("../services/purchaseManager");
 
 // Get Cars from Persona
 app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), async (req, res, next) => {
-    if (req.params.carsType == "objects") return next();
+    let carsType = req.params.carsType;
+
+    if (carsType == "objects") return next();
 
     res.type("application/xml");
 
-    let driversDir = path.join(__dirname, "..", "drivers");
-    let drivers = 0;
+    switch (carsType) {
+        case "carslots": {
+            const getCarslots = await carManager.getCarslots(req.params.personaId);
 
-    let dirFiles = fs.readdirSync(driversDir);
-
-    for (let file of dirFiles) {
-        if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
-
-                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
-
-                if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let carslots = fs.readFileSync(`./drivers/${file}/carslots.xml`).toString();
-
-                    if (req.params.carsType == "carslots") {
-                        return res.send(carslots);
-                    } else if (req.params.carsType == "cars") {
-                        let carsTemplate = {
-                            ArrayOfOwnedCarTrans: {
-                                OwnedCarTrans: []
-                            }
-                        }
-
-                        carslots = await xmlParser.parseXML(carslots);
-
-                        if (!carslots.CarSlotInfoTrans.CarsOwnedByPersona) carslots.CarSlotInfoTrans.CarsOwnedByPersona = [{ OwnedCarTrans: [] }];
-
-                        carsTemplate.ArrayOfOwnedCarTrans = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0];
-
-                        return res.send(xmlParser.buildXML(carsTemplate));
-                    } else if (req.params.carsType == "defaultcar") {
-                        let defaultCar = {
-                            OwnedCarTrans: {}
-                        }
-
-                        carslots = await xmlParser.parseXML(carslots);
-
-                        if (!carslots.CarSlotInfoTrans.CarsOwnedByPersona) carslots.CarSlotInfoTrans.CarsOwnedByPersona = [{ OwnedCarTrans: [] }];
-
-                        if (carslots.CarSlotInfoTrans.CarsOwnedByPersona.delEmpty().length <= 0) {
-                            defaultCar.OwnedCarTrans = {
-                                Durability: ["0"],
-                                Heat: ["0.0"],
-                                Id: ["0"]
-                            }
-
-                            return res.send(xmlParser.buildXML(defaultCar));
-                        }
-
-                        let defaultIndex = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
-                        let defaultItem = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIndex];
-
-                        defaultCar.OwnedCarTrans = defaultItem || {};
-
-                        return res.send(xmlParser.buildXML(defaultCar));
-                    } else {
-                        return res.status(403).send("<EngineError><Message>Invalid cars type</Message></EngineError>");
-                    }
-                }
-
-                drivers += 1;
+            if (getCarslots.success) {
+                res.send(getCarslots.data.carslotsData);
+                return;
             }
-        } else if (req.params.carsType == "cars" || req.params.carsType == "defaultcar") {
-            let filePath = `./data/personas/${req.query.personaId}/${req.params.carsType}.xml`;
-
-            if (fs.existsSync(filePath)) return res.send(fs.readFileSync(filePath).toString());
+            
+            break;
         }
+        case "cars": {
+            const getCars = await carManager.getCars(req.params.personaId);
+
+            if (getCars.success) {
+                res.send(xmlParser.buildXML(getCars.data));
+                return;
+            }
+
+            break;
+        }
+        case "defaultcar": {
+            const getDefaultCar = await carManager.getDefaultCar(req.params.personaId);
+
+            if (getDefaultCar.success) {
+                res.send(xmlParser.buildXML(getDefaultCar.data));
+                return;
+            }
+
+            break;
+        }
+        default:
+            res.status(403).send("<EngineError><Message>Invalid cars type</Message></EngineError>");
+            return;
     }
 
-    res.status(200).end();
+    let filePath = path.join(__dirname, "..", "data", "personas", path.basename(req.params.personaId), `${carsType}.xml`);
+    
+    if (fs.existsSync(filePath)) {
+        res.send(fs.readFileSync(filePath).toString());
+        return;
+    }
+    
+    res.status(403).end();
 });
 
 // Set Default Car
 app.put("/personas/:personaId/defaultcar/:carId", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
-    let driversDir = path.join(__dirname, "..", "drivers");
-    let drivers = 0;
+    const setDefaultCar = await carManager.setDefaultCar(req.params.personaId, req.params.carId);
 
-    let dirFiles = fs.readdirSync(driversDir);
-
-    for (let file of dirFiles) {
-        if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
-
-                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
-
-                if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let carslots = await xmlParser.parseXML(fs.readFileSync(`./drivers/${file}/carslots.xml`).toString());
-                    
-                    let findCarIndex = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.findIndex(i => i.Id[0] == req.params.carId);
-                    if (typeof findCarIndex == "number" && findCarIndex >= 0) {
-                        carslots.CarSlotInfoTrans.DefaultOwnedCarIndex = [];
-                        carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0] = `${findCarIndex}`;
-                        fs.writeFileSync(`./drivers/${file}/carslots.xml`, xmlParser.buildXML(carslots));
-
-                        return res.status(200).end();
-                    }
-                }
-
-                drivers += 1;
-            }
-        }
+    if (setDefaultCar.success) {
+        res.status(200).end();
+    } else {
+        res.status(404).end();
     }
-
-    res.status(404).end();
 });
 
 // Sell Car
 app.post("/personas/:personaId/cars", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
-    let driversDir = path.join(__dirname, "..", "drivers");
-    let drivers = 0;
+    const sellCar = await carManager.sellCar(req.params.personaId, req.query.serialNumber);
 
-    let dirFiles = fs.readdirSync(driversDir);
-
-    for (let file of dirFiles) {
-        if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
-
-                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
-
-                if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let carslots = await xmlParser.parseXML(fs.readFileSync(`./drivers/${file}/carslots.xml`).toString());
-
-                    if (carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.length <= 1) break;
-                    
-                    let findCarIndex = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.findIndex(i => i.Id[0] == req.query.serialNumber);
-
-                    if (typeof findCarIndex == "number" && findCarIndex >= 0) {
-                        carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.splice(findCarIndex, 1);
-
-                        let newIndex = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.length - 1;
-                        let defaultIdx = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
-
-                        if (!carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx]) carslots.CarSlotInfoTrans.DefaultOwnedCarIndex = [`${newIndex}`];
-                        else newIndex = defaultIdx;
-
-                        fs.writeFileSync(`./drivers/${file}/carslots.xml`, xmlParser.buildXML(carslots));
-
-                        return res.status(200).send(xmlParser.buildXML({
-                            OwnedCarTrans: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[newIndex]
-                        }));
-                    }
-                }
-
-                drivers += 1;
-            }
-        }
+    if (sellCar.success) {
+        res.send(xmlParser.buildXML(sellCar.data));
+    } else {
+        res.status(200).end();
     }
-
-    res.status(200).end();
 });
 
 // dont even know what this is for, my guess would be initializing the car?
@@ -188,84 +93,36 @@ app.post("/personas/:personaId/cars", compression({ threshold: 0 }), async (req,
 app.put("/personas/:personaId/cars", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
-    let driversDir = path.join(__dirname, "..", "drivers");
-    let drivers = 0;
+    const getDefaultCar = await carManager.getDefaultCar(req.params.personaId);
 
-    let dirFiles = fs.readdirSync(driversDir);
-
-    for (let file of dirFiles) {
-        if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
-
-                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
-
-                if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let carslots = await xmlParser.parseXML(fs.readFileSync(`./drivers/${file}/carslots.xml`).toString());
-                    
-                    let defaultCarIndex = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
-
-                    return res.status(200).send(xmlParser.buildXML({
-                        OwnedCarTrans: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex]
-                    }));
-                }
-
-                drivers += 1;
-            }
-        }
+    if (getDefaultCar.success) {
+        res.send(xmlParser.buildXML(getDefaultCar.data));
+    } else {
+        res.status(404).end();
     }
-
-    res.status(404).end();
 });
 
 // Customize Car
 app.post("/personas/:personaId/commerce", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
-    let driversDir = path.join(__dirname, "..", "drivers");
-    let drivers = 0;
+    let parsedBody = await xmlParser.parseXML(req.body);
+    let customCar = parsedBody?.CommerceSessionTrans?.UpdatedCar?.[0]?.CustomCar?.[0];
 
-    let dirFiles = fs.readdirSync(driversDir);
-
-    for (let file of dirFiles) {
-        if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
-
-                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
-
-                if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let carslots = await xmlParser.parseXML(fs.readFileSync(`./drivers/${file}/carslots.xml`).toString());
-                    let body = await xmlParser.parseXML(req.body);
-                    
-                    let defaultCarIndex = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
-
-                    let car = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex].CustomCar[0];
-                    let newCar = body.CommerceSessionTrans.UpdatedCar[0].CustomCar[0];
-
-                    car.Paints = newCar.Paints;
-                    car.PerformanceParts = newCar.PerformanceParts;
-                    car.SkillModParts = newCar.SkillModParts;
-                    car.Vinyls = newCar.Vinyls;
-                    car.VisualParts = newCar.VisualParts;
-
-                    fs.writeFileSync(`./drivers/${file}/carslots.xml`, xmlParser.buildXML(carslots));
-
-                    return res.status(200).send(xmlParser.buildXML({
-                        CommerceSessionResultTrans: {
-                            Status: ["Success"],
-                            UpdatedCar: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex]
-                        }
-                    }));
+    if ((typeof customCar) == "object") {
+        const saveCar = await carManager.saveCar(req.params.personaId, customCar);
+        
+        if (saveCar.success) {
+            res.send(xmlParser.buildXML({
+                CommerceSessionResultTrans: {
+                    Status: ["Success"],
+                    UpdatedCar: saveCar.data
                 }
-
-                drivers += 1;
-            }
+            }));
+            return;
         }
     }
-
+    
     res.status(404).end();
 });
 
@@ -273,86 +130,31 @@ app.post("/personas/:personaId/commerce", compression({ threshold: 0 }), async (
 app.get("/personas/inventory/objects", compression({ threshold: 0 }), (req, res) => {
     res.type("application/xml");
 
-    let file = `./drivers/${global.activeDriver.driver}/objects.xml`;
+    const activePersona = personaManager.getActivePersona();
+    if (!activePersona.success) return res.status(404).send(activePersona.data);
 
-    if (!global.activeDriver.driver) return res.status(404).send("<EngineError><Message>No active persona</Message></EngineError>");
+    let objectsPath = path.join(activePersona.data.driverDirectory, "objects.xml");
 
-    if (fs.existsSync(file)) res.send(fs.readFileSync(file).toString());
-    else res.status(200).end();
+    if (fs.existsSync(objectsPath)) {
+        res.send(fs.readFileSync(objectsPath).toString());
+    } else {
+        res.status(404).end();
+    }
 });
 
 // Purchasing (cars, etc...)
 app.post("/personas/:personaId/baskets", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
+    
+    let parsedBody = await xmlParser.parseXML(req.body);
+    let ProductId = parsedBody?.BasketTrans?.Items?.[0]?.BasketItemTrans?.[0]?.ProductId?.[0];
 
-    let driversDir = path.join(__dirname, "..", "drivers");
-    let drivers = 0;
-
-    let dirFiles = fs.readdirSync(driversDir);
-
-    let body = await xmlParser.parseXML(req.body);
-
-    for (let file of dirFiles) {
-        if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
-
-                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
-
-                if (PersonaInfo.ProfileData.PersonaId[0] == req.params.personaId) {
-                    let basketFile = `./data/basket/${body.BasketTrans.Items[0].BasketItemTrans[0].ProductId[0]}.xml`;
-
-                    let commerceTemplate = {
-                        CommerceResultTrans: {
-                            InventoryItems: [{
-                                InventoryItemTrans: [{
-                                    Hash: ["0"],
-                                    InventoryId: ["0"],
-                                    RemainingUseCount: ["0"],
-                                    ResellPrice: ["0"]
-                                }]
-                            }],
-                            Status: ["Success"],
-                        }
-                    }
-
-                    if (fs.existsSync(basketFile)) {
-                        let basket = await xmlParser.parseXML(fs.readFileSync(basketFile).toString());
-                        
-                        let stanza = xmlParser.getRootName(basket);
-
-                        switch (stanza) {
-                            case "OwnedCarTrans":
-                                let carslots = await xmlParser.parseXML(fs.readFileSync(`./drivers/${file}/carslots.xml`).toString());
-
-                                let carTemplate = {
-                                    CustomCar: basket.OwnedCarTrans.CustomCar,
-                                    Durability: ["100"],
-                                    Heat: ["1"],
-                                    Id: [functions.MakeID()],
-                                    OwnershipType: ["CustomizedCar"]
-                                }
-
-                                if (!carslots.CarSlotInfoTrans.CarsOwnedByPersona) carslots.CarSlotInfoTrans.CarsOwnedByPersona = [{ OwnedCarTrans: [] }];
-                                if (!carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans) carslots.CarSlotInfoTrans.CarsOwnedByPersona = [{ OwnedCarTrans: [] }];
-
-                                let carindex = (carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.push(carTemplate)) - 1;
-
-                                carslots.CarSlotInfoTrans.DefaultOwnedCarIndex = [`${carindex}`];
-
-                                fs.writeFileSync(`./drivers/${file}/carslots.xml`, xmlParser.buildXML(carslots));
-
-                                commerceTemplate.CommerceResultTrans.PurchasedCars = [{ OwnedCarTrans: [carTemplate] }];
-                            break;
-                        }
-                    }
-
-                    return res.status(200).send(xmlParser.buildXML(commerceTemplate));
-                }
-
-                drivers += 1;
-            }
+    if ((typeof ProductId) == "string") {
+        const purchaseItem = await purchaseManager.purchaseItem(req.params.personaId, ProductId);
+        
+        if (purchaseItem.success) {
+            res.send(xmlParser.buildXML(purchaseItem.data));
+            return;
         }
     }
 
@@ -363,73 +165,34 @@ app.post("/personas/:personaId/baskets", compression({ threshold: 0 }), async (r
 app.get("/car/repair", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
-    let driversDir = path.join(__dirname, "..", "drivers");
-    let drivers = 0;
+    const repairCar = await carManager.repairDefaultCar(req.query.personaId);
 
-    let dirFiles = fs.readdirSync(driversDir);
-
-    for (let file of dirFiles) {
-        if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(`./drivers/${file}/carslots.xml`)) continue;
-
-                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
-
-                if (PersonaInfo.ProfileData.PersonaId[0] == req.query.personaId) {
-                    let carslots = await xmlParser.parseXML(fs.readFileSync(`./drivers/${file}/carslots.xml`).toString());
-                    
-                    let defaultCarIndex = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
-
-                    carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex].Durability = ["100"];
-
-                    fs.writeFileSync(`./drivers/${file}/carslots.xml`, xmlParser.buildXML(carslots));
-
-                    return res.status(200).send("<int>100</int>");
-                }
-
-                drivers += 1;
-            }
-        }
+    if (repairCar.success) {
+        res.send("<int>100</int>");
+    } else {
+        res.status(404).end();
     }
-
-    res.status(404).end();
 });
 
 // Edit Motto
 app.post("/DriverPersona/UpdateStatusMessage", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
+    
+    let parsedBody = await xmlParser.parseXML(req.body);
+    let targetPersonaId = parsedBody?.PersonaMotto?.personaId?.[0];
+    let targetMotto = parsedBody?.PersonaMotto?.message?.[0];
 
-    let driversDir = path.join(__dirname, "..", "drivers");
-    let drivers = 0;
+    if (((typeof targetPersonaId) == "string") && ((typeof targetMotto) == "string")) {
+        const setMotto = await personaManager.setMotto(targetPersonaId, targetMotto);
 
-    let dirFiles = fs.readdirSync(driversDir);
-
-    let body = await xmlParser.parseXML(req.body);
-
-    for (let file of dirFiles) {
-        if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
-
-                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
-
-                if (PersonaInfo.ProfileData.PersonaId[0] == body.PersonaMotto.personaId[0]) {
-                    PersonaInfo.ProfileData.Motto = [];
-                    PersonaInfo.ProfileData.Motto[0] = body.PersonaMotto.message[0];
-
-                    fs.writeFileSync(path.join(driversDir, file, "GetPersonaInfo.xml"), xmlParser.buildXML(PersonaInfo));
-
-                    return res.status(200).send(xmlParser.buildXML({
-                        PersonaMotto: {
-                            message: PersonaInfo.ProfileData.Motto,
-                            personaId: PersonaInfo.ProfileData.PersonaId
-                        }
-                    }));
+        if (setMotto.success) {
+            res.send(xmlParser.buildXML({
+                PersonaMotto: {
+                    message: targetMotto,
+                    personaId: targetPersonaId
                 }
-
-                drivers += 1;
-            }
+            }));
+            return;
         }
     }
 
@@ -440,93 +203,71 @@ app.post("/DriverPersona/UpdateStatusMessage", compression({ threshold: 0 }), as
 app.get("/DriverPersona/GetPersonaInfo", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
-    let driversDir = path.join(__dirname, "..", "drivers");
-    let drivers = 0;
+    const findPersona = await personaManager.getPersonaById(req.query.personaId);
 
-    let dirFiles = fs.readdirSync(driversDir);
+    if (findPersona.success) {
+        let personaInfo = findPersona.data.personaInfo;
 
-    for (let file of dirFiles) {
-        if (drivers < 3) {
-            if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
-                if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
-
-                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
-
-                if (PersonaInfo.ProfileData.PersonaId[0] == req.query.personaId) {
-                    if (global.newDriver && global.newDriver.personaId == req.query.personaId && global.newDriver.numOfReqs < 2) {
-                        if (global.newDriver.numOfReqs == 1) PersonaInfo.ProfileData.Level = ["1"];
-                        global.newDriver.numOfReqs += 1;
-                    }
-
-                    return res.send(xmlParser.buildXML(PersonaInfo));
-                }
-
-                drivers += 1;
+        if (((global.newDriver?.personaId) == req.query.personaId) && (global.newDriver?.numOfReqs < 2)) {
+            // enable tutorial for newly created drivers by spoofing level
+            if (global.newDriver.numOfReqs == 1) {
+                personaInfo.Level = ["1"];
             }
-        } else {
-            let filePath = `./data/personas/${req.query.personaId}/GetPersonaInfo.xml`;
+            global.newDriver.numOfReqs += 1;
+        }
 
-            if (fs.existsSync(filePath)) {
-                return res.send(fs.readFileSync(filePath).toString());
-            }
+        res.send(xmlParser.buildXML({
+            ProfileData: personaInfo
+        }));
+        return;
+    }
+
+    if ((typeof req.query.personaId) == "string") {
+        let filePath = path.join(__dirname, "..", "data", "personas", path.basename(req.query.personaId), "GetPersonaInfo.xml");
+        
+        if (fs.existsSync(filePath)) {
+            res.send(fs.readFileSync(filePath).toString());
+            return;
         }
     }
 
-    res.status(200).end();
+    res.status(404).end();
 });
 
 // Get base driver information
 app.post("/DriverPersona/GetPersonaBaseFromList", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
-
-    let driversDir = path.join(__dirname, "..", "drivers");
-
-    let dirFiles = fs.readdirSync(driversDir);
-
+    
     let baseTemplate = {
         ArrayOfPersonaBase: {
             PersonaBase: []
         }
     }
 
-    let body = await xmlParser.parseXML(req.body);
+    let parsedBody = await xmlParser.parseXML(req.body);
+    let personaIds = parsedBody?.PersonaIdArray?.PersonaIds?.[0]?.["array:long"]?.filter?.(i => ((typeof i) == "string"));
 
-    for (let x in body.PersonaIdArray.PersonaIds) {
-        let drivers = 0;
+    const findPersonas = await personaManager.getPersonas(personaIds);
 
-        for (let file of dirFiles) {
-            if (drivers < 3) {
-                if (fs.statSync(path.join(driversDir, file)).isDirectory() && file.startsWith("driver") && Number(file.replace("driver", ""))) {
-                    if (!fs.existsSync(path.join(driversDir, file, "GetPersonaInfo.xml"))) continue;
+    for (let personaData of findPersonas) {
+        baseTemplate.ArrayOfPersonaBase.PersonaBase.push({ Presence: ["1"], UserId: ["1"], ...personaData.personaInfo });
+    }
 
-                    let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driversDir, file, "GetPersonaInfo.xml")).toString());
+    if (Array.isArray(personaIds)) {
+        let personasPath = path.join(__dirname, "..", "data", "personas");
 
-                    if (PersonaInfo.ProfileData.PersonaId[0] == body.PersonaIdArray.PersonaIds[0]["array:long"][x]) {
-                        baseTemplate.ArrayOfPersonaBase.PersonaBase.push({ Presence: ["1"], UserId: ["1"], ...PersonaInfo.ProfileData});
-                    }
+        for (let personaId of personaIds) {
+            let personaInfoPath = path.join(personasPath, path.basename(personaId), "GetPersonaInfo.xml");
+            
+            if (fs.existsSync(personaInfoPath)) {
+                let personaInfoData = await xmlParser.parseXML(fs.readFileSync(personaInfoPath).toString());
 
-                    drivers += 1;
-                }
-            } else {
-                let filePath = `./data/personas/${body.PersonaIdArray.PersonaIds[0]["array:long"][x]}/GetPersonaBase.xml`;
-                let otherPath = `./data/personas/${body.PersonaIdArray.PersonaIds[0]["array:long"][x]}/GetPersonaBaseFromList.xml`;
-
-                if (fs.existsSync(filePath)) {
-                    let fileRead = await xmlParser.parseXML(fs.readFileSync(filePath).toString());
-
-                    baseTemplate.ArrayOfPersonaBase.PersonaBase = baseTemplate.ArrayOfPersonaBase.PersonaBase.concat(fileRead.ArrayOfPersonaBase.PersonaBase);
-                }
-
-                if (fs.existsSync(otherPath)) {
-                    let otherFileRead = await xmlParser.parseXML(fs.readFileSync(otherPath).toString());
-
-                    baseTemplate.ArrayOfPersonaBase.PersonaBase = baseTemplate.ArrayOfPersonaBase.PersonaBase.concat(otherFileRead.ArrayOfPersonaBase.PersonaBase);
-                }
+                baseTemplate.ArrayOfPersonaBase.PersonaBase.push({ Presence: ["0"], UserId: ["2"], ...personaInfoData.ProfileData });
             }
         }
     }
 
-    res.status(200).send(xmlParser.buildXML(baseTemplate));
+    res.send(xmlParser.buildXML(baseTemplate));
 });
 
 module.exports = app;

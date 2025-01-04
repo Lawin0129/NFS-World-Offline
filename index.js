@@ -2,11 +2,13 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 const config = require("./Config/config.json");
-
 const functions = require("./utils/functions");
+const personaManager = require("./services/personaManager");
+const path = require("path");
+
 const PORT = 3550;
 
-global.activeDriver = { driver: "", personaId: "" };
+personaManager.removeActivePersona();
 
 app.use((req, res, next) => {
     req.body = "";
@@ -20,13 +22,13 @@ app.use((req, res, next) => {
     return next();
 });
 
-fs.readdirSync("./routes").forEach(fileName => {
-    if (fileName.startsWith("Main")) return;
+for (let fileName of fs.readdirSync(path.join(__dirname, "routes"))) {
+    if (fileName.startsWith("Main")) continue;
     
     app.use("/Engine.svc", require(`./routes/${fileName}`));
-});
+}
 
-app.use("/Engine.svc", require("./routes/Main.js"));
+app.use("/Engine.svc", require("./routes/Main"));
 
 app.listen(PORT, async () => {
     console.log(`NFS World Offline Server by Lawin started listening on port ${PORT}`);

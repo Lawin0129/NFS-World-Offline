@@ -2,15 +2,15 @@ const express = require("express");
 const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
+const path = require("path");
 const xmlParser = require("../utils/xmlParser");
+const personaManager = require("../services/personaManager");
 
-let eventId;
+let eventId = "";
 
 // Launch single player event
 app.get("/matchmaking/launchevent/:eventId", compression({ threshold: 0 }), (req, res) => {
-    res.type("application/xml");
-
-    if (!eventId) eventId = req.params.eventId;
+    if (eventId.length == 0) eventId = req.params.eventId;
 
     let eventTemplate = {
         SessionInfo: {
@@ -19,122 +19,111 @@ app.get("/matchmaking/launchevent/:eventId", compression({ threshold: 0 }), (req
         }
     }
 
-    eventId = "";
+    res.type("application/xml").send(xmlParser.buildXML(eventTemplate));
 
-    res.status(200).send(xmlParser.buildXML(eventTemplate));
+    eventId = "";
 });
 
 // Multiplayer and Private event
 app.put("/matchmaking/*/:eventId", compression({ threshold: 0 }), (req, res) => {
-    res.type("application/xml");
-
     eventId = req.params.eventId;
 
-    console.log(`\nMultiplayer/private event detected (eventId: ${req.params.eventId}), launch a single player event to launch this event.`);
+    console.log(`\nMultiplayer/private event detected (eventId: ${req.params.eventId}), launch any single player event to play this.`);
 
-    res.status(200).end();
+    res.type("application/xml").status(200).end();
 });
 
 // Busted in pursuit
 app.post("/event/bust", compression({ threshold: 0 }), async (req, res) => {
-    res.type("application/xml");
+    const activePersona = personaManager.getActivePersona();
+    if (!activePersona.success) return res.status(404).send(activePersona.data);
 
-    let file = `./drivers/${global.activeDriver.driver}/carslots.xml`;
-
-    if (!global.activeDriver.driver) return res.status(404).send("<EngineError><Message>No active persona</Message></EngineError>");
-
-    let carslots = await xmlParser.parseXML(fs.readFileSync(file).toString());
+    let carslotsPath = path.join(activePersona.data.driverDirectory, "carslots.xml");
+    let carslots = await xmlParser.parseXML(fs.readFileSync(carslotsPath).toString());
 
     let defaultIdx = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
-    let durability = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability[0];
-    
-    carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Heat = ["1.0"];
-    
-    let calculateDurability = Number(durability) - 5;
+    let defaultCar = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx];
+
+    let calculateDurability = Number(defaultCar.Durability[0]) - 5;
     if (calculateDurability < 0) calculateDurability = 0;
-
-    carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability = [`${calculateDurability}`];
-
-    fs.writeFileSync(file, xmlParser.buildXML(carslots));
+    
+    defaultCar.Heat = ["1.0"];
+    defaultCar.Durability = [`${calculateDurability}`];
+    
+    fs.writeFileSync(carslotsPath, xmlParser.buildXML(carslots));
 
     let finishTemplate = {
         PursuitEventResult: {
             Accolades: [{ HasLeveledUp: ["false"] }],
-            Durability: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability,
+            Durability: defaultCar.Durability,
             EventSessionId: [req.query.eventSessionId],
             ExitPath: ["ExitToFreeroam"],
             InviteLifetimeInMilliseconds: ["0"],
             LobbyInviteId: ["0"],
-            PersonaId: [global.activeDriver.personaId],
-            Heat: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Heat
+            PersonaId: [activePersona.data.personaId],
+            Heat: defaultCar.Heat
         }
     }
 
-    res.status(200).send(xmlParser.buildXML(finishTemplate));
+    res.type("application/xml").send(xmlParser.buildXML(finishTemplate));
 });
 
 // Finish event
 app.post("/event/:eventAction", compression({ threshold: 0 }), async (req, res) => {
-    res.type("application/xml");
+    const activePersona = personaManager.getActivePersona();
+    if (!activePersona.success) return res.status(404).send(activePersona.data);
 
-    let file = `./drivers/${global.activeDriver.driver}/carslots.xml`;
+    let carslotsPath = path.join(activePersona.data.driverDirectory, "carslots.xml");
+    let carslots = await xmlParser.parseXML(fs.readFileSync(carslotsPath).toString());
 
-    if (!global.activeDriver.driver) return res.status(404).send("<EngineError><Message>No active persona</Message></EngineError>");
-
-    let carslots = await xmlParser.parseXML(fs.readFileSync(file).toString());
     let body = await xmlParser.parseXML(req.body);
+    let bodyRootName = xmlParser.getRootName(body);
+    if (!bodyRootName) return res.status(403).end();
 
-    let bodyStanza = xmlParser.getRootName(body);
-    let event;
-
-    if (!bodyStanza) return res.status(403).end();
-
-    event = `${bodyStanza.split("Arbitration")[0]}`;
+    let event = `${bodyRootName.split("Arbitration")[0]}`;
 
     let defaultIdx = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
-    let calculateHeat = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Heat[0];
-    let durability = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability[0];
+    let defaultCar = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx];
 
-    if (body[bodyStanza].Heat) calculateHeat = body[bodyStanza].Heat[0];
-    
-    carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Heat = [calculateHeat];
+    body = body[bodyRootName];
 
-    let calculateDurability = Number(durability);
+    if (body.Heat) defaultCar.Heat = [body.Heat[0]];
 
-    if (event == "Pursuit" || event == "Route" || event == "TeamEscape") calculateDurability -= 5;
-    if (event == "Drag") calculateDurability -= 2;
+    let calculateDurability = Number(defaultCar.Durability[0]);
+    if ((event == "Pursuit") || (event == "Route") || (event == "TeamEscape")) calculateDurability -= 5;
+    else if (event == "Drag") calculateDurability -= 2;
 
     if (calculateDurability < 0) calculateDurability = 0;
 
-    carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability = [`${calculateDurability}`];
+    defaultCar.Durability = [`${calculateDurability}`];
 
-    fs.writeFileSync(file, xmlParser.buildXML(carslots));
+    fs.writeFileSync(carslotsPath, xmlParser.buildXML(carslots));
 
     let finishTemplate = {
         [`${event}EventResult`]: {
             Accolades: [{ HasLeveledUp: ["false"] }],
-            Durability: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Durability,
+            Durability: defaultCar.Durability,
             EventSessionId: [req.query.eventSessionId],
             ExitPath: ["ExitToFreeroam"],
             InviteLifetimeInMilliseconds: ["0"],
             LobbyInviteId: ["0"],
-            PersonaId: [global.activeDriver.personaId],
-            Heat: carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx].Heat,
+            PersonaId: [activePersona.data.personaId],
+            Heat: defaultCar.Heat,
             Entrants: [{
                 RouteEntrantResult: [{
-                    EventDurationInMilliseconds: body[bodyStanza].EventDurationInMilliseconds,
+                    EventDurationInMilliseconds: body.EventDurationInMilliseconds,
                     EventSessionId: [req.query.eventSessionId],
-                    FinishReason: body[bodyStanza].FinishReason,
-                    PersonaId: [global.activeDriver.personaId],
-                    Ranking: body[bodyStanza].Rank,
-                    BestLapDurationInMilliseconds: body[bodyStanza].BestLapDurationInMilliseconds,
-                    TopSpeed: body[bodyStanza].TopSpeed
+                    FinishReason: body.FinishReason,
+                    PersonaId: [activePersona.data.personaId],
+                    Ranking: body.Rank,
+                    BestLapDurationInMilliseconds: body.BestLapDurationInMilliseconds,
+                    TopSpeed: body.TopSpeed
                 }]
             }]
         }
     }
 
-    res.status(200).send(xmlParser.buildXML(finishTemplate));
+    res.type("application/xml").send(xmlParser.buildXML(finishTemplate));
 });
 
 module.exports = app;
