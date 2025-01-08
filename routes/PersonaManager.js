@@ -18,7 +18,7 @@ app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), async (r
     const createPersona = await personaManager.createPersona(req.query.name, req.query.iconIndex);
 
     if (createPersona.success) {
-        // enable tutorial
+        // enable tutorial for newly created drivers by spoofing level
         createPersona.data.ProfileData.Level = ["1"];
         global.newDriver = { personaId: createPersona.data.ProfileData.PersonaId[0], numOfReqs: 0 };
 

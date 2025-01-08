@@ -6,7 +6,7 @@ You can find out more here: [https://nfs.fandom.com/wiki/Need_for_Speed:_World](
 This program is a server emulator/backend written in Node.js for NFS World which allows you to play it.
 # Features
 * Achievements:
-    + All original achievements that once existed in nfs world.
+    + All original achievements included that once existed in NFS World.
     + Setting your achievement badges in achievements log.
 * Drivers:
     + Creating Drivers (functionality like "name taken?" also included).
@@ -14,7 +14,7 @@ This program is a server emulator/backend written in Node.js for NFS World which
     + Changing Drivers.
     + Editing/Adding Motto.
 * Events:
-    + All original events that once existed in nfs world.
+    + All original events included that once existed in NFS World.
     + Launching single player events.
     + Pursuit heat saves on current car.
     + Pursuit heat resets to 1 if busted.
@@ -25,6 +25,7 @@ This program is a server emulator/backend written in Node.js for NFS World which
         - Team Escapes: -5% Durability Loss.
         - Drags: -2% Durability Loss.
 * Cars:
+    + All original cars included in the shop that once existed in NFS World.
     + Changing your car.
     + Repairing your car.
     + Purchasing cars.
@@ -38,7 +39,7 @@ This program is a server emulator/backend written in Node.js for NFS World which
 * Treasure Hunt
 # Command Line Commands
 - `> help {commandName}` - Outputs a list of commands, `commandName` parameter is optional and can be used to show more information about a specific command.
-- `> holiday {type}` - Sets the current Need for Speed World holiday type.
+- `> holiday` - Sets the current Need for Speed World holiday type. Upon running this command, a list of holidays will be outputted where you can choose one.
 # Issues
 * Powerups WILL NOT work due to unfinished XMPP server.
 * Launching using launch args will not work as it gives "Error Code 7", you will have to use the Soapbox Race World Launcher (do not disable the proxy).

@@ -31,12 +31,11 @@ let self = module.exports = {
             }
             
             let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
+            let carsOwnedByPersona = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona;
             
-            if (!parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona) {
-                parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona = [{ OwnedCarTrans: [] }];
+            if (carsOwnedByPersona?.[0]?.OwnedCarTrans) {
+                carsTemplate.ArrayOfOwnedCarTrans = carsOwnedByPersona[0];
             }
-            
-            carsTemplate.ArrayOfOwnedCarTrans = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0];
             
             return functions.createResponse(true, carsTemplate);
         }

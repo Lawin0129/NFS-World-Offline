@@ -4,6 +4,14 @@ async function sleep(ms) {
     })
 }
 
+function askQuestion(question, ReadLine) {
+    let qPromise = new Promise((resolve, reject) => {
+        ReadLine.question(question, (ans) => resolve(ans));
+    });
+
+    return qPromise;
+}
+
 function between(min, max) {  
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -21,6 +29,7 @@ function createResponse(success, data) {
 
 module.exports = {
     sleep,
+    askQuestion,
     between,
     MakeID,
     createResponse

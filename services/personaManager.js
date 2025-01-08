@@ -3,6 +3,14 @@ const path = require("path");
 const xmlParser = require("../utils/xmlParser");
 const functions = require("../utils/functions");
 
+let personaFiles = [
+    "GetPersonaInfo.xml",
+    "carslots.xml",
+    "gettreasurehunteventsession.xml",
+    "loadall.xml",
+    "objects.xml"
+];
+
 let self = module.exports = {
     getPersonas: async (personaIds) => {
         let driversDir = path.join(__dirname, "..", "drivers");
@@ -16,11 +24,8 @@ let self = module.exports = {
             let driverDirectory = path.join(driversDir, file);
             
             if ((fs.statSync(driverDirectory).isDirectory()) && (file.startsWith("driver")) && (!Number.isNaN(Number(file.replace("driver", ""))))) {
-                if (!fs.existsSync(path.join(driverDirectory, "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(path.join(driverDirectory, "carslots.xml"))) continue;
-                if (!fs.existsSync(path.join(driverDirectory, "gettreasurehunteventsession.xml"))) continue;
-                if (!fs.existsSync(path.join(driverDirectory, "loadall.xml"))) continue;
-                if (!fs.existsSync(path.join(driverDirectory, "objects.xml"))) continue;
+                let filesInDriver = fs.readdirSync(driverDirectory);
+                if (!personaFiles.every(fileName => filesInDriver.includes(fileName))) continue;
                 
                 let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driverDirectory, "GetPersonaInfo.xml")).toString());
 
@@ -65,11 +70,8 @@ let self = module.exports = {
             let driverDirectory = path.join(driversDir, file);
             
             if ((fs.statSync(driverDirectory).isDirectory()) && (file.startsWith("driver")) && (!Number.isNaN(Number(file.replace("driver", ""))))) {
-                if (!fs.existsSync(path.join(driverDirectory, "GetPersonaInfo.xml"))) continue;
-                if (!fs.existsSync(path.join(driverDirectory, "carslots.xml"))) continue;
-                if (!fs.existsSync(path.join(driverDirectory, "gettreasurehunteventsession.xml"))) continue;
-                if (!fs.existsSync(path.join(driverDirectory, "loadall.xml"))) continue;
-                if (!fs.existsSync(path.join(driverDirectory, "objects.xml"))) continue;
+                let filesInDriver = fs.readdirSync(driverDirectory);
+                if (!personaFiles.every(fileName => filesInDriver.includes(fileName))) continue;
                 
                 let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driverDirectory, "GetPersonaInfo.xml")).toString());
                 

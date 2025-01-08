@@ -8,12 +8,12 @@ const personaManager = require("../services/personaManager");
 
 // Get achievements from persona
 app.get("/achievements/loadall", compression({ threshold: 0 }), (req, res) => {
+    res.type("application/xml");
+
     const activePersona = personaManager.getActivePersona();
     if (!activePersona.success) return res.status(404).send(activePersona.data);
 
     let achievementsPath = path.join(activePersona.data.driverDirectory, "loadall.xml");
-
-    res.type("application/xml");
 
     if (fs.existsSync(achievementsPath)) {
         res.send(fs.readFileSync(achievementsPath).toString());
@@ -24,6 +24,8 @@ app.get("/achievements/loadall", compression({ threshold: 0 }), (req, res) => {
 
 // Set achievement badges
 app.put("/badges/set", compression({ threshold: 0 }), async (req, res) => {
+    res.type("application/xml");
+
     const activePersona = personaManager.getActivePersona();
     if (!activePersona.success) return res.status(404).send(activePersona.data);
 
@@ -35,32 +37,37 @@ app.put("/badges/set", compression({ threshold: 0 }), async (req, res) => {
 
     let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(personaInfoPath).toString());
     let Achievements = await xmlParser.parseXML(fs.readFileSync(achievementsPath).toString());
-    let body = await xmlParser.parseXML(req.body);
+    let parsedBody = await xmlParser.parseXML(req.body);
 
     let badgesTemplate = {
         Badges: [{ BadgePacket: [] }]
     }
 
-    let bodyBadges = body.BadgeBundle.Badges[0].BadgeInput;
+    let bodyBadges = parsedBody?.BadgeBundle?.Badges?.[0]?.BadgeInput;
+    if (!bodyBadges) return res.status(403).end();
 
     for (let i in bodyBadges) {
-        let badge = Achievements.AchievementsPacket.Definitions[0].AchievementDefinitionPacket.find(x => x.BadgeDefinitionId[0] == bodyBadges[i].BadgeDefinitionId[0]);
-        let achRankslen = badge.AchievementRanks[0].AchievementRankPacket[badge.AchievementRanks[0].AchievementRankPacket.length - 1];
+        let badge = Achievements.AchievementsPacket.Definitions[0].AchievementDefinitionPacket.find(x => x.BadgeDefinitionId[0] == bodyBadges?.[i]?.BadgeDefinitionId?.[0]);
 
-        badgesTemplate.Badges[0].BadgePacket.push({
-            AchievementRankId: achRankslen.AchievementRankId,
-            BadgeDefinitionId: badge.BadgeDefinitionId,
-            IsRare: achRankslen.IsRare,
-            Rarity: achRankslen.Rarity,
-            SlotId: bodyBadges[i].SlotId
-        });
+        if (badge) {
+            let achievementPackets = badge.AchievementRanks[0].AchievementRankPacket;
+            let targetAchievementPacket = achievementPackets[achievementPackets.length - 1];
+            
+            badgesTemplate.Badges[0].BadgePacket.push({
+                AchievementRankId: targetAchievementPacket.AchievementRankId,
+                BadgeDefinitionId: badge.BadgeDefinitionId,
+                IsRare: targetAchievementPacket.IsRare,
+                Rarity: targetAchievementPacket.Rarity,
+                SlotId: bodyBadges[i].SlotId
+            });
+        }
     }
 
     PersonaInfo.ProfileData.Badges = badgesTemplate.Badges;
 
     fs.writeFileSync(personaInfoPath, xmlParser.buildXML(PersonaInfo));
     
-    res.type("application/xml").status(200).end();
+    res.status(200).end();
 });
 
 module.exports = app;

@@ -15,7 +15,7 @@ readline.on('line', async (line) => {
     args.splice(0, 1);
 
     if (fs.existsSync(path.join(__dirname, "cmds", `${command.toLowerCase()}.js`))) {
-        await require(`./cmds/${command.toLowerCase()}.js`).execute(args);
+        await require(`./cmds/${command.toLowerCase()}.js`).execute(args, readline);
     } else {
         console.log("\nInvalid command.");
     }
