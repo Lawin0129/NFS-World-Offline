@@ -2,10 +2,11 @@ const express = require("express");
 const app = express.Router();
 const fs = require("fs");
 const path = require("path");
+const paths = require("../utils/paths");
 
 // Get Soapbox server information
 app.get("/GetServerInformation", (req, res) => {
-    let serverInformationPath = path.join(__dirname, "..", "data", "GetServerInformation.json");
+    let serverInformationPath = path.join(paths.dataPath, "GetServerInformation.json");
 
     if (fs.existsSync(serverInformationPath)) {
         res.json(JSON.parse(fs.readFileSync(serverInformationPath).toString()));

@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const paths = require("../utils/paths");
 const readline = require("readline").createInterface({
     input: process.stdin,
     output: process.stdout
@@ -14,8 +15,10 @@ readline.on('line', async (line) => {
 
     args.splice(0, 1);
 
-    if (fs.existsSync(path.join(__dirname, "cmds", `${command.toLowerCase()}.js`))) {
-        await require(`./cmds/${command.toLowerCase()}.js`).execute(args, readline);
+    const commandPath = path.join(paths.commandsPath, `${command.toLowerCase()}.js`);
+
+    if (fs.existsSync(commandPath)) {
+        await require(commandPath).execute(args, readline);
     } else {
         console.log("\nInvalid command.");
     }

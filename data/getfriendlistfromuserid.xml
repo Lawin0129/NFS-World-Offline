@@ -1,0 +1,14 @@
+<PersonaFriendsList>
+  <friendPersona>
+    <FriendPersona>
+      <iconIndex>8</iconIndex>
+      <level>60</level>
+      <name>LAWIN</name>
+      <originalName>test</originalName>
+      <personaId>0</personaId>
+      <presence>2</presence>
+      <socialNetwork>0</socialNetwork>
+      <userId>0</userId>
+    </FriendPersona>
+  </friendPersona>
+</PersonaFriendsList>

@@ -3,13 +3,12 @@ const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
+const paths = require("../utils/paths");
 const xmlParser = require("../utils/xmlParser");
 
 // Get news
 app.get("/LoginAnnouncements", compression({ threshold: 0 }), (req, res, next) => {
-    let dataPath = path.join(__dirname, "..", "data");
-
-    if (fs.existsSync(path.join(dataPath, "LoginAnnouncements.xml"))) return next();
+    if (fs.existsSync(path.join(paths.dataPath, "LoginAnnouncements.xml"))) return next();
 
     let acceptedFormats = ["jpg","jpeg","png"];
 
@@ -22,7 +21,7 @@ app.get("/LoginAnnouncements", compression({ threshold: 0 }), (req, res, next) =
 
     let id = 1;
 
-    for (let file of fs.readdirSync(path.join(dataPath, "news"))) {
+    for (let file of fs.readdirSync(path.join(paths.dataPath, "news"))) {
         if (!acceptedFormats.includes(file.toLowerCase().split(".").pop())) continue;
 
         newsTemplate.LoginAnnouncementsDefinition.Announcements[0].LoginAnnouncementDefinition.push({
@@ -41,7 +40,7 @@ app.get("/LoginAnnouncements", compression({ threshold: 0 }), (req, res, next) =
 
 // Get image from news folder
 app.get("/news/*.*", compression({ threshold: 0 }), (req, res) => {
-    let filePath = path.join(__dirname, "..", "data", "news", path.basename(req.path));
+    let filePath = path.join(paths.dataPath, "news", path.basename(req.path));
 
     if (fs.existsSync(filePath)) {
         res.send(fs.readFileSync(filePath));

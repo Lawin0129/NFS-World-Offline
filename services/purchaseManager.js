@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const paths = require("../utils/paths");
 const functions = require("../utils/functions");
 const xmlParser = require("../utils/xmlParser");
 const personaManager = require("./personaManager");
@@ -21,7 +22,7 @@ let self = module.exports = {
             }
         }
         
-        let productPath = path.join(__dirname, "..", "data", "basket", `${path.basename(productId)}.xml`);
+        let productPath = path.join(paths.dataPath, "basket", `${path.basename(productId)}.xml`);
         
         if (fs.existsSync(productPath)) {
             let product = await xmlParser.parseXML(fs.readFileSync(productPath).toString());

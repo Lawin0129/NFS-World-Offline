@@ -3,12 +3,13 @@ const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
+const paths = require("../utils/paths");
 
 // Get xml file from data folder
 app.use(compression({ threshold: 0 }), (req, res) => {
     res.type("application/xml");
 
-    let filePath = path.join(__dirname, "..", "data", `${req.path.replace(/\.\./ig, "")}.xml`);
+    let filePath = path.join(paths.dataPath, `${req.path.replace(/\.\./ig, "")}.xml`);
 
     if (fs.existsSync(filePath)) {
         res.send(fs.readFileSync(filePath).toString());

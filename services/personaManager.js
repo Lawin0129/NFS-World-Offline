@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const paths = require("../utils/paths");
 const xmlParser = require("../utils/xmlParser");
 const functions = require("../utils/functions");
 
@@ -13,7 +14,7 @@ let personaFiles = [
 
 let self = module.exports = {
     getPersonas: async (personaIds) => {
-        let driversDir = path.join(__dirname, "..", "drivers");
+        let driversDir = paths.driversPath;
 
         let driverIdx = 0;
         let drivers = [];
@@ -60,7 +61,7 @@ let self = module.exports = {
         return functions.createResponse(false, {});
     },
     getPersonaByName: async (personaName) => {
-        let driversDir = path.join(__dirname, "..", "drivers");
+        let driversDir = paths.driversPath;
 
         let driverIdx = 0;
         
@@ -108,7 +109,7 @@ let self = module.exports = {
                 personaId: findPersona.data.personaId
             }
 
-            fs.writeFileSync(path.join(__dirname, "..", "drivers", "DefaultPersonaIdx.xml"), `<UserInfo><defaultPersonaIdx>${findPersona.data.driverIdx}</defaultPersonaIdx></UserInfo>`);
+            fs.writeFileSync(path.join(paths.driversPath, "DefaultPersonaIdx.xml"), `<UserInfo><defaultPersonaIdx>${findPersona.data.driverIdx}</defaultPersonaIdx></UserInfo>`);
 
             return functions.createResponse(true, {});
         }
@@ -142,8 +143,8 @@ let self = module.exports = {
             let newPersonaId = functions.MakeID();
             let driverFolderName;
 
-            let configDirectory = path.join(__dirname, "..", "Config", "DriverTemplate");
-            let driverDirectory = path.join(__dirname, "..", "drivers");
+            let configDirectory = paths.driverTemplatePath;
+            let driverDirectory = paths.driversPath;
             
             if (!fs.existsSync(path.join(driverDirectory, "driver1"))) driverFolderName = "driver1";
             else if (!fs.existsSync(path.join(driverDirectory, "driver2"))) driverFolderName = "driver2";
@@ -184,7 +185,7 @@ let self = module.exports = {
         if (findPersona.success == false) return functions.createResponse(false, {});
         
         fs.rmSync(findPersona.data.driverDirectory, { recursive: true });
-        fs.writeFileSync(path.join(__dirname, "..", "drivers", "DefaultPersonaIdx.xml"), "<UserInfo><defaultPersonaIdx>0</defaultPersonaIdx></UserInfo>");
+        fs.writeFileSync(path.join(paths.driversPath, "DefaultPersonaIdx.xml"), "<UserInfo><defaultPersonaIdx>0</defaultPersonaIdx></UserInfo>");
 
         return functions.createResponse(true, {});
     }

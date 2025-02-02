@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const paths = require("../../utils/paths");
 
 let self = module.exports = {
     commandInfo: {
@@ -13,13 +14,13 @@ let self = module.exports = {
         if (!args[0]) {
             msg = 'For more information on a specific command, type "help commandName"\n';
 
-            for (let file of fs.readdirSync(__dirname)) {
+            for (let file of fs.readdirSync(paths.commandsPath)) {
                 let cmd = require(`./${file}`);
                 
                 msg += `\n${cmd.commandInfo.name} - ${cmd.commandInfo.info}`;
             }
         } else {
-            const commandPath = path.join(__dirname, `${args[0]}.js`);
+            const commandPath = path.join(paths.commandsPath, `${args[0]}.js`);
 
             if (fs.existsSync(commandPath)) {
                 let cmd = require(commandPath);

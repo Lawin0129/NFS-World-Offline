@@ -51,7 +51,7 @@ app.put("/badges/set", compression({ threshold: 0 }), async (req, res) => {
 
         if (badge) {
             let achievementPackets = badge.AchievementRanks[0].AchievementRankPacket;
-            let targetAchievementPacket = achievementPackets[achievementPackets.length - 1];
+            let targetAchievementPacket = achievementPackets.pop();
             
             badgesTemplate.Badges[0].BadgePacket.push({
                 AchievementRankId: targetAchievementPacket.AchievementRankId,

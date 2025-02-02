@@ -3,6 +3,7 @@ const app = express.Router();
 const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
+const paths = require("../utils/paths");
 const xmlParser = require("../utils/xmlParser");
 const personaManager = require("../services/personaManager");
 const carManager = require("../services/carManager");
@@ -52,7 +53,7 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), async (
             return;
     }
 
-    let filePath = path.join(__dirname, "..", "data", "personas", path.basename(req.params.personaId), `${carsType}.xml`);
+    let filePath = path.join(paths.dataPath, "personas", path.basename(req.params.personaId), `${carsType}.xml`);
     
     if (fs.existsSync(filePath)) {
         res.send(fs.readFileSync(filePath).toString());
@@ -183,16 +184,18 @@ app.post("/DriverPersona/UpdateStatusMessage", compression({ threshold: 0 }), as
     let targetMotto = parsedBody?.PersonaMotto?.message?.[0];
 
     if (((typeof targetPersonaId) == "string") && ((typeof targetMotto) == "string")) {
-        const setMotto = await personaManager.setMotto(targetPersonaId, targetMotto);
-
-        if (setMotto.success) {
-            res.send(xmlParser.buildXML({
-                PersonaMotto: {
-                    message: targetMotto,
-                    personaId: targetPersonaId
-                }
-            }));
-            return;
+        if (targetMotto.length <= 60) {
+            const setMotto = await personaManager.setMotto(targetPersonaId, targetMotto);
+            
+            if (setMotto.success) {
+                res.send(xmlParser.buildXML({
+                    PersonaMotto: {
+                        message: targetMotto,
+                        personaId: targetPersonaId
+                    }
+                }));
+                return;
+            }
         }
     }
 
@@ -223,7 +226,7 @@ app.get("/DriverPersona/GetPersonaInfo", compression({ threshold: 0 }), async (r
     }
 
     if ((typeof req.query.personaId) == "string") {
-        let filePath = path.join(__dirname, "..", "data", "personas", path.basename(req.query.personaId), "GetPersonaInfo.xml");
+        let filePath = path.join(paths.dataPath, "personas", path.basename(req.query.personaId), "GetPersonaInfo.xml");
         
         if (fs.existsSync(filePath)) {
             res.send(fs.readFileSync(filePath).toString());
@@ -254,7 +257,7 @@ app.post("/DriverPersona/GetPersonaBaseFromList", compression({ threshold: 0 }),
     }
 
     if (Array.isArray(personaIds)) {
-        let personasPath = path.join(__dirname, "..", "data", "personas");
+        let personasPath = path.join(paths.dataPath, "personas");
 
         for (let personaId of personaIds) {
             let personaInfoPath = path.join(personasPath, path.basename(personaId), "GetPersonaInfo.xml");

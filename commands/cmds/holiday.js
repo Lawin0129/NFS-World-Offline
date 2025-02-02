@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const paths = require("../../utils/paths");
 const functions = require("../../utils/functions");
 const xmlParser = require("../../utils/xmlParser");
 
@@ -25,7 +26,7 @@ let self = module.exports = {
 
         let optionSelect = await functions.askQuestion("\nEnter a number: ", readline);
         
-        let holidayOptionNum = Number.isNaN(Number(optionSelect)) ? 0 : Number(optionSelect);
+        let holidayOptionNum = Number.isNaN(Number(optionSelect)) ? -1 : Number(optionSelect);
         let holidayData = holidayTypesList[holidayOptionNum];
 
         if ((!holidayData) && (holidayOptionNum != holidayTypesList.length)) {
@@ -35,9 +36,8 @@ let self = module.exports = {
 
         let holidayType = (holidayData?.name) ? holidayData.name : "All";
 
-        let dataDirectory = path.join(__dirname, "..", "..", "data");
-        let getusersettingsPath = path.join(dataDirectory, "getusersettings.xml");
-        let GetServerInformationPath = path.join(dataDirectory, "GetServerInformation.json");
+        let getusersettingsPath = path.join(paths.dataPath, "getusersettings.xml");
+        let GetServerInformationPath = path.join(paths.dataPath, "GetServerInformation.json");
 
         let UserSettings = await xmlParser.parseXML(fs.readFileSync(getusersettingsPath).toString());
         let ServerInformation = JSON.parse(fs.readFileSync(GetServerInformationPath).toString());

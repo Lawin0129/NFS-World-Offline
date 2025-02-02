@@ -1,5 +1,5 @@
 # About NFS: World
-Need for Speed: World (formerly known as Need for Speed: World Online) is the 15th game in the Need for Speed franchise and was a free-to-play massively multiplayer online-only racing game which was only available on Windows and officially launched on July 27, 2010 then shut down on July 14, 2015. The game combined gameplay elements from previous titles in the series such as NFS: Most Wanted 2005 and NFS: Carbon, with MMO features. It focused on illegal street racing, car tuning, and police chases, and was set in a map called Tri-City, which was a combination of Rockport and Palmont cities from previous games.
+Need for Speed: World is the 15th game in the Need for Speed franchise and was a free-to-play massively multiplayer online racing game which was only available on Windows and officially launched on July 27, 2010 then shut down on July 14, 2015. It was an online-only game that combined gameplay elements from previous titles in the series such as NFS: Most Wanted (2005) and NFS: Carbon. It focused on illegal street racing, car tuning, police chases and was set in a map called Tri-Cities which was the connected metropolises of Rockport and Palmont City from previous games.
 
 You can find out more here: [https://nfs.fandom.com/wiki/Need_for_Speed:_World](https://nfs.fandom.com/wiki/Need_for_Speed:_World)
 # About this program
