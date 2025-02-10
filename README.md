@@ -13,6 +13,9 @@ This program is a server emulator/backend written in Node.js for NFS World which
     + Deleting Drivers.
     + Changing Drivers.
     + Editing/Adding Motto.
+* Powerups:
+    + Using powerups.
+    + Recharging/purchasing powerups from the powerup console.
 * Events:
     + All original events included that once existed in NFS World.
     + Launching single player events.
@@ -41,7 +44,6 @@ This program is a server emulator/backend written in Node.js for NFS World which
 - `> help {commandName}` - Outputs a list of commands, `commandName` parameter is optional and can be used to show more information about a specific command.
 - `> holiday` - Sets the current Need for Speed World holiday type. Upon running this command, a list of holidays will be outputted where you can choose one.
 # Issues
-* Powerups WILL NOT work due to unfinished XMPP server.
 * Launching using launch args will not work as it gives "Error Code 7", you will have to use the Soapbox Race World Launcher (do not disable the proxy).
 # How to use this nfs world server emulator?
 1) Install [NodeJS](https://nodejs.org/en/).

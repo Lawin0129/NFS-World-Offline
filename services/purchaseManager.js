@@ -5,6 +5,7 @@ const functions = require("../utils/functions");
 const xmlParser = require("../utils/xmlParser");
 const personaManager = require("./personaManager");
 const carManager = require("./carManager");
+const powerupManager = require("../services/powerupManager");
 
 let self = module.exports = {
     purchaseItem: async (personaId, productId) => {
@@ -39,6 +40,8 @@ let self = module.exports = {
                     break;
                 }
             }
+        } else {
+            await powerupManager.purchasePowerup(productId);
         }
         
         return functions.createResponse(true, commerceTemplate);

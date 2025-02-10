@@ -47,20 +47,25 @@ app.put("/badges/set", compression({ threshold: 0 }), async (req, res) => {
     if (!bodyBadges) return res.status(403).end();
 
     for (let i in bodyBadges) {
-        let badge = Achievements.AchievementsPacket.Definitions[0].AchievementDefinitionPacket.find(x => x.BadgeDefinitionId[0] == bodyBadges?.[i]?.BadgeDefinitionId?.[0]);
+        let slotId = bodyBadges?.[i]?.SlotId?.[0];
+        if ((typeof slotId) != "string") continue;
+        if (/^[0123]$/.test(slotId) == false) continue;
+        if (badgesTemplate.Badges[0].BadgePacket.some(pkt => pkt.SlotId[0] == slotId)) continue;
 
-        if (badge) {
-            let achievementPackets = badge.AchievementRanks[0].AchievementRankPacket;
-            let targetAchievementPacket = achievementPackets.pop();
-            
-            badgesTemplate.Badges[0].BadgePacket.push({
-                AchievementRankId: targetAchievementPacket.AchievementRankId,
-                BadgeDefinitionId: badge.BadgeDefinitionId,
-                IsRare: targetAchievementPacket.IsRare,
-                Rarity: targetAchievementPacket.Rarity,
-                SlotId: bodyBadges[i].SlotId
-            });
-        }
+        let badge = Achievements.AchievementsPacket.Definitions[0].AchievementDefinitionPacket.find(x => x.BadgeDefinitionId[0] == bodyBadges?.[i]?.BadgeDefinitionId?.[0]);
+        if (!badge) continue;
+        
+        let achievementPackets = badge.AchievementRanks[0].AchievementRankPacket;
+        let targetAchievementPacket = achievementPackets.pop();
+        if (!targetAchievementPacket) continue;
+        
+        badgesTemplate.Badges[0].BadgePacket.push({
+            AchievementRankId: targetAchievementPacket.AchievementRankId,
+            BadgeDefinitionId: badge.BadgeDefinitionId,
+            IsRare: targetAchievementPacket.IsRare,
+            Rarity: targetAchievementPacket.Rarity,
+            SlotId: [slotId]
+        });
     }
 
     PersonaInfo.ProfileData.Badges = badgesTemplate.Badges;

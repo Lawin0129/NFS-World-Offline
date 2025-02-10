@@ -42,7 +42,7 @@ app.listen(PORT, async () => {
 }).on("error", async (err) => {
     if (err.code == "EADDRINUSE") {
         console.log(`Port ${PORT} is already in use!\nClosing in 3 seconds...`);
-        await functions.sleep(3000)
+        await functions.sleep(3000);
         process.exit(0);
     } else throw err;
 });
