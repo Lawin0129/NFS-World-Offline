@@ -43,16 +43,16 @@ app.put("/badges/set", compression({ threshold: 0 }), async (req, res) => {
         Badges: [{ BadgePacket: [] }]
     }
 
-    let bodyBadges = parsedBody?.BadgeBundle?.Badges?.[0]?.BadgeInput;
-    if (!bodyBadges) return res.status(403).end();
+    let badgeInputs = parsedBody?.BadgeBundle?.Badges?.[0]?.BadgeInput;
+    if (!Array.isArray(badgeInputs)) return res.status(403).end();
 
-    for (let i in bodyBadges) {
-        let slotId = bodyBadges?.[i]?.SlotId?.[0];
+    for (let badgeInput of badgeInputs) {
+        let slotId = badgeInput?.SlotId?.[0];
         if ((typeof slotId) != "string") continue;
         if (/^[0123]$/.test(slotId) == false) continue;
         if (badgesTemplate.Badges[0].BadgePacket.some(pkt => pkt.SlotId[0] == slotId)) continue;
 
-        let badge = Achievements.AchievementsPacket.Definitions[0].AchievementDefinitionPacket.find(x => x.BadgeDefinitionId[0] == bodyBadges?.[i]?.BadgeDefinitionId?.[0]);
+        let badge = Achievements.AchievementsPacket.Definitions[0].AchievementDefinitionPacket.find(x => x.BadgeDefinitionId[0] == badgeInput?.BadgeDefinitionId?.[0]);
         if (!badge) continue;
         
         let achievementPackets = badge.AchievementRanks[0].AchievementRankPacket;

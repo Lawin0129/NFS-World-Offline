@@ -8,6 +8,7 @@ const xmlParser = require("../utils/xmlParser");
 const personaManager = require("../services/personaManager");
 const carManager = require("../services/carManager");
 const purchaseManager = require("../services/purchaseManager");
+const inventoryManager = require("../services/inventoryManager");
 
 // Get Cars from Persona
 app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), async (req, res, next) => {
@@ -28,6 +29,7 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), async (
             
             break;
         }
+
         case "cars": {
             const getCars = await carManager.getCars(req.params.personaId);
 
@@ -38,6 +40,7 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), async (
 
             break;
         }
+
         case "defaultcar": {
             const getDefaultCar = await carManager.getDefaultCar(req.params.personaId);
 
@@ -48,9 +51,11 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), async (
 
             break;
         }
-        default:
+
+        default: {
             res.status(403).send("<EngineError><Message>Invalid cars type</Message></EngineError>");
             return;
+        }
     }
 
     let filePath = path.join(paths.dataPath, "personas", path.basename(req.params.personaId), `${carsType}.xml`);
@@ -128,16 +133,16 @@ app.post("/personas/:personaId/commerce", compression({ threshold: 0 }), async (
 });
 
 // Get Inventory from Persona
-app.get("/personas/inventory/objects", compression({ threshold: 0 }), (req, res) => {
+app.get("/personas/inventory/objects", compression({ threshold: 0 }), async (req, res) => {
     res.type("application/xml");
 
     const activePersona = personaManager.getActivePersona();
     if (!activePersona.success) return res.status(404).send(activePersona.data);
 
-    let objectsPath = path.join(activePersona.data.driverDirectory, "objects.xml");
+    const getInventory = await inventoryManager.getInventory(activePersona.data.personaId);
 
-    if (fs.existsSync(objectsPath)) {
-        res.send(fs.readFileSync(objectsPath).toString());
+    if (getInventory.success) {
+        res.send(getInventory.data.inventoryData);
     } else {
         res.status(404).end();
     }
@@ -183,19 +188,17 @@ app.post("/DriverPersona/UpdateStatusMessage", compression({ threshold: 0 }), as
     let targetPersonaId = parsedBody?.PersonaMotto?.personaId?.[0];
     let targetMotto = parsedBody?.PersonaMotto?.message?.[0];
 
-    if (((typeof targetPersonaId) == "string") && ((typeof targetMotto) == "string")) {
-        if (targetMotto.length <= 60) {
-            const setMotto = await personaManager.setMotto(targetPersonaId, targetMotto);
-            
-            if (setMotto.success) {
-                res.send(xmlParser.buildXML({
-                    PersonaMotto: {
-                        message: targetMotto,
-                        personaId: targetPersonaId
-                    }
-                }));
-                return;
-            }
+    if (((typeof targetPersonaId) == "string") && ((typeof targetMotto) == "string") && (targetMotto.length <= 60)) {
+        const setMotto = await personaManager.setMotto(targetPersonaId, targetMotto);
+        
+        if (setMotto.success) {
+            res.send(xmlParser.buildXML({
+                PersonaMotto: {
+                    message: targetMotto,
+                    personaId: targetPersonaId
+                }
+            }));
+            return;
         }
     }
 

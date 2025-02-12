@@ -5,6 +5,7 @@ const path = require("path");
 const config = require("../Config/config.json");
 const functions = require("../utils/functions");
 const xmlParser = require("../utils/xmlParser");
+const log = require("../utils/log");
 const HandleSecureMessage = require("./HandleSecureMessage");
 
 const KEY = fs.readFileSync(path.join(__dirname, "key.pem"));
@@ -12,16 +13,16 @@ const CERT = fs.readFileSync(path.join(__dirname, "cert.pem"));
 
 const PORT = 5222;
 const tcpServer = net.createServer((socket) => {
-    if (config.LogRequests) console.log("\nXMPP client has connected.");
+    if (config.LogRequests) log.xmpp("XMPP client has connected.");
 
     let clientData = {};
 
     socket.on("error", (err) => {
-        console.error(`\nXMPP Socket Error: ${err.message}`);
+        log.error("XMPP", `TCP Socket Error: ${err.message}`);
         socket.destroy();
     });
-    socket.on("end", () => {
-        if (config.LogRequests) console.log('\nXMPP client disconnected.');
+    socket.once("close", () => {
+        if (config.LogRequests) log.xmpp("XMPP client disconnected.");
     });
 
     socket.on("data", async (data) => {
@@ -29,7 +30,7 @@ const tcpServer = net.createServer((socket) => {
 
         data = data.toString().trim().replace(/'>$/, "'/>");
 
-        if (config.LogRequests) console.log(`Received data from XMPP client: ${data}`);
+        if (config.LogRequests) log.xmpp(`Received data from XMPP client: ${data}`);
 
         if (data == "</stream:stream>") {
             clientData.disconnected = true;
@@ -51,7 +52,7 @@ const tcpServer = net.createServer((socket) => {
             case "starttls": {
                 socket.write("<proceed xmlns='urn:ietf:params:xml:ns:xmpp-tls'/>");
 
-                if (config.LogRequests) console.log("Upgrading XMPP connection to TLS...");
+                if (config.LogRequests) log.xmpp("Upgrading XMPP connection to TLS...");
 
                 if (!clientData.secureSocket) {
                     clientData.secureSocket = new tls.TLSSocket(socket, {
@@ -72,11 +73,11 @@ const tcpServer = net.createServer((socket) => {
                 }
 
                 clientData.secureSocket.on("error", (err) => {
-                    console.error(`\nTLS Socket Error: ${err.message}`);
-                    socket.destroy();
+                    log.error("XMPP", `TLS Socket Error: ${err.message}`);
+                    clientData.secureSocket.destroy();
                 });
-                clientData.secureSocket.on("end", () => {
-                    if (config.LogRequests) console.log('\nSecure XMPP client disconnected.');
+                clientData.secureSocket.once("close", () => {
+                    if (config.LogRequests) log.xmpp("Secure XMPP client disconnected.");
                     delete global.xmppClientData;
                 });
 
@@ -88,12 +89,13 @@ const tcpServer = net.createServer((socket) => {
 
 tcpServer.on("error", async (err) => {
     if (err.code == "EADDRINUSE") {
-        console.log(`Port ${PORT} is already in use!\nClosing in 3 seconds...`);
+        log.error("XMPP", `Port ${PORT} is already in use!`);
+        log.error("XMPP", `Closing in 3 seconds...`);
         await functions.sleep(3000);
         process.exit(0);
     } else throw err;
 });
 
 tcpServer.listen(PORT, () => {
-    console.log(`XMPP server now listening on port ${PORT}`);
+    log.xmpp(`XMPP server now listening on port ${PORT}`);
 });

@@ -3,6 +3,7 @@ const app = express();
 const fs = require("fs");
 const config = require("./Config/config.json");
 const functions = require("./utils/functions");
+const log = require("./utils/log");
 const personaManager = require("./services/personaManager");
 const path = require("path");
 
@@ -17,9 +18,9 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-    if (config.LogRequests) console.log(`${req.body ? "\n" : ""}${req.method}`, req.url, req.body ? `${req.body}\n` : "");
-
-    return next();
+    if (config.LogRequests) log.backend(`${req.method} ${req.url} ${req.body}`);
+    
+    next();
 });
 
 for (let fileName of fs.readdirSync(path.join(__dirname, "routes"))) {
@@ -31,7 +32,7 @@ for (let fileName of fs.readdirSync(path.join(__dirname, "routes"))) {
 app.use("/Engine.svc", require("./routes/Main"));
 
 app.listen(PORT, async () => {
-    console.log(`NFS World Offline Server by Lawin started listening on port ${PORT}`);
+    log.backend(`NFS World Offline Server by Lawin started listening on port ${PORT}`);
     console.log(`\nLaunch the game either by:`
               + `\n1) Adding the server to the Soapbox Race World Launcher by the url "http://localhost:${PORT}/Engine.svc".`
               + `\n2) or by using these launch args "nfsw.exe US http://localhost:${PORT}/Engine.svc a 1" (not working, use soapbox launcher).\n`);
@@ -41,7 +42,8 @@ app.listen(PORT, async () => {
     require("./commands");
 }).on("error", async (err) => {
     if (err.code == "EADDRINUSE") {
-        console.log(`Port ${PORT} is already in use!\nClosing in 3 seconds...`);
+        log.error("BACKEND", `Port ${PORT} is already in use!`);
+        log.error("BACKEND", `Closing in 3 seconds...`);
         await functions.sleep(3000);
         process.exit(0);
     } else throw err;

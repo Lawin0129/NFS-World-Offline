@@ -10,7 +10,7 @@ let self = module.exports = {
         const xmppClientData = global.xmppClientData;
         if (!xmppClientData) return functions.createResponse(false, {});
 
-        const useItem = await inventoryManager.useInventoryItemFromActivePersona(itemHash, 1);
+        const useItem = await inventoryManager.useInventoryItem(xmppClientData.personaId, itemHash, "powerup", 1);
 
         if (useItem.success) {
             let powerupMessage = {
@@ -36,7 +36,7 @@ let self = module.exports = {
 
         return functions.createResponse(false, {});
     },
-    purchasePowerup: async (productId) => {
+    purchasePowerup: async (personaId, productId) => {
         let categoryPath = path.join(paths.dataPath, "catalog", "productsInCategory_STORE_POWERUPS.xml");
 
         if (fs.existsSync(categoryPath)) {
@@ -53,7 +53,7 @@ let self = module.exports = {
                     VirtualItemType: ["powerup"]
                 }
 
-                const addItem = await inventoryManager.addInventoryItemToActivePersona(inventoryItemTrans);
+                const addItem = await inventoryManager.addInventoryItem(personaId, inventoryItemTrans);
 
                 if (addItem.success) return functions.createResponse(true, {});
             }

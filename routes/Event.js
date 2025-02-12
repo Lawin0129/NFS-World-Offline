@@ -4,13 +4,18 @@ const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
 const xmlParser = require("../utils/xmlParser");
+const log = require("../utils/log");
 const personaManager = require("../services/personaManager");
+const carManager = require("../services/carManager");
 
 let eventId = "";
 
 // Launch single player event
 app.get("/matchmaking/launchevent/:eventId", compression({ threshold: 0 }), (req, res) => {
     if (eventId.length == 0) eventId = req.params.eventId;
+    else {
+        log.game(`Launching the detected multiplayer/private event (eventId: ${eventId}).`)
+    }
 
     let eventTemplate = {
         SessionInfo: {
@@ -28,7 +33,7 @@ app.get("/matchmaking/launchevent/:eventId", compression({ threshold: 0 }), (req
 app.put("/matchmaking/*/:eventId", compression({ threshold: 0 }), (req, res) => {
     eventId = req.params.eventId;
 
-    console.log(`\nMultiplayer/private event detected (eventId: ${req.params.eventId}), launch any single player event to play this.`);
+    log.game(`Multiplayer/private event detected (eventId: ${eventId}), launch any single player event to play this.`);
 
     res.type("application/xml").status(200).end();
 });
@@ -38,11 +43,13 @@ app.post("/event/bust", compression({ threshold: 0 }), async (req, res) => {
     const activePersona = personaManager.getActivePersona();
     if (!activePersona.success) return res.status(404).send(activePersona.data);
 
-    let carslotsPath = path.join(activePersona.data.driverDirectory, "carslots.xml");
-    let carslots = await xmlParser.parseXML(fs.readFileSync(carslotsPath).toString());
+    const getCarslots = await carManager.getCarslots(activePersona.data.personaId);
+    if (!getCarslots.success) return res.status(404).end();
 
-    let defaultIdx = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
-    let defaultCar = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx];
+    let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
+
+    let defaultIdx = parsedCarslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
+    let defaultCar = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx];
 
     let calculateDurability = Number(defaultCar.Durability[0]) - 5;
     if (calculateDurability < 0) calculateDurability = 0;
@@ -50,7 +57,7 @@ app.post("/event/bust", compression({ threshold: 0 }), async (req, res) => {
     defaultCar.Heat = ["1.0"];
     defaultCar.Durability = [`${calculateDurability}`];
     
-    fs.writeFileSync(carslotsPath, xmlParser.buildXML(carslots));
+    fs.writeFileSync(getCarslots.data.carslotsPath, xmlParser.buildXML(parsedCarslots));
 
     let finishTemplate = {
         PursuitEventResult: {
@@ -73,8 +80,10 @@ app.post("/event/:eventAction", compression({ threshold: 0 }), async (req, res) 
     const activePersona = personaManager.getActivePersona();
     if (!activePersona.success) return res.status(404).send(activePersona.data);
 
-    let carslotsPath = path.join(activePersona.data.driverDirectory, "carslots.xml");
-    let carslots = await xmlParser.parseXML(fs.readFileSync(carslotsPath).toString());
+    const getCarslots = await carManager.getCarslots(activePersona.data.personaId);
+    if (!getCarslots.success) return res.status(404).end();
+
+    let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
 
     let body = await xmlParser.parseXML(req.body);
     let bodyRootName = xmlParser.getRootName(body);
@@ -82,8 +91,8 @@ app.post("/event/:eventAction", compression({ threshold: 0 }), async (req, res) 
 
     let event = `${bodyRootName.split("Arbitration")[0]}`;
 
-    let defaultIdx = carslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
-    let defaultCar = carslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx];
+    let defaultIdx = parsedCarslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
+    let defaultCar = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultIdx];
 
     body = body[bodyRootName];
 
@@ -97,7 +106,7 @@ app.post("/event/:eventAction", compression({ threshold: 0 }), async (req, res) 
 
     defaultCar.Durability = [`${calculateDurability}`];
 
-    fs.writeFileSync(carslotsPath, xmlParser.buildXML(carslots));
+    fs.writeFileSync(getCarslots.data.carslotsPath, xmlParser.buildXML(parsedCarslots));
 
     let finishTemplate = {
         [`${event}EventResult`]: {

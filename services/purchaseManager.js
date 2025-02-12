@@ -41,7 +41,7 @@ let self = module.exports = {
                 }
             }
         } else {
-            await powerupManager.purchasePowerup(productId);
+            await powerupManager.purchasePowerup(personaId, productId);
         }
         
         return functions.createResponse(true, commerceTemplate);

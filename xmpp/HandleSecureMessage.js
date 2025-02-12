@@ -1,5 +1,6 @@
 const config = require("../Config/config.json");
 const xmlParser = require("../utils/xmlParser");
+const log = require("../utils/log");
 const personaManager = require("../services/personaManager");
 
 module.exports = async (clientData, msg) => {
@@ -8,7 +9,7 @@ module.exports = async (clientData, msg) => {
     msg = msg.toString().trim().replace(/'>$/, "'/>");
     if (!msg) return;
 
-    if (config.LogRequests) console.log(`Received data from secure XMPP client: ${msg}`);
+    if (config.LogRequests) log.xmpp(`Received data from secure XMPP client: ${msg}`);
 
     if (msg == "</stream:stream>") {
         clientData.disconnected = true;
@@ -40,7 +41,10 @@ module.exports = async (clientData, msg) => {
             if (!username) break;
             
             const findPersona = personaManager.getActivePersona();
-            if (!findPersona.success) break;
+            if (!findPersona.success) {
+                clientData.secureSocket.destroy();
+                break;
+            }
 
             username = findPersona.data.personaId;
 

@@ -99,7 +99,16 @@ let self = module.exports = {
         
         return functions.createResponse(false, "<EngineError><Message>No active persona</Message></EngineError>");
     },
+    removeActivePersona: () => {
+        global.activeDriver = { driverDirectory: "", driver: "", personaId: "" };
+        global.xmppClientData?.secureSocket?.destroy?.();
+        delete global.xmppClientData;
+
+        return functions.createResponse(true, {});
+    },
     setActivePersona: async (personaId) => {
+        self.removeActivePersona();
+        
         const findPersona = await self.getPersonaById(personaId);
 
         if (findPersona.success) {
@@ -115,11 +124,6 @@ let self = module.exports = {
         }
 
         return functions.createResponse(false, {});
-    },
-    removeActivePersona: () => {
-        global.activeDriver = { driverDirectory: "", driver: "", personaId: "" };
-
-        return functions.createResponse(true, {});
     },
     setMotto: async (personaId, motto) => {
         const findPersona = await self.getPersonaById(personaId);

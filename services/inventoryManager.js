@@ -5,11 +5,11 @@ const xmlParser = require("../utils/xmlParser");
 const personaManager = require("./personaManager");
 
 let self = module.exports = {
-    getInventoryFromActivePersona: () => {
-        const getActivePersona = personaManager.getActivePersona();
+    getInventory: async (personaId) => {
+        const findPersona = await personaManager.getPersonaById(personaId);
 
-        if (getActivePersona.success) {
-            const inventoryPath = path.join(getActivePersona.data.driverDirectory, "objects.xml");
+        if (findPersona.success) {
+            const inventoryPath = path.join(findPersona.data.driverDirectory, "objects.xml");
 
             return functions.createResponse(true, {
                 inventoryData: fs.readFileSync(inventoryPath).toString(),
@@ -19,8 +19,8 @@ let self = module.exports = {
         
         return functions.createResponse(false, {});
     },
-    addInventoryItemToActivePersona: async (inventoryItemTrans) => {
-        const getInventory = self.getInventoryFromActivePersona();
+    addInventoryItem: async (personaId, inventoryItemTrans) => {
+        const getInventory = await self.getInventory(personaId);
 
         if (getInventory.success) {
             let parsedInventory = await xmlParser.parseXML(getInventory.data.inventoryData);
@@ -30,7 +30,7 @@ let self = module.exports = {
             }
 
             let inventoryItems = parsedInventory.InventoryTrans.InventoryItems[0];
-            let findItem = inventoryItems.InventoryItemTrans.find(item => item.Hash[0] == inventoryItemTrans.Hash[0]);
+            let findItem = inventoryItems.InventoryItemTrans.find(item => item.Hash?.[0] == inventoryItemTrans.Hash[0]);
 
             if (findItem) {
                 let newItemQuantity = Number(findItem.RemainingUseCount[0]) + Number(inventoryItemTrans.RemainingUseCount[0]);
@@ -47,8 +47,8 @@ let self = module.exports = {
 
         return functions.createResponse(false, {});
     },
-    useInventoryItemFromActivePersona: async (itemHash, useCount) => {
-        const getInventory = self.getInventoryFromActivePersona();
+    useInventoryItem: async (personaId, itemHash, itemType, useCount) => {
+        const getInventory = await self.getInventory(personaId);
 
         if (getInventory.success) {
             let parsedInventory = await xmlParser.parseXML(getInventory.data.inventoryData);
@@ -58,7 +58,7 @@ let self = module.exports = {
             }
 
             let inventoryItems = parsedInventory.InventoryTrans.InventoryItems[0];
-            let findItem = inventoryItems.InventoryItemTrans.find(item => item.Hash[0] == itemHash);
+            let findItem = inventoryItems.InventoryItemTrans.find(item => (item.Hash?.[0] == itemHash) && (item.VirtualItemType?.[0]?.toLowerCase?.() == itemType.toLowerCase()));
 
             if (findItem) {
                 let newItemQuantity = Number(findItem.RemainingUseCount[0]) - useCount;
