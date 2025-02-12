@@ -3,7 +3,6 @@ const path = require("path");
 const paths = require("../../utils/paths");
 const functions = require("../../utils/functions");
 const xmlParser = require("../../utils/xmlParser");
-const log = require("../../utils/log");
 
 let holidayTypesList = [
     { name: "Normal", activated: ["SCENERY_GROUP_NORMAL"], disactivated: ["SCENERY_GROUP_NORMAL_DISABLE"], activeHolidayIds: ["0"] },
@@ -68,7 +67,7 @@ let self = module.exports = {
         ServerInformation.activatedHolidaySceneryGroups = activated;
         ServerInformation.disactivatedHolidaySceneryGroups = disactivated;
 
-        log.game(`Successfully set to ${holidayType} holiday type. Launch the game and play!`);
+        console.log(`\nSuccessfully set to ${holidayType} holiday type. Launch the game and play!`);
 
         fs.writeFileSync(getusersettingsPath, xmlParser.buildXML(UserSettings));
         fs.writeFileSync(GetServerInformationPath, JSON.stringify(ServerInformation, null, 2));
