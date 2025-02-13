@@ -19,6 +19,7 @@ This program is a server emulator/backend written in Node.js for NFS World which
 * Events:
     + All original events included that once existed in NFS World.
     + Launching single player events.
+        - You can also launch multiplayer-only events as single player. Select your target event and press multiplayer (this saves the event ID into memory). Now launch any single player event and the multiplayer-only event should load.
     + Pursuit heat saves on current car.
     + Pursuit heat resets to 1 if busted.
     + Original Car Durability Loss:
