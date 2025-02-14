@@ -14,7 +14,7 @@ let eventId = "";
 app.get("/matchmaking/launchevent/:eventId", compression({ threshold: 0 }), (req, res) => {
     if (eventId.length == 0) eventId = req.params.eventId;
     else {
-        log.game(`Launching the detected multiplayer/private event (eventId: ${eventId}).`)
+        log.game(`Launching the detected multiplayer event (eventId: ${eventId}).`)
     }
 
     let eventTemplate = {
@@ -29,13 +29,82 @@ app.get("/matchmaking/launchevent/:eventId", compression({ threshold: 0 }), (req
     eventId = "";
 });
 
-// Multiplayer and Private event
-app.put("/matchmaking/*/:eventId", compression({ threshold: 0 }), (req, res) => {
+// Multiplayer event
+app.put("/matchmaking/joinqueueevent/:eventId", compression({ threshold: 0 }), (req, res) => {
     eventId = req.params.eventId;
 
-    log.game(`Multiplayer/private event detected (eventId: ${eventId}), launch any single player event to play this.`);
+    log.game(`Multiplayer event detected (eventId: ${eventId}), launch any single player event to play this.`);
 
     res.type("application/xml").status(200).end();
+});
+
+// Create private lobby
+app.put("/matchmaking/makeprivatelobby/:eventId", compression({ threshold: 0 }), async (req, res) => {
+    const activePersona = personaManager.getActivePersona();
+    if (!activePersona.success) return res.status(404).send(activePersona.data);
+
+    const findPersona = await personaManager.getPersonaById(activePersona.data.personaId);
+    if (!findPersona.success) return res.status(404).end();
+    
+    let makeLobbyTemplate = {
+        LobbyInfo: {
+            Entrants: [{
+                LobbyEntrantInfo: [{
+                    GridIndex: ["0"],
+                    Heat: ["0.0"],
+                    Level: findPersona.data.personaInfo.Level,
+                    PersonaId: findPersona.data.personaInfo.PersonaId,
+                    State: ["InFreeRoam"],
+                    Ready: ["false"]
+                }]
+            }],
+            EventId: [req.params.eventId],
+            IsInviteEnabled: ["true"],
+            LobbyId: ["1"],
+            LobbyInviteId: [req.params.eventId]
+        }
+    }
+
+    res.type("application/xml").send(xmlParser.buildXML(makeLobbyTemplate));
+});
+
+// Accept invite
+app.put("/matchmaking/acceptinvite", compression({ threshold: 0 }), async (req, res) => {
+    const activePersona = personaManager.getActivePersona();
+    if (!activePersona.success) return res.status(404).send(activePersona.data);
+
+    const findPersona = await personaManager.getPersonaById(activePersona.data.personaId);
+    if (!findPersona.success) return res.status(404).end();
+
+    let lobbyEventID = ((typeof req.query.lobbyInviteId) == "string") ? req.query.lobbyInviteId : "";
+
+    let acceptInviteTemplate = {
+        LobbyInfo: {
+            Countdown: [{
+                EventId: [lobbyEventID],
+                IsWaiting: ["false"],
+                LobbyCountdownInMilliseconds: ["60000"],
+                LobbyId: ["1"],
+                LobbyStuckDurationInMilliseconds: ["10000"]
+            }],
+            Entrants: [{
+                LobbyEntrantInfo: [{
+                    GridIndex: ["0"],
+                    Heat: ["0.0"],
+                    Level: findPersona.data.personaInfo.Level,
+                    PersonaId: findPersona.data.personaInfo.PersonaId,
+                    State: ["InLobby"],
+                    Ready: ["false"]
+                }]
+            }],
+            EventId: [lobbyEventID],
+            IsInviteEnabled: ["true"],
+            LobbyId: ["1"],
+            LobbyInviteId: [lobbyEventID]
+        }
+    }
+
+    res.type("application/xml").send(xmlParser.buildXML(acceptInviteTemplate));
 });
 
 // Busted in pursuit
