@@ -1,8 +1,11 @@
 const express = require("express");
 const app = express.Router();
+const config = require("../Config/config.json");
 const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");
+const log = require("../utils/log");
+const sbrwManager = require("../services/sbrwManager");
 
 // Get Soapbox server information
 app.get("/GetServerInformation", (req, res) => {
@@ -16,7 +19,7 @@ app.get("/GetServerInformation", (req, res) => {
 });
 
 // Get Soapbox server mod information
-app.get("/Modding/GetModInfo", (req, res) => {
+app.get("/Modding/GetModInfo", async (req, res) => {
     let host;
     
     if (req.headers["host"]) {
@@ -25,7 +28,21 @@ app.get("/Modding/GetModInfo", (req, res) => {
         host = "localhost:3550"
     }
 
-    res.json({"basePath":`http://${host}/Engine.svc/mods`,"serverID":"LAWIN","features":["[]"]});
+    let modInfo = {
+        basePath: `http://${host}/Engine.svc/mods`,
+        serverID: "LAWIN",
+        features: ["[]"]
+    };
+
+    const getModInfo = await sbrwManager.getModInfo();
+
+    if (getModInfo.success) {
+        modInfo = getModInfo.data;
+    } else {
+        if ((config.LogRequests) && ((typeof getModInfo.data) == "string")) log.error("GETMODINFO", getModInfo.data);
+    }
+
+    res.json(modInfo);
 });
 
 // Get Soapbox server mods

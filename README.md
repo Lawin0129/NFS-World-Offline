@@ -44,16 +44,19 @@ This program is a server emulator/backend written in Node.js for NFS World which
 # Command Line Commands
 - `> help {commandName}` - Outputs a list of commands, `commandName` parameter is optional and can be used to show more information about a specific command.
 - `> holiday` - Sets the current Need for Speed World holiday type. Upon running this command, a list of holidays will be outputted where you can choose one.
+- `> modloader` - Sets which SBRW server mods load when you launch the game on the soapbox launcher. Upon running this command, a list of SBRW servers will be outputted where you can choose one along with the option to disable mods.
+    + ModLoader grabs the latest mod information from the selected SBRW server. By default, no SBRW server is selected and the base game will load upon launch.
+    + This does not create a duplicate of mods which means the mods directory is shared with the selected SBRW server.
+    + If you've played on this selected SBRW server before, the mods should load instantly without having to re-download again.
 # Issues
 * Launching using launch args will not work as it gives "Error Code 7", you will have to use the Soapbox Race World Launcher (do not disable the proxy).
-# How to use this nfs world server emulator?
+# How to use this NFS World Server Emulator
 1) Install [NodeJS](https://nodejs.org/en/).
-2) Download and Extract NFS World Offline to a safe location.
-3) Run "install_packages.bat" to install all the required modules.
-4) Run "start.bat", if there is no errors, it should work.
-5) Add the server to the Soapbox Race World Launcher by the url "http://localhost:3550/Engine.svc".
-6) Select the server, enter any email and password then press login.
-7) Once the game has launched, create your driver and play!
+2) [Download](https://github.com/Lawin0129/NFS-World-Offline/archive/refs/heads/main.zip) and Extract NFS World Offline to a safe location.
+3) Run "start.bat", some required dependencies will be installed if it's your first time running this. Once finished it should say "listening on port 3550".
+4) Add the server to the Soapbox Race World Launcher by the url "http://localhost:3550/Engine.svc".
+5) Select the server, enter any email and password then press login.
+6) Once the game has launched, create your driver and play!
 # Credits
 | Name | Helped with |
 | --------------- | ----------- |
