@@ -43,11 +43,12 @@ This program is a server emulator/backend written in Node.js for NFS World which
 * Treasure Hunt
 # Command Line Commands
 - `> help {commandName}` - Outputs a list of commands, `commandName` parameter is optional and can be used to show more information about a specific command.
-- `> holiday` - Sets the current Need for Speed World holiday type. Upon running this command, a list of holidays will be outputted where you can choose one.
-- `> modloader` - Sets which SBRW server mods load when you launch the game using the soapbox launcher. Upon running this command, a list of SBRW servers will be outputted where you can choose one along with the option to disable mods.
-    + ModLoader grabs the latest mod information from the selected SBRW server. By default, no SBRW server is selected and the base game will load upon launch.
+- `> holiday` - Sets the current Need for Speed World holiday type. Upon running this command, a list of holidays will be displayed where you can choose one.
+- `> modloader` - Sets which SBRW server mods load when you launch the game using Soapbox Launcher. Upon running this command, a list of SBRW servers will be displayed where you can choose one along with the option to disable mods.
+    + ModLoader sets the SBRW server to fetch mod info from. When you launch the game, it fetches the latest mod information from the selected SBRW server. This guarantees the mods are always up-to-date.
+    + By default, no SBRW server is selected and the base game will load upon launch.
     + This does not create a duplicate of mods which means the mods directory is shared with the selected SBRW server.
-    + If you've played on this selected SBRW server before, the mods should load instantly without having to re-download again.
+    + If you've played on this selected SBRW server before, the mods should load instantly without having to re-download.
 # Issues
 * Launching using launch args will not work as it gives "Error Code 7", you will have to use the Soapbox Race World Launcher (do not disable the proxy).
 # How to use this NFS World Server Emulator
