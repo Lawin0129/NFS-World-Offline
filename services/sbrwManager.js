@@ -4,12 +4,21 @@ const paths = require("../utils/paths");
 const functions = require("../utils/functions");
 const axios = require("axios");
 
+let requestHeaders = {
+    "Cache-Control": "no-store,no-cache",
+    "Pragma": "no-cache",
+    "User-Agent": "SBRW Launcher 2.2.2 (+https://github.com/SoapBoxRaceWorld/GameLauncher_NFSW)",
+    "Connection": "Close",
+    "Accept": null,
+    "Accept-Encoding": null
+};
+
 let self = module.exports = {
     getServerList: async () => {
         let serverList = [];
 
         try {
-            serverList = (await axios.get("https://api.worldunited.gg/serverlist.json")).data;
+            serverList = (await axios.get("https://api.worldunited.gg/serverlist.json", { headers: requestHeaders })).data;
         } catch {
             return functions.createResponse(false, "Failed to fetch server list, are you connected to the internet?");
         }
@@ -36,7 +45,7 @@ let self = module.exports = {
             let modInfo;
 
             try {
-                modInfo = (await axios.get(`${selectedServer.ip_address}/Modding/GetModInfo`)).data;
+                modInfo = (await axios.get(`${selectedServer.ip_address}/Modding/GetModInfo`, { headers: requestHeaders })).data;
             } catch {
                 return functions.createResponse(false, "Failed to fetch mod info, are you connected to the internet?");
             }
