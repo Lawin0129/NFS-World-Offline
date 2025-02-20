@@ -7,9 +7,11 @@ const readline = require("readline").createInterface({
 });
 
 console.log("\nFor a list of commands type 'help'");
-readline.setPrompt("\n> ");
+readline.setPrompt("> ");
 
 readline.on('line', async (line) => {
+    global.SuppressLogs = true;
+
     let args = line.trim().split(" ");
     let command = args[0];
 
@@ -23,7 +25,14 @@ readline.on('line', async (line) => {
         console.log("\nInvalid command.");
     }
 
-    readline.prompt();
+    readlinePrompt();
+
+    global.SuppressLogs = false;
 });
 
-readline.prompt();
+readlinePrompt();
+
+function readlinePrompt() {
+    console.log();
+    readline.prompt();
+}

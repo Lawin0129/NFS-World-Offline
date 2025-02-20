@@ -3,7 +3,7 @@ const sbrwManager = require("../../services/sbrwManager");
 
 let self = module.exports = {
     commandInfo: {
-        info: "This command is used to set which SBRW server mods load when you launch the game on the soapbox launcher.",
+        info: "This command is used to set which SBRW server mods load when you launch the game using the soapbox launcher.",
         helpInfo: "Upon running this command, a list of SBRW servers will be outputted where you can choose one.",
         name: "modloader",
     },

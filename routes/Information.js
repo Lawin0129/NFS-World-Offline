@@ -14,7 +14,7 @@ app.get("/GetServerInformation", (req, res) => {
     if (fs.existsSync(serverInformationPath)) {
         res.json(JSON.parse(fs.readFileSync(serverInformationPath).toString()));
     } else {
-        res.json({});
+        res.status(404).end();
     }
 });
 
