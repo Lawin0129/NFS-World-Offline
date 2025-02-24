@@ -22,7 +22,7 @@ let self = module.exports = {
     addInventoryItem: async (personaId, inventoryItemTrans) => {
         const getInventory = await self.getInventory(personaId);
 
-        if (getInventory.success) {
+        if ((getInventory.success) && ((typeof inventoryItemTrans) == "object")) {
             let parsedInventory = await xmlParser.parseXML(getInventory.data.inventoryData);
 
             if (!(parsedInventory.InventoryTrans.InventoryItems?.[0]?.InventoryItemTrans)) {
@@ -49,8 +49,9 @@ let self = module.exports = {
     },
     useInventoryItem: async (personaId, itemHash, itemType, useCount) => {
         const getInventory = await self.getInventory(personaId);
+        let parsedUseCount = parseInt(useCount);
 
-        if (getInventory.success) {
+        if ((getInventory.success) && ((typeof itemHash) == "string") && ((typeof itemType) == "string") && (!isNaN(parsedUseCount))) {
             let parsedInventory = await xmlParser.parseXML(getInventory.data.inventoryData);
 
             if (!(parsedInventory.InventoryTrans.InventoryItems?.[0]?.InventoryItemTrans)) {
@@ -61,7 +62,7 @@ let self = module.exports = {
             let findItem = inventoryItems.InventoryItemTrans.find(item => (item.Hash?.[0] == itemHash) && (item.VirtualItemType?.[0]?.toLowerCase?.() == itemType.toLowerCase()));
 
             if (findItem) {
-                let newItemQuantity = Number(findItem.RemainingUseCount[0]) - useCount;
+                let newItemQuantity = Number(findItem.RemainingUseCount[0]) - parsedUseCount;
 
                 if (newItemQuantity >= 0) {
                     findItem.RemainingUseCount = [`${newItemQuantity}`];

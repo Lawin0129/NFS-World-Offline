@@ -128,18 +128,20 @@ app.post("/event/bust", compression({ threshold: 0 }), async (req, res) => {
     
     fs.writeFileSync(getCarslots.data.carslotsPath, xmlParser.buildXML(parsedCarslots));
 
+    let eventSessionID = ((typeof req.query.eventSessionId) == "string") ? req.query.eventSessionId : "";
+
     let finishTemplate = {
         PursuitEventResult: {
             Accolades: [{ HasLeveledUp: ["false"] }],
             Durability: defaultCar.Durability,
-            EventSessionId: [req.query.eventSessionId],
+            EventSessionId: [eventSessionID],
             ExitPath: ["ExitToFreeroam"],
             InviteLifetimeInMilliseconds: ["0"],
             LobbyInviteId: ["0"],
             PersonaId: [activePersona.data.personaId],
             Heat: defaultCar.Heat
         }
-    }
+    };
 
     res.type("application/xml").send(xmlParser.buildXML(finishTemplate));
 });
@@ -165,7 +167,15 @@ app.post("/event/:eventAction", compression({ threshold: 0 }), async (req, res) 
 
     body = body[bodyRootName];
 
-    if (body.Heat) defaultCar.Heat = [body.Heat[0]];
+    if (body.Heat) {
+        let parsedHeat = parseFloat(body.Heat[0]);
+
+        if (parsedHeat >= 1){
+            if (parsedHeat > 5) parsedHeat = 5;
+
+            defaultCar.Heat = [`${parsedHeat}`];
+        }
+    }
 
     let calculateDurability = Number(defaultCar.Durability[0]);
     if ((event == "Pursuit") || (event == "Route") || (event == "TeamEscape")) calculateDurability -= 5;
@@ -177,11 +187,13 @@ app.post("/event/:eventAction", compression({ threshold: 0 }), async (req, res) 
 
     fs.writeFileSync(getCarslots.data.carslotsPath, xmlParser.buildXML(parsedCarslots));
 
+    let eventSessionID = ((typeof req.query.eventSessionId) == "string") ? req.query.eventSessionId : "";
+
     let finishTemplate = {
         [`${event}EventResult`]: {
             Accolades: [{ HasLeveledUp: ["false"] }],
             Durability: defaultCar.Durability,
-            EventSessionId: [req.query.eventSessionId],
+            EventSessionId: [eventSessionID],
             ExitPath: ["ExitToFreeroam"],
             InviteLifetimeInMilliseconds: ["0"],
             LobbyInviteId: ["0"],
@@ -190,7 +202,7 @@ app.post("/event/:eventAction", compression({ threshold: 0 }), async (req, res) 
             Entrants: [{
                 RouteEntrantResult: [{
                     EventDurationInMilliseconds: body.EventDurationInMilliseconds,
-                    EventSessionId: [req.query.eventSessionId],
+                    EventSessionId: [eventSessionID],
                     FinishReason: body.FinishReason,
                     PersonaId: [activePersona.data.personaId],
                     Ranking: body.Rank,
@@ -199,7 +211,7 @@ app.post("/event/:eventAction", compression({ threshold: 0 }), async (req, res) 
                 }]
             }]
         }
-    }
+    };
 
     res.type("application/xml").send(xmlParser.buildXML(finishTemplate));
 });

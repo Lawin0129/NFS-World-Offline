@@ -7,7 +7,7 @@ const paths = require("../utils/paths");
 const xmlParser = require("../utils/xmlParser");
 const personaManager = require("../services/personaManager");
 
-// Get session info
+// Start session
 app.post("/User/GetPermanentSession", compression({ threshold: 0 }), async (req, res) => {
     personaManager.removeActivePersona();
     
@@ -54,11 +54,9 @@ app.post("/User/SecureLoginPersona", async (req, res) => {
 
 // Log out of driver (game close/changing driver)
 app.post("/User/SecureLogout*", (req, res) => {
-    res.type("application/xml");
-
     personaManager.removeActivePersona();
 
-    res.status(200).end();
+    res.type("application/xml").status(200).end();
 });
 
 module.exports = app;

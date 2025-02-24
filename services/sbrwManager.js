@@ -56,8 +56,12 @@ let self = module.exports = {
         return functions.createResponse(false, {});
     },
     setModInfo: (serverId) => {
-        fs.writeFileSync(path.join(paths.dataPath, "GetModInfo.json"), JSON.stringify({ serverId }, null, 2));
-        
-        return functions.createResponse(true, {});
+        if ((typeof serverId) == "string") {
+            fs.writeFileSync(path.join(paths.dataPath, "GetModInfo.json"), JSON.stringify({ serverId }, null, 2));
+            
+            return functions.createResponse(true, {});
+        }
+
+        return functions.createResponse(false, {});
     }
 }

@@ -1,22 +1,15 @@
 const express = require("express");
 const app = express.Router();
 const compression = require("compression");
-const fs = require("fs");
 const path = require("path");
-const paths = require("../utils/paths");
+const catalogManager = require("../services/catalogManager");
 
 // Get catalog by category name
 app.get("/catalog/*", compression({ threshold: 0 }), (req, res) => {
-    res.type("application/xml");
+    let catalogCategory = `${path.basename(req.path)}_${req.query.categoryName}`;
+    let getCategory = catalogManager.getCategory(catalogCategory);
 
-    let catalogCategory = `${path.basename(req.path)}_${req.query.categoryName?.replace?.(/\.\./ig, "")}.xml`;
-    let categoryPath = path.join(paths.dataPath, "catalog", catalogCategory);
-
-    if (fs.existsSync(categoryPath)) {
-        res.send(fs.readFileSync(categoryPath).toString());
-    } else {
-        res.status(200).send("<ArrayOfProductTrans/>");
-    }
+    res.type("application/xml").send(getCategory.success ? getCategory.data.categoryData : "<ArrayOfProductTrans/>");
 });
 
 module.exports = app;

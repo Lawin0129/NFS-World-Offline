@@ -4,6 +4,13 @@ const paths = require("../utils/paths");
 const functions = require("../utils/functions");
 const xmlParser = require("../utils/xmlParser");
 const inventoryManager = require("../services/inventoryManager");
+let catalogManager;
+
+function initialiseCatalogManager() {
+    catalogManager = require("../services/catalogManager");
+
+    return catalogManager;
+}
 
 let self = module.exports = {
     activatePowerup: async (itemHash) => {
@@ -37,12 +44,11 @@ let self = module.exports = {
         return functions.createResponse(false, {});
     },
     purchasePowerup: async (personaId, productId) => {
-        let categoryPath = path.join(paths.dataPath, "catalog", "productsInCategory_STORE_POWERUPS.xml");
+        let getCategory = (catalogManager ? catalogManager : initialiseCatalogManager()).getCategory("productsInCategory_STORE_POWERUPS");
 
-        if (fs.existsSync(categoryPath)) {
-            const parsedCatalog = await xmlParser.parseXML(fs.readFileSync(categoryPath).toString());
-
-            const findItem = parsedCatalog.ArrayOfProductTrans.ProductTrans.find(item => item.ProductId[0] == productId);
+        if ((getCategory.success) && ((typeof productId) == "string")) {
+            const parsedCatalog = await xmlParser.parseXML(getCategory.data.categoryData);
+            const findItem = parsedCatalog.ArrayOfProductTrans.ProductTrans.find(item => item.ProductId?.[0] == productId);
             
             if (findItem) {
                 let inventoryItemTrans = {

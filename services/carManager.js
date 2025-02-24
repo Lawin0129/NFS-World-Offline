@@ -9,12 +9,11 @@ let self = module.exports = {
         const findPersona = await personaManager.getPersonaById(personaId);
         
         if (findPersona.success) {
-            let carslotsPath = path.join(findPersona.data.driverDirectory, "carslots.xml");
-            let carslots = fs.readFileSync(carslotsPath).toString();
+            const carslotsPath = path.join(findPersona.data.driverDirectory, "carslots.xml");
             
             return functions.createResponse(true, {
-                carslotsPath: carslotsPath,
-                carslotsData: carslots
+                carslotsData: fs.readFileSync(carslotsPath).toString(),
+                carslotsPath: carslotsPath
             });
         }
 
@@ -69,11 +68,11 @@ let self = module.exports = {
     setDefaultCar: async (personaId, carId) => {
         const getCarslots = await self.getCarslots(personaId);
         
-        if (getCarslots.success) {
+        if ((getCarslots.success) && ((typeof carId) == "string")) {
             let carslotsPath = getCarslots.data.carslotsPath;
             let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
             
-            let findCarIndex = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.findIndex(i => (i.Id[0] == carId));
+            let findCarIndex = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.findIndex(car => car.Id?.[0] == carId);
             
             if (findCarIndex >= 0) {
                 parsedCarslots.CarSlotInfoTrans.DefaultOwnedCarIndex = [`${findCarIndex}`];
@@ -104,21 +103,21 @@ let self = module.exports = {
 
         return functions.createResponse(false, {});
     },
-    saveCar: async (personaId, updatedCar) => {
+    saveCar: async (personaId, updatedCustomCar) => {
         const getCarslots = await self.getCarslots(personaId);
         
-        if (getCarslots.success) {
+        if ((getCarslots.success) && ((typeof updatedCustomCar) == "object")) {
             let carslotsPath = getCarslots.data.carslotsPath;
             let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
             
             let defaultCarIndex = parsedCarslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
-            let defaultCar = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex].CustomCar[0];
+            let defaultCustomCar = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex].CustomCar[0];
             
-            defaultCar.Paints = updatedCar.Paints;
-            defaultCar.PerformanceParts = updatedCar.PerformanceParts;
-            defaultCar.SkillModParts = updatedCar.SkillModParts;
-            defaultCar.Vinyls = updatedCar.Vinyls;
-            defaultCar.VisualParts = updatedCar.VisualParts;
+            defaultCustomCar.Paints = updatedCustomCar.Paints;
+            defaultCustomCar.PerformanceParts = updatedCustomCar.PerformanceParts;
+            defaultCustomCar.SkillModParts = updatedCustomCar.SkillModParts;
+            defaultCustomCar.Vinyls = updatedCustomCar.Vinyls;
+            defaultCustomCar.VisualParts = updatedCustomCar.VisualParts;
             
             fs.writeFileSync(carslotsPath, xmlParser.buildXML(parsedCarslots));
             
@@ -130,7 +129,7 @@ let self = module.exports = {
     addCar: async (personaId, ownedCarTrans) => {
         const getCarslots = await self.getCarslots(personaId);
         
-        if (getCarslots.success) {
+        if ((getCarslots.success) && ((typeof ownedCarTrans) == "object")) {
             let carslotsPath = getCarslots.data.carslotsPath;
             let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
             
@@ -144,7 +143,7 @@ let self = module.exports = {
 
             let CarSlotInfoTrans = parsedCarslots.CarSlotInfoTrans;
             
-            if (!(CarSlotInfoTrans.CarsOwnedByPersona?.[0]?.OwnedCarTrans)) {
+            if (!CarSlotInfoTrans.CarsOwnedByPersona?.[0]?.OwnedCarTrans) {
                 CarSlotInfoTrans.CarsOwnedByPersona = [{ OwnedCarTrans: [] }];
             }
             
@@ -162,21 +161,21 @@ let self = module.exports = {
     sellCar: async (personaId, carId) => {
         const getCarslots = await self.getCarslots(personaId);
         
-        if (getCarslots.success) {
+        if ((getCarslots.success) && ((typeof carId) == "string")) {
             let carslotsPath = getCarslots.data.carslotsPath;
             let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
 
             let ownedCars = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0];
             
             if (ownedCars.OwnedCarTrans.length > 1) {
-                let findCarIndex = ownedCars.OwnedCarTrans.findIndex(i => (i.Id[0] == carId));
+                let findCarIndex = ownedCars.OwnedCarTrans.findIndex(car => car.Id?.[0] == carId);
                 
                 if (findCarIndex >= 0) {
                     ownedCars.OwnedCarTrans.splice(findCarIndex, 1);
                     
                     let defaultIdx = parsedCarslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
                     
-                    if (!(ownedCars.OwnedCarTrans[defaultIdx])) {
+                    if (!ownedCars.OwnedCarTrans[defaultIdx]) {
                         defaultIdx = (ownedCars.OwnedCarTrans.length - 1);
 
                         parsedCarslots.CarSlotInfoTrans.DefaultOwnedCarIndex = [`${defaultIdx}`];

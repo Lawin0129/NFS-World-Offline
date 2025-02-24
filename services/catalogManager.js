@@ -3,11 +3,38 @@ const path = require("path");
 const paths = require("../utils/paths");
 const functions = require("../utils/functions");
 const xmlParser = require("../utils/xmlParser");
-const personaManager = require("./personaManager");
 const carManager = require("./carManager");
 const powerupManager = require("../services/powerupManager");
 
 let self = module.exports = {
+    getCategory: (categoryId) => {
+        if ((typeof categoryId) == "string") {
+            const categoryPath = path.join(paths.dataPath, "catalog", `${path.basename(categoryId)}.xml`);
+            
+            if (fs.existsSync(categoryPath)) {
+                return functions.createResponse(true, {
+                    categoryData: fs.readFileSync(categoryPath).toString(),
+                    categoryPath: categoryPath
+                });
+            }
+        }
+        
+        return functions.createResponse(false, {});
+    },
+    getBasketItem: (basketId) => {
+        if ((typeof basketId) == "string") {
+            const basketPath = path.join(paths.dataPath, "basket", `${path.basename(basketId)}.xml`);
+            
+            if (fs.existsSync(basketPath)) {
+                return functions.createResponse(true, {
+                    basketData: fs.readFileSync(basketPath).toString(),
+                    basketPath: basketPath
+                });
+            }
+        }
+        
+        return functions.createResponse(false, {});
+    },
     purchaseItem: async (personaId, productId) => {
         let commerceTemplate = {
             CommerceResultTrans: {
@@ -19,14 +46,14 @@ let self = module.exports = {
                         ResellPrice: ["0"]
                     }]
                 }],
-                Status: ["Success"],
+                Status: ["Success"]
             }
-        }
+        };
         
-        let productPath = path.join(paths.dataPath, "basket", `${path.basename(productId)}.xml`);
+        let getBasketItem = self.getBasketItem(productId);
         
-        if (fs.existsSync(productPath)) {
-            let product = await xmlParser.parseXML(fs.readFileSync(productPath).toString());
+        if (getBasketItem.success) {
+            let product = await xmlParser.parseXML(getBasketItem.data.basketData);
             let productRootName = xmlParser.getRootName(product);
             
             switch (productRootName) {

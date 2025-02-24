@@ -8,7 +8,7 @@ const personaManager = require("../services/personaManager");
 app.post("/DriverPersona/ReserveName", compression({ threshold: 0 }), async (req, res) => {
     const findDriver = await personaManager.getPersonaByName(req.query.name);
 
-    res.type("application/xml").send(((findDriver.success) ? "<ArrayOfString><string>NONE</string></ArrayOfString>" : "<ArrayOfString/>"));
+    res.type("application/xml").send(findDriver.success ? "<ArrayOfString><string>NONE</string></ArrayOfString>" : "<ArrayOfString/>");
 });
 
 // Create driver (persona)

@@ -4,6 +4,8 @@ Need for Speed: World is the 15th game in the Need for Speed franchise and was a
 You can find out more here: [https://nfs.fandom.com/wiki/Need_for_Speed:_World](https://nfs.fandom.com/wiki/Need_for_Speed:_World)
 # About this program
 This program is a server emulator/backend written in Node.js for NFS World which allows you to play it.
+
+Compatible with Node.js v14.0.0 up to the latest version.
 # Features
 * Achievements:
     + All original achievements included that once existed in NFS World.

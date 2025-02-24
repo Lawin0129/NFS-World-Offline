@@ -7,13 +7,12 @@ const paths = require("../utils/paths");
 const xmlParser = require("../utils/xmlParser");
 const personaManager = require("../services/personaManager");
 const carManager = require("../services/carManager");
-const purchaseManager = require("../services/purchaseManager");
+const catalogManager = require("../services/catalogManager");
 const inventoryManager = require("../services/inventoryManager");
 
 // Get Cars from Persona
 app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), async (req, res, next) => {
     let carsType = req.params.carsType;
-
     if (carsType == "objects") return next();
 
     res.type("application/xml");
@@ -114,22 +113,19 @@ app.post("/personas/:personaId/commerce", compression({ threshold: 0 }), async (
 
     let parsedBody = await xmlParser.parseXML(req.body);
     let customCar = parsedBody?.CommerceSessionTrans?.UpdatedCar?.[0]?.CustomCar?.[0];
-
-    if ((typeof customCar) == "object") {
-        const saveCar = await carManager.saveCar(req.params.personaId, customCar);
-        
-        if (saveCar.success) {
-            res.send(xmlParser.buildXML({
-                CommerceSessionResultTrans: {
-                    Status: ["Success"],
-                    UpdatedCar: saveCar.data
-                }
-            }));
-            return;
-        }
-    }
     
-    res.status(404).end();
+    const saveCar = await carManager.saveCar(req.params.personaId, customCar);
+    
+    if (saveCar.success) {
+        res.send(xmlParser.buildXML({
+            CommerceSessionResultTrans: {
+                Status: ["Success"],
+                UpdatedCar: saveCar.data
+            }
+        }));
+    } else {
+        res.status(404).end();
+    }
 });
 
 // Get Inventory from Persona
@@ -154,17 +150,14 @@ app.post("/personas/:personaId/baskets", compression({ threshold: 0 }), async (r
     
     let parsedBody = await xmlParser.parseXML(req.body);
     let ProductId = parsedBody?.BasketTrans?.Items?.[0]?.BasketItemTrans?.[0]?.ProductId?.[0];
-
-    if ((typeof ProductId) == "string") {
-        const purchaseItem = await purchaseManager.purchaseItem(req.params.personaId, ProductId);
-        
-        if (purchaseItem.success) {
-            res.send(xmlParser.buildXML(purchaseItem.data));
-            return;
-        }
+    
+    const purchaseItem = await catalogManager.purchaseItem(req.params.personaId, ProductId);
+    
+    if (purchaseItem.success) {
+        res.send(xmlParser.buildXML(purchaseItem.data));
+    } else {
+        res.status(404).end();
     }
-
-    res.status(404).end();
 });
 
 // Repair Car
@@ -187,22 +180,19 @@ app.post("/DriverPersona/UpdateStatusMessage", compression({ threshold: 0 }), as
     let parsedBody = await xmlParser.parseXML(req.body);
     let targetPersonaId = parsedBody?.PersonaMotto?.personaId?.[0];
     let targetMotto = parsedBody?.PersonaMotto?.message?.[0];
-
-    if (((typeof targetPersonaId) == "string") && ((typeof targetMotto) == "string") && (targetMotto.length <= 60)) {
-        const setMotto = await personaManager.setMotto(targetPersonaId, targetMotto);
-        
-        if (setMotto.success) {
-            res.send(xmlParser.buildXML({
-                PersonaMotto: {
-                    message: targetMotto,
-                    personaId: targetPersonaId
-                }
-            }));
-            return;
-        }
+    
+    const setMotto = await personaManager.setMotto(targetPersonaId, targetMotto);
+    
+    if (setMotto.success) {
+        res.send(xmlParser.buildXML({
+            PersonaMotto: {
+                message: targetMotto,
+                personaId: targetPersonaId
+            }
+        }));
+    } else {
+        res.status(404).end();
     }
-
-    res.status(404).end();
 });
 
 // Get driver information
@@ -214,7 +204,7 @@ app.get("/DriverPersona/GetPersonaInfo", compression({ threshold: 0 }), async (r
     if (findPersona.success) {
         let personaInfo = findPersona.data.personaInfo;
 
-        if (((global.newDriver?.personaId) == req.query.personaId) && (global.newDriver?.numOfReqs < 2)) {
+        if ((global.newDriver?.personaId == req.query.personaId) && (global.newDriver?.numOfReqs < 2)) {
             // enable tutorial for newly created drivers by spoofing level
             if (global.newDriver.numOfReqs == 1) {
                 personaInfo.Level = ["1"];
