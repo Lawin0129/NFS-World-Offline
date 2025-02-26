@@ -4,20 +4,21 @@ const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");
+const functions = require("../utils/functions");
 const xmlParser = require("../utils/xmlParser");
 
 // Get news
 app.get("/LoginAnnouncements", compression({ threshold: 0 }), (req, res, next) => {
-    if (fs.existsSync(path.join(paths.dataPath, "LoginAnnouncements.xml"))) return next();
-
     let acceptedFormats = ["jpg","jpeg","png"];
+
+    let host = functions.getHost(req.headers["host"]);
 
     let newsTemplate = {
         LoginAnnouncementsDefinition: {
             Announcements: [{ LoginAnnouncementDefinition: [] }],
-            ImagesPath: ["http://localhost:3550/Engine.svc/news"]
+            ImagesPath: [`http://${host}/Engine.svc/news`]
         }
-    }
+    };
 
     let id = 1;
 

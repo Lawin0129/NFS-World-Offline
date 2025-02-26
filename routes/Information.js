@@ -4,6 +4,7 @@ const config = require("../Config/config.json");
 const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");
+const functions = require("../utils/functions");
 const log = require("../utils/log");
 const sbrwManager = require("../services/sbrwManager");
 
@@ -20,13 +21,7 @@ app.get("/GetServerInformation", (req, res) => {
 
 // Get Soapbox server mod information
 app.get("/Modding/GetModInfo", async (req, res) => {
-    let host;
-    
-    if (req.headers["host"]) {
-        host = req.headers["host"];
-    } else {
-        host = "localhost:3550"
-    }
+    let host = functions.getHost(req.headers["host"]);
 
     let modInfo = {
         basePath: `http://${host}/Engine.svc/mods`,

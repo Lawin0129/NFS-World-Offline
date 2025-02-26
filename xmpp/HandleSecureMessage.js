@@ -41,10 +41,7 @@ module.exports = async (clientData, msg) => {
             if (!username) break;
             
             const findPersona = personaManager.getActivePersona();
-            if (!findPersona.success) {
-                clientData.secureSocket.destroy();
-                break;
-            }
+            if (!findPersona.success) break;
 
             username = findPersona.data.personaId;
 

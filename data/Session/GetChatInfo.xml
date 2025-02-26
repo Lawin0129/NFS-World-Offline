@@ -51,7 +51,7 @@
 			<shortName>IT</shortName>
 		</chatRoom>
 	</Rooms>
-	<ip>localhost</ip>
+	<ip>127.0.0.1</ip>
 	<port>5222</port>
 	<prefix>nfsw</prefix>
 </chatServer>

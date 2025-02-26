@@ -11,7 +11,6 @@ const HandleSecureMessage = require("./HandleSecureMessage");
 const KEY = fs.readFileSync(path.join(__dirname, "key.pem"));
 const CERT = fs.readFileSync(path.join(__dirname, "cert.pem"));
 
-const PORT = 5222;
 const tcpServer = net.createServer((socket) => {
     if (config.LogRequests) log.xmpp("XMPP client has connected.");
 
@@ -89,13 +88,13 @@ const tcpServer = net.createServer((socket) => {
 
 tcpServer.on("error", async (err) => {
     if (err.code == "EADDRINUSE") {
-        log.error("XMPP", `Port ${PORT} is already in use!`);
+        log.error("XMPP", `Port ${global.xmppPORT} is already in use!`);
         log.error("XMPP", `Closing in 3 seconds...`);
         await functions.sleep(3000);
         process.exit(0);
     } else throw err;
 });
 
-tcpServer.listen(PORT, () => {
-    log.xmpp(`XMPP server now listening on port ${PORT}`);
+tcpServer.listen(global.xmppPORT, () => {
+    log.xmpp(`XMPP server now listening on port ${global.xmppPORT}`);
 });

@@ -7,7 +7,8 @@ const log = require("./utils/log");
 const personaManager = require("./services/personaManager");
 const path = require("path");
 
-const PORT = 3550;
+global.httpPORT = 3550;
+global.xmppPORT = 5222;
 
 personaManager.removeActivePersona();
 
@@ -31,20 +32,22 @@ for (let fileName of fs.readdirSync(path.join(__dirname, "routes"))) {
 
 app.use("/Engine.svc", require("./routes/Main"));
 
-app.listen(PORT, async () => {
-    log.backend(`NFS World Offline Server by Lawin started listening on port ${PORT}`);
-    console.log(`\nLaunch the game either by:`
-              + `\n1) Adding the server to the Soapbox Race World Launcher by the url "http://localhost:${PORT}/Engine.svc".`
-              + `\n2) or by using these launch args "nfsw.exe US http://localhost:${PORT}/Engine.svc a 1" (not working, use soapbox launcher).\n`);
-
-    await require("./xmpp");
-    
-    require("./commands");
-}).on("error", async (err) => {
+app.on("error", async (err) => {
     if (err.code == "EADDRINUSE") {
-        log.error("BACKEND", `Port ${PORT} is already in use!`);
+        log.error("BACKEND", `Port ${global.httpPORT} is already in use!`);
         log.error("BACKEND", `Closing in 3 seconds...`);
         await functions.sleep(3000);
         process.exit(0);
     } else throw err;
+});
+
+app.listen(global.httpPORT, async () => {
+    log.backend(`NFS World Offline Server by Lawin started listening on port ${global.httpPORT}`);
+    console.log(`\nLaunch the game either by:`
+              + `\n1) Adding the server to the Soapbox Race World Launcher by the url "http://127.0.0.1:${global.httpPORT}/Engine.svc".`
+              + `\n2) or by using these launch args "nfsw.exe US http://127.0.0.1:${global.httpPORT}/Engine.svc a 1" (not working, use soapbox launcher).\n`);
+
+    await require("./xmpp");
+    
+    require("./commands");
 });

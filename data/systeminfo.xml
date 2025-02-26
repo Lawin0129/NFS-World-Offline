@@ -7,7 +7,7 @@
 	<EntitlementsToDownload>true</EntitlementsToDownload>
 	<ForcePermanentSession>true</ForcePermanentSession>
 	<JidPrepender>nfsw</JidPrepender>
-	<LauncherServiceUrl>http://localhost</LauncherServiceUrl>
+	<LauncherServiceUrl>http://127.0.0.1</LauncherServiceUrl>
 	<NucleusNamespace>nfsw-live</NucleusNamespace>
 	<NucleusNamespaceWeb>nfs_web</NucleusNamespaceWeb>
 	<PersonaCacheTimeout>900</PersonaCacheTimeout>
