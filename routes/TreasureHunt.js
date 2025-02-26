@@ -1,12 +1,11 @@
 const express = require("express");
 const app = express.Router();
-const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
 const personaManager = require("../services/personaManager");
 
 // Get treasure hunt info from persona
-app.get("/events/gettreasurehunteventsession", compression({ threshold: 0 }), (req, res) => {
+app.get("/events/gettreasurehunteventsession", (req, res) => {
     res.type("application/xml");
 
     const activePersona = personaManager.getActivePersona();

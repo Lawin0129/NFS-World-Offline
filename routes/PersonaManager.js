@@ -1,18 +1,17 @@
 const express = require("express");
 const app = express.Router();
-const compression = require("compression");
 const xmlParser = require("../utils/xmlParser");
 const personaManager = require("../services/personaManager");
 
 // Check if name is available
-app.post("/DriverPersona/ReserveName", compression({ threshold: 0 }), async (req, res) => {
+app.post("/DriverPersona/ReserveName", async (req, res) => {
     const findDriver = await personaManager.getPersonaByName(req.query.name);
 
     res.type("application/xml").send(findDriver.success ? "<ArrayOfString><string>NONE</string></ArrayOfString>" : "<ArrayOfString/>");
 });
 
 // Create driver (persona)
-app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), async (req, res) => {
+app.post("/DriverPersona/CreatePersona", async (req, res) => {
     res.type("application/xml");
 
     const createPersona = await personaManager.createPersona(req.query.name, req.query.iconIndex);
@@ -29,7 +28,7 @@ app.post("/DriverPersona/CreatePersona", compression({ threshold: 0 }), async (r
 });
 
 // Delete driver (persona)
-app.post("/DriverPersona/DeletePersona", compression({ threshold: 0 }), async (req, res) => {
+app.post("/DriverPersona/DeletePersona", async (req, res) => {
     res.type("application/xml");
 
     const deletePersona = await personaManager.deletePersona(req.query.personaId);

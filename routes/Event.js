@@ -1,8 +1,6 @@
 const express = require("express");
 const app = express.Router();
-const compression = require("compression");
 const fs = require("fs");
-const path = require("path");
 const xmlParser = require("../utils/xmlParser");
 const log = require("../utils/log");
 const personaManager = require("../services/personaManager");
@@ -11,7 +9,7 @@ const carManager = require("../services/carManager");
 let eventId = "";
 
 // Launch single player event
-app.get("/matchmaking/launchevent/:eventId", compression({ threshold: 0 }), (req, res) => {
+app.get("/matchmaking/launchevent/:eventId", (req, res) => {
     if (eventId.length == 0) eventId = req.params.eventId;
     else {
         log.game(`Launching the detected multiplayer event (eventId: ${eventId}).`)
@@ -30,7 +28,7 @@ app.get("/matchmaking/launchevent/:eventId", compression({ threshold: 0 }), (req
 });
 
 // Multiplayer event
-app.put("/matchmaking/joinqueueevent/:eventId", compression({ threshold: 0 }), (req, res) => {
+app.put("/matchmaking/joinqueueevent/:eventId", (req, res) => {
     eventId = req.params.eventId;
 
     log.game(`Multiplayer event detected (eventId: ${eventId}), launch any single player event to play this.`);
@@ -39,7 +37,7 @@ app.put("/matchmaking/joinqueueevent/:eventId", compression({ threshold: 0 }), (
 });
 
 // Create private lobby
-app.put("/matchmaking/makeprivatelobby/:eventId", compression({ threshold: 0 }), async (req, res) => {
+app.put("/matchmaking/makeprivatelobby/:eventId", async (req, res) => {
     const activePersona = personaManager.getActivePersona();
     if (!activePersona.success) return res.status(404).send(activePersona.data);
 
@@ -69,7 +67,7 @@ app.put("/matchmaking/makeprivatelobby/:eventId", compression({ threshold: 0 }),
 });
 
 // Accept invite
-app.put("/matchmaking/acceptinvite", compression({ threshold: 0 }), async (req, res) => {
+app.put("/matchmaking/acceptinvite", async (req, res) => {
     const activePersona = personaManager.getActivePersona();
     if (!activePersona.success) return res.status(404).send(activePersona.data);
 
@@ -108,7 +106,7 @@ app.put("/matchmaking/acceptinvite", compression({ threshold: 0 }), async (req, 
 });
 
 // Busted in pursuit
-app.post("/event/bust", compression({ threshold: 0 }), async (req, res) => {
+app.post("/event/bust", async (req, res) => {
     const activePersona = personaManager.getActivePersona();
     if (!activePersona.success) return res.status(404).send(activePersona.data);
 
@@ -147,7 +145,7 @@ app.post("/event/bust", compression({ threshold: 0 }), async (req, res) => {
 });
 
 // Finish event
-app.post("/event/:eventAction", compression({ threshold: 0 }), async (req, res) => {
+app.post("/event/:eventAction", async (req, res) => {
     const activePersona = personaManager.getActivePersona();
     if (!activePersona.success) return res.status(404).send(activePersona.data);
 

@@ -5,10 +5,9 @@ const path = require("path");
 const paths = require("../utils/paths");
 const functions = require("../utils/functions");
 const xmlParser = require("../utils/xmlParser");
-const compression = require("compression");
 
 // Get chat info
-app.get("/Session/GetChatInfo", compression({ threshold: 0 }), async (req, res) => {
+app.get("/Session/GetChatInfo", async (req, res) => {
     let chatInfoPath = path.join(paths.dataPath, `${req.path}.xml`);
     let host = functions.getHost(req.headers["host"]);
 

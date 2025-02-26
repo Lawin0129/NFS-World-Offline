@@ -1,13 +1,12 @@
 const express = require("express");
 const app = express.Router();
-const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");
 const xmlParser = require("../utils/xmlParser");
 
 // Get friends list
-app.get("/getfriendlistfromuserid", compression({ threshold: 0 }), async (req, res, next) => {
+app.get("/getfriendlistfromuserid", async (req, res, next) => {
     if (fs.existsSync(path.join(paths.dataPath, "getfriendlistfromuserid.xml"))) return next();
     
     let friendsTemplate = {

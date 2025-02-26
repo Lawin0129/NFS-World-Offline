@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express.Router();
-const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");
@@ -8,7 +7,7 @@ const xmlParser = require("../utils/xmlParser");
 const personaManager = require("../services/personaManager");
 
 // Start session
-app.post("/User/GetPermanentSession", compression({ threshold: 0 }), async (req, res) => {
+app.post("/User/GetPermanentSession", async (req, res) => {
     personaManager.removeActivePersona();
     
     let DefaultPersonaIdx = await xmlParser.parseXML(fs.readFileSync(path.join(paths.driversPath, "DefaultPersonaIdx.xml")).toString());

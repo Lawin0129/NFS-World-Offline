@@ -3,6 +3,7 @@ const path = require("path");
 const paths = require("../utils/paths");
 const functions = require("../utils/functions");
 const xmlParser = require("../utils/xmlParser");
+const calculateHashFromData = require("../utils/calculateHashFromData");
 const inventoryManager = require("../services/inventoryManager");
 let catalogManager;
 
@@ -35,7 +36,8 @@ let self = module.exports = {
                     ]
                 }
             };
-            
+
+            powerupMessage.message.subject[0] = calculateHashFromData(powerupMessage.message.$.to + powerupMessage.message.body[0]);
             xmppClientData.secureSocket.write(xmlParser.buildXML(powerupMessage));
 
             return functions.createResponse(true, {});

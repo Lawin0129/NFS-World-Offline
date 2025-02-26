@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express.Router();
-const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");
@@ -8,7 +7,7 @@ const functions = require("../utils/functions");
 const xmlParser = require("../utils/xmlParser");
 
 // Get news
-app.get("/LoginAnnouncements", compression({ threshold: 0 }), (req, res, next) => {
+app.get("/LoginAnnouncements", (req, res) => {
     let acceptedFormats = ["jpg","jpeg","png"];
 
     let host = functions.getHost(req.headers["host"]);
@@ -40,7 +39,7 @@ app.get("/LoginAnnouncements", compression({ threshold: 0 }), (req, res, next) =
 });
 
 // Get image from news folder
-app.get("/news/*.*", compression({ threshold: 0 }), (req, res) => {
+app.get("/news/*.*", (req, res) => {
     let filePath = path.join(paths.dataPath, "news", path.basename(req.path));
 
     if (fs.existsSync(filePath)) {

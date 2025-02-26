@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express.Router();
-const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");
@@ -11,7 +10,7 @@ const catalogManager = require("../services/catalogManager");
 const inventoryManager = require("../services/inventoryManager");
 
 // Get Cars from Persona
-app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), async (req, res, next) => {
+app.get("/personas/:personaId/:carsType", async (req, res, next) => {
     let carsType = req.params.carsType;
     if (carsType == "objects") return next();
 
@@ -68,7 +67,7 @@ app.get("/personas/:personaId/:carsType", compression({ threshold: 0 }), async (
 });
 
 // Set Default Car
-app.put("/personas/:personaId/defaultcar/:carId", compression({ threshold: 0 }), async (req, res) => {
+app.put("/personas/:personaId/defaultcar/:carId", async (req, res) => {
     res.type("application/xml");
 
     const setDefaultCar = await carManager.setDefaultCar(req.params.personaId, req.params.carId);
@@ -81,7 +80,7 @@ app.put("/personas/:personaId/defaultcar/:carId", compression({ threshold: 0 }),
 });
 
 // Sell Car
-app.post("/personas/:personaId/cars", compression({ threshold: 0 }), async (req, res) => {
+app.post("/personas/:personaId/cars", async (req, res) => {
     res.type("application/xml");
 
     const sellCar = await carManager.sellCar(req.params.personaId, req.query.serialNumber);
@@ -95,7 +94,7 @@ app.post("/personas/:personaId/cars", compression({ threshold: 0 }), async (req,
 
 // dont even know what this is for, my guess would be initializing the car?
 // from what I know this gets requested when you save car customization changes
-app.put("/personas/:personaId/cars", compression({ threshold: 0 }), async (req, res) => {
+app.put("/personas/:personaId/cars", async (req, res) => {
     res.type("application/xml");
 
     const getDefaultCar = await carManager.getDefaultCar(req.params.personaId);
@@ -108,7 +107,7 @@ app.put("/personas/:personaId/cars", compression({ threshold: 0 }), async (req, 
 });
 
 // Customize Car
-app.post("/personas/:personaId/commerce", compression({ threshold: 0 }), async (req, res) => {
+app.post("/personas/:personaId/commerce", async (req, res) => {
     res.type("application/xml");
 
     let parsedBody = await xmlParser.parseXML(req.body);
@@ -129,7 +128,7 @@ app.post("/personas/:personaId/commerce", compression({ threshold: 0 }), async (
 });
 
 // Get Inventory from Persona
-app.get("/personas/inventory/objects", compression({ threshold: 0 }), async (req, res) => {
+app.get("/personas/inventory/objects", async (req, res) => {
     res.type("application/xml");
 
     const activePersona = personaManager.getActivePersona();
@@ -145,7 +144,7 @@ app.get("/personas/inventory/objects", compression({ threshold: 0 }), async (req
 });
 
 // Purchasing (cars, etc...)
-app.post("/personas/:personaId/baskets", compression({ threshold: 0 }), async (req, res) => {
+app.post("/personas/:personaId/baskets", async (req, res) => {
     res.type("application/xml");
     
     let parsedBody = await xmlParser.parseXML(req.body);
@@ -161,7 +160,7 @@ app.post("/personas/:personaId/baskets", compression({ threshold: 0 }), async (r
 });
 
 // Repair Car
-app.get("/car/repair", compression({ threshold: 0 }), async (req, res) => {
+app.get("/car/repair", async (req, res) => {
     res.type("application/xml");
 
     const repairCar = await carManager.repairDefaultCar(req.query.personaId);
@@ -174,7 +173,7 @@ app.get("/car/repair", compression({ threshold: 0 }), async (req, res) => {
 });
 
 // Edit Motto
-app.post("/DriverPersona/UpdateStatusMessage", compression({ threshold: 0 }), async (req, res) => {
+app.post("/DriverPersona/UpdateStatusMessage", async (req, res) => {
     res.type("application/xml");
     
     let parsedBody = await xmlParser.parseXML(req.body);
@@ -196,7 +195,7 @@ app.post("/DriverPersona/UpdateStatusMessage", compression({ threshold: 0 }), as
 });
 
 // Get driver information
-app.get("/DriverPersona/GetPersonaInfo", compression({ threshold: 0 }), async (req, res) => {
+app.get("/DriverPersona/GetPersonaInfo", async (req, res) => {
     res.type("application/xml");
 
     const findPersona = await personaManager.getPersonaById(req.query.personaId);
@@ -231,7 +230,7 @@ app.get("/DriverPersona/GetPersonaInfo", compression({ threshold: 0 }), async (r
 });
 
 // Get base driver information
-app.post("/DriverPersona/GetPersonaBaseFromList", compression({ threshold: 0 }), async (req, res) => {
+app.post("/DriverPersona/GetPersonaBaseFromList", async (req, res) => {
     res.type("application/xml");
     
     let baseTemplate = {

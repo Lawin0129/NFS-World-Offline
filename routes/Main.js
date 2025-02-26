@@ -1,12 +1,11 @@
 const express = require("express");
 const app = express.Router();
-const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");
 
 // Get xml file from data folder
-app.use(compression({ threshold: 0 }), (req, res) => {
+app.use((req, res) => {
     res.type("application/xml");
 
     let filePath = path.join(paths.dataPath, `${req.path.replace(/\.\./ig, "")}.xml`);

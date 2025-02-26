@@ -51,15 +51,25 @@ Compatible with Node.js v14.0.0 up to the latest version.
     + By default, no SBRW server is selected and the base game will load upon launch.
     + This does not create a duplicate of mods which means the mods directory is shared with the selected SBRW server.
     + If you've played on this selected SBRW server before, the mods should load instantly without having to re-download.
-# Issues
-* Launching using launch args will not work as it gives "Error Code 7", you will have to use the Soapbox Race World Launcher (do not disable the proxy).
 # How to use this NFS World Server Emulator
 1) Install [NodeJS](https://nodejs.org/en/).
-2) [Download](https://github.com/Lawin0129/NFS-World-Offline/archive/refs/heads/main.zip) and Extract NFS World Offline to a safe location.
+2) [Download](https://github.com/Lawin0129/NFS-World-Offline/archive/refs/heads/main.zip) and extract NFS World Offline to a safe location.
 3) Run "start.bat", some required dependencies will be installed if it's your first time running this. Once finished it should say "listening on port 3550".
-4) Add the server to the Soapbox Race World Launcher by the url "http://localhost:3550/Engine.svc".
-5) Select the server, enter any email and password then press login.
-6) Once the game has launched, create your driver and play!
+4) Look below for the "[Launching the Game](https://github.com/Lawin0129/NFS-World-Offline?tab=readme-ov-file#launching-the-game)" section.
+## Launching the Game
+When you have started the server, you can launch the game using one of the following methods:
+
+### Method 1: Using Soapbox Race World Launcher
+1) [Download](https://github.com/SoapboxRaceWorld/GameLauncher_NFSW/releases/latest) and extract the launcher to a safe location.
+2) Run and set up the launcher.
+3) Add the server to the Soapbox Race World Launcher by the url `http://127.0.0.1:3550/Engine.svc`.
+4) Select the server, enter any email and password then press login.
+
+### Method 2: Using Launch Arguments
+1) Open the game client folder and locate the `nfsw.exe` file.
+2) Launch the game by running the following command `nfsw.exe US http://127.0.0.1:3550/Engine.svc a 1`.
+
+Once the game has launched, create your driver and play!
 # Credits
 | Name | Helped with |
 | --------------- | ----------- |

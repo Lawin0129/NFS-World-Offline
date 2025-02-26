@@ -1,13 +1,12 @@
 const express = require("express");
 const app = express.Router();
-const compression = require("compression");
 const fs = require("fs");
 const path = require("path");
 const xmlParser = require("../utils/xmlParser");
 const personaManager = require("../services/personaManager");
 
 // Get achievements from persona
-app.get("/achievements/loadall", compression({ threshold: 0 }), (req, res) => {
+app.get("/achievements/loadall", (req, res) => {
     res.type("application/xml");
 
     const activePersona = personaManager.getActivePersona();
@@ -23,7 +22,7 @@ app.get("/achievements/loadall", compression({ threshold: 0 }), (req, res) => {
 });
 
 // Set achievement badges
-app.put("/badges/set", compression({ threshold: 0 }), async (req, res) => {
+app.put("/badges/set", async (req, res) => {
     res.type("application/xml");
 
     const activePersona = personaManager.getActivePersona();
