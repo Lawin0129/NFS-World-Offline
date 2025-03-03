@@ -8,10 +8,10 @@ const personaManager = require("../services/personaManager");
 app.get("/events/gettreasurehunteventsession", (req, res) => {
     res.type("application/xml");
 
-    const activePersona = personaManager.getActivePersona();
-    if (!activePersona.success) return res.status(404).send(activePersona.data);
+    const getActivePersona = personaManager.getActivePersona();
+    if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
 
-    let treasurehuntPath = path.join(activePersona.data.driverDirectory, "gettreasurehunteventsession.xml");
+    let treasurehuntPath = path.join(getActivePersona.data.driverDirectory, "gettreasurehunteventsession.xml");
 
     if (fs.existsSync(treasurehuntPath)) {
         res.send(fs.readFileSync(treasurehuntPath).toString());

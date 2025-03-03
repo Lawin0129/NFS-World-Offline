@@ -10,7 +10,7 @@ let self = module.exports = {
     execute: async (args, readline) => {
         let getServerList = await sbrwManager.getServerList();
         if (!getServerList.success) {
-            console.log(`\n${getServerList.data}`);
+            console.log(`\n${getServerList.error.reason}`);
             return;
         }
 
@@ -22,7 +22,7 @@ let self = module.exports = {
 
         let optionSelect = await functions.askQuestion("\nEnter a number: ", readline);
         
-        let serverOptionNum = Number.isNaN(Number(optionSelect)) ? -1 : Number(optionSelect);
+        let serverOptionNum = Number.isInteger(parseInt(optionSelect)) ? parseInt(optionSelect) : -1;
         let serverData = getServerList[serverOptionNum];
 
         if ((!serverData) && (serverOptionNum != getServerList.length)) {

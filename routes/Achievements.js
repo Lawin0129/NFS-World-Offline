@@ -9,10 +9,10 @@ const personaManager = require("../services/personaManager");
 app.get("/achievements/loadall", (req, res) => {
     res.type("application/xml");
 
-    const activePersona = personaManager.getActivePersona();
-    if (!activePersona.success) return res.status(404).send(activePersona.data);
+    const getActivePersona = personaManager.getActivePersona();
+    if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
 
-    let achievementsPath = path.join(activePersona.data.driverDirectory, "loadall.xml");
+    let achievementsPath = path.join(getActivePersona.data.driverDirectory, "loadall.xml");
 
     if (fs.existsSync(achievementsPath)) {
         res.send(fs.readFileSync(achievementsPath).toString());
@@ -25,11 +25,11 @@ app.get("/achievements/loadall", (req, res) => {
 app.put("/badges/set", async (req, res) => {
     res.type("application/xml");
 
-    const activePersona = personaManager.getActivePersona();
-    if (!activePersona.success) return res.status(404).send(activePersona.data);
+    const getActivePersona = personaManager.getActivePersona();
+    if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
 
-    let personaInfoPath = path.join(activePersona.data.driverDirectory, "GetPersonaInfo.xml");
-    let achievementsPath = path.join(activePersona.data.driverDirectory, "loadall.xml");
+    let personaInfoPath = path.join(getActivePersona.data.driverDirectory, "GetPersonaInfo.xml");
+    let achievementsPath = path.join(getActivePersona.data.driverDirectory, "loadall.xml");
 
     if (!fs.existsSync(personaInfoPath)) return res.status(404).end();
     if (!fs.existsSync(achievementsPath)) return res.status(404).end();

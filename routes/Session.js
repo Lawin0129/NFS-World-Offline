@@ -25,7 +25,7 @@ app.post("/User/GetPermanentSession", async (req, res) => {
                 userId: ["1"]
             }]
         }
-    }
+    };
 
     const allPersonas = await personaManager.getPersonas();
 
@@ -47,7 +47,7 @@ app.post("/User/SecureLoginPersona", async (req, res) => {
     if (setActivePersona.success) {
         res.status(200).end();
     } else {
-        res.status(404).end();
+        res.status(setActivePersona.error.status).send(setActivePersona.error.reason);
     }
 });
 

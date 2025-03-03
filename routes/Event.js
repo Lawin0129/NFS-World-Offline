@@ -20,7 +20,7 @@ app.get("/matchmaking/launchevent/:eventId", (req, res) => {
             EventId: [eventId],
             SessionId: ["1"]
         }
-    }
+    };
 
     res.type("application/xml").send(xmlParser.buildXML(eventTemplate));
 
@@ -38,11 +38,11 @@ app.put("/matchmaking/joinqueueevent/:eventId", (req, res) => {
 
 // Create private lobby
 app.put("/matchmaking/makeprivatelobby/:eventId", async (req, res) => {
-    const activePersona = personaManager.getActivePersona();
-    if (!activePersona.success) return res.status(404).send(activePersona.data);
+    const getActivePersona = personaManager.getActivePersona();
+    if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
 
-    const findPersona = await personaManager.getPersonaById(activePersona.data.personaId);
-    if (!findPersona.success) return res.status(404).end();
+    const findPersona = await personaManager.getPersonaById(getActivePersona.data.personaId);
+    if (!findPersona.success) return res.status(findPersona.error.status).send(findPersona.error.reason);
     
     let makeLobbyTemplate = {
         LobbyInfo: {
@@ -61,18 +61,18 @@ app.put("/matchmaking/makeprivatelobby/:eventId", async (req, res) => {
             LobbyId: ["1"],
             LobbyInviteId: [req.params.eventId]
         }
-    }
+    };
 
     res.type("application/xml").send(xmlParser.buildXML(makeLobbyTemplate));
 });
 
 // Accept invite
 app.put("/matchmaking/acceptinvite", async (req, res) => {
-    const activePersona = personaManager.getActivePersona();
-    if (!activePersona.success) return res.status(404).send(activePersona.data);
+    const getActivePersona = personaManager.getActivePersona();
+    if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
 
-    const findPersona = await personaManager.getPersonaById(activePersona.data.personaId);
-    if (!findPersona.success) return res.status(404).end();
+    const findPersona = await personaManager.getPersonaById(getActivePersona.data.personaId);
+    if (!findPersona.success) return res.status(findPersona.error.status).send(findPersona.error.reason);
 
     let lobbyEventID = ((typeof req.query.lobbyInviteId) == "string") ? req.query.lobbyInviteId : "";
 
@@ -96,22 +96,22 @@ app.put("/matchmaking/acceptinvite", async (req, res) => {
                 }]
             }],
             EventId: [lobbyEventID],
-            IsInviteEnabled: ["true"],
+            IsInviteEnabled: ["false"],
             LobbyId: ["1"],
             LobbyInviteId: [lobbyEventID]
         }
-    }
+    };
 
     res.type("application/xml").send(xmlParser.buildXML(acceptInviteTemplate));
 });
 
 // Busted in pursuit
 app.post("/event/bust", async (req, res) => {
-    const activePersona = personaManager.getActivePersona();
-    if (!activePersona.success) return res.status(404).send(activePersona.data);
+    const getActivePersona = personaManager.getActivePersona();
+    if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
 
-    const getCarslots = await carManager.getCarslots(activePersona.data.personaId);
-    if (!getCarslots.success) return res.status(404).end();
+    const getCarslots = await carManager.getCarslots(getActivePersona.data.personaId);
+    if (!getCarslots.success) return res.status(getCarslots.error.status).send(getCarslots.error.reason);
 
     let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
 
@@ -136,7 +136,7 @@ app.post("/event/bust", async (req, res) => {
             ExitPath: ["ExitToFreeroam"],
             InviteLifetimeInMilliseconds: ["0"],
             LobbyInviteId: ["0"],
-            PersonaId: [activePersona.data.personaId],
+            PersonaId: [getActivePersona.data.personaId],
             Heat: defaultCar.Heat
         }
     };
@@ -146,11 +146,11 @@ app.post("/event/bust", async (req, res) => {
 
 // Finish event
 app.post("/event/:eventAction", async (req, res) => {
-    const activePersona = personaManager.getActivePersona();
-    if (!activePersona.success) return res.status(404).send(activePersona.data);
+    const getActivePersona = personaManager.getActivePersona();
+    if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
 
-    const getCarslots = await carManager.getCarslots(activePersona.data.personaId);
-    if (!getCarslots.success) return res.status(404).end();
+    const getCarslots = await carManager.getCarslots(getActivePersona.data.personaId);
+    if (!getCarslots.success) return res.status(getCarslots.error.status).send(getCarslots.error.reason);
 
     let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
 
@@ -195,14 +195,14 @@ app.post("/event/:eventAction", async (req, res) => {
             ExitPath: ["ExitToFreeroam"],
             InviteLifetimeInMilliseconds: ["0"],
             LobbyInviteId: ["0"],
-            PersonaId: [activePersona.data.personaId],
+            PersonaId: [getActivePersona.data.personaId],
             Heat: defaultCar.Heat,
             Entrants: [{
                 RouteEntrantResult: [{
                     EventDurationInMilliseconds: body.EventDurationInMilliseconds,
                     EventSessionId: [eventSessionID],
                     FinishReason: body.FinishReason,
-                    PersonaId: [activePersona.data.personaId],
+                    PersonaId: [getActivePersona.data.personaId],
                     Ranking: body.Rank,
                     BestLapDurationInMilliseconds: body.BestLapDurationInMilliseconds,
                     TopSpeed: body.TopSpeed

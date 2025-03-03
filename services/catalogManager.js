@@ -1,39 +1,34 @@
 const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");
-const functions = require("../utils/functions");
+const response = require("../utils/response");
+const error = require("../utils/error");
 const xmlParser = require("../utils/xmlParser");
 const carManager = require("./carManager");
 const powerupManager = require("../services/powerupManager");
 
 let self = module.exports = {
     getCategory: (categoryId) => {
-        if ((typeof categoryId) == "string") {
-            const categoryPath = path.join(paths.dataPath, "catalog", `${path.basename(categoryId)}.xml`);
-            
-            if (fs.existsSync(categoryPath)) {
-                return functions.createResponse(true, {
-                    categoryData: fs.readFileSync(categoryPath).toString(),
-                    categoryPath: categoryPath
-                });
-            }
-        }
+        if ((typeof categoryId) != "string") return error.invalidParameters();
         
-        return functions.createResponse(false, {});
+        const categoryPath = path.join(paths.dataPath, "catalog", `${path.basename(categoryId)}.xml`);
+        if (!fs.existsSync(categoryPath)) return error.catalogNotFound();
+        
+        return response.createSuccess({
+            categoryData: fs.readFileSync(categoryPath).toString(),
+            categoryPath: categoryPath
+        });
     },
     getBasketItem: (basketId) => {
-        if ((typeof basketId) == "string") {
-            const basketPath = path.join(paths.dataPath, "basket", `${path.basename(basketId)}.xml`);
-            
-            if (fs.existsSync(basketPath)) {
-                return functions.createResponse(true, {
-                    basketData: fs.readFileSync(basketPath).toString(),
-                    basketPath: basketPath
-                });
-            }
-        }
+        if ((typeof basketId) != "string") return error.invalidParameters();
         
-        return functions.createResponse(false, {});
+        const basketPath = path.join(paths.dataPath, "basket", `${path.basename(basketId)}.xml`);
+        if (!fs.existsSync(basketPath)) return error.basketItemNotFound();
+        
+        return response.createSuccess({
+            basketData: fs.readFileSync(basketPath).toString(),
+            basketPath: basketPath
+        });
     },
     purchaseItem: async (personaId, productId) => {
         let commerceTemplate = {
@@ -71,6 +66,6 @@ let self = module.exports = {
             await powerupManager.purchasePowerup(personaId, productId);
         }
         
-        return functions.createResponse(true, commerceTemplate);
+        return response.createSuccess(commerceTemplate);
     }
 }

@@ -23,7 +23,7 @@ app.post("/DriverPersona/CreatePersona", async (req, res) => {
 
         res.send(xmlParser.buildXML(createPersona.data));
     } else {
-        res.status(403).end();
+        res.status(createPersona.error.status).send(createPersona.error.reason);
     }
 });
 
@@ -36,7 +36,7 @@ app.post("/DriverPersona/DeletePersona", async (req, res) => {
     if (deletePersona.success) {
         res.send("<long>0</long>");
     } else {
-        res.status(403).end();
+        res.status(deletePersona.error.status).send(deletePersona.error.reason);
     }
 });
 

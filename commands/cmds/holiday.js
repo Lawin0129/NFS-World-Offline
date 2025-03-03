@@ -26,7 +26,7 @@ let self = module.exports = {
 
         let optionSelect = await functions.askQuestion("\nEnter a number: ", readline);
         
-        let holidayOptionNum = Number.isNaN(Number(optionSelect)) ? -1 : Number(optionSelect);
+        let holidayOptionNum = Number.isInteger(parseInt(optionSelect)) ? parseInt(optionSelect) : -1;
         let holidayData = holidayTypesList[holidayOptionNum];
 
         if ((!holidayData) && (holidayOptionNum != holidayTypesList.length)) {

@@ -29,10 +29,23 @@ app.get("/personas/:personaId/:carsType", async (req, res, next) => {
         }
 
         case "cars": {
-            const getCars = await carManager.getCars(req.params.personaId);
+            const getCarslots = await carManager.getCarslots(req.params.personaId);
+            
+            if (getCarslots.success) {
+                let carsTemplate = {
+                    ArrayOfOwnedCarTrans: {
+                        OwnedCarTrans: []
+                    }
+                };
+                
+                let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
+                let carsOwnedByPersona = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona;
+                
+                if (carsOwnedByPersona?.[0]?.OwnedCarTrans) {
+                    carsTemplate.ArrayOfOwnedCarTrans = carsOwnedByPersona[0];
+                }
 
-            if (getCars.success) {
-                res.send(xmlParser.buildXML(getCars.data));
+                res.send(xmlParser.buildXML(carsTemplate));
                 return;
             }
 
@@ -72,11 +85,7 @@ app.put("/personas/:personaId/defaultcar/:carId", async (req, res) => {
 
     const setDefaultCar = await carManager.setDefaultCar(req.params.personaId, req.params.carId);
 
-    if (setDefaultCar.success) {
-        res.status(200).end();
-    } else {
-        res.status(404).end();
-    }
+    res.status(setDefaultCar.success ? 200 : setDefaultCar.error.status).end();
 });
 
 // Sell Car
@@ -102,7 +111,7 @@ app.put("/personas/:personaId/cars", async (req, res) => {
     if (getDefaultCar.success) {
         res.send(xmlParser.buildXML(getDefaultCar.data));
     } else {
-        res.status(404).end();
+        res.status(getDefaultCar.error.status).send(getDefaultCar.error.reason);
     }
 });
 
@@ -123,7 +132,7 @@ app.post("/personas/:personaId/commerce", async (req, res) => {
             }
         }));
     } else {
-        res.status(404).end();
+        res.status(saveCar.error.status).send(saveCar.error.reason);
     }
 });
 
@@ -131,15 +140,15 @@ app.post("/personas/:personaId/commerce", async (req, res) => {
 app.get("/personas/inventory/objects", async (req, res) => {
     res.type("application/xml");
 
-    const activePersona = personaManager.getActivePersona();
-    if (!activePersona.success) return res.status(404).send(activePersona.data);
+    const getActivePersona = personaManager.getActivePersona();
+    if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
 
-    const getInventory = await inventoryManager.getInventory(activePersona.data.personaId);
+    const getInventory = await inventoryManager.getInventory(getActivePersona.data.personaId);
 
     if (getInventory.success) {
         res.send(getInventory.data.inventoryData);
     } else {
-        res.status(404).end();
+        res.status(getInventory.error.status).send(getInventory.error.reason);
     }
 });
 
@@ -168,7 +177,7 @@ app.get("/car/repair", async (req, res) => {
     if (repairCar.success) {
         res.send("<int>100</int>");
     } else {
-        res.status(404).end();
+        res.status(repairCar.error.status).send(repairCar.error.reason);
     }
 });
 
@@ -190,7 +199,7 @@ app.post("/DriverPersona/UpdateStatusMessage", async (req, res) => {
             }
         }));
     } else {
-        res.status(404).end();
+        res.status(setMotto.error.status).send(setMotto.error.reason);
     }
 });
 
@@ -226,7 +235,7 @@ app.get("/DriverPersona/GetPersonaInfo", async (req, res) => {
         }
     }
 
-    res.status(404).end();
+    res.status(findPersona.error.status).send(findPersona.error.reason);
 });
 
 // Get base driver information
@@ -237,7 +246,7 @@ app.post("/DriverPersona/GetPersonaBaseFromList", async (req, res) => {
         ArrayOfPersonaBase: {
             PersonaBase: []
         }
-    }
+    };
 
     let parsedBody = await xmlParser.parseXML(req.body);
     let personaIds = parsedBody?.PersonaIdArray?.PersonaIds?.[0]?.["array:long"]?.filter?.(i => ((typeof i) == "string"));

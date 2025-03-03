@@ -16,6 +16,10 @@ function between(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+function MakeID() {
+    return `${between(100000000, 999999999)}`;
+}
+
 function getHost(hostHeader) {
     let host = `127.0.0.1:${global.httpPORT}`;
 
@@ -26,22 +30,10 @@ function getHost(hostHeader) {
     return host;
 }
 
-function MakeID() {
-    return `${between(100000000, 999999999)}`;
-}
-
-function createResponse(success, data) {
-    return {
-        success,
-        data
-    }
-}
-
 module.exports = {
     sleep,
     askQuestion,
     between,
-    getHost,
     MakeID,
-    createResponse
+    getHost
 }

@@ -34,7 +34,7 @@ app.get("/Modding/GetModInfo", async (req, res) => {
     if (getModInfo.success) {
         modInfo = getModInfo.data;
     } else {
-        if ((config.LogRequests) && ((typeof getModInfo.data) == "string")) log.error("GETMODINFO", getModInfo.data);
+        if (config.LogRequests && getModInfo.error.reason) log.error("GETMODINFO", getModInfo.error.reason);
     }
 
     res.json(modInfo);
@@ -43,8 +43,8 @@ app.get("/Modding/GetModInfo", async (req, res) => {
 // Get Soapbox server mods
 app.get("/mods/index.json", (req, res) => {
     res.json({
-        "built_at": new Date().toISOString(),
-        "entries": []
+        built_at: new Date().toISOString(),
+        entries: []
     });
 });
 
