@@ -55,7 +55,7 @@ Compatible with Node.js v14.0.0 up to the latest version.
 1) Install [NodeJS](https://nodejs.org/en/).
 2) [Download](https://github.com/Lawin0129/NFS-World-Offline/archive/refs/heads/main.zip) and extract NFS World Offline to a safe location.
 3) Run "start.bat", some required dependencies will be installed if it's your first time running this. Once finished it should say "listening on port 3550".
-4) Look below for the "[Launching the Game](https://github.com/Lawin0129/NFS-World-Offline?tab=readme-ov-file#launching-the-game)" section.
+4) Look below for the "[Launching the Game](#launching-the-game)" section.
 ## Launching the Game
 When you have started the server, you can launch the game using one of the following methods:
 
