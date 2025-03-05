@@ -40,7 +40,7 @@ app.put("/badges/set", async (req, res) => {
 
     let badgesTemplate = {
         Badges: [{ BadgePacket: [] }]
-    }
+    };
 
     let badgeInputs = parsedBody?.BadgeBundle?.Badges?.[0]?.BadgeInput;
     if (!Array.isArray(badgeInputs)) return res.status(403).end();
