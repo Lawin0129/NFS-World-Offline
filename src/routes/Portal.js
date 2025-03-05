@@ -6,7 +6,7 @@ const paths = require("../utils/paths");
 
 // Game guide
 app.get("/webkit/guide", (req, res) => {
-    res.type("html")
+    res.type("html");
 
     let gameGuidePath = path.join(paths.dataPath, "gameguide", "index.html");
 

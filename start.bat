@@ -22,5 +22,5 @@ title NFS World Offline by Lawin
 endlocal
 @echo on
 
-node index.js
+node src/index.js
 pause
