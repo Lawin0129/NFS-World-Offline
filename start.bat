@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-set dependencies=express xml2js compression axios
+set dependencies=express xml2js compression
 set installNeeded=0
 
 for %%d in (%dependencies%) do (
