@@ -1,8 +1,5 @@
 const express = require("express");
 const app = express.Router();
-const fs = require("fs");
-const path = require("path");
-const paths = require("../utils/paths");
 const xmlParser = require("../utils/xmlParser");
 const personaManager = require("../services/personaManager");
 
@@ -10,11 +7,11 @@ const personaManager = require("../services/personaManager");
 app.post("/User/GetPermanentSession", async (req, res) => {
     personaManager.removeActivePersona();
     
-    let DefaultPersonaIdx = await xmlParser.parseXML(fs.readFileSync(path.join(paths.driversPath, "DefaultPersonaIdx.xml")).toString());
+    let DefaultPersonaIdx = (await personaManager.getDefaultPersonaIdx()).data;
 
     let SessionTemplate = {
         UserInfo: {
-            defaultPersonaIdx: DefaultPersonaIdx.UserInfo.defaultPersonaIdx,
+            defaultPersonaIdx: [DefaultPersonaIdx ? DefaultPersonaIdx : "0"],
             personas: [{ ProfileData: [] }],
             user: [{
                 fullGameAccess: ["false"],

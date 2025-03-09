@@ -3,7 +3,31 @@ const error = require("../utils/error");
 const xmlParser = require("../utils/xmlParser");
 const calculateHashFromData = require("../utils/calculateHashFromData");
 
-module.exports = {
+let activeXmppClientData = {};
+
+let self = module.exports = {
+    getActiveXmppClientData: () => {
+        if (!activeXmppClientData.secureSocket) return error.noActiveXmppClient();
+
+        return response.createSuccess(activeXmppClientData);
+    },
+    removeActiveXmppClientData: (shouldDestroy) => {
+        if (shouldDestroy) activeXmppClientData.secureSocket?.destroy?.();
+        activeXmppClientData = {};
+
+        return response.createSuccess();
+    },
+    setActiveXmppClientData: (personaId, secureSocket) => {
+        if ((typeof personaId) != "string") return error.invalidParameters();
+        if ((typeof secureSocket?.write) != "function") return error.invalidParameters();
+
+        self.removeActiveXmppClientData(true);
+
+        activeXmppClientData.personaId = personaId;
+        activeXmppClientData.secureSocket = secureSocket;
+
+        return response.createSuccess();
+    },
     sendMessage: (xmppClientData, body) => {
         if ((typeof xmppClientData) != "object") return error.invalidParameters();
         if ((typeof body) != "string") return error.invalidParameters();
@@ -16,7 +40,7 @@ module.exports = {
                     to: `nfsw.${xmppClientData.personaId}@localhost`
                 },
                 body: [body],
-                subject: ["LAWIN"]
+                subject: []
             }
         };
         

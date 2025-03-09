@@ -5,6 +5,7 @@ const path = require("path");
 const paths = require("../utils/paths");
 const functions = require("../utils/functions");
 const xmlParser = require("../utils/xmlParser");
+const config = require("../../Config/config.json");
 
 // Get chat info
 app.get("/Session/GetChatInfo", async (req, res) => {
@@ -17,7 +18,7 @@ app.get("/Session/GetChatInfo", async (req, res) => {
 
         if ((chatInfo.ip[0] == "127.0.0.1") || (chatInfo.ip[0] == "localhost")) {
             chatInfo.ip[0] = host.split(":")[0];
-            chatInfo.port[0] = `${global.xmppPORT}`;
+            chatInfo.port[0] = `${config.xmppPORT}`;
         }
 
         res.type("application/xml").send(xmlParser.buildXML(parsedChatInfo));

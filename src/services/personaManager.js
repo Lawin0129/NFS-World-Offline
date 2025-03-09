@@ -4,6 +4,7 @@ const paths = require("../utils/paths");
 const xmlParser = require("../utils/xmlParser");
 const response = require("../utils/response");
 const error = require("../utils/error");
+const xmppManager = require("../services/xmppManager");
 
 let personaFiles = [
     "GetPersonaInfo.xml",
@@ -12,6 +13,8 @@ let personaFiles = [
     "loadall.xml",
     "objects.xml"
 ];
+
+let activePersona = { driverDirectory: "", driver: "", personaId: "" };
 
 let self = module.exports = {
     getPersonas: async (personaIds) => {
@@ -88,17 +91,10 @@ let self = module.exports = {
         
         return error.personaNotFound();
     },
-    getActivePersona: () => {
-        if (global.activeDriver.driver.length == 0) return error.noActivePersona();
-        
-        return response.createSuccess(global.activeDriver);
-    },
-    removeActivePersona: () => {
-        global.activeDriver = { driverDirectory: "", driver: "", personaId: "" };
-        global.xmppClientData?.secureSocket?.destroy?.();
-        delete global.xmppClientData;
+    getDefaultPersonaIdx: async () => {
+        const parsedDefaultIdx = await xmlParser.parseXML(fs.readFileSync(path.join(paths.driversPath, "DefaultPersonaIdx.xml")).toString());
 
-        return response.createSuccess();
+        return response.createSuccess(parsedDefaultIdx?.UserInfo?.defaultPersonaIdx?.[0]);
     },
     setDefaultPersonaIdx: (personaIdx) => {
         let parsedPersonaIdx = parseInt(personaIdx);
@@ -108,13 +104,24 @@ let self = module.exports = {
 
         return response.createSuccess();
     },
+    getActivePersona: () => {
+        if (activePersona.driver.length == 0) return error.noActivePersona();
+        
+        return response.createSuccess(activePersona);
+    },
+    removeActivePersona: () => {
+        activePersona = { driverDirectory: "", driver: "", personaId: "" };
+        xmppManager.removeActiveXmppClientData(true);
+
+        return response.createSuccess();
+    },
     setActivePersona: async (personaId) => {
         self.removeActivePersona();
         
         const findPersona = await self.getPersonaById(personaId);
         if (!findPersona.success) return error.personaNotFound();
         
-        global.activeDriver = {
+        activePersona = {
             driverDirectory: findPersona.data.driverDirectory,
             driver: path.basename(findPersona.data.driverDirectory),
             personaId: findPersona.data.personaId

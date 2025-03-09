@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");
+const log = require("../utils/log");
 const readline = require("readline").createInterface({
     input: process.stdin,
     output: process.stdout
@@ -10,7 +11,7 @@ console.log("\nFor a list of commands type 'help'");
 readline.setPrompt("> ");
 
 readline.on('line', async (line) => {
-    global.SuppressLogs = true;
+    log.setSuppressLogs(true);
 
     let args = line.trim().split(" ");
     let command = args[0];
@@ -27,7 +28,7 @@ readline.on('line', async (line) => {
 
     readlinePrompt();
 
-    global.SuppressLogs = false;
+    log.setSuppressLogs(false);
 });
 
 readlinePrompt();

@@ -2,6 +2,7 @@ const config = require("../../Config/config.json");
 const xmlParser = require("../utils/xmlParser");
 const log = require("../utils/log");
 const personaManager = require("../services/personaManager");
+const xmppManager = require("../services/xmppManager");
 
 module.exports = async (clientData, msg) => {
     if (clientData.disconnected) return;
@@ -13,7 +14,7 @@ module.exports = async (clientData, msg) => {
 
     if (msg == "</stream:stream>") {
         clientData.disconnected = true;
-        delete global.xmppClientData;
+        xmppManager.removeActiveXmppClientData(false);
         clientData.secureSocket.write("</stream:stream>");
         return;
     }
@@ -55,7 +56,7 @@ module.exports = async (clientData, msg) => {
                     clientData.secureSocket.write(`<iq id='${iqId}' type='result' xml:lang='en'/>`);
                     
                     clientData.personaId = username;
-                    global.xmppClientData = clientData;
+                    xmppManager.setActiveXmppClientData(username, clientData.secureSocket);
                     break;
                 }
             }

@@ -15,13 +15,13 @@ let self = module.exports = {
     activatePowerup: async (itemHash) => {
         if ((typeof itemHash) != "string") return error.invalidParameters();
         
-        const xmppClientData = global.xmppClientData;
-        if (!xmppClientData) return error.noActiveXmppClient();
+        const getActiveXmppClientData = xmppManager.getActiveXmppClientData();
+        if (!getActiveXmppClientData.success) return getActiveXmppClientData;
 
-        const useItem = await inventoryManager.useInventoryItem(xmppClientData.personaId, itemHash, "powerup", 1);
+        const useItem = await inventoryManager.useInventoryItem(getActiveXmppClientData.data.personaId, itemHash, "powerup", 1);
         if (!useItem.success) return useItem;
         
-        xmppManager.sendMessage(xmppClientData, xmlParser.buildXML({
+        xmppManager.sendMessage(getActiveXmppClientData.data, xmlParser.buildXML({
             response: {
                 $: {
                     status: "1",
@@ -34,7 +34,7 @@ let self = module.exports = {
                     },
                     Count: ["1"],
                     Id: [itemHash],
-                    PersonaId: [xmppClientData.personaId],
+                    PersonaId: [getActiveXmppClientData.data.personaId],
                     TargetPersonaId: ["0"]
                 }]
             }

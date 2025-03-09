@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express.Router();
+const sharedState = require("../utils/sharedState");
 const xmlParser = require("../utils/xmlParser");
 const personaManager = require("../services/personaManager");
 
@@ -19,7 +20,7 @@ app.post("/DriverPersona/CreatePersona", async (req, res) => {
     if (createPersona.success) {
         // enable tutorial for newly created drivers by spoofing level
         createPersona.data.ProfileData.Level = ["1"];
-        global.newDriver = { personaId: createPersona.data.ProfileData.PersonaId[0], numOfReqs: 0 };
+        sharedState.data.newDriver = { personaId: createPersona.data.ProfileData.PersonaId[0], numOfReqs: 0 };
 
         res.send(xmlParser.buildXML(createPersona.data));
     } else {

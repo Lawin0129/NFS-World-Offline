@@ -6,6 +6,7 @@ const config = require("../../Config/config.json");
 const functions = require("../utils/functions");
 const xmlParser = require("../utils/xmlParser");
 const log = require("../utils/log");
+const xmppManager = require("../services/xmppManager");
 const HandleSecureMessage = require("./HandleSecureMessage");
 
 const KEY = fs.readFileSync(path.join(__dirname, "key.pem"));
@@ -33,7 +34,7 @@ const tcpServer = net.createServer((socket) => {
 
         if (data == "</stream:stream>") {
             clientData.disconnected = true;
-            delete global.xmppClientData;
+            xmppManager.removeActiveXmppClientData(false);
             socket.write("</stream:stream>");
             return;
         }
@@ -77,7 +78,7 @@ const tcpServer = net.createServer((socket) => {
                 });
                 clientData.secureSocket.once("close", () => {
                     if (config.LogRequests) log.xmpp("Secure XMPP client disconnected.");
-                    delete global.xmppClientData;
+                    xmppManager.removeActiveXmppClientData(false);
                 });
 
                 clientData.secureSocket.on("data", (msg) => HandleSecureMessage(clientData, msg));
@@ -88,13 +89,13 @@ const tcpServer = net.createServer((socket) => {
 
 tcpServer.on("error", async (err) => {
     if (err.code == "EADDRINUSE") {
-        log.error("XMPP", `Port ${global.xmppPORT} is already in use!`);
+        log.error("XMPP", `Port ${config.xmppPORT} is already in use!`);
         log.error("XMPP", `Closing in 3 seconds...`);
         await functions.sleep(3000);
         process.exit(0);
     } else throw err;
 });
 
-tcpServer.listen(global.xmppPORT, () => {
-    log.xmpp(`XMPP server now listening on port ${global.xmppPORT}`);
+tcpServer.listen(config.xmppPORT, () => {
+    log.xmpp(`XMPP server now listening on port ${config.xmppPORT}`);
 });

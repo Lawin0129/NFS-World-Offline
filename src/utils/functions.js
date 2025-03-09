@@ -1,3 +1,5 @@
+const config = require("../../Config/config.json");
+
 async function sleep(ms) {
     await new Promise((resolve, reject) => {
         setTimeout(resolve, ms);
@@ -21,10 +23,10 @@ function MakeID() {
 }
 
 function getHost(hostHeader) {
-    let host = `127.0.0.1:${global.httpPORT}`;
+    let host = `127.0.0.1:${config.httpPORT}`;
 
     if (hostHeader) {
-        host = (hostHeader.includes(":") ? hostHeader : `${hostHeader}:${global.httpPORT}`);
+        host = (hostHeader.includes(":") ? hostHeader : `${hostHeader}:${config.httpPORT}`);
     }
 
     return host;
