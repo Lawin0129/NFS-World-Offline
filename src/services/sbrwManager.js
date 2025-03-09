@@ -3,15 +3,13 @@ const path = require("path");
 const paths = require("../utils/paths");
 const response = require("../utils/response");
 const error = require("../utils/error");
-const axios = require("axios");
+const request = require("../utils/request");
 
 let requestHeaders = {
     "Cache-Control": "no-store,no-cache",
     "Pragma": "no-cache",
     "User-Agent": "SBRW Launcher 2.2.2 (+https://github.com/SoapBoxRaceWorld/GameLauncher_NFSW)",
-    "Connection": "Close",
-    "Accept": null,
-    "Accept-Encoding": null
+    "Connection": "Close"
 };
 
 let self = module.exports = {
@@ -19,7 +17,7 @@ let self = module.exports = {
         let serverList = [];
 
         try {
-            serverList = (await axios.get("https://api.worldunited.gg/serverlist.json", { headers: requestHeaders })).data;
+            serverList = (await request.get("https://api.worldunited.gg/serverlist.json", requestHeaders)).data;
         } catch {
             return response.createError(500, "Failed to fetch server list, are you connected to the internet?");
         }
@@ -46,7 +44,7 @@ let self = module.exports = {
         let modInfo;
         
         try {
-            modInfo = (await axios.get(`${selectedServer.ip_address}/Modding/GetModInfo`, { headers: requestHeaders })).data;
+            modInfo = (await request.get(`${selectedServer.ip_address}/Modding/GetModInfo`, requestHeaders)).data;
         } catch {
             return response.createError(500, "Failed to fetch mod info, are you connected to the internet?");
         }
