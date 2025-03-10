@@ -34,7 +34,7 @@ let self = module.exports = {
             return;
         }
 
-        let holidayType = (holidayData?.name) ? holidayData.name : "All";
+        let holidayType = holidayData?.name ?? "All";
 
         let getusersettingsPath = path.join(paths.dataPath, "getusersettings.xml");
         let GetServerInformationPath = path.join(paths.dataPath, "GetServerInformation.json");

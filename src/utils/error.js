@@ -6,6 +6,7 @@ module.exports = {
     basketItemNotFound: () => response.createError(404, "Basket item not found."),
     catalogNotFound: () => response.createError(404, "Catalog not found."),
     inventoryItemNotFound: () => response.createError(404, "Inventory item not found."),
+    invalidInventoryItemType: () => response.createError(403, "Invalid inventory item type."),
     insufficientCarsOwned: () => response.createError(403, "Not enough cars owned."),
     insufficientInventoryUseCount: () => response.createError(403, "Not enough inventory item remaining use count."),
     personaMottoTooLong: () => response.createError(403, "Persona motto too long."),

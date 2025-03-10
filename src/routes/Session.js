@@ -11,7 +11,7 @@ app.post("/User/GetPermanentSession", async (req, res) => {
 
     let SessionTemplate = {
         UserInfo: {
-            defaultPersonaIdx: [DefaultPersonaIdx ? DefaultPersonaIdx : "0"],
+            defaultPersonaIdx: [DefaultPersonaIdx ?? "0"],
             personas: [{ ProfileData: [] }],
             user: [{
                 fullGameAccess: ["false"],

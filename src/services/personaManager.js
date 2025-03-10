@@ -213,7 +213,7 @@ let self = module.exports = {
         if (!findPersona.success) return error.personaNotFound();
         
         self.removeActivePersona();
-        (fs.rmSync ? fs.rmSync : fs.rmdirSync)(findPersona.data.driverDirectory, { recursive: true });
+        (fs.rmSync ?? fs.rmdirSync)(findPersona.data.driverDirectory, { recursive: true });
         self.setDefaultPersonaIdx(0);
 
         return response.createSuccess();

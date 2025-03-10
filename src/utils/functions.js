@@ -1,4 +1,4 @@
-const config = require("../../Config/config.json");
+const config = require("../../config/config.json");
 
 async function sleep(ms) {
     await new Promise((resolve, reject) => {

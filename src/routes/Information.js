@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express.Router();
-const config = require("../../Config/config.json");
+const config = require("../../config/config.json");
 const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");

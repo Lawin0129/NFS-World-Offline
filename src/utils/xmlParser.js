@@ -19,6 +19,6 @@ let self = module.exports = {
         return (parsedXML ? self.buildXML(parsedXML) : null);
     },
     getRootName: (obj) => {
-        return obj ? Object.keys(obj)[0] : null;
+        return (obj ? Object.keys(obj)[0] : null);
     }
 }

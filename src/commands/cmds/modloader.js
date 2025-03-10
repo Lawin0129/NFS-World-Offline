@@ -30,7 +30,7 @@ let self = module.exports = {
             return;
         }
 
-        let serverId = (serverData?.id) ? serverData.id : "normal";
+        let serverId = serverData?.id ?? "normal";
 
         sbrwManager.setModInfo(serverId);
 

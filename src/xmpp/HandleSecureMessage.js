@@ -1,4 +1,4 @@
-const config = require("../../Config/config.json");
+const config = require("../../config/config.json");
 const xmlParser = require("../utils/xmlParser");
 const log = require("../utils/log");
 const personaManager = require("../services/personaManager");

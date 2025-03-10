@@ -42,7 +42,7 @@ let self = module.exports = {
         
         fs.writeFileSync(getInventory.data.inventoryPath, xmlParser.buildXML(parsedInventory));
         
-        return response.createSuccess(findItem ? findItem : inventoryItemTrans);
+        return response.createSuccess(findItem ?? inventoryItemTrans);
     },
     useInventoryItem: async (personaId, itemHash, itemType, useCount) => {
         let parsedUseCount = parseInt(useCount);
@@ -61,8 +61,9 @@ let self = module.exports = {
         }
         
         let inventoryItems = parsedInventory.InventoryTrans.InventoryItems[0];
-        let findItem = inventoryItems.InventoryItemTrans.find(item => (item.Hash?.[0] == itemHash) && (item.VirtualItemType?.[0]?.toLowerCase?.() == itemType.toLowerCase()));
+        let findItem = inventoryItems.InventoryItemTrans.find(item => item.Hash?.[0] == itemHash);
         if (!findItem) return error.inventoryItemNotFound();
+        if (findItem.VirtualItemType?.[0]?.toLowerCase?.() != itemType.toLowerCase()) return error.invalidInventoryItemType();
         
         let newItemQuantity = Number(findItem.RemainingUseCount[0]) - parsedUseCount;
         if (newItemQuantity < 0) return error.insufficientInventoryUseCount();

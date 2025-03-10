@@ -45,7 +45,7 @@ let self = module.exports = {
     purchasePowerup: async (personaId, productId) => {
         if ((typeof productId) != "string") return error.invalidParameters();
         
-        const getCategory = (catalogManager ? catalogManager : initialiseCatalogManager()).getCategory("productsInCategory_STORE_POWERUPS");
+        const getCategory = (catalogManager ?? initialiseCatalogManager()).getCategory("productsInCategory_STORE_POWERUPS");
         if (!getCategory.success) return getCategory;
         
         const parsedCatalog = await xmlParser.parseXML(getCategory.data.categoryData);

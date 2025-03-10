@@ -5,7 +5,7 @@ const path = require("path");
 const paths = require("../utils/paths");
 const functions = require("../utils/functions");
 const xmlParser = require("../utils/xmlParser");
-const config = require("../../Config/config.json");
+const config = require("../../config/config.json");
 
 // Get chat info
 app.get("/Session/GetChatInfo", async (req, res) => {
