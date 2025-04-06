@@ -21,7 +21,7 @@ app.get("/Session/GetChatInfo", async (req, res) => {
             chatInfo.port[0] = `${config.xmppPORT}`;
         }
 
-        res.type("application/xml").send(xmlParser.buildXML(parsedChatInfo));
+        res.xml(parsedChatInfo);
     } else {
         res.status(404).end();
     }

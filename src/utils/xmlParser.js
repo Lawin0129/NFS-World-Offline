@@ -11,7 +11,11 @@ let self = module.exports = {
         }
     },
     buildXML: (obj) => {
-        return builder.buildObject(obj);
+        try {
+            return builder.buildObject(obj);
+        } catch {
+            return null;
+        }
     },
     beautifyXML: async (str) => {
         let parsedXML = await self.parseXML(str);

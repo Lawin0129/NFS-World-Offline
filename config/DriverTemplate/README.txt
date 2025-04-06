@@ -1,1 +1,1 @@
-Do not edit the DriverTemplate folder unless you know what you are doing.
+These are the default files that are used when a new driver is created.

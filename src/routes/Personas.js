@@ -15,14 +15,12 @@ app.get("/personas/:personaId/:carsType", async (req, res, next) => {
     let carsType = req.params.carsType;
     if (carsType == "objects") return next();
 
-    res.type("application/xml");
-
     switch (carsType) {
         case "carslots": {
             const getCarslots = await carManager.getCarslots(req.params.personaId);
 
             if (getCarslots.success) {
-                res.send(getCarslots.data.carslotsData);
+                res.xml(getCarslots.data.carslotsData);
                 return;
             }
             
@@ -46,7 +44,7 @@ app.get("/personas/:personaId/:carsType", async (req, res, next) => {
                     carsTemplate.ArrayOfOwnedCarTrans = carsOwnedByPersona[0];
                 }
 
-                res.send(xmlParser.buildXML(carsTemplate));
+                res.xml(carsTemplate);
                 return;
             }
 
@@ -57,7 +55,7 @@ app.get("/personas/:personaId/:carsType", async (req, res, next) => {
             const getDefaultCar = await carManager.getDefaultCar(req.params.personaId);
 
             if (getDefaultCar.success) {
-                res.send(xmlParser.buildXML(getDefaultCar.data));
+                res.xml(getDefaultCar.data);
                 return;
             }
 
@@ -65,7 +63,7 @@ app.get("/personas/:personaId/:carsType", async (req, res, next) => {
         }
 
         default: {
-            res.status(403).send("<EngineError><Message>Invalid cars type</Message></EngineError>");
+            res.status(403).xml("<EngineError><Message>Invalid cars type</Message></EngineError>");
             return;
         }
     }
@@ -73,7 +71,29 @@ app.get("/personas/:personaId/:carsType", async (req, res, next) => {
     let filePath = path.join(paths.dataPath, "personas", path.basename(req.params.personaId), `${carsType}.xml`);
     
     if (fs.existsSync(filePath)) {
-        res.send(fs.readFileSync(filePath).toString());
+        res.xml(fs.readFileSync(filePath).toString());
+        return;
+    } else if (carsType == "cars") {
+        res.xml("<ArrayOfOwnedCarTrans/>");
+        return;
+    } else if (carsType == "defaultcar") {
+        let defaultCar = {
+            OwnedCarTrans: {
+                Durability: ["0"],
+                Heat: ["0.0"],
+                Id: ["0"]
+            }
+        };
+        
+        const products = fs.readdirSync(path.join(paths.dataPath, "basket"));
+        const randomCar = products[Math.floor(Math.random() * products.length)];
+        const getCarBasket = catalogManager.getBasketItem(randomCar.split(".")[0]);
+        
+        if (getCarBasket.success) {
+            defaultCar = getCarBasket.data.basketData;
+        }
+        
+        res.xml(defaultCar);
         return;
     }
     
@@ -82,8 +102,6 @@ app.get("/personas/:personaId/:carsType", async (req, res, next) => {
 
 // Set Default Car
 app.put("/personas/:personaId/defaultcar/:carId", async (req, res) => {
-    res.type("application/xml");
-
     const setDefaultCar = await carManager.setDefaultCar(req.params.personaId, req.params.carId);
 
     res.status(setDefaultCar.success ? 200 : setDefaultCar.error.status).end();
@@ -91,12 +109,10 @@ app.put("/personas/:personaId/defaultcar/:carId", async (req, res) => {
 
 // Sell Car
 app.post("/personas/:personaId/cars", async (req, res) => {
-    res.type("application/xml");
-
     const sellCar = await carManager.sellCar(req.params.personaId, req.query.serialNumber);
 
     if (sellCar.success) {
-        res.send(xmlParser.buildXML(sellCar.data));
+        res.xml(sellCar.data);
     } else {
         res.status(200).end();
     }
@@ -105,12 +121,10 @@ app.post("/personas/:personaId/cars", async (req, res) => {
 // dont even know what this is for, my guess would be initializing the car?
 // from what I know this gets requested when you save car customization changes
 app.put("/personas/:personaId/cars", async (req, res) => {
-    res.type("application/xml");
-
     const getDefaultCar = await carManager.getDefaultCar(req.params.personaId);
 
     if (getDefaultCar.success) {
-        res.send(xmlParser.buildXML(getDefaultCar.data));
+        res.xml(getDefaultCar.data);
     } else {
         res.status(getDefaultCar.error.status).send(getDefaultCar.error.reason);
     }
@@ -118,20 +132,18 @@ app.put("/personas/:personaId/cars", async (req, res) => {
 
 // Customize Car
 app.post("/personas/:personaId/commerce", async (req, res) => {
-    res.type("application/xml");
-
     let parsedBody = await xmlParser.parseXML(req.body);
     let customCar = parsedBody?.CommerceSessionTrans?.UpdatedCar?.[0]?.CustomCar?.[0];
     
     const saveCar = await carManager.saveCar(req.params.personaId, customCar);
     
     if (saveCar.success) {
-        res.send(xmlParser.buildXML({
+        res.xml({
             CommerceSessionResultTrans: {
                 Status: ["Success"],
                 UpdatedCar: saveCar.data
             }
-        }));
+        });
     } else {
         res.status(saveCar.error.status).send(saveCar.error.reason);
     }
@@ -139,15 +151,13 @@ app.post("/personas/:personaId/commerce", async (req, res) => {
 
 // Get Inventory from Persona
 app.get("/personas/inventory/objects", async (req, res) => {
-    res.type("application/xml");
-
     const getActivePersona = personaManager.getActivePersona();
     if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
 
     const getInventory = await inventoryManager.getInventory(getActivePersona.data.personaId);
 
     if (getInventory.success) {
-        res.send(getInventory.data.inventoryData);
+        res.xml(getInventory.data.inventoryData);
     } else {
         res.status(getInventory.error.status).send(getInventory.error.reason);
     }
@@ -155,15 +165,13 @@ app.get("/personas/inventory/objects", async (req, res) => {
 
 // Purchasing (cars, etc...)
 app.post("/personas/:personaId/baskets", async (req, res) => {
-    res.type("application/xml");
-    
     let parsedBody = await xmlParser.parseXML(req.body);
     let ProductId = parsedBody?.BasketTrans?.Items?.[0]?.BasketItemTrans?.[0]?.ProductId?.[0];
     
     const purchaseItem = await catalogManager.purchaseItem(req.params.personaId, ProductId);
     
     if (purchaseItem.success) {
-        res.send(xmlParser.buildXML(purchaseItem.data));
+        res.xml(purchaseItem.data);
     } else {
         res.status(404).end();
     }
@@ -171,12 +179,10 @@ app.post("/personas/:personaId/baskets", async (req, res) => {
 
 // Repair Car
 app.get("/car/repair", async (req, res) => {
-    res.type("application/xml");
-
     const repairCar = await carManager.repairDefaultCar(req.query.personaId);
 
     if (repairCar.success) {
-        res.send("<int>100</int>");
+        res.xml("<int>100</int>");
     } else {
         res.status(repairCar.error.status).send(repairCar.error.reason);
     }
@@ -184,8 +190,6 @@ app.get("/car/repair", async (req, res) => {
 
 // Edit Motto
 app.post("/DriverPersona/UpdateStatusMessage", async (req, res) => {
-    res.type("application/xml");
-    
     let parsedBody = await xmlParser.parseXML(req.body);
     let targetPersonaId = parsedBody?.PersonaMotto?.personaId?.[0];
     let targetMotto = parsedBody?.PersonaMotto?.message?.[0];
@@ -193,12 +197,12 @@ app.post("/DriverPersona/UpdateStatusMessage", async (req, res) => {
     const setMotto = await personaManager.setMotto(targetPersonaId, targetMotto);
     
     if (setMotto.success) {
-        res.send(xmlParser.buildXML({
+        res.xml({
             PersonaMotto: {
                 message: targetMotto,
                 personaId: targetPersonaId
             }
-        }));
+        });
     } else {
         res.status(setMotto.error.status).send(setMotto.error.reason);
     }
@@ -206,8 +210,6 @@ app.post("/DriverPersona/UpdateStatusMessage", async (req, res) => {
 
 // Get driver information
 app.get("/DriverPersona/GetPersonaInfo", async (req, res) => {
-    res.type("application/xml");
-
     const findPersona = await personaManager.getPersonaById(req.query.personaId);
 
     if (findPersona.success) {
@@ -220,10 +222,10 @@ app.get("/DriverPersona/GetPersonaInfo", async (req, res) => {
             }
             sharedState.data.newDriver.numOfReqs += 1;
         }
-
-        res.send(xmlParser.buildXML({
+        
+        res.xml({
             ProfileData: personaInfo
-        }));
+        });
         return;
     }
 
@@ -231,7 +233,14 @@ app.get("/DriverPersona/GetPersonaInfo", async (req, res) => {
         let filePath = path.join(paths.dataPath, "personas", path.basename(req.query.personaId), "GetPersonaInfo.xml");
         
         if (fs.existsSync(filePath)) {
-            res.send(fs.readFileSync(filePath).toString());
+            res.xml(fs.readFileSync(filePath).toString());
+            return;
+        } else {
+            res.xml({
+                ProfileData: {
+                    PersonaId: [req.query.personaId]
+                }
+            });
             return;
         }
     }
@@ -241,8 +250,6 @@ app.get("/DriverPersona/GetPersonaInfo", async (req, res) => {
 
 // Get base driver information
 app.post("/DriverPersona/GetPersonaBaseFromList", async (req, res) => {
-    res.type("application/xml");
-    
     let baseTemplate = {
         ArrayOfPersonaBase: {
             PersonaBase: []
@@ -252,7 +259,7 @@ app.post("/DriverPersona/GetPersonaBaseFromList", async (req, res) => {
     let parsedBody = await xmlParser.parseXML(req.body);
     let personaIds = parsedBody?.PersonaIdArray?.PersonaIds?.[0]?.["array:long"]?.filter?.(i => ((typeof i) == "string"));
 
-    const findPersonas = await personaManager.getPersonas(personaIds);
+    const findPersonas = await personaManager.getPersonas("PersonaId", personaIds);
 
     for (let personaData of findPersonas) {
         baseTemplate.ArrayOfPersonaBase.PersonaBase.push({ Presence: ["1"], UserId: ["1"], ...personaData.personaInfo });
@@ -262,17 +269,21 @@ app.post("/DriverPersona/GetPersonaBaseFromList", async (req, res) => {
         let personasPath = path.join(paths.dataPath, "personas");
 
         for (let personaId of personaIds) {
+            if (baseTemplate.ArrayOfPersonaBase.PersonaBase.some(persona => persona.PersonaId[0] == personaId)) continue;
+
             let personaInfoPath = path.join(personasPath, path.basename(personaId), "GetPersonaInfo.xml");
             
             if (fs.existsSync(personaInfoPath)) {
                 let personaInfoData = await xmlParser.parseXML(fs.readFileSync(personaInfoPath).toString());
 
-                baseTemplate.ArrayOfPersonaBase.PersonaBase.push({ Presence: ["0"], UserId: ["2"], ...personaInfoData.ProfileData });
+                baseTemplate.ArrayOfPersonaBase.PersonaBase.push({ Presence: ["1"], UserId: ["2"], ...personaInfoData.ProfileData });
+            } else {
+                baseTemplate.ArrayOfPersonaBase.PersonaBase.push({ Presence: ["1"], UserId: ["2"], PersonaId: [personaId] });
             }
         }
     }
 
-    res.send(xmlParser.buildXML(baseTemplate));
+    res.xml(baseTemplate);
 });
 
 module.exports = app;

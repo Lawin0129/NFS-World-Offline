@@ -1,3 +1,4 @@
 {
-    "LogRequests": false
+    "LogRequests": false,
+    "FakeFreeroamPlayers": false
 }

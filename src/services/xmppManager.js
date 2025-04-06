@@ -29,7 +29,7 @@ let self = module.exports = {
         return response.createSuccess();
     },
     sendMessage: (xmppClientData, body) => {
-        if ((typeof xmppClientData) != "object") return error.invalidParameters();
+        if ((typeof xmppClientData?.secureSocket?.write) != "function") return error.invalidParameters();
         if ((typeof body) != "string") return error.invalidParameters();
         
         let xmppMessage = {
@@ -45,7 +45,7 @@ let self = module.exports = {
         };
         
         xmppMessage.message.subject[0] = calculateHashFromData(xmppMessage.message.$.to + body);
-        xmppClientData.secureSocket?.write?.(xmlParser.buildXML(xmppMessage));
+        xmppClientData.secureSocket.write(xmlParser.buildXML(xmppMessage));
         
         return response.createSuccess();
     }

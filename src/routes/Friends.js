@@ -3,7 +3,6 @@ const app = express.Router();
 const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");
-const xmlParser = require("../utils/xmlParser");
 
 // Get friends list
 app.get("/getfriendlistfromuserid", async (req, res, next) => {
@@ -26,7 +25,7 @@ app.get("/getfriendlistfromuserid", async (req, res, next) => {
         }
     }
 
-    res.type("application/xml").send(xmlParser.buildXML(friendsTemplate));
+    res.xml(friendsTemplate);
 });
 
 module.exports = app;

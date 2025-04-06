@@ -7,15 +7,13 @@ const personaManager = require("../services/personaManager");
 
 // Get achievements from persona
 app.get("/achievements/loadall", (req, res) => {
-    res.type("application/xml");
-
     const getActivePersona = personaManager.getActivePersona();
     if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
 
     let achievementsPath = path.join(getActivePersona.data.driverDirectory, "loadall.xml");
 
     if (fs.existsSync(achievementsPath)) {
-        res.send(fs.readFileSync(achievementsPath).toString());
+        res.xml(fs.readFileSync(achievementsPath).toString());
     } else {
         res.status(404).end();
     }
@@ -23,8 +21,6 @@ app.get("/achievements/loadall", (req, res) => {
 
 // Set achievement badges
 app.put("/badges/set", async (req, res) => {
-    res.type("application/xml");
-
     const getActivePersona = personaManager.getActivePersona();
     if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
 

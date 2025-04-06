@@ -22,7 +22,7 @@ app.get("/matchmaking/launchevent/:eventId", (req, res) => {
         }
     };
 
-    res.type("application/xml").send(xmlParser.buildXML(eventTemplate));
+    res.xml(eventTemplate);
 
     eventId = "";
 });
@@ -33,7 +33,7 @@ app.put("/matchmaking/joinqueueevent/:eventId", (req, res) => {
 
     log.game(`Multiplayer event detected (eventId: ${eventId}), launch any single player event to play this.`);
 
-    res.type("application/xml").status(200).end();
+    res.status(200).end();
 });
 
 // Create private lobby
@@ -63,7 +63,7 @@ app.put("/matchmaking/makeprivatelobby/:eventId", async (req, res) => {
         }
     };
 
-    res.type("application/xml").send(xmlParser.buildXML(makeLobbyTemplate));
+    res.xml(makeLobbyTemplate);
 });
 
 // Accept invite
@@ -102,7 +102,7 @@ app.put("/matchmaking/acceptinvite", async (req, res) => {
         }
     };
 
-    res.type("application/xml").send(xmlParser.buildXML(acceptInviteTemplate));
+    res.xml(acceptInviteTemplate);
 });
 
 // Busted in pursuit
@@ -141,7 +141,7 @@ app.post("/event/bust", async (req, res) => {
         }
     };
 
-    res.type("application/xml").send(xmlParser.buildXML(finishTemplate));
+    res.xml(finishTemplate);
 });
 
 // Finish event
@@ -211,7 +211,7 @@ app.post("/event/:eventAction", async (req, res) => {
         }
     };
 
-    res.type("application/xml").send(xmlParser.buildXML(finishTemplate));
+    res.xml(finishTemplate);
 });
 
 module.exports = app;

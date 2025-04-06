@@ -4,7 +4,6 @@ const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");
 const functions = require("../utils/functions");
-const xmlParser = require("../utils/xmlParser");
 
 // Get news
 app.get("/LoginAnnouncements", (req, res) => {
@@ -35,7 +34,7 @@ app.get("/LoginAnnouncements", (req, res) => {
         id += 1;
     }
 
-    res.type("application/xml").send(xmlParser.buildXML(newsTemplate));
+    res.xml(newsTemplate);
 });
 
 // Get image from news folder
@@ -45,7 +44,7 @@ app.get("/news/*.*", (req, res) => {
     if (fs.existsSync(filePath)) {
         res.send(fs.readFileSync(filePath));
     } else {
-        res.status(200).end();
+        res.status(404).end();
     }
 });
 

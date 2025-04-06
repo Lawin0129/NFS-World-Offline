@@ -18,7 +18,6 @@ if !installNeeded! == 1 (
 )
 
 cls
-title NFS World Offline by Lawin
 endlocal
 @echo on
 

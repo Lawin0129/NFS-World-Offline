@@ -1,3 +1,5 @@
+setTitle("NFS World Offline by Lawin");
+
 const express = require("express");
 const app = express();
 const compression = require("compression");
@@ -5,13 +7,25 @@ const fs = require("fs");
 const config = require("../config/config.json");
 const functions = require("./utils/functions");
 const log = require("./utils/log");
+const xmlParser = require("./utils/xmlParser");
 const personaManager = require("./services/personaManager");
 const path = require("path");
 
 if (!config.httpPORT) config.httpPORT = 3550;
 if (!config.xmppPORT) config.xmppPORT = 5222;
+if (!config.freeroamPORT) config.freeroamPORT = 9999;
 
 personaManager.removeActivePersona();
+
+express.response.xml = function (body) {
+    if ((typeof body) == "object") body = xmlParser.buildXML(body);
+    if ((typeof body) != "string") {
+        this.status(500);
+        body = "<Error>Failed parsing XML response.</Error>";
+    }
+
+    this.type("application/xml").send(body);
+};
 
 app.use((req, res, next) => {
     res.set("Connection", "close");
@@ -44,6 +58,8 @@ app.listen(config.httpPORT, async () => {
               + `\n2) or by using these launch args "nfsw.exe US http://127.0.0.1:${config.httpPORT}/Engine.svc a 1".\n`);
 
     await require("./xmpp");
+
+    if (config.FakeFreeroamPlayers) await require("./freeroam");
     
     require("./commands");
 }).on("error", async (err) => {
@@ -54,3 +70,11 @@ app.listen(config.httpPORT, async () => {
         process.exit(0);
     } else throw err;
 });
+
+function setTitle(title) {
+    if (process.platform == "win32") {
+        process.title = title;
+    } else {
+        process.stdout.write("\x1b]2;" + title + "\x1b\x5c");
+    }
+}

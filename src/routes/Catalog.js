@@ -8,7 +8,7 @@ app.get("/catalog/*", (req, res) => {
     let catalogCategory = `${path.basename(req.path)}_${req.query.categoryName}`;
     let getCategory = catalogManager.getCategory(catalogCategory);
 
-    res.type("application/xml").send(getCategory.success ? getCategory.data.categoryData : "<ArrayOfProductTrans/>");
+    res.xml(getCategory.success ? getCategory.data.categoryData : "<ArrayOfProductTrans/>");
 });
 
 module.exports = app;

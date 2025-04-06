@@ -14,10 +14,13 @@ let personaFiles = [
     "objects.xml"
 ];
 
-let activePersona = { driverDirectory: "", driver: "", personaId: "" };
+let activePersona = { driverDirectory: "", personaId: "" };
 
 let self = module.exports = {
-    getPersonas: async (personaIds) => {
+    getPersonas: async (fieldName, valueArray) => {
+        const valuesIsArray = Array.isArray(valueArray);
+        if (valuesIsArray && (fieldName != "PersonaId") && (fieldName != "Name")) return [];
+
         let driversDir = paths.driversPath;
         let driverIdx = 0;
         let drivers = [];
@@ -33,7 +36,7 @@ let self = module.exports = {
                 
                 let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driverDirectory, "GetPersonaInfo.xml")).toString());
 
-                if ((Array.isArray(personaIds)) && (!personaIds.includes(PersonaInfo.ProfileData.PersonaId[0]))) {
+                if (valuesIsArray && !valueArray.includes(PersonaInfo.ProfileData[fieldName][0])) {
                     driverIdx += 1;
                     continue;
                 }
@@ -46,7 +49,7 @@ let self = module.exports = {
                     driverDirectory: driverDirectory
                 });
 
-                if ((Array.isArray(personaIds)) && (drivers.length == personaIds.length)) break;
+                if (valuesIsArray && (drivers.length == valueArray.length)) break;
                 
                 driverIdx += 1;
             }
@@ -55,41 +58,16 @@ let self = module.exports = {
         return drivers;
     },
     getPersonaById: async (personaId) => {
-        const findPersona = await self.getPersonas([personaId]);
+        const findPersona = await self.getPersonas("PersonaId", [personaId]);
         if (findPersona.length == 0) return error.personaNotFound();
         
         return response.createSuccess(findPersona[0]);
     },
     getPersonaByName: async (personaName) => {
-        let driversDir = paths.driversPath;
-        let driverIdx = 0;
+        const findPersona = await self.getPersonas("Name", [personaName]);
+        if (findPersona.length == 0) return error.personaNotFound();
         
-        for (let file of fs.readdirSync(driversDir)) {
-            if (driverIdx >= 3) break;
-
-            let driverDirectory = path.join(driversDir, file);
-            
-            if (file.startsWith("driver") && Number.isInteger(parseInt(file.replace("driver", ""))) && fs.statSync(driverDirectory).isDirectory()) {
-                let filesInDriver = fs.readdirSync(driverDirectory);
-                if (!personaFiles.every(fileName => filesInDriver.includes(fileName))) continue;
-                
-                let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driverDirectory, "GetPersonaInfo.xml")).toString());
-                
-                if (personaName == PersonaInfo.ProfileData.Name[0]) {
-                    return response.createSuccess({
-                        personaInfo: PersonaInfo.ProfileData,
-                        personaId: PersonaInfo.ProfileData.PersonaId[0],
-                        personaName: PersonaInfo.ProfileData.Name[0],
-                        driverIdx: driverIdx,
-                        driverDirectory: driverDirectory
-                    });
-                }
-                
-                driverIdx += 1;
-            }
-        }
-        
-        return error.personaNotFound();
+        return response.createSuccess(findPersona[0]);
     },
     getDefaultPersonaIdx: async () => {
         const parsedDefaultIdx = await xmlParser.parseXML(fs.readFileSync(path.join(paths.driversPath, "DefaultPersonaIdx.xml")).toString());
@@ -105,12 +83,12 @@ let self = module.exports = {
         return response.createSuccess();
     },
     getActivePersona: () => {
-        if (activePersona.driver.length == 0) return error.noActivePersona();
+        if (activePersona.driverDirectory.length == 0) return error.noActivePersona();
         
         return response.createSuccess(activePersona);
     },
     removeActivePersona: () => {
-        activePersona = { driverDirectory: "", driver: "", personaId: "" };
+        activePersona = { driverDirectory: "", personaId: "" };
         xmppManager.removeActiveXmppClientData(true);
 
         return response.createSuccess();
@@ -123,7 +101,6 @@ let self = module.exports = {
         
         activePersona = {
             driverDirectory: findPersona.data.driverDirectory,
-            driver: path.basename(findPersona.data.driverDirectory),
             personaId: findPersona.data.personaId
         };
         
@@ -176,7 +153,7 @@ let self = module.exports = {
         let driverPath = path.join(driverDirectory, driverFolderName);
         
         let personaIdList = ["100", "200", "300"];
-        let takenPersonaIds = await self.getPersonas(personaIdList);
+        let takenPersonaIds = await self.getPersonas("PersonaId", personaIdList);
         
         for (let personaId of personaIdList) {
             if (!takenPersonaIds.some(persona => persona.personaId == personaId)) {

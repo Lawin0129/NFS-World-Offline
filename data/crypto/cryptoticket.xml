@@ -1,5 +1,5 @@
 <ClientServerCryptoTicket>
-	<CryptoTicket>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</CryptoTicket>
+	<CryptoTicket>CgsMDQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</CryptoTicket>
 	<SessionKey>AAAAAAAAAAAAAAAAAAAAAA==</SessionKey>
-	<TicketIv>A==</TicketIv>
+	<TicketIv>AAAAAAAAAAAAAAAAAAAAAA==</TicketIv>
 </ClientServerCryptoTicket>

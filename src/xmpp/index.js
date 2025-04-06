@@ -1,3 +1,6 @@
+let resolveModule;
+module.exports = new Promise((resolve) => resolveModule = resolve);
+
 const net = require("net");
 const tls = require("tls");
 const fs = require("fs");
@@ -98,4 +101,6 @@ tcpServer.on("error", async (err) => {
 
 tcpServer.listen(config.xmppPORT, () => {
     log.xmpp(`XMPP server now listening on port ${config.xmppPORT}`);
+
+    resolveModule();
 });

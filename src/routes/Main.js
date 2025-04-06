@@ -6,12 +6,10 @@ const paths = require("../utils/paths");
 
 // Get xml file from data folder
 app.use((req, res) => {
-    res.type("application/xml");
-
     let filePath = path.join(paths.dataPath, `${req.path.replace(/\.\./ig, "")}.xml`);
 
     if (fs.existsSync(filePath)) {
-        res.send(fs.readFileSync(filePath).toString());
+        res.xml(fs.readFileSync(filePath).toString());
     } else {
         res.status(204).end();
     }

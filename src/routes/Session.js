@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express.Router();
-const xmlParser = require("../utils/xmlParser");
 const personaManager = require("../services/personaManager");
 
 // Start session
@@ -32,13 +31,11 @@ app.post("/User/GetPermanentSession", async (req, res) => {
         SessionTemplate.UserInfo.personas[0].ProfileData.push(personaData.personaInfo);
     }
 
-    res.type("application/xml").send(xmlParser.buildXML(SessionTemplate));
+    res.xml(SessionTemplate);
 });
 
 // Login to driver (Enter world)
 app.post("/User/SecureLoginPersona", async (req, res) => {
-    res.type("application/xml");
-
     const setActivePersona = await personaManager.setActivePersona(req.query.personaId);
 
     if (setActivePersona.success) {
@@ -52,7 +49,7 @@ app.post("/User/SecureLoginPersona", async (req, res) => {
 app.post("/User/SecureLogout*", (req, res) => {
     personaManager.removeActivePersona();
 
-    res.type("application/xml").status(200).end();
+    res.status(200).end();
 });
 
 module.exports = app;

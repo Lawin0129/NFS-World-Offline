@@ -13,6 +13,9 @@ module.exports = {
     game: (...msgArgs) => {
         if (!SuppressLogs) console.log(`[\x1b[33mGAME\x1b[0m] ${msgArgs.join(" ")}`);
     },
+    freeroam: (...msgArgs) => {
+        if (!SuppressLogs) console.log(`[\x1b[35mFREEROAM\x1b[0m] ${msgArgs.join(" ")}`);
+    },
     error: (type, ...msgArgs) => {
         if (!SuppressLogs) console.log(`[\x1b[31m${type.toUpperCase()} ERROR\x1b[0m] ${msgArgs.join(" ")}`);
     }
