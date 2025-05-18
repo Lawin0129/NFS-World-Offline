@@ -9,6 +9,7 @@ const personaManager = require("../services/personaManager");
 const carManager = require("../services/carManager");
 const catalogManager = require("../services/catalogManager");
 const inventoryManager = require("../services/inventoryManager");
+const config = require("../../config/config.json");
 
 // Get Cars from Persona
 app.get("/personas/:personaId/:carsType", async (req, res, next) => {
@@ -76,7 +77,7 @@ app.get("/personas/:personaId/:carsType", async (req, res, next) => {
     } else if (carsType == "cars") {
         res.xml("<ArrayOfOwnedCarTrans/>");
         return;
-    } else if (carsType == "defaultcar") {
+    } else if ((carsType == "defaultcar") && config.FakeFreeroamPlayers) {
         let defaultCar = {
             OwnedCarTrans: {
                 Durability: ["0"],
@@ -193,6 +194,10 @@ app.post("/DriverPersona/UpdateStatusMessage", async (req, res) => {
     let parsedBody = await xmlParser.parseXML(req.body);
     let targetPersonaId = parsedBody?.PersonaMotto?.personaId?.[0];
     let targetMotto = parsedBody?.PersonaMotto?.message?.[0];
+
+    if ((typeof targetMotto) == "string") {
+        targetMotto = targetMotto.substring(0, 60);
+    }
     
     const setMotto = await personaManager.setMotto(targetPersonaId, targetMotto);
     

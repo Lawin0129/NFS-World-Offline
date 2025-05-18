@@ -1,7 +1,7 @@
 <ProfileData>
-	<Boost>100000000.0</Boost>
-	<Cash>100000000.0</Cash>
-	<IconIndex>ICON</IconIndex>
+	<Boost>100000000</Boost>
+	<Cash>100000000</Cash>
+	<IconIndex>0</IconIndex>
 	<Level>60</Level>
 	<Name>NAME</Name>
 	<PercentToLevel>0.0</PercentToLevel>

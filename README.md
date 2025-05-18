@@ -9,15 +9,15 @@ Compatible with Node.js v14.0.0 up to the latest version.
 # Features
 * Achievements:
     + All original achievements included that once existed in NFS World.
-    + Setting your achievement badges in achievements log.
+    + Changing your achievement badges in Achievements Log.
 * Drivers:
     + Creating drivers (functionality like "name taken?" also included).
     + Deleting drivers.
     + Changing drivers.
     + Editing motto.
-* Powerups:
-    + Using powerups.
-    + Recharging/purchasing powerups from the powerup console.
+* Power-Ups:
+    + Using power-ups.
+    + Recharging/purchasing power-ups from the Power-Up Console.
 * Events:
     + All original events included that once existed in NFS World.
     + Launching single player events.
@@ -42,6 +42,8 @@ Compatible with Node.js v14.0.0 up to the latest version.
         - Performance Customization.
         - Vinyls Customization.
         - Paints Customization.
+* Freeroam:
+    + Freeroam with fake players. Look at [Configuration](#configuration) for more details.
 * Treasure Hunt
 # Command Line Commands
 - `> help {commandName}` - Outputs a list of commands, `commandName` parameter is optional and can be used to show more information about a specific command.
@@ -50,6 +52,7 @@ Compatible with Node.js v14.0.0 up to the latest version.
     + ModLoader sets the SBRW server to fetch mod info from. When you launch the game, it fetches the latest mod information from the selected SBRW server. This guarantees the mods are always up-to-date.
     + By default, no SBRW server is selected and the base game will load upon launch.
     + This does not create a duplicate of mods which means the mods directory is shared with the selected SBRW server.
+    + If there is no internet connection, the base game will load instead.
 # Configuration
 Located in `config/config.json`. You will need to restart the server if you make any changes to this file.
 | Key                    | Default  | Description |
@@ -58,10 +61,14 @@ Located in `config/config.json`. You will need to restart the server if you make
 | `FakeFreeroamPlayers`  | `false`  | When set to `true`, this will add about 10 fake players driving around the map. |
 
 NOTE: The `FakeFreeroamPlayers` feature may be a bit buggy. Players don't appear on the map sometimes and can cause the game to become really slow. If this happens, try entering and exiting the safehouse until they appear.
+# Server Editor
+- `ServerEditor.exe` is forked from `soapbox-race-offline-1.9.0` then improved and modified to work with my offline server.
+- You can use Server Editor to modify driver information, import drivers, export drivers, set holiday and more.
+- If `ServerEditor.exe` doesn't run, you should install [.NET Framework 3.5](https://www.microsoft.com/en-gb/download/details.aspx?id=21).
 # NFS World Server Emulator Setup
 1) Install [NodeJS](https://nodejs.org/en/).
 2) [Download](https://github.com/Lawin0129/NFS-World-Offline/archive/refs/heads/main.zip) and extract NFS World Offline to a safe location.
-3) Run "start.bat", some required dependencies will be installed if it's your first time running this. Once finished it should say "listening on port 3550".
+3) Run "start.bat", some required dependencies will be installed if it's your first time running this. Once finished, it should say "listening on port 3550".
 4) Look below for the "[Launching the Game](#launching-the-game)" section.
 ## Launching the Game
 When you have started the server, you can launch the game using one of the following methods:
