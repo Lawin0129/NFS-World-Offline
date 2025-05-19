@@ -48,5 +48,29 @@ let self = module.exports = {
         xmppClientData.secureSocket.write(xmlParser.buildXML(xmppMessage));
         
         return response.createSuccess();
+    },
+    sendSystemChat: (xmppClientData, msg) => {
+        if ((typeof msg) != "string") return error.invalidParameters();
+
+        const attemptSend = self.sendMessage(xmppClientData, xmlParser.buildXML({
+            response: {
+                $: {
+                    status: "1",
+                    ticket: "0"
+                },
+                ChatBroadcast: [{
+                    ChatBlob: [{
+                        FromName: ["System"],
+                        FromPersonaId: ["0"],
+                        FromUserId: ["0"],
+                        Message: [msg],
+                        ToId: ["0"],
+                        Type: ["2"]
+                    }]
+                }]
+            }
+        }));
+
+        return attemptSend;
     }
 }
