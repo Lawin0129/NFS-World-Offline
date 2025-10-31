@@ -11,7 +11,7 @@ Compatible with Node.js v14.0.0 up to the latest version.
     + All original achievements included that once existed in NFS World.
     + Changing your achievement badges in Achievements Log.
 * Drivers:
-    + Creating drivers (functionality like "name taken?" also included).
+    + Creating drivers.
     + Deleting drivers.
     + Changing drivers.
     + Editing motto.
@@ -88,4 +88,4 @@ Once the game has launched, create your driver and play!
 | Name | Helped with |
 | --------------- | ----------- |
 | Lawin | Creator |
-| soapbox-race-offline-1.9.0<br/>by berkay2578 & Nilzao | For catalog and baskets xml files |
+| soapbox-race-offline-1.9.0<br/>by berkay2578 & Nilzao | For catalog and baskets xml files,<br/>For [Server Editor](#server-editor) and XMPP message subject hash algorithm |

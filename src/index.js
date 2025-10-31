@@ -56,6 +56,7 @@ app.listen(config.httpPORT, async () => {
     console.log(`\nLaunch the game either by:`
               + `\n1) Adding the server to the Soapbox Race World Launcher by the url "http://127.0.0.1:${config.httpPORT}/Engine.svc".`
               + `\n2) or by using these launch args "nfsw.exe US http://127.0.0.1:${config.httpPORT}/Engine.svc a 1".\n`);
+    console.log("If you like this offline server, please star the repo at \"https://github.com/Lawin0129/NFS-World-Offline\"!\n");
 
     await require("./xmpp");
 

@@ -22,6 +22,13 @@ app.get("/GetServerInformation", (req, res) => {
 // Get Soapbox server mod information
 app.get("/Modding/GetModInfo", async (req, res) => {
     let host = functions.getHost(req.headers["host"]);
+    let userAgent;
+
+    if (req.headers["user-agent"]) {
+        if (req.headers["user-agent"].startsWith("SBRW")) {
+            userAgent = req.headers["user-agent"];
+        }
+    }
 
     let modInfo = {
         basePath: `http://${host}/Engine.svc/mods`,
@@ -29,7 +36,7 @@ app.get("/Modding/GetModInfo", async (req, res) => {
         features: ["[]"]
     };
 
-    const getModInfo = await sbrwManager.getModInfo();
+    const getModInfo = await sbrwManager.getModInfo(userAgent);
 
     if (getModInfo.success) {
         modInfo = getModInfo.data;

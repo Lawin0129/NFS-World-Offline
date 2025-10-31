@@ -8,13 +8,17 @@ const request = require("../utils/request");
 let requestHeaders = {
     "Cache-Control": "no-store,no-cache",
     "Pragma": "no-cache",
-    "User-Agent": "SBRW Launcher 2.2.2 (+https://github.com/SoapBoxRaceWorld/GameLauncher_NFSW)",
+    "User-Agent": "SBRW Launcher 2.2.4 (+https://github.com/SoapBoxRaceWorld/GameLauncher_NFSW)",
     "Connection": "Close"
 };
 
 let self = module.exports = {
-    getServerList: async () => {
+    getServerList: async (userAgent) => {
         let serverList = [];
+
+        if ((typeof userAgent) == "string") {
+            requestHeaders["User-Agent"] = userAgent;
+        }
 
         try {
             serverList = (await request.get("https://api.worldunited.gg/serverlist.json", requestHeaders)).data;
@@ -24,9 +28,13 @@ let self = module.exports = {
 
         return response.createSuccess(serverList);
     },
-    getModInfo: async () => {
+    getModInfo: async (userAgent) => {
         let getModInfoPath = path.join(paths.dataPath, "GetModInfo.json");
         if (!fs.existsSync(getModInfoPath)) return response.createError(404);
+        
+        if ((typeof userAgent) == "string") {
+            requestHeaders["User-Agent"] = userAgent;
+        }
         
         let getModInfoData = JSON.parse(fs.readFileSync(getModInfoPath).toString());
         let serverId = getModInfoData.serverId?.toLowerCase?.();
