@@ -1,4 +1,5 @@
 {
     "LogRequests": false,
-    "FakeFreeroamPlayers": false
+    "FakeFreeroamPlayers": false,
+    "nfswFilePath": ""
 }

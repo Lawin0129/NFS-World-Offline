@@ -13,15 +13,18 @@ let holidayTypesList = [
     { name: "Oktoberfest", activated: ["SCENERY_GROUP_OKTOBERFEST"], disactivated: ["SCENERY_GROUP_OKTOBERFEST_DISABLE"], activeHolidayIds: ["1"] }
 ];
 
-let holidayOptions = `${holidayTypesList.map((val, i) => ` [${i}] ${val.name}`).join("\n")}\n [${holidayTypesList.length}] All (some holiday types conflict with each other in-game)`;
+let holidayOptions = holidayTypesList.map((val, i) => ` [${i}] ${val.name}`).join("\n")
+                   + `\n [${holidayTypesList.length}] All (some holiday types conflict with each other in-game)`;
 
 let self = module.exports = {
     commandInfo: {
         info: "This command sets the current Need for Speed World holiday type.",
-        helpInfo: "Upon running this command, a list of holidays will be outputted where you can choose one.",
+        helpInfo: "Upon running this command, a list of holidays will be displayed where you can choose one.",
+        extraInfo: "None.",
         name: "holiday",
     },
     execute: async (args, readline) => {
+        console.log(`\n${self.commandInfo.info}\n${self.commandInfo.helpInfo}`);
         console.log(`\nSelect a holiday:\n${holidayOptions}`);
 
         let optionSelect = await functions.askQuestion("\nEnter a number: ", readline);
