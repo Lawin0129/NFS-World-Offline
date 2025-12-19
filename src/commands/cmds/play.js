@@ -46,7 +46,7 @@ let self = module.exports = {
                     filePath = (await functions.askQuestion("Enter the file path: ", readline)).trim().replace(/"/ig, "");
                 }
                 
-                if ((path.basename(filePath ?? "").toLowerCase() != "nfsw.exe") || !fs.existsSync(filePath)) {
+                if (!checkExeValid(filePath)) {
                     console.log("\nInvalid nfsw.exe file path, cancelling operation.");
                     break;
                 }
@@ -61,7 +61,7 @@ let self = module.exports = {
             }
 
             case 1: {
-                if ((path.basename(configData.nfswFilePath ?? "").toLowerCase() != "nfsw.exe") || !fs.existsSync(configData.nfswFilePath)) {
+                if (!checkExeValid(configData.nfswFilePath)) {
                     console.log("\nInvalid nfsw.exe file path, cancelling operation.");
                     break;
                 }
@@ -83,6 +83,19 @@ let self = module.exports = {
         }
     }
 }
+
+function checkExeValid(filePath) {
+    if ((typeof filePath) != "string") return false;
+    if (!path.basename(filePath).toLowerCase().endsWith(".exe")) return false;
+
+    try {
+        const stats = fs.statSync(filePath);
+        return stats.isFile();
+    } catch {
+        return false;
+    }
+}
+
 
 function buildAffinityMask(maxCpuCount) {
     const cpuCount = os.cpus().length;
