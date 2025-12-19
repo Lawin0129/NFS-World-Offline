@@ -21,12 +21,14 @@ let self = module.exports = {
         }
 
         try {
-            serverList = (await request.get("https://api.worldunited.gg/serverlist.json", requestHeaders)).data;
+            serverList = await request.get("https://api.worldunited.gg/serverlist.json", requestHeaders);
+
+            if (serverList.status >= 300) throw new Error("serverList request error.");
         } catch {
             return response.createError(500, "Failed to fetch server list, are you connected to the internet?");
         }
 
-        return response.createSuccess(serverList);
+        return response.createSuccess(serverList.data);
     },
     getModInfo: async (userAgent) => {
         let getModInfoPath = path.join(paths.dataPath, "GetModInfo.json");
@@ -52,12 +54,14 @@ let self = module.exports = {
         let modInfo;
         
         try {
-            modInfo = (await request.get(`${selectedServer.ip_address}/Modding/GetModInfo`, requestHeaders)).data;
+            modInfo = await request.get(`${selectedServer.ip_address}/Modding/GetModInfo`, requestHeaders);
+
+            if (modInfo.status >= 300) throw new Error("modInfo request error.");
         } catch {
             return response.createError(500, "Failed to fetch mod info, are you connected to the internet?");
         }
         
-        return response.createSuccess(modInfo);
+        return response.createSuccess(modInfo.data);
     },
     setModInfo: (serverId) => {
         if ((typeof serverId) != "string") return error.invalidParameters();
