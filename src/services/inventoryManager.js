@@ -40,7 +40,7 @@ let self = module.exports = {
             inventoryItems.InventoryItemTrans.push(inventoryItemTrans);
         }
         
-        fs.writeFileSync(getInventory.data.inventoryPath, xmlParser.buildXML(parsedInventory));
+        fs.writeFileSync(getInventory.data.inventoryPath, xmlParser.buildXML(parsedInventory, { pretty: true }));
         
         return response.createSuccess(findItem ?? inventoryItemTrans);
     },
@@ -70,7 +70,7 @@ let self = module.exports = {
         
         findItem.RemainingUseCount = [`${newItemQuantity}`];
         
-        fs.writeFileSync(getInventory.data.inventoryPath, xmlParser.buildXML(parsedInventory));
+        fs.writeFileSync(getInventory.data.inventoryPath, xmlParser.buildXML(parsedInventory, { pretty: true }));
         
         return response.createSuccess();
     }

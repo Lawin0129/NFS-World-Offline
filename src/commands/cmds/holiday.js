@@ -72,7 +72,7 @@ let self = module.exports = {
 
         console.log(`\nSuccessfully set to ${holidayType} holiday type. Launch the game and play!`);
 
-        fs.writeFileSync(getusersettingsPath, xmlParser.buildXML(UserSettings));
+        fs.writeFileSync(getusersettingsPath, xmlParser.buildXML(UserSettings, { pretty: true }));
         fs.writeFileSync(GetServerInformationPath, JSON.stringify(ServerInformation, null, 2));
     }
 }

@@ -53,7 +53,7 @@ let self = module.exports = {
         
         parsedCarslots.CarSlotInfoTrans.DefaultOwnedCarIndex = [`${findCarIndex}`];
         
-        fs.writeFileSync(carslotsPath, xmlParser.buildXML(parsedCarslots));
+        fs.writeFileSync(carslotsPath, xmlParser.buildXML(parsedCarslots, { pretty: true }));
         
         return response.createSuccess();
     },
@@ -68,7 +68,7 @@ let self = module.exports = {
         
         parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex].Durability = ["100"];
         
-        fs.writeFileSync(carslotsPath, xmlParser.buildXML(parsedCarslots));
+        fs.writeFileSync(carslotsPath, xmlParser.buildXML(parsedCarslots, { pretty: true }));
         
         return response.createSuccess();
     },
@@ -90,7 +90,7 @@ let self = module.exports = {
         defaultCustomCar.Vinyls = updatedCustomCar.Vinyls;
         defaultCustomCar.VisualParts = updatedCustomCar.VisualParts;
         
-        fs.writeFileSync(carslotsPath, xmlParser.buildXML(parsedCarslots));
+        fs.writeFileSync(carslotsPath, xmlParser.buildXML(parsedCarslots, { pretty: true }));
         
         return response.createSuccess(parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex]);
     },
@@ -121,7 +121,7 @@ let self = module.exports = {
         
         CarSlotInfoTrans.DefaultOwnedCarIndex = [`${newCarIdx}`];
         
-        fs.writeFileSync(carslotsPath, xmlParser.buildXML(parsedCarslots));
+        fs.writeFileSync(carslotsPath, xmlParser.buildXML(parsedCarslots, { pretty: true }));
         
         return response.createSuccess(carTemplate);
     },
@@ -150,7 +150,7 @@ let self = module.exports = {
             parsedCarslots.CarSlotInfoTrans.DefaultOwnedCarIndex = [`${defaultIdx}`];
         }
         
-        fs.writeFileSync(carslotsPath, xmlParser.buildXML(parsedCarslots));
+        fs.writeFileSync(carslotsPath, xmlParser.buildXML(parsedCarslots, { pretty: true }));
         
         return response.createSuccess({
             OwnedCarTrans: ownedCars.OwnedCarTrans[defaultIdx]

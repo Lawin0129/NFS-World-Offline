@@ -65,7 +65,7 @@ app.put("/badges/set", async (req, res) => {
 
     PersonaInfo.ProfileData.Badges = badgesTemplate.Badges;
 
-    fs.writeFileSync(personaInfoPath, xmlParser.buildXML(PersonaInfo));
+    fs.writeFileSync(personaInfoPath, xmlParser.buildXML(PersonaInfo, { pretty: true }));
     
     res.status(200).end();
 });

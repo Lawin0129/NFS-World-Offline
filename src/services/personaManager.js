@@ -119,7 +119,7 @@ let self = module.exports = {
         
         personaInfo.Motto = [motto];
         
-        fs.writeFileSync(path.join(findPersona.data.driverDirectory, "GetPersonaInfo.xml"), xmlParser.buildXML({ ProfileData: personaInfo }));
+        fs.writeFileSync(path.join(findPersona.data.driverDirectory, "GetPersonaInfo.xml"), xmlParser.buildXML({ ProfileData: personaInfo }, { pretty: true }));
         
         return response.createSuccess();
     },
@@ -178,9 +178,9 @@ let self = module.exports = {
         loadall.AchievementsPacket.PersonaId = [newPersonaId];
         
         fs.writeFileSync(path.join(driverPath, "carslots.xml"), carslots);
-        fs.writeFileSync(path.join(driverPath, "GetPersonaInfo.xml"), xmlParser.buildXML(GetPersonaInfo));
+        fs.writeFileSync(path.join(driverPath, "GetPersonaInfo.xml"), xmlParser.buildXML(GetPersonaInfo, { pretty: true }));
         fs.writeFileSync(path.join(driverPath, "gettreasurehunteventsession.xml"), gettreasurehunteventsession);
-        fs.writeFileSync(path.join(driverPath, "loadall.xml"), xmlParser.buildXML(loadall));
+        fs.writeFileSync(path.join(driverPath, "loadall.xml"), xmlParser.buildXML(loadall, { pretty: true }));
         fs.writeFileSync(path.join(driverPath, "objects.xml"), objects);
         
         return response.createSuccess(GetPersonaInfo);

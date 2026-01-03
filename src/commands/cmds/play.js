@@ -96,7 +96,6 @@ function checkExeValid(filePath) {
     }
 }
 
-
 function buildAffinityMask(maxCpuCount) {
     const cpuCount = os.cpus().length;
     const n = Math.min(Math.max(1, cpuCount), maxCpuCount);

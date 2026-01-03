@@ -124,7 +124,7 @@ app.post("/event/bust", async (req, res) => {
     defaultCar.Heat = ["1.0"];
     defaultCar.Durability = [`${calculateDurability}`];
     
-    fs.writeFileSync(getCarslots.data.carslotsPath, xmlParser.buildXML(parsedCarslots));
+    fs.writeFileSync(getCarslots.data.carslotsPath, xmlParser.buildXML(parsedCarslots, { pretty: true }));
 
     let eventSessionID = ((typeof req.query.eventSessionId) == "string") ? req.query.eventSessionId : "";
 
@@ -183,7 +183,7 @@ app.post("/event/:eventAction", async (req, res) => {
 
     defaultCar.Durability = [`${calculateDurability}`];
 
-    fs.writeFileSync(getCarslots.data.carslotsPath, xmlParser.buildXML(parsedCarslots));
+    fs.writeFileSync(getCarslots.data.carslotsPath, xmlParser.buildXML(parsedCarslots, { pretty: true }));
 
     let eventSessionID = ((typeof req.query.eventSessionId) == "string") ? req.query.eventSessionId : "";
 
