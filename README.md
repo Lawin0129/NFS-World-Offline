@@ -1,6 +1,8 @@
 ### Contents
 - [About NFS: World](#about-nfs-world)
 - [About This Program](#about-this-program)
+- [Reason For Developing This Program](#reason-for-developing-this-program)
+- [Notes](#notes)
 - [Features](#features)
 - [Command Line Commands](#command-line-commands)
 - [Configuration](#configuration)
@@ -9,13 +11,24 @@
 - [Credits](#credits)
 
 # About NFS: World
-Need for Speed: World is the 15th game in the Need for Speed franchise. It was a free-to-play, massively multiplayer online racing game released exclusively for Windows. Officially launched on July 27, 2010 then shut down on July 14, 2015. It was an online-only game that combined elements from previous titles in the series such as NFS: Most Wanted (2005) and NFS: Carbon. It focused on illegal street racing, car tuning, and police chases. The game was set in Tri-Cities, a map that connected the metropolises of Rockport from NFS: Most Wanted (2005) and Palmont City from NFS: Carbon.
+Need for Speed: World is the 15th game in the Need for Speed franchise. It was a free-to-play, massively multiplayer online racing game released exclusively for Windows. Officially launched on July 27th 2010, then permanently shut down on July 14th 2015. It was an online-only game that combined elements from previous titles in the series such as NFS: Most Wanted (2005) and NFS: Carbon. It focused on illegal street racing, car tuning, and police chases. The game was set in Tri-Cities, a map that connected the metropolises of Rockport from NFS: Most Wanted (2005) and Palmont City from NFS: Carbon.
 
 You can find out more here: [https://nfs.fandom.com/wiki/Need_for_Speed:_World](https://nfs.fandom.com/wiki/Need_for_Speed:_World)
 # About This Program
-This program is an NFS World backend (server emulator) written in Node.js which allows you to play the game locally.
+This program is an NFS World backend (server emulator) written in Node.js that lets you play the game locally.
 
 Compatible with Node.js v14.0.0 up to the latest version.
+# Reason For Developing This Program
+Need for Speed World is my favourite childhood multiplayer game and I played all the time from 2012 to 2015 with my family and friends, this game holds a special place in my heart so I wanted to create something useful for it.
+
+The current existing offline server emulators are very outdated and finicky with a disorganised folder/file structure and missing features. I decided to create my own offline server emulator from the ground up for easy setup, new features, modding, and more.
+# Notes
+* Some of the XML file names are deliberately the exact same as existing offline servers to make data and file imports from other servers easier.
+* Basket is located at [`NFS-World-Offline/data/basket/`](data/basket/).
+* Catalog is located at [`NFS-World-Offline/data/catalog/`](data/catalog/).
+* Driver/persona data is located at [`NFS-World-Offline/drivers/`](drivers/).
+    + This is a major step up in folder structure compared to other offline servers, each driver has a unique folder in here with all their files located in there, making it much simpler to modify and replace driver related data like cars.
+* You can export driver/persona data from SBRW servers using my [`SBRW-Exporter`](https://github.com/Lawin0129/SBRW-Exporter) tool and use it in this offline server with your specific modded NFS World game client (like `modloader` in [Command Line Commands](#command-line-commands)).
 # Features
 * Achievements:
     + All original achievements included that once existed in NFS World.
@@ -64,9 +77,10 @@ Compatible with Node.js v14.0.0 up to the latest version.
     + This does not create a duplicate of mods which means the mods directory is shared with the selected SBRW server.
     + If there is no internet connection, the base game will load instead.
     + NOTE: You need the specific catalog and basket xml files for your selected SBRW server to access the added cars and items in the shop. You can usually get them by asking in the respective SBRW Discord servers. Some servers already have the necessary files dumped and shared for users.
-- `> play` - Used to launch Need for Speed World. Upon running this command, two options are displayed where one is for selecting the nfsw.exe file path and the other is to launch Need for Speed World.
-    + Selecting a valid nfsw.exe file path saves into [Configuration](#configuration) so you won't need to re-select it again if you restart this offline server.
-    + Once a valid nfsw.exe file path is selected, you can simply run the "play" command again then select "Launch" and Need for Speed World will start.
+    + You can export driver/persona data from SBRW servers and use them with the modded client, look at [Notes](#notes) for more information.
+- `> play` - Used to launch Need for Speed World. Upon running this command, two options are displayed where one is for selecting the `nfsw.exe` file path and the other is to launch Need for Speed World.
+    + Selecting a valid `nfsw.exe` file path saves into [Configuration](#configuration) so you won't need to re-select it again if you restart this offline server.
+    + Once a valid `nfsw.exe` file path is selected, you can simply run the "play" command again then select "Launch" and Need for Speed World will start.
     + This command automatically limits NFS World to a maximum of 8 CPU cores (because using above 8 cores makes the game unstable and usually crashes).
 # Configuration
 Located in `config/config.json`. You will need to restart the server if you make any changes to this file.
@@ -74,7 +88,7 @@ Located in `config/config.json`. You will need to restart the server if you make
 |------------------------|----------|-------------|
 | `LogRequests`          | `false`  | When set to `true`, this will display every request and XMPP message being sent by the game client. |
 | `FakeFreeroamPlayers`  | `false`  | When set to `true`, this will add about 10 fake players driving around the map. |
-| `nfswFilePath`         |  Empty   | This is where your valid nfsw.exe file path will be stored. Changed with the "play" command using [Command Line Commands](#command-line-commands). |
+| `nfswFilePath`         |  Empty   | This is where your valid `nfsw.exe` file path will be stored. Changed with the "play" command using [Command Line Commands](#command-line-commands). |
 
 NOTE: The `FakeFreeroamPlayers` feature may be a bit buggy. Players don't appear on the map sometimes and can cause the game to become really slow. If this happens, try entering and exiting the safehouse until they appear.
 # Server Editor
@@ -113,4 +127,4 @@ Once the game has launched, create your driver and play!
 | Name | Helped with |
 | --------------- | ----------- |
 | Lawin | Creator |
-| soapbox-race-offline-1.9.0<br/>by berkay2578 & Nilzao | For catalog and baskets xml files,<br/>For [Server Editor](#server-editor) and XMPP message subject hash algorithm. |
+| soapbox-race-offline-1.9.0<br/>by berkay2578 & Nilzao | For catalog and baskets XML files,<br/>For [Server Editor](#server-editor) and XMPP message subject hash algorithm. |
