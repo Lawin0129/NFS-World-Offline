@@ -5,6 +5,7 @@ const functions = require("../utils/functions");
 const response = require("../utils/response");
 const error = require("../utils/error");
 const personaManager = require("./personaManager");
+const allCatalogProducts = require("../../config/Assets/catalog.json");
 
 let self = module.exports = {
     getCarslots: async (personaId) => {
@@ -15,7 +16,8 @@ let self = module.exports = {
         
         return response.createSuccess({
             carslotsData: fs.readFileSync(carslotsPath).toString(),
-            carslotsPath: carslotsPath
+            carslotsPath: carslotsPath,
+            persona: findPersona.data
         });
     },
     getDefaultCar: async (personaId) => {
@@ -83,6 +85,63 @@ let self = module.exports = {
         
         let defaultCarIndex = parsedCarslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
         let defaultCustomCar = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex].CustomCar[0];
+
+        const oldPerfParts = defaultCustomCar.PerformanceParts?.[0]?.PerformancePartTrans;
+        const newPerfParts = updatedCustomCar.PerformanceParts?.[0]?.PerformancePartTrans;
+
+        const oldSkillParts = defaultCustomCar.SkillModParts?.[0]?.SkillModPartTrans;
+        const newSkillParts = updatedCustomCar.SkillModParts?.[0]?.SkillModPartTrans;
+
+        const extractPartHashes = (parts, attribName) => {
+            let partsList = [];
+
+            if (Array.isArray(parts)) {
+                for (let idx = 0; parts.length > idx; idx++) {
+                    let partHash = parts[idx]?.[attribName]?.[0];
+                    if ((typeof partHash) != "string") partHash = "";
+
+                    partsList.push(partHash);
+                }
+            }
+
+            return partsList;
+        }
+
+        const oldPerfPartsHashes = extractPartHashes(oldPerfParts, "PerformancePartAttribHash");
+        const newPerfPartsHashes = extractPartHashes(newPerfParts, "PerformancePartAttribHash");
+
+        const oldSkillPartsHashes = extractPartHashes(oldSkillParts, "SkillModPartAttribHash");
+        const newSkillPartsHashes = extractPartHashes(newSkillParts, "SkillModPartAttribHash");
+
+        const perfDiff = functions.diffArrays(oldPerfPartsHashes, newPerfPartsHashes).filter(i => i[1] < 0);
+        const skillDiff = functions.diffArrays(oldSkillPartsHashes, newSkillPartsHashes).filter(i => i[1] < 0);
+
+        let cashChange = 0;
+
+        for (let perfRemoval of perfDiff) {
+            if (!perfRemoval[0]) continue;
+
+            const productData = allCatalogProducts.find(p => p.hash == perfRemoval[0]);
+
+            if (productData) {
+                cashChange += productData.resalePrice;
+            }
+        }
+
+        for (let skillRemoval of skillDiff) {
+            if (!skillRemoval[0]) continue;
+
+            let soldPartHash = skillRemoval[0];
+            let amountSold = skillRemoval[1] * -1;
+
+            const productData = allCatalogProducts.find(p => p.hash == soldPartHash);
+
+            if (productData) {
+                cashChange += (productData.resalePrice * amountSold);
+            }
+        }
+
+        if (cashChange != 0) await personaManager.addCash(personaId, cashChange);
         
         defaultCustomCar.Paints = updatedCustomCar.Paints;
         defaultCustomCar.PerformanceParts = updatedCustomCar.PerformanceParts;
@@ -139,6 +198,11 @@ let self = module.exports = {
         
         let findCarIndex = ownedCars.OwnedCarTrans.findIndex(car => car.Id?.[0] == carId);
         if (findCarIndex == -1) return error.carNotFound();
+
+        const currentCar = ownedCars.OwnedCarTrans[findCarIndex];
+        const resalePrice = parseInt(currentCar.CustomCar?.[0]?.ResalePrice?.[0]) || 0;
+
+        await personaManager.addCash(getCarslots.data.persona.personaId, resalePrice);
         
         ownedCars.OwnedCarTrans.splice(findCarIndex, 1);
         

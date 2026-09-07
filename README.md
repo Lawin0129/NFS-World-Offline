@@ -1,5 +1,5 @@
 ### Contents
-- [About NFS: World](#about-nfs-world)
+- [About NFS World](#about-nfs-world)
 - [About This Program](#about-this-program)
 - [Reason For Developing This Program](#reason-for-developing-this-program)
 - [Notes](#notes)
@@ -10,8 +10,8 @@
 - [NFS World Server Emulator Setup](#nfs-world-server-emulator-setup)
 - [Credits](#credits)
 
-# About NFS: World
-Need for Speed: World is the 15th game in the Need for Speed franchise. It was a free-to-play, massively multiplayer online racing game released exclusively for Windows. Officially launched on July 27th 2010, then permanently shut down on July 14th 2015. It was an online-only game that combined elements from previous titles in the series such as NFS: Most Wanted (2005) and NFS: Carbon. It focused on illegal street racing, car tuning, and police chases. The game was set in Tri-Cities, a map that connected the metropolises of Rockport from NFS: Most Wanted (2005) and Palmont City from NFS: Carbon.
+# About NFS World
+Need for Speed World is the 15th game in the Need for Speed franchise. It was a free-to-play, massively multiplayer online racing game released exclusively for Windows. Officially launched on July 27th 2010, then permanently shut down on July 14th 2015. It was an online-only game that combined elements from previous titles in the series such as NFS Most Wanted (2005) and NFS Carbon. It focused on illegal street racing, car tuning, and police chases. The game was set in Tri-Cities, a map that connected the metropolises of Rockport from NFS Most Wanted (2005) and Palmont City from NFS Carbon.
 
 You can find out more here: [https://nfs.fandom.com/wiki/Need_for_Speed:_World](https://nfs.fandom.com/wiki/Need_for_Speed:_World)
 # About This Program
@@ -41,6 +41,10 @@ The current existing offline server emulators are very outdated and finicky with
 * Power-Ups:
     + Using power-ups.
     + Recharging/purchasing power-ups from the Power-Up Console.
+* Economy:
+    + Cash and SpeedBoost is correctly spent when purchasing any items.
+    + Selling any item gives the correct amount of cash.
+        - NOTE: Using a modded NFS World client may make the equipped performance/skill part selling prices inaccurate.
 * Events:
     + All original events included that once existed in NFS World.
     + Launching single player events.

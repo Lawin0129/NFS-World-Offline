@@ -35,6 +35,7 @@ let self = module.exports = {
                 if (!personaFiles.every(fileName => filesInDriver.includes(fileName))) continue;
                 
                 let PersonaInfo = await xmlParser.parseXML(fs.readFileSync(path.join(driverDirectory, "GetPersonaInfo.xml")).toString());
+                if (drivers.some(driver => driver.personaId == PersonaInfo.ProfileData.PersonaId[0])) continue;
 
                 if (valuesIsArray && !valueArray.includes(PersonaInfo.ProfileData[fieldName][0])) {
                     driverIdx += 1;
@@ -121,6 +122,42 @@ let self = module.exports = {
         
         fs.writeFileSync(path.join(findPersona.data.driverDirectory, "GetPersonaInfo.xml"), xmlParser.buildXML({ ProfileData: personaInfo }, { pretty: true }));
         
+        return response.createSuccess();
+    },
+    addCash: async (personaId, cash) => {
+        let parsedCash = parseInt(cash);
+        if (!Number.isInteger(parsedCash)) return error.invalidParameters();
+
+        const findPersona = await self.getPersonaById(personaId);
+        if (!findPersona.success) return error.personaNotFound();
+
+        let personaInfo = findPersona.data.personaInfo;
+
+        const oldCash = parseInt(personaInfo.Cash?.[0]) || 0;
+        const newCash = oldCash + parsedCash;
+
+        personaInfo.Cash = [`${newCash}`];
+
+        fs.writeFileSync(path.join(findPersona.data.driverDirectory, "GetPersonaInfo.xml"), xmlParser.buildXML({ ProfileData: personaInfo }, { pretty: true }));
+
+        return response.createSuccess();
+    },
+    addBoost: async (personaId, boost) => {
+        let parsedBoost = parseInt(boost);
+        if (!Number.isInteger(parsedBoost)) return error.invalidParameters();
+
+        const findPersona = await self.getPersonaById(personaId);
+        if (!findPersona.success) return error.personaNotFound();
+
+        let personaInfo = findPersona.data.personaInfo;
+
+        const oldBoost = parseInt(personaInfo.Boost?.[0]) || 0;
+        const newBoost = oldBoost + parsedBoost;
+
+        personaInfo.Boost = [`${newBoost}`];
+
+        fs.writeFileSync(path.join(findPersona.data.driverDirectory, "GetPersonaInfo.xml"), xmlParser.buildXML({ ProfileData: personaInfo }, { pretty: true }));
+
         return response.createSuccess();
     },
     createPersona: async (personaName, iconIndex) => {

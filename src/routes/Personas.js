@@ -135,16 +135,42 @@ app.put("/personas/:personaId/cars", async (req, res) => {
 app.post("/personas/:personaId/commerce", async (req, res) => {
     let parsedBody = await xmlParser.parseXML(req.body);
     let customCar = parsedBody?.CommerceSessionTrans?.UpdatedCar?.[0]?.CustomCar?.[0];
+    let basketItems = parsedBody?.CommerceSessionTrans?.Basket?.[0]?.Items?.[0]?.BasketItemTrans;
+    let productIds = [];
+    
+    if (Array.isArray(basketItems)) {
+        for (let product of basketItems) {
+            let productId = product.ProductId?.[0];
+            let quantity = parseInt(product.Quantity?.[0]) || 1;
+
+            if ((typeof productId) != "string") continue;
+            if (quantity < 1) continue;
+
+            productIds.push({
+                productId: productId,
+                quantity: quantity
+            });
+        }
+    }
+
+    let commerceResult = {
+        CommerceSessionResultTrans: {}
+    };
+
+    const commerce = await catalogManager.purchaseItems(req.params.personaId, productIds);
+    if (!commerce.success) return res.status(commerce.error.status).send(commerce.error.reason);
+
+    commerceResult.CommerceSessionResultTrans = commerce.data.CommerceResultTrans;
+
+    if (commerce.data.CommerceResultTrans.Status[0] == "Fail_InsufficientFunds") {
+        return res.xml(commerceResult);
+    }
     
     const saveCar = await carManager.saveCar(req.params.personaId, customCar);
     
     if (saveCar.success) {
-        res.xml({
-            CommerceSessionResultTrans: {
-                Status: ["Success"],
-                UpdatedCar: saveCar.data
-            }
-        });
+        commerceResult.CommerceSessionResultTrans.UpdatedCar = saveCar.data;
+        res.xml(commerceResult);
     } else {
         res.status(saveCar.error.status).send(saveCar.error.reason);
     }
@@ -167,14 +193,30 @@ app.get("/personas/inventory/objects", async (req, res) => {
 // Purchasing (cars, etc...)
 app.post("/personas/:personaId/baskets", async (req, res) => {
     let parsedBody = await xmlParser.parseXML(req.body);
-    let ProductId = parsedBody?.BasketTrans?.Items?.[0]?.BasketItemTrans?.[0]?.ProductId?.[0];
+    let basketItems = parsedBody?.BasketTrans?.Items?.[0]?.BasketItemTrans;
+    let productIds = [];
+
+    if (Array.isArray(basketItems)) {
+        for (let product of basketItems) {
+            let productId = product.ProductId?.[0];
+            let quantity = parseInt(product.Quantity?.[0]) || 1;
+
+            if ((typeof productId) != "string") continue;
+            if (quantity < 1) continue;
+
+            productIds.push({
+                productId: productId,
+                quantity: quantity
+            });
+        }
+    }
+
+    const purchaseItems = await catalogManager.purchaseItems(req.params.personaId, productIds);
     
-    const purchaseItem = await catalogManager.purchaseItem(req.params.personaId, ProductId);
-    
-    if (purchaseItem.success) {
-        res.xml(purchaseItem.data);
+    if (purchaseItems.success) {
+        res.xml(purchaseItems.data);
     } else {
-        res.status(404).end();
+        res.status(purchaseItems.error.status).send(purchaseItems.error.reason);
     }
 });
 

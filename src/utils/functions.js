@@ -18,6 +18,25 @@ function between(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+function diffArrays(a, b) {
+    const valueCount = (arr) => {
+        let valueMap = new Map();
+
+        for (let value of arr) {
+            valueMap.set(value, (valueMap.get(value) || 0) + 1);
+        }
+
+        return valueMap;
+    }
+    
+    const A = valueCount(a);
+    const B = valueCount(b);
+    
+    return [ ...new Set([ ...(A.keys()), ...(B.keys()) ]) ]
+        .map(x => [x, (B.get(x) || 0) - (A.get(x) || 0)])
+        .filter(([key, diff]) => diff != 0);
+}
+
 function MakeID() {
     return `${between(100000000, 999999999)}`;
 }
@@ -36,6 +55,7 @@ module.exports = {
     sleep,
     askQuestion,
     between,
+    diffArrays,
     MakeID,
     getHost
 }
