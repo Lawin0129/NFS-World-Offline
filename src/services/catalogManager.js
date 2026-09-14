@@ -5,21 +5,12 @@ const response = require("../utils/response");
 const error = require("../utils/error");
 const xmlParser = require("../utils/xmlParser");
 const carManager = require("./carManager");
-const powerupManager = require("../services/powerupManager");
 const personaManager = require("../services/personaManager");
+const inventoryManager = require("../services/inventoryManager");
+
+let cachedCatalog;
 
 let self = module.exports = {
-    getCategory: (categoryId) => {
-        if ((typeof categoryId) != "string") return error.invalidParameters();
-        
-        const categoryPath = path.join(paths.dataPath, "catalog", `${path.basename(categoryId)}.xml`);
-        if (!fs.existsSync(categoryPath)) return error.catalogNotFound();
-        
-        return response.createSuccess({
-            categoryData: fs.readFileSync(categoryPath).toString(),
-            categoryPath: categoryPath
-        });
-    },
     getBasketItem: (basketId) => {
         if ((typeof basketId) != "string") return error.invalidParameters();
         
@@ -32,35 +23,109 @@ let self = module.exports = {
         });
     },
     getAllCatalogProducts: async () => {
-        let catalog = [];
         const catalogNames = fs.readdirSync(path.join(paths.dataPath, "catalog")).filter(n => n.endsWith(".xml"));
+        let needsUpdate = false;
 
-        for (let catalogName of catalogNames) {
-            let categoryName = catalogName.split(".")[0];
+        // This checks if any of the catalog xml files were modified so the server does not have to be restarted
+        if (Array.isArray(cachedCatalog)) {
+            if (catalogNames.length != cachedCatalog.length) needsUpdate = true;
 
-            const catalogData = self.getCategory(categoryName);
-            const parsedCatalogData = await xmlParser.parseXML(catalogData.data.categoryData);
+            for (let c of cachedCatalog) {
+                if (needsUpdate) break;
 
-            if (Array.isArray(parsedCatalogData?.ArrayOfProductTrans?.ProductTrans)) {
-                for (let p of parsedCatalogData.ArrayOfProductTrans.ProductTrans) {
-                    p.categoryName = [categoryName];
-                    catalog.push(p);
-                }
-            } else if (Array.isArray(parsedCatalogData?.ArrayOfCategoryTrans?.CategoryTrans)) {
-                for (let catalogCategory of parsedCatalogData.ArrayOfCategoryTrans.CategoryTrans) {
-                    if (Array.isArray(catalogCategory.Products?.[0]?.ProductTrans)) {
-                        for (let p of catalogCategory.Products[0].ProductTrans) {
-                            p.categoryName = [categoryName];
-                            catalog.push(p);
-                        }
-                    }
+                try {
+                    const catalogStats = fs.statSync(c.categoryPath);
+                    const lastUpdated = `${catalogStats.mtime}_${catalogStats.size}`;
+                    
+                    if (lastUpdated != c.lastUpdated) needsUpdate = true;
+                } catch {
+                    needsUpdate = true;
                 }
             }
         }
 
+        if (!needsUpdate && Array.isArray(cachedCatalog)) return response.createSuccess(cachedCatalog);
+
+        let catalog = [];
+        let counts = new Map();
+
+        for (let catalogName of catalogNames) {
+            const categoryName = catalogName.split(".")[0];
+            const categoryPath = path.join(paths.dataPath, "catalog", catalogName);
+            const catalogData = fs.readFileSync(categoryPath).toString();
+            const catalogStats = fs.statSync(categoryPath);
+            const parsedCatalogData = await xmlParser.parseXML(catalogData);
+
+            let products = [];
+
+            // deals with duplicate and invalid product ids in catalog to prevent wrong item purchases
+            const addProducts = (items) => {
+                for (let p of items) {
+                    let origId = p.ProductId?.[0];
+                    if ((typeof origId) != "string") {
+                        origId = "LAWIN_INVALID_PRODUCT_ID";
+                        p.ProductId = [`${origId}`];
+                    }
+
+                    const count = counts.get(origId) ?? 0;
+
+                    counts.set(origId, count + 1);
+
+                    if (count > 0) {
+                        p.ProductId = [`${origId}-${count}`];
+                        p.OriginalProductId = [`${origId}`];
+
+                        const newIdCount = counts.get(p.ProductId[0]) ?? 0;
+
+                        counts.set(p.ProductId[0], newIdCount + 1);
+                    }
+
+                    // convert hashes into 32-bit because NFS World is 32-bit
+                    let newHash = (parseInt(p.Hash?.[0]) || 0) | 0;
+                    p.Hash = [`${newHash}`];
+
+                    products.push(p);
+                }
+            }
+
+            if (Array.isArray(parsedCatalogData?.ArrayOfProductTrans?.ProductTrans)) {
+                addProducts(parsedCatalogData.ArrayOfProductTrans.ProductTrans);
+            } else if (Array.isArray(parsedCatalogData?.ArrayOfCategoryTrans?.CategoryTrans)) {
+                for (let catalogCategory of parsedCatalogData.ArrayOfCategoryTrans.CategoryTrans) {
+                    if (Array.isArray(catalogCategory.Products?.[0]?.ProductTrans)) {
+                        addProducts(catalogCategory.Products[0].ProductTrans);
+                    }
+                }
+            }
+
+            catalog.push({
+                categoryPath: categoryPath,
+                categoryName: categoryName,
+                products: products,
+                xmlData: await xmlParser.buildXML(parsedCatalogData),
+                lastUpdated: `${catalogStats.mtime}_${catalogStats.size}`
+            });
+        }
+
+        cachedCatalog = catalog;
+
         return response.createSuccess(catalog);
     },
+    getCategory: async (categoryId) => {
+        if ((typeof categoryId) != "string") return error.invalidParameters();
+
+        let allCatalogs = await self.getAllCatalogProducts();
+        let catalog = allCatalogs.data.find(c => c.categoryName == categoryId);
+        if (!catalog) return error.catalogNotFound();
+
+        return response.createSuccess({
+            categoryData: catalog.xmlData,
+            products: catalog.products
+        });
+    },
     purchaseItems: async (personaId, basketItems) => {
+        if (!basketItems.every(i => ((typeof i.productId) == "string") && Number.isInteger(i.quantity))) return error.invalidParameters();
+
         const findPersona = await personaManager.getPersonaById(personaId);
         if (!findPersona.success) return error.personaNotFound();
 
@@ -96,20 +161,38 @@ let self = module.exports = {
         let purchasedItems = [];
 
         for (let basketItem of basketItems) {
-            const productItem = allCatalogs.data.find(product => product.ProductId?.[0] == basketItem.productId);
+            let productItem;
+
+            for (let catalog of allCatalogs.data) {
+                productItem = catalog.products.find(p => p.ProductId?.[0] == basketItem.productId);
+
+                if (productItem) {
+                    productItem.categoryName = catalog.categoryName;
+                    break;
+                }
+            }
+
             if (!productItem) continue;
             
-            let priceMultiplier = (parseInt(productItem.UseCount?.[0]) * parseInt(basketItem.quantity)) || 1;
+            const totalPrice = (parseInt(productItem.Price?.[0]) * basketItem.quantity) || 0;
+            const cashOnlyCatalogs = [
+                "categories_NFSW_NA_EP_VINYLS_Category",
+                "productsInCategory_NFSW_NA_EP_PAINTS_BODY_Category",
+                "productsInCategory_NFSW_NA_EP_PAINTS_WHEEL_Category",
+                "productsInCategory_NFSW_NA_EP_PERFORMANCEPARTS",
+                "productsInCategory_NFSW_NA_EP_REPAIRS",
+                "productsInCategory_NFSW_NA_EP_SKILLMODPARTS"
+            ];
             
-            if (productItem.categoryName[0] == "productsInCategory_STORE_POWERUPS") priceMultiplier = 1;
-            
-            const totalPrice = (parseInt(productItem.Price?.[0]) * priceMultiplier) || 0;
-            
-            if (productItem.Currency[0].toLowerCase() == "cash") {
+            if ((productItem.Currency?.[0] == "CASH") || cashOnlyCatalogs.includes(productItem.categoryName)) {
+                productItem.Currency = ["CASH"];
                 cashChange -= totalPrice;
-            } else if (productItem.Currency[0].toLowerCase() == "_ns") {
+            } else {
+                productItem.Currency = ["_NS"];
                 boostChange -= totalPrice;
             }
+
+            basketItem.productItem = productItem;
 
             purchasedItems.push(basketItem);
         }
@@ -128,8 +211,24 @@ let self = module.exports = {
         cashWalletTrans.Balance = [cashBal];
         boostWalletTrans.Balance = [boostBal];
 
+        let addedInventoryItems = [];
+
         for (let purchasedItem of purchasedItems) {
-            let getBasketItem = self.getBasketItem(purchasedItem.productId);
+            const productItem = purchasedItem.productItem;
+            let purchasedProductId = productItem.ProductId[0];
+
+            if (productItem.OriginalProductId) {
+                purchasedProductId = productItem.OriginalProductId[0];
+            }
+
+            let getBasketItem = self.getBasketItem(purchasedProductId);
+            let itemResellPrice = parseInt(productItem.Price?.[0]) || 0;
+
+            if (productItem.Currency[0] == "CASH") {
+                itemResellPrice *= 0.5;
+            } else {
+                itemResellPrice = null;
+            }
 
             if (getBasketItem.success) {
                 let product = await xmlParser.parseXML(getBasketItem.data.basketData);
@@ -137,7 +236,11 @@ let self = module.exports = {
 
                 switch (productRootName) {
                     case "OwnedCarTrans": {
-                        const addCar = await carManager.addCar(personaId, product.OwnedCarTrans);
+                        let customFields = {};
+
+                        if (itemResellPrice != null) customFields.ResalePrice = [`${parseInt(itemResellPrice)}`];
+
+                        const addCar = await carManager.addCar(personaId, product.OwnedCarTrans, customFields);
 
                         if (addCar.success) {
                             commerceTemplate.CommerceResultTrans.PurchasedCars = [{ OwnedCarTrans: [addCar.data] }];
@@ -147,12 +250,51 @@ let self = module.exports = {
                     }
                 }
             } else {
-                const productItem = allCatalogs.data.find(product => product.ProductId?.[0] == purchasedItem.productId);
-                
-                if (productItem) {
-                    if (productItem.categoryName[0] == "productsInCategory_STORE_POWERUPS") {
-                        await powerupManager.purchasePowerup(personaId, purchasedItem.productId);
+                let itemType;
+
+                switch (productItem.categoryName) {
+                    case "productsInCategory_STORE_POWERUPS": {
+                        itemType = "powerup";
+                        break;
                     }
+                    case "productsInCategory_NFSW_NA_EP_PERFORMANCEPARTS": {
+                        itemType = "performancepart";
+                        break;
+                    }
+                    case "productsInCategory_NFSW_NA_EP_SKILLMODPARTS":
+                    case "productsInCategory_STORE_SKILLMODPARTS": {
+                        itemType = "skillmodpart";
+                        break;
+                    }
+                    case "categories_NFSW_NA_EP_VINYLS_Category": {
+                        itemType = "vinyl";
+                        break;
+                    }
+                }
+
+                if (productItem.categoryName.includes("VISUALPARTS") || productItem.categoryName.includes("VANITY")) {
+                    itemType = "visualpart";
+                }
+
+                if (!itemType) continue;
+
+                let invenItem = {
+                    Hash: productItem.Hash,
+                    RemainingUseCount: productItem.UseCount,
+                    ResellPrice: [`${itemResellPrice}`],
+                    VirtualItemType: [itemType]
+                };
+
+                addedInventoryItems.push(invenItem);
+            }
+        }
+
+        if (addedInventoryItems.length != 0) {
+            const itemAdd = await inventoryManager.addInventoryItems(personaId, addedInventoryItems);
+
+            if (itemAdd.success) {
+                for (let newItem of itemAdd.data) {
+                    commerceTemplate.CommerceResultTrans.InventoryItems[0].InventoryItemTrans.push(newItem);
                 }
             }
         }

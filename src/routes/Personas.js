@@ -136,7 +136,23 @@ app.post("/personas/:personaId/commerce", async (req, res) => {
     let parsedBody = await xmlParser.parseXML(req.body);
     let customCar = parsedBody?.CommerceSessionTrans?.UpdatedCar?.[0]?.CustomCar?.[0];
     let basketItems = parsedBody?.CommerceSessionTrans?.Basket?.[0]?.Items?.[0]?.BasketItemTrans;
+    let entitlementsToSell = parsedBody?.CommerceSessionTrans?.EntitlementsToSell?.[0]?.Items?.[0]?.EntitlementItemTrans;
+    let entitlements = [];
     let productIds = [];
+
+    if (Array.isArray(entitlementsToSell)) {
+        for (let entitlementItem of entitlementsToSell) {
+            let entitlementId = entitlementItem.EntitlementId?.[0];
+
+            if ((typeof entitlementId) != "string") continue;
+
+            entitlements.push(entitlementId);
+        }
+    }
+
+    if (entitlements.length != 0) {
+        await inventoryManager.sellEntitlements(req.params.personaId, entitlements);
+    }
     
     if (Array.isArray(basketItems)) {
         for (let product of basketItems) {
@@ -188,6 +204,16 @@ app.get("/personas/inventory/objects", async (req, res) => {
     } else {
         res.status(getInventory.error.status).send(getInventory.error.reason);
     }
+});
+
+// Sell a single inventory item
+app.get("/personas/inventory/sell/:entitlementTag", async (req, res) => {
+    const getActivePersona = personaManager.getActivePersona();
+    if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
+
+    const sell = await inventoryManager.sellEntitlements(getActivePersona.data.personaId, [req.params.entitlementTag]);
+
+    res.status(200).end();
 });
 
 // Purchasing (cars, etc...)

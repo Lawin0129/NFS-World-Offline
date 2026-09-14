@@ -3,13 +3,6 @@ const error = require("../utils/error");
 const xmlParser = require("../utils/xmlParser");
 const inventoryManager = require("../services/inventoryManager");
 const xmppManager = require("../services/xmppManager");
-let catalogManager;
-
-function initialiseCatalogManager() {
-    catalogManager = require("../services/catalogManager");
-
-    return catalogManager;
-}
 
 let self = module.exports = {
     activatePowerup: async (itemHash) => {
@@ -18,8 +11,12 @@ let self = module.exports = {
         const getActiveXmppClientData = xmppManager.getActiveXmppClientData();
         if (!getActiveXmppClientData.success) return getActiveXmppClientData;
 
-        const useItem = await inventoryManager.useInventoryItem(getActiveXmppClientData.data.personaId, itemHash, "powerup", 1);
+        const useItem = await inventoryManager.useInventoryItems(getActiveXmppClientData.data.personaId, [{ itemHash: itemHash, itemType: "powerup" }]);
         if (!useItem.success) return useItem;
+
+        if (useItem.data.failedToApply) {
+            return useItem.data.usedItems[0].data;
+        }
         
         xmppManager.sendMessage(getActiveXmppClientData.data, xmlParser.buildXML({
             response: {
@@ -39,29 +36,6 @@ let self = module.exports = {
                 }]
             }
         }));
-        
-        return response.createSuccess();
-    },
-    purchasePowerup: async (personaId, productId) => {
-        if ((typeof productId) != "string") return error.invalidParameters();
-        
-        const getCategory = (catalogManager ?? initialiseCatalogManager()).getCategory("productsInCategory_STORE_POWERUPS");
-        if (!getCategory.success) return getCategory;
-        
-        const parsedCatalog = await xmlParser.parseXML(getCategory.data.categoryData);
-        const findItem = parsedCatalog.ArrayOfProductTrans.ProductTrans.find(item => item.ProductId?.[0] == productId);
-        if (!findItem) return error.basketItemNotFound();
-        
-        let inventoryItemTrans = {
-            Hash: findItem.Hash,
-            RemainingUseCount: findItem.UseCount,
-            ResellPrice: ["0.0"],
-            Status: ["ACTIVE"],
-            VirtualItemType: ["powerup"]
-        };
-        
-        const addItem = await inventoryManager.addInventoryItem(personaId, inventoryItemTrans);
-        if (!addItem.success) return addItem;
         
         return response.createSuccess();
     }

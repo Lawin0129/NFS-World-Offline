@@ -4,9 +4,9 @@ const path = require("path");
 const catalogManager = require("../services/catalogManager");
 
 // Get catalog by category name
-app.get("/catalog/*", (req, res) => {
+app.get("/catalog/*", async (req, res) => {
     let catalogCategory = `${path.basename(req.path)}_${req.query.categoryName}`;
-    let getCategory = catalogManager.getCategory(catalogCategory);
+    let getCategory = await catalogManager.getCategory(catalogCategory);
 
     res.xml(getCategory.success ? getCategory.data.categoryData : "<ArrayOfProductTrans/>");
 });

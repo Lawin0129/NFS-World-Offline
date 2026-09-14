@@ -21,7 +21,7 @@ Compatible with Node.js v14.0.0 up to the latest version.
 # Reason For Developing This Program
 Need for Speed World is my favourite childhood multiplayer game and I played all the time from 2012 to 2015 with my family and friends, this game holds a special place in my heart so I wanted to create something useful for it.
 
-The current existing offline server emulators are very outdated and finicky with a disorganised folder/file structure and missing features. I decided to create my own offline server emulator from the ground up for easy setup, new features, modding, and more.
+The current existing offline server emulators are very outdated and finicky with a disorganised folder/file structure and a lot of features not accurate to the original game. I decided to develop my own offline server emulator from the ground up for easy setup, new features, modding, and more. My goal is to design this server in a way which accurately behaves and processes things exactly like the game client.
 # Notes
 * Some of the XML file names are deliberately the exact same as existing offline servers to make data and file imports from other servers easier.
 * Basket is located at [`NFS-World-Offline/data/basket/`](data/basket/).
@@ -30,9 +30,6 @@ The current existing offline server emulators are very outdated and finicky with
     + This is a major step up in folder structure compared to other offline servers, each driver has a unique folder in here with all their files located in there, making it much simpler to modify and replace driver related data like cars.
 * You can export driver/persona data from SBRW servers using my [`SBRW-Exporter`](https://github.com/Lawin0129/SBRW-Exporter) tool and use it in this offline server with your specific modded NFS World game client (like `modloader` in [Command Line Commands](#command-line-commands)).
 # Features
-* Achievements:
-    + All original achievements included that once existed in NFS World.
-    + Changing your achievement badges in Achievements Log.
 * Drivers:
     + Creating drivers.
     + Deleting drivers.
@@ -41,10 +38,13 @@ The current existing offline server emulators are very outdated and finicky with
 * Power-Ups:
     + Using power-ups.
     + Recharging/purchasing power-ups from the Power-Up Console.
+* Achievements:
+    + All original achievements included that once existed in NFS World.
+    + Changing your achievement badges in Achievements Log.
 * Economy:
     + Cash and SpeedBoost is correctly spent when purchasing any items.
     + Selling any item gives the correct amount of cash.
-        - NOTE: Using a modded NFS World client may make the equipped performance/skill part selling prices inaccurate.
+        - NOTE: Using a modded NFS World client may make the equipped (not inventory) performance/skill part selling prices inaccurate.
 * Events:
     + All original events included that once existed in NFS World.
     + Launching single player events.
@@ -69,6 +69,9 @@ The current existing offline server emulators are very outdated and finicky with
         - Performance Customization.
         - Vinyls Customization.
         - Paints Customization.
+* Inventory:
+    + Equipping inventory parts.
+    + Selling inventory parts.
 * Freeroam:
     + Freeroam with fake players. Look at [Configuration](#configuration) for more details.
 * Treasure Hunt

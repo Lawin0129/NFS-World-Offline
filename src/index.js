@@ -9,6 +9,7 @@ const functions = require("./utils/functions");
 const log = require("./utils/log");
 const xmlParser = require("./utils/xmlParser");
 const personaManager = require("./services/personaManager");
+const catalogManager = require("./services/catalogManager");
 const path = require("path");
 
 if (!config.httpPORT) config.httpPORT = 3550;
@@ -65,6 +66,8 @@ app.listen(config.httpPORT, async () => {
     console.log("If you like this offline server, please star the repo at \"https://github.com/Lawin0129/NFS-World-Offline\"!");
     
     require("./commands");
+
+    catalogManager.getAllCatalogProducts();
 }).on("error", async (err) => {
     if (err.code == "EADDRINUSE") {
         log.error("BACKEND", `Port ${config.httpPORT} is already in use!`);

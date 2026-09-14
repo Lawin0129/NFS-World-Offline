@@ -9,6 +9,7 @@ module.exports = {
     invalidInventoryItemType: () => response.createError(403, "Invalid inventory item type."),
     insufficientCarsOwned: () => response.createError(403, "Not enough cars owned."),
     insufficientInventoryUseCount: () => response.createError(403, "Not enough inventory item remaining use count."),
+    partApplyFail: () => response.createError(403, "An error occured while trying to apply performance/skill/visual/vinyl parts. Please make sure you own the items you are trying to apply."),
     personaMottoTooLong: () => response.createError(403, "Persona motto too long."),
     personaNameTooShort: () => response.createError(403, "Persona name too short."),
     personaNameTooLong: () => response.createError(403, "Persona name too long."),
