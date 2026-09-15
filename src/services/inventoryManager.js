@@ -141,10 +141,14 @@ let self = module.exports = {
             if (invenItem.VirtualItemType[0].toLowerCase() == "powerup") {
                 findItem = inventoryItems.InventoryItemTrans.find(i => (parseInt(i.Hash?.[0]) || 0) == invenItemHash);
 
-                let remainingUseCount = parseInt(findItem.RemainingUseCount?.[0]) || 0;
-                let newItemQuantity = remainingUseCount + parseInt(invenItem.RemainingUseCount[0]);
-
-                findItem.RemainingUseCount = [`${newItemQuantity}`];
+                if (findItem) {
+                    let remainingUseCount = parseInt(findItem.RemainingUseCount?.[0]) || 0;
+                    let newItemQuantity = remainingUseCount + parseInt(invenItem.RemainingUseCount[0]);
+                    
+                    findItem.RemainingUseCount = [`${newItemQuantity}`];
+                } else {
+                    inventoryItems.InventoryItemTrans.push(invenItem);
+                }
             } else {
                 inventoryItems.InventoryItemTrans.push(invenItem);
             }
