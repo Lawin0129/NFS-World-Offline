@@ -102,7 +102,7 @@ let self = module.exports = {
                 categoryPath: categoryPath,
                 categoryName: categoryName,
                 products: products,
-                xmlData: await xmlParser.buildXML(parsedCatalogData),
+                xmlData: xmlParser.buildXML(parsedCatalogData),
                 lastUpdated: `${catalogStats.mtime}_${catalogStats.size}`
             });
         }
@@ -167,7 +167,7 @@ let self = module.exports = {
                 productItem = catalog.products.find(p => p.ProductId?.[0] == basketItem.productId);
 
                 if (productItem) {
-                    productItem.categoryName = catalog.categoryName;
+                    basketItem.categoryName = catalog.categoryName;
                     break;
                 }
             }
@@ -184,7 +184,7 @@ let self = module.exports = {
                 "productsInCategory_NFSW_NA_EP_SKILLMODPARTS"
             ];
             
-            if ((productItem.Currency?.[0] == "CASH") || cashOnlyCatalogs.includes(productItem.categoryName)) {
+            if ((productItem.Currency?.[0] == "CASH") || cashOnlyCatalogs.includes(basketItem.categoryName)) {
                 productItem.Currency = ["CASH"];
                 cashChange -= totalPrice;
             } else {
@@ -216,6 +216,11 @@ let self = module.exports = {
         for (let purchasedItem of purchasedItems) {
             const productItem = purchasedItem.productItem;
             let purchasedProductId = productItem.ProductId[0];
+
+            if (purchasedItem.categoryName == "productsInCategory_NFSW_NA_EP_CARSLOTS") {
+                await carManager.increaseCarSlot(personaId, purchasedItem.quantity);
+                continue;
+            }
 
             if (productItem.OriginalProductId) {
                 purchasedProductId = productItem.OriginalProductId[0];
@@ -252,7 +257,7 @@ let self = module.exports = {
             } else {
                 let itemType;
 
-                switch (productItem.categoryName) {
+                switch (purchasedItem.categoryName) {
                     case "productsInCategory_STORE_POWERUPS": {
                         itemType = "powerup";
                         break;
@@ -272,7 +277,7 @@ let self = module.exports = {
                     }
                 }
 
-                if (productItem.categoryName.includes("VISUALPARTS") || productItem.categoryName.includes("VANITY")) {
+                if (purchasedItem.categoryName.includes("VISUALPARTS") || purchasedItem.categoryName.includes("VANITY")) {
                     itemType = "visualpart";
                 }
 

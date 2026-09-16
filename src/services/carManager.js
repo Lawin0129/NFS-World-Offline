@@ -6,6 +6,7 @@ const response = require("../utils/response");
 const error = require("../utils/error");
 const personaManager = require("./personaManager");
 const inventoryManager = require("./inventoryManager");
+const catalogManager = () => require("./catalogManager");
 const allCatalogProducts = require("../../config/Assets/catalog.json");
 
 let self = module.exports = {
@@ -14,11 +15,30 @@ let self = module.exports = {
         if (!findPersona.success) return error.personaNotFound();
         
         const carslotsPath = path.join(findPersona.data.driverDirectory, "carslots.xml");
+        let carslotsData = fs.readFileSync(carslotsPath).toString();
+        let parsedCarslots = await xmlParser.parseXML(carslotsData);
+        let carslotsChanged = false;
+
+        const carslotsCatalog = await catalogManager().getCategory("productsInCategory_NFSW_NA_EP_CARSLOTS");
+
+        if (carslotsCatalog.success) {
+            const products = [{ ProductTrans: carslotsCatalog.data.products }];
+
+            if (JSON.stringify((parsedCarslots.CarSlotInfoTrans.ObtainableSlots || "")) != JSON.stringify(products)) {
+                parsedCarslots.CarSlotInfoTrans.ObtainableSlots = products;
+                carslotsChanged = true;
+            }
+        }
+
+        if (carslotsChanged) {
+            carslotsData = xmlParser.buildXML(parsedCarslots, { pretty: true });
+            fs.writeFileSync(carslotsPath, carslotsData);
+        }
         
         return response.createSuccess({
-            carslotsData: fs.readFileSync(carslotsPath).toString(),
-            carslotsPath: carslotsPath,
-            persona: findPersona.data
+            parsedCarslots: parsedCarslots,
+            carslotsData: carslotsData,
+            carslotsPath: carslotsPath
         });
     },
     getDefaultCar: async (personaId) => {
@@ -33,7 +53,7 @@ let self = module.exports = {
             }
         };
         
-        let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
+        let parsedCarslots = getCarslots.data.parsedCarslots;
         
         let defaultIndex = parsedCarslots.CarSlotInfoTrans.DefaultOwnedCarIndex?.[0];
         let defaultItem = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona?.[0]?.OwnedCarTrans?.[defaultIndex];
@@ -49,7 +69,7 @@ let self = module.exports = {
         if (!getCarslots.success) return error.personaNotFound();
         
         let carslotsPath = getCarslots.data.carslotsPath;
-        let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
+        let parsedCarslots = getCarslots.data.parsedCarslots;
         
         let findCarIndex = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.findIndex(car => car.Id?.[0] == carId);
         if (findCarIndex == -1) return error.carNotFound();
@@ -65,7 +85,7 @@ let self = module.exports = {
         if (!getCarslots.success) return error.personaNotFound();
         
         let carslotsPath = getCarslots.data.carslotsPath;
-        let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
+        let parsedCarslots = getCarslots.data.parsedCarslots;
         
         let defaultCarIndex = parsedCarslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
         
@@ -83,7 +103,7 @@ let self = module.exports = {
         if (!getCarslots.success) return error.personaNotFound();
         
         let carslotsPath = getCarslots.data.carslotsPath;
-        let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
+        let parsedCarslots = getCarslots.data.parsedCarslots;
         
         let defaultCarIndex = parsedCarslots.CarSlotInfoTrans.DefaultOwnedCarIndex?.[0];
         let defaultCustomCar = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona?.[0]?.OwnedCarTrans?.[defaultCarIndex]?.CustomCar?.[0];
@@ -364,7 +384,7 @@ let self = module.exports = {
         if (!getCarslots.success) return error.personaNotFound();
         
         let carslotsPath = getCarslots.data.carslotsPath;
-        let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
+        let parsedCarslots = getCarslots.data.parsedCarslots;
         let CarSlotInfoTrans = parsedCarslots.CarSlotInfoTrans;
 
         if (!CarSlotInfoTrans.CarsOwnedByPersona?.[0]?.OwnedCarTrans) {
@@ -404,7 +424,7 @@ let self = module.exports = {
         if (!getCarslots.success) return error.personaNotFound();
         
         let carslotsPath = getCarslots.data.carslotsPath;
-        let parsedCarslots = await xmlParser.parseXML(getCarslots.data.carslotsData);
+        let parsedCarslots = getCarslots.data.parsedCarslots;
         
         let ownedCars = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0];
         if (ownedCars.OwnedCarTrans.length <= 1) return error.insufficientCarsOwned();
@@ -415,7 +435,7 @@ let self = module.exports = {
         const currentCar = ownedCars.OwnedCarTrans[findCarIndex];
         const resalePrice = parseInt(currentCar.CustomCar?.[0]?.ResalePrice?.[0]) || 0;
 
-        await personaManager.addCash(getCarslots.data.persona.personaId, resalePrice);
+        await personaManager.addCash(personaId, resalePrice);
         
         ownedCars.OwnedCarTrans.splice(findCarIndex, 1);
         
@@ -432,5 +452,25 @@ let self = module.exports = {
         return response.createSuccess({
             OwnedCarTrans: ownedCars.OwnedCarTrans[defaultIdx]
         });
+    },
+    increaseCarSlot: async (personaId, amount) => {
+        const parsedAmount = parseInt(amount);
+        if (!Number.isInteger(amount)) return error.invalidParameters();
+
+        const getCarslots = await self.getCarslots(personaId);
+        if (!getCarslots.success) return getCarslots;
+
+        let carslotsPath = getCarslots.data.carslotsPath;
+        let parsedCarslots = getCarslots.data.parsedCarslots;
+
+        let parsedCarSlotCount = parseInt(parsedCarslots.CarSlotInfoTrans.OwnedCarSlotsCount?.[0]) || 0;
+
+        parsedCarSlotCount += parsedAmount;
+
+        parsedCarslots.CarSlotInfoTrans.OwnedCarSlotsCount = [`${parsedCarSlotCount}`];
+
+        fs.writeFileSync(carslotsPath, xmlParser.buildXML(parsedCarslots, { pretty: true }));
+        
+        return response.createSuccess();
     }
 }
