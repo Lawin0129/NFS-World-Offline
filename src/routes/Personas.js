@@ -246,14 +246,16 @@ app.post("/personas/:personaId/baskets", async (req, res) => {
     }
 });
 
-// Repair Car
+// Get new car durability (requested after repair purchases)
 app.get("/car/repair", async (req, res) => {
-    const repairCar = await carManager.repairDefaultCar(req.query.personaId);
+    const getDefaultCar = await carManager.getDefaultCar(req.query.personaId);
 
-    if (repairCar.success) {
-        res.xml("<int>100</int>");
+    if (getDefaultCar.success) {
+        const parsedDurability = parseInt(getDefaultCar.data.OwnedCarTrans.Durability?.[0]) || 0;
+
+        res.xml(`<int>${parsedDurability}</int>`);
     } else {
-        res.status(repairCar.error.status).send(repairCar.error.reason);
+        res.status(getDefaultCar.error.status).send(getDefaultCar.error.reason);
     }
 });
 

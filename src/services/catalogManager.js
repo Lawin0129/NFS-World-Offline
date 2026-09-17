@@ -220,6 +220,9 @@ let self = module.exports = {
             if (purchasedItem.categoryName == "productsInCategory_NFSW_NA_EP_CARSLOTS") {
                 await carManager.increaseCarSlot(personaId, purchasedItem.quantity);
                 continue;
+            } else if (purchasedItem.categoryName == "productsInCategory_NFSW_NA_EP_REPAIRS") {
+                await carManager.repairDefaultCar(personaId, purchasedItem.quantity);
+                continue;
             }
 
             if (productItem.OriginalProductId) {

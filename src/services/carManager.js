@@ -80,16 +80,28 @@ let self = module.exports = {
         
         return response.createSuccess();
     },
-    repairDefaultCar: async (personaId) => {
+    repairDefaultCar: async (personaId, amount) => {
+        const parsedAmount = parseInt(amount);
+        if (!Number.isInteger(amount)) return error.invalidParameters();
+
         const getCarslots = await self.getCarslots(personaId);
-        if (!getCarslots.success) return error.personaNotFound();
+        if (!getCarslots.success) return getCarslots;
         
         let carslotsPath = getCarslots.data.carslotsPath;
         let parsedCarslots = getCarslots.data.parsedCarslots;
         
-        let defaultCarIndex = parsedCarslots.CarSlotInfoTrans.DefaultOwnedCarIndex[0];
+        let defaultCarIndex = parsedCarslots.CarSlotInfoTrans.DefaultOwnedCarIndex?.[0];
+        let defaultCar = parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona?.[0]?.OwnedCarTrans?.[defaultCarIndex];
+
+        if (!defaultCar) return error.carNotFound();
+
+        let parsedCarDurability = parseInt(defaultCar.Durability?.[0]) || 0;
+        if (parsedCarDurability < 0) parsedCarDurability = 0;
+
+        parsedCarDurability += parsedAmount;
+        if (parsedCarDurability > 100) parsedCarDurability = 100;
         
-        parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex].Durability = ["100"];
+        defaultCar.Durability = [`${parsedCarDurability}`];
         
         fs.writeFileSync(carslotsPath, xmlParser.buildXML(parsedCarslots, { pretty: true }));
         
