@@ -1,0 +1,1614 @@
+[
+  {
+    "ID": 1401,
+    "name": "cardpack_aftermarket_item1"
+  },
+  {
+    "ID": 1856,
+    "name": "cardpack_blackdiamond_brakes_item1"
+  },
+  {
+    "ID": 1857,
+    "name": "cardpack_blackdiamond_brakes_item2"
+  },
+  {
+    "ID": 1836,
+    "name": "cardpack_blackdiamond_engine_item1"
+  },
+  {
+    "ID": 1837,
+    "name": "cardpack_blackdiamond_engine_item2"
+  },
+  {
+    "ID": 1841,
+    "name": "cardpack_blackdiamond_forcedinduction_item1"
+  },
+  {
+    "ID": 1842,
+    "name": "cardpack_blackdiamond_forcedinduction_item2"
+  },
+  {
+    "ID": 1831,
+    "name": "cardpack_blackdiamond_item1"
+  },
+  {
+    "ID": 1832,
+    "name": "cardpack_blackdiamond_item2"
+  },
+  {
+    "ID": 1851,
+    "name": "cardpack_blackdiamond_suspension_item1"
+  },
+  {
+    "ID": 1852,
+    "name": "cardpack_blackdiamond_suspension_item2"
+  },
+  {
+    "ID": 1861,
+    "name": "cardpack_blackdiamond_tires_item1"
+  },
+  {
+    "ID": 1862,
+    "name": "cardpack_blackdiamond_tires_item2"
+  },
+  {
+    "ID": 1846,
+    "name": "cardpack_blackdiamond_transmission_item1"
+  },
+  {
+    "ID": 1847,
+    "name": "cardpack_blackdiamond_transmission_item2"
+  },
+  {
+    "ID": 1751,
+    "name": "cardpack_bronze_item1"
+  },
+  {
+    "ID": 1752,
+    "name": "cardpack_bronze_item2"
+  },
+  {
+    "ID": 1931,
+    "name": "cardpack_carprize_item1"
+  },
+  {
+    "ID": 1932,
+    "name": "cardpack_carprize_item2"
+  },
+  {
+    "ID": 1933,
+    "name": "cardpack_carprize_item3"
+  },
+  {
+    "ID": 1934,
+    "name": "cardpack_carprize_item4"
+  },
+  {
+    "ID": 1786,
+    "name": "cardpack_gold_brakes_item1"
+  },
+  {
+    "ID": 1787,
+    "name": "cardpack_gold_brakes_item2"
+  },
+  {
+    "ID": 1766,
+    "name": "cardpack_gold_engine_item1"
+  },
+  {
+    "ID": 1767,
+    "name": "cardpack_gold_engine_item2"
+  },
+  {
+    "ID": 1771,
+    "name": "cardpack_gold_forcedinduction_item1"
+  },
+  {
+    "ID": 1772,
+    "name": "cardpack_gold_forcedinduction_item2"
+  },
+  {
+    "ID": 1761,
+    "name": "cardpack_gold_item1"
+  },
+  {
+    "ID": 1762,
+    "name": "cardpack_gold_item2"
+  },
+  {
+    "ID": 1781,
+    "name": "cardpack_gold_suspension_item1"
+  },
+  {
+    "ID": 1782,
+    "name": "cardpack_gold_suspension_item2"
+  },
+  {
+    "ID": 1791,
+    "name": "cardpack_gold_tires_item1"
+  },
+  {
+    "ID": 1792,
+    "name": "cardpack_gold_tires_item2"
+  },
+  {
+    "ID": 1776,
+    "name": "cardpack_gold_transmission_item1"
+  },
+  {
+    "ID": 1777,
+    "name": "cardpack_gold_transmission_item2"
+  },
+  {
+    "ID": 1746,
+    "name": "cardpack_mystery_item1"
+  },
+  {
+    "ID": 1821,
+    "name": "cardpack_platinum_brakes_item1"
+  },
+  {
+    "ID": 1822,
+    "name": "cardpack_platinum_brakes_item2"
+  },
+  {
+    "ID": 1801,
+    "name": "cardpack_platinum_engine_item1"
+  },
+  {
+    "ID": 1802,
+    "name": "cardpack_platinum_engine_item2"
+  },
+  {
+    "ID": 1806,
+    "name": "cardpack_platinum_forcedinduction_item1"
+  },
+  {
+    "ID": 1807,
+    "name": "cardpack_platinum_forcedinduction_item2"
+  },
+  {
+    "ID": 1796,
+    "name": "cardpack_platinum_item1"
+  },
+  {
+    "ID": 1797,
+    "name": "cardpack_platinum_item2"
+  },
+  {
+    "ID": 1816,
+    "name": "cardpack_platinum_suspension_item1"
+  },
+  {
+    "ID": 1817,
+    "name": "cardpack_platinum_suspension_item2"
+  },
+  {
+    "ID": 1826,
+    "name": "cardpack_platinum_tires_item1"
+  },
+  {
+    "ID": 1827,
+    "name": "cardpack_platinum_tires_item2"
+  },
+  {
+    "ID": 1811,
+    "name": "cardpack_platinum_transmission_item1"
+  },
+  {
+    "ID": 1812,
+    "name": "cardpack_platinum_transmission_item2"
+  },
+  {
+    "ID": 1756,
+    "name": "cardpack_silver_item1"
+  },
+  {
+    "ID": 1757,
+    "name": "cardpack_silver_item2"
+  },
+  {
+    "ID": 1871,
+    "name": "cardpack_skillmods_bronze_item1"
+  },
+  {
+    "ID": 1872,
+    "name": "cardpack_skillmods_bronze_item2"
+  },
+  {
+    "ID": 1896,
+    "name": "cardpack_skillmods_gold_explore_item1"
+  },
+  {
+    "ID": 1897,
+    "name": "cardpack_skillmods_gold_explore_item2"
+  },
+  {
+    "ID": 1881,
+    "name": "cardpack_skillmods_gold_item1"
+  },
+  {
+    "ID": 1882,
+    "name": "cardpack_skillmods_gold_item2"
+  },
+  {
+    "ID": 1891,
+    "name": "cardpack_skillmods_gold_pursuit_item1"
+  },
+  {
+    "ID": 1892,
+    "name": "cardpack_skillmods_gold_pursuit_item2"
+  },
+  {
+    "ID": 1886,
+    "name": "cardpack_skillmods_gold_race_item1"
+  },
+  {
+    "ID": 1887,
+    "name": "cardpack_skillmods_gold_race_item2"
+  },
+  {
+    "ID": 1921,
+    "name": "cardpack_skillmods_gold_rewardsbooster_item1"
+  },
+  {
+    "ID": 1922,
+    "name": "cardpack_skillmods_gold_rewardsbooster_item2"
+  },
+  {
+    "ID": 1923,
+    "name": "cardpack_skillmods_gold_rewardsbooster_item3"
+  },
+  {
+    "ID": 1924,
+    "name": "cardpack_skillmods_gold_rewardsbooster_item4"
+  },
+  {
+    "ID": 1866,
+    "name": "cardpack_skillmods_mystery_item1"
+  },
+  {
+    "ID": 1876,
+    "name": "cardpack_skillmods_silver_item1"
+  },
+  {
+    "ID": 1877,
+    "name": "cardpack_skillmods_silver_item2"
+  },
+  {
+    "ID": 1506,
+    "name": "cardpack_t1_bronze_item1"
+  },
+  {
+    "ID": 1507,
+    "name": "cardpack_t1_bronze_item2"
+  },
+  {
+    "ID": 1541,
+    "name": "cardpack_t1_gold_brakes_item1"
+  },
+  {
+    "ID": 1542,
+    "name": "cardpack_t1_gold_brakes_item2"
+  },
+  {
+    "ID": 1521,
+    "name": "cardpack_t1_gold_engine_item1"
+  },
+  {
+    "ID": 1522,
+    "name": "cardpack_t1_gold_engine_item2"
+  },
+  {
+    "ID": 1526,
+    "name": "cardpack_t1_gold_forced_induction_item1"
+  },
+  {
+    "ID": 1527,
+    "name": "cardpack_t1_gold_forced_induction_item2"
+  },
+  {
+    "ID": 1516,
+    "name": "cardpack_t1_gold_item1"
+  },
+  {
+    "ID": 1517,
+    "name": "cardpack_t1_gold_item2"
+  },
+  {
+    "ID": 1536,
+    "name": "cardpack_t1_gold_suspension_item1"
+  },
+  {
+    "ID": 1537,
+    "name": "cardpack_t1_gold_suspension_item2"
+  },
+  {
+    "ID": 1546,
+    "name": "cardpack_t1_gold_tires_item1"
+  },
+  {
+    "ID": 1547,
+    "name": "cardpack_t1_gold_tires_item2"
+  },
+  {
+    "ID": 1531,
+    "name": "cardpack_t1_gold_transmission_item1"
+  },
+  {
+    "ID": 1532,
+    "name": "cardpack_t1_gold_transmission_item2"
+  },
+  {
+    "ID": 1551,
+    "name": "cardpack_t1_platinumA_item1"
+  },
+  {
+    "ID": 1552,
+    "name": "cardpack_t1_platinumA_item2"
+  },
+  {
+    "ID": 1511,
+    "name": "cardpack_t1_silver_item1"
+  },
+  {
+    "ID": 1512,
+    "name": "cardpack_t1_silver_item2"
+  },
+  {
+    "ID": 1576,
+    "name": "cardpack_t1_ultraA_brakes_item1"
+  },
+  {
+    "ID": 1577,
+    "name": "cardpack_t1_ultraA_brakes_item2"
+  },
+  {
+    "ID": 1556,
+    "name": "cardpack_t1_ultraA_engine_item1"
+  },
+  {
+    "ID": 1557,
+    "name": "cardpack_t1_ultraA_engine_item2"
+  },
+  {
+    "ID": 1561,
+    "name": "cardpack_t1_ultraA_forced_induction_item1"
+  },
+  {
+    "ID": 1562,
+    "name": "cardpack_t1_ultraA_forced_induction_item2"
+  },
+  {
+    "ID": 1571,
+    "name": "cardpack_t1_ultraA_suspension_item1"
+  },
+  {
+    "ID": 1572,
+    "name": "cardpack_t1_ultraA_suspension_item2"
+  },
+  {
+    "ID": 1581,
+    "name": "cardpack_t1_ultraA_tires_item1"
+  },
+  {
+    "ID": 1582,
+    "name": "cardpack_t1_ultraA_tires_item2"
+  },
+  {
+    "ID": 1566,
+    "name": "cardpack_t1_ultraA_transmission_item1"
+  },
+  {
+    "ID": 1567,
+    "name": "cardpack_t1_ultraA_transmission_item2"
+  },
+  {
+    "ID": 1586,
+    "name": "cardpack_t2_bronze_item1"
+  },
+  {
+    "ID": 1587,
+    "name": "cardpack_t2_bronze_item2"
+  },
+  {
+    "ID": 1621,
+    "name": "cardpack_t2_gold_brakes_item1"
+  },
+  {
+    "ID": 1622,
+    "name": "cardpack_t2_gold_brakes_item2"
+  },
+  {
+    "ID": 1601,
+    "name": "cardpack_t2_gold_engine_item1"
+  },
+  {
+    "ID": 1602,
+    "name": "cardpack_t2_gold_engine_item2"
+  },
+  {
+    "ID": 1606,
+    "name": "cardpack_t2_gold_forced_induction_item1"
+  },
+  {
+    "ID": 1607,
+    "name": "cardpack_t2_gold_forced_induction_item2"
+  },
+  {
+    "ID": 1596,
+    "name": "cardpack_t2_gold_item1"
+  },
+  {
+    "ID": 1597,
+    "name": "cardpack_t2_gold_item2"
+  },
+  {
+    "ID": 1616,
+    "name": "cardpack_t2_gold_suspension_item1"
+  },
+  {
+    "ID": 1617,
+    "name": "cardpack_t2_gold_suspension_item2"
+  },
+  {
+    "ID": 1626,
+    "name": "cardpack_t2_gold_tires_item1"
+  },
+  {
+    "ID": 1627,
+    "name": "cardpack_t2_gold_tires_item2"
+  },
+  {
+    "ID": 1611,
+    "name": "cardpack_t2_gold_transmission_item1"
+  },
+  {
+    "ID": 1612,
+    "name": "cardpack_t2_gold_transmission_item2"
+  },
+  {
+    "ID": 1631,
+    "name": "cardpack_t2_platinumA_item1"
+  },
+  {
+    "ID": 1632,
+    "name": "cardpack_t2_platinumA_item2"
+  },
+  {
+    "ID": 1591,
+    "name": "cardpack_t2_silver_item1"
+  },
+  {
+    "ID": 1592,
+    "name": "cardpack_t2_silver_item2"
+  },
+  {
+    "ID": 1656,
+    "name": "cardpack_t2_ultraA_brakes_item1"
+  },
+  {
+    "ID": 1657,
+    "name": "cardpack_t2_ultraA_brakes_item2"
+  },
+  {
+    "ID": 1636,
+    "name": "cardpack_t2_ultraA_engine_item1"
+  },
+  {
+    "ID": 1637,
+    "name": "cardpack_t2_ultraA_engine_item2"
+  },
+  {
+    "ID": 1641,
+    "name": "cardpack_t2_ultraA_forced_induction_item1"
+  },
+  {
+    "ID": 1642,
+    "name": "cardpack_t2_ultraA_forced_induction_item2"
+  },
+  {
+    "ID": 1651,
+    "name": "cardpack_t2_ultraA_suspension_item1"
+  },
+  {
+    "ID": 1652,
+    "name": "cardpack_t2_ultraA_suspension_item2"
+  },
+  {
+    "ID": 1661,
+    "name": "cardpack_t2_ultraA_tires_item1"
+  },
+  {
+    "ID": 1662,
+    "name": "cardpack_t2_ultraA_tires_item2"
+  },
+  {
+    "ID": 1646,
+    "name": "cardpack_t2_ultraA_transmission_item1"
+  },
+  {
+    "ID": 1647,
+    "name": "cardpack_t2_ultraA_transmission_item2"
+  },
+  {
+    "ID": 1666,
+    "name": "cardpack_t3_bronze_item1"
+  },
+  {
+    "ID": 1667,
+    "name": "cardpack_t3_bronze_item2"
+  },
+  {
+    "ID": 1701,
+    "name": "cardpack_t3_gold_brakes_item1"
+  },
+  {
+    "ID": 1702,
+    "name": "cardpack_t3_gold_brakes_item2"
+  },
+  {
+    "ID": 1681,
+    "name": "cardpack_t3_gold_engine_item1"
+  },
+  {
+    "ID": 1682,
+    "name": "cardpack_t3_gold_engine_item2"
+  },
+  {
+    "ID": 1686,
+    "name": "cardpack_t3_gold_forced_induction_item1"
+  },
+  {
+    "ID": 1687,
+    "name": "cardpack_t3_gold_forced_induction_item2"
+  },
+  {
+    "ID": 1676,
+    "name": "cardpack_t3_gold_item1"
+  },
+  {
+    "ID": 1677,
+    "name": "cardpack_t3_gold_item2"
+  },
+  {
+    "ID": 1696,
+    "name": "cardpack_t3_gold_suspension_item1"
+  },
+  {
+    "ID": 1697,
+    "name": "cardpack_t3_gold_suspension_item2"
+  },
+  {
+    "ID": 1706,
+    "name": "cardpack_t3_gold_tires_item1"
+  },
+  {
+    "ID": 1707,
+    "name": "cardpack_t3_gold_tires_item2"
+  },
+  {
+    "ID": 1691,
+    "name": "cardpack_t3_gold_transmission_item1"
+  },
+  {
+    "ID": 1692,
+    "name": "cardpack_t3_gold_transmission_item2"
+  },
+  {
+    "ID": 1711,
+    "name": "cardpack_t3_platinumA_item1"
+  },
+  {
+    "ID": 1712,
+    "name": "cardpack_t3_platinumA_item2"
+  },
+  {
+    "ID": 1671,
+    "name": "cardpack_t3_silver_item1"
+  },
+  {
+    "ID": 1672,
+    "name": "cardpack_t3_silver_item2"
+  },
+  {
+    "ID": 1736,
+    "name": "cardpack_t3_ultraA_brakes_item1"
+  },
+  {
+    "ID": 1737,
+    "name": "cardpack_t3_ultraA_brakes_item2"
+  },
+  {
+    "ID": 1716,
+    "name": "cardpack_t3_ultraA_engine_item1"
+  },
+  {
+    "ID": 1717,
+    "name": "cardpack_t3_ultraA_engine_item2"
+  },
+  {
+    "ID": 1721,
+    "name": "cardpack_t3_ultraA_forced_induction_item1"
+  },
+  {
+    "ID": 1722,
+    "name": "cardpack_t3_ultraA_forced_induction_item2"
+  },
+  {
+    "ID": 1731,
+    "name": "cardpack_t3_ultraA_suspension_item1"
+  },
+  {
+    "ID": 1732,
+    "name": "cardpack_t3_ultraA_suspension_item2"
+  },
+  {
+    "ID": 1741,
+    "name": "cardpack_t3_ultraA_tires_item1"
+  },
+  {
+    "ID": 1742,
+    "name": "cardpack_t3_ultraA_tires_item2"
+  },
+  {
+    "ID": 1726,
+    "name": "cardpack_t3_ultraA_transmission_item1"
+  },
+  {
+    "ID": 1727,
+    "name": "cardpack_t3_ultraA_transmission_item2"
+  },
+  {
+    "ID": 24,
+    "name": "downtown_run1"
+  },
+  {
+    "ID": 2125,
+    "name": "elite_improved_brakes"
+  },
+  {
+    "ID": 2121,
+    "name": "elite_improved_engines"
+  },
+  {
+    "ID": 2122,
+    "name": "elite_improved_inductions"
+  },
+  {
+    "ID": 2159,
+    "name": "elite_improved_parts"
+  },
+  {
+    "ID": 2124,
+    "name": "elite_improved_suspensions"
+  },
+  {
+    "ID": 2126,
+    "name": "elite_improved_tires"
+  },
+  {
+    "ID": 2123,
+    "name": "elite_improved_transmissions"
+  },
+  {
+    "ID": 2131,
+    "name": "elite_sport_brakes"
+  },
+  {
+    "ID": 2127,
+    "name": "elite_sport_engines"
+  },
+  {
+    "ID": 2128,
+    "name": "elite_sport_inductions"
+  },
+  {
+    "ID": 2160,
+    "name": "elite_sport_parts"
+  },
+  {
+    "ID": 2130,
+    "name": "elite_sport_suspensions"
+  },
+  {
+    "ID": 2132,
+    "name": "elite_sport_tires"
+  },
+  {
+    "ID": 2129,
+    "name": "elite_sport_transmissions"
+  },
+  {
+    "ID": 2137,
+    "name": "elite_tuned_brakes"
+  },
+  {
+    "ID": 2133,
+    "name": "elite_tuned_engines"
+  },
+  {
+    "ID": 2134,
+    "name": "elite_tuned_inductions"
+  },
+  {
+    "ID": 2161,
+    "name": "elite_tuned_parts"
+  },
+  {
+    "ID": 2136,
+    "name": "elite_tuned_suspensions"
+  },
+  {
+    "ID": 2138,
+    "name": "elite_tuned_tires"
+  },
+  {
+    "ID": 2135,
+    "name": "elite_tuned_transmissions"
+  },
+  {
+    "ID": 9,
+    "name": "event_drag_rank1"
+  },
+  {
+    "ID": 10,
+    "name": "event_drag_rank2"
+  },
+  {
+    "ID": 11,
+    "name": "event_drag_rank3"
+  },
+  {
+    "ID": 12,
+    "name": "event_drag_rank4"
+  },
+  {
+    "ID": 15,
+    "name": "event_pursuit_rank1"
+  },
+  {
+    "ID": 5,
+    "name": "event_race_long_rank1"
+  },
+  {
+    "ID": 6,
+    "name": "event_race_long_rank2"
+  },
+  {
+    "ID": 7,
+    "name": "event_race_long_rank3"
+  },
+  {
+    "ID": 8,
+    "name": "event_race_long_rank4"
+  },
+  {
+    "ID": 1,
+    "name": "event_race_rank1"
+  },
+  {
+    "ID": 2,
+    "name": "event_race_rank2"
+  },
+  {
+    "ID": 3,
+    "name": "event_race_rank3"
+  },
+  {
+    "ID": 4,
+    "name": "event_race_rank4"
+  },
+  {
+    "ID": 16,
+    "name": "event_race_tutorial_rank1"
+  },
+  {
+    "ID": 13,
+    "name": "event_teamescape_rank1"
+  },
+  {
+    "ID": 14,
+    "name": "event_teamescape_short_rank1"
+  },
+  {
+    "ID": 25,
+    "name": "long_OQT1"
+  },
+  {
+    "ID": 26,
+    "name": "long_OQT2"
+  },
+  {
+    "ID": 27,
+    "name": "long_OQT3"
+  },
+  {
+    "ID": 28,
+    "name": "long_OQT4"
+  },
+  {
+    "ID": 101,
+    "name": "performance_distribution_rank1"
+  },
+  {
+    "ID": 103,
+    "name": "performance_distribution_rank2"
+  },
+  {
+    "ID": 105,
+    "name": "performance_distribution_rank3"
+  },
+  {
+    "ID": 107,
+    "name": "performance_distribution_rank4"
+  },
+  {
+    "ID": 2202,
+    "name": "powerups_bronze"
+  },
+  {
+    "ID": 2206,
+    "name": "powerups_diamond"
+  },
+  {
+    "ID": 2207,
+    "name": "powerups_diamond_upper"
+  },
+  {
+    "ID": 17,
+    "name": "powerups_event"
+  },
+  {
+    "ID": 2204,
+    "name": "powerups_gold"
+  },
+  {
+    "ID": 2201,
+    "name": "powerups_mystery"
+  },
+  {
+    "ID": 2205,
+    "name": "powerups_platinum"
+  },
+  {
+    "ID": 2203,
+    "name": "powerups_silver"
+  },
+  {
+    "ID": 2083,
+    "name": "pro_custom_brakes"
+  },
+  {
+    "ID": 2079,
+    "name": "pro_custom_engines"
+  },
+  {
+    "ID": 2080,
+    "name": "pro_custom_inductions"
+  },
+  {
+    "ID": 2152,
+    "name": "pro_custom_parts"
+  },
+  {
+    "ID": 2082,
+    "name": "pro_custom_suspensions"
+  },
+  {
+    "ID": 2084,
+    "name": "pro_custom_tires"
+  },
+  {
+    "ID": 2081,
+    "name": "pro_custom_transmissions"
+  },
+  {
+    "ID": 2089,
+    "name": "pro_elite_brakes"
+  },
+  {
+    "ID": 2085,
+    "name": "pro_elite_engines"
+  },
+  {
+    "ID": 2086,
+    "name": "pro_elite_inductions"
+  },
+  {
+    "ID": 2153,
+    "name": "pro_elite_parts"
+  },
+  {
+    "ID": 2088,
+    "name": "pro_elite_suspensions"
+  },
+  {
+    "ID": 2090,
+    "name": "pro_elite_tires"
+  },
+  {
+    "ID": 2087,
+    "name": "pro_elite_transmissions"
+  },
+  {
+    "ID": 2065,
+    "name": "pro_improved_brakes"
+  },
+  {
+    "ID": 2061,
+    "name": "pro_improved_engines"
+  },
+  {
+    "ID": 2062,
+    "name": "pro_improved_inductions"
+  },
+  {
+    "ID": 2149,
+    "name": "pro_improved_parts"
+  },
+  {
+    "ID": 2064,
+    "name": "pro_improved_suspensions"
+  },
+  {
+    "ID": 2066,
+    "name": "pro_improved_tires"
+  },
+  {
+    "ID": 2063,
+    "name": "pro_improved_transmissions"
+  },
+  {
+    "ID": 2071,
+    "name": "pro_sport_brakes"
+  },
+  {
+    "ID": 2067,
+    "name": "pro_sport_engines"
+  },
+  {
+    "ID": 2068,
+    "name": "pro_sport_inductions"
+  },
+  {
+    "ID": 2150,
+    "name": "pro_sport_parts"
+  },
+  {
+    "ID": 2070,
+    "name": "pro_sport_suspensions"
+  },
+  {
+    "ID": 2072,
+    "name": "pro_sport_tires"
+  },
+  {
+    "ID": 2069,
+    "name": "pro_sport_transmissions"
+  },
+  {
+    "ID": 2077,
+    "name": "pro_tuned_brakes"
+  },
+  {
+    "ID": 2073,
+    "name": "pro_tuned_engines"
+  },
+  {
+    "ID": 2074,
+    "name": "pro_tuned_inductions"
+  },
+  {
+    "ID": 2151,
+    "name": "pro_tuned_parts"
+  },
+  {
+    "ID": 2076,
+    "name": "pro_tuned_suspensions"
+  },
+  {
+    "ID": 2078,
+    "name": "pro_tuned_tires"
+  },
+  {
+    "ID": 2075,
+    "name": "pro_tuned_transmissions"
+  },
+  {
+    "ID": 2053,
+    "name": "race_custom_brakes"
+  },
+  {
+    "ID": 2049,
+    "name": "race_custom_engines"
+  },
+  {
+    "ID": 2050,
+    "name": "race_custom_inductions"
+  },
+  {
+    "ID": 2147,
+    "name": "race_custom_parts"
+  },
+  {
+    "ID": 2052,
+    "name": "race_custom_suspensions"
+  },
+  {
+    "ID": 2054,
+    "name": "race_custom_tires"
+  },
+  {
+    "ID": 2051,
+    "name": "race_custom_transmissions"
+  },
+  {
+    "ID": 2059,
+    "name": "race_elite_brakes"
+  },
+  {
+    "ID": 2055,
+    "name": "race_elite_engines"
+  },
+  {
+    "ID": 2056,
+    "name": "race_elite_inductions"
+  },
+  {
+    "ID": 2148,
+    "name": "race_elite_parts"
+  },
+  {
+    "ID": 2058,
+    "name": "race_elite_suspensions"
+  },
+  {
+    "ID": 2060,
+    "name": "race_elite_tires"
+  },
+  {
+    "ID": 2057,
+    "name": "race_elite_transmissions"
+  },
+  {
+    "ID": 2035,
+    "name": "race_improved_brakes"
+  },
+  {
+    "ID": 2031,
+    "name": "race_improved_engines"
+  },
+  {
+    "ID": 2032,
+    "name": "race_improved_inductions"
+  },
+  {
+    "ID": 2144,
+    "name": "race_improved_parts"
+  },
+  {
+    "ID": 2034,
+    "name": "race_improved_suspensions"
+  },
+  {
+    "ID": 2036,
+    "name": "race_improved_tires"
+  },
+  {
+    "ID": 2033,
+    "name": "race_improved_transmissions"
+  },
+  {
+    "ID": 2041,
+    "name": "race_sport_brakes"
+  },
+  {
+    "ID": 2037,
+    "name": "race_sport_engines"
+  },
+  {
+    "ID": 2038,
+    "name": "race_sport_inductions"
+  },
+  {
+    "ID": 2145,
+    "name": "race_sport_parts"
+  },
+  {
+    "ID": 2040,
+    "name": "race_sport_suspensions"
+  },
+  {
+    "ID": 2042,
+    "name": "race_sport_tires"
+  },
+  {
+    "ID": 2039,
+    "name": "race_sport_transmissions"
+  },
+  {
+    "ID": 2047,
+    "name": "race_tuned_brakes"
+  },
+  {
+    "ID": 2043,
+    "name": "race_tuned_engines"
+  },
+  {
+    "ID": 2044,
+    "name": "race_tuned_inductions"
+  },
+  {
+    "ID": 2146,
+    "name": "race_tuned_parts"
+  },
+  {
+    "ID": 2046,
+    "name": "race_tuned_suspensions"
+  },
+  {
+    "ID": 2048,
+    "name": "race_tuned_tires"
+  },
+  {
+    "ID": 2045,
+    "name": "race_tuned_transmissions"
+  },
+  {
+    "ID": 501,
+    "name": "skillmods_1star"
+  },
+  {
+    "ID": 502,
+    "name": "skillmods_2star"
+  },
+  {
+    "ID": 503,
+    "name": "skillmods_3star"
+  },
+  {
+    "ID": 504,
+    "name": "skillmods_4star"
+  },
+  {
+    "ID": 505,
+    "name": "skillmods_5star"
+  },
+  {
+    "ID": 526,
+    "name": "skillmods_cashreward_1star"
+  },
+  {
+    "ID": 527,
+    "name": "skillmods_cashreward_2star"
+  },
+  {
+    "ID": 528,
+    "name": "skillmods_cashreward_3star"
+  },
+  {
+    "ID": 529,
+    "name": "skillmods_cashreward_4star"
+  },
+  {
+    "ID": 530,
+    "name": "skillmods_cashreward_5star"
+  },
+  {
+    "ID": 102,
+    "name": "skillmods_distribution_rank1"
+  },
+  {
+    "ID": 104,
+    "name": "skillmods_distribution_rank2"
+  },
+  {
+    "ID": 106,
+    "name": "skillmods_distribution_rank3"
+  },
+  {
+    "ID": 108,
+    "name": "skillmods_distribution_rank4"
+  },
+  {
+    "ID": 511,
+    "name": "skillmods_drag_1star"
+  },
+  {
+    "ID": 512,
+    "name": "skillmods_drag_2star"
+  },
+  {
+    "ID": 513,
+    "name": "skillmods_drag_3star"
+  },
+  {
+    "ID": 514,
+    "name": "skillmods_drag_4star"
+  },
+  {
+    "ID": 515,
+    "name": "skillmods_drag_5star"
+  },
+  {
+    "ID": 521,
+    "name": "skillmods_explore_1star"
+  },
+  {
+    "ID": 522,
+    "name": "skillmods_explore_2star"
+  },
+  {
+    "ID": 523,
+    "name": "skillmods_explore_3star"
+  },
+  {
+    "ID": 524,
+    "name": "skillmods_explore_4star"
+  },
+  {
+    "ID": 525,
+    "name": "skillmods_explore_5star"
+  },
+  {
+    "ID": 516,
+    "name": "skillmods_pursuit_1star"
+  },
+  {
+    "ID": 517,
+    "name": "skillmods_pursuit_2star"
+  },
+  {
+    "ID": 518,
+    "name": "skillmods_pursuit_3star"
+  },
+  {
+    "ID": 519,
+    "name": "skillmods_pursuit_4star"
+  },
+  {
+    "ID": 520,
+    "name": "skillmods_pursuit_5star"
+  },
+  {
+    "ID": 506,
+    "name": "skillmods_race_1star"
+  },
+  {
+    "ID": 507,
+    "name": "skillmods_race_2star"
+  },
+  {
+    "ID": 508,
+    "name": "skillmods_race_3star"
+  },
+  {
+    "ID": 509,
+    "name": "skillmods_race_4star"
+  },
+  {
+    "ID": 510,
+    "name": "skillmods_race_5star"
+  },
+  {
+    "ID": 2023,
+    "name": "street_custom_brakes"
+  },
+  {
+    "ID": 2019,
+    "name": "street_custom_engines"
+  },
+  {
+    "ID": 2020,
+    "name": "street_custom_inductions"
+  },
+  {
+    "ID": 2142,
+    "name": "street_custom_parts"
+  },
+  {
+    "ID": 2022,
+    "name": "street_custom_suspensions"
+  },
+  {
+    "ID": 2024,
+    "name": "street_custom_tires"
+  },
+  {
+    "ID": 2021,
+    "name": "street_custom_transmissions"
+  },
+  {
+    "ID": 2029,
+    "name": "street_elite_brakes"
+  },
+  {
+    "ID": 2025,
+    "name": "street_elite_engines"
+  },
+  {
+    "ID": 2026,
+    "name": "street_elite_inductions"
+  },
+  {
+    "ID": 2143,
+    "name": "street_elite_parts"
+  },
+  {
+    "ID": 2028,
+    "name": "street_elite_suspensions"
+  },
+  {
+    "ID": 2030,
+    "name": "street_elite_tires"
+  },
+  {
+    "ID": 2027,
+    "name": "street_elite_transmissions"
+  },
+  {
+    "ID": 2005,
+    "name": "street_improved_brakes"
+  },
+  {
+    "ID": 2001,
+    "name": "street_improved_engines"
+  },
+  {
+    "ID": 2002,
+    "name": "street_improved_inductions"
+  },
+  {
+    "ID": 2139,
+    "name": "street_improved_parts"
+  },
+  {
+    "ID": 2004,
+    "name": "street_improved_suspensions"
+  },
+  {
+    "ID": 2006,
+    "name": "street_improved_tires"
+  },
+  {
+    "ID": 2003,
+    "name": "street_improved_transmissions"
+  },
+  {
+    "ID": 2011,
+    "name": "street_sport_brakes"
+  },
+  {
+    "ID": 2007,
+    "name": "street_sport_engines"
+  },
+  {
+    "ID": 2008,
+    "name": "street_sport_inductions"
+  },
+  {
+    "ID": 2140,
+    "name": "street_sport_parts"
+  },
+  {
+    "ID": 2010,
+    "name": "street_sport_suspensions"
+  },
+  {
+    "ID": 2012,
+    "name": "street_sport_tires"
+  },
+  {
+    "ID": 2009,
+    "name": "street_sport_transmissions"
+  },
+  {
+    "ID": 2017,
+    "name": "street_tuned_brakes"
+  },
+  {
+    "ID": 2013,
+    "name": "street_tuned_engines"
+  },
+  {
+    "ID": 2014,
+    "name": "street_tuned_inductions"
+  },
+  {
+    "ID": 2141,
+    "name": "street_tuned_parts"
+  },
+  {
+    "ID": 2016,
+    "name": "street_tuned_suspensions"
+  },
+  {
+    "ID": 2018,
+    "name": "street_tuned_tires"
+  },
+  {
+    "ID": 2015,
+    "name": "street_tuned_transmissions"
+  },
+  {
+    "ID": 2208,
+    "name": "test_am_issue"
+  },
+  {
+    "ID": 20,
+    "name": "test_rank1"
+  },
+  {
+    "ID": 21,
+    "name": "test_rank2"
+  },
+  {
+    "ID": 22,
+    "name": "test_rank3"
+  },
+  {
+    "ID": 23,
+    "name": "test_rank4"
+  },
+  {
+    "ID": 50,
+    "name": "th_day1"
+  },
+  {
+    "ID": 2113,
+    "name": "ultra_custom_brakes"
+  },
+  {
+    "ID": 2109,
+    "name": "ultra_custom_engines"
+  },
+  {
+    "ID": 2110,
+    "name": "ultra_custom_inductions"
+  },
+  {
+    "ID": 2157,
+    "name": "ultra_custom_parts"
+  },
+  {
+    "ID": 2112,
+    "name": "ultra_custom_suspensions"
+  },
+  {
+    "ID": 2114,
+    "name": "ultra_custom_tires"
+  },
+  {
+    "ID": 2111,
+    "name": "ultra_custom_transmissions"
+  },
+  {
+    "ID": 2119,
+    "name": "ultra_elite_brakes"
+  },
+  {
+    "ID": 2115,
+    "name": "ultra_elite_engines"
+  },
+  {
+    "ID": 2116,
+    "name": "ultra_elite_inductions"
+  },
+  {
+    "ID": 2158,
+    "name": "ultra_elite_parts"
+  },
+  {
+    "ID": 2118,
+    "name": "ultra_elite_suspensions"
+  },
+  {
+    "ID": 2120,
+    "name": "ultra_elite_tires"
+  },
+  {
+    "ID": 2117,
+    "name": "ultra_elite_transmissions"
+  },
+  {
+    "ID": 2095,
+    "name": "ultra_improved_brakes"
+  },
+  {
+    "ID": 2091,
+    "name": "ultra_improved_engines"
+  },
+  {
+    "ID": 2092,
+    "name": "ultra_improved_inductions"
+  },
+  {
+    "ID": 2154,
+    "name": "ultra_improved_parts"
+  },
+  {
+    "ID": 2094,
+    "name": "ultra_improved_suspensions"
+  },
+  {
+    "ID": 2096,
+    "name": "ultra_improved_tires"
+  },
+  {
+    "ID": 2093,
+    "name": "ultra_improved_transmissions"
+  },
+  {
+    "ID": 2101,
+    "name": "ultra_sport_brakes"
+  },
+  {
+    "ID": 2097,
+    "name": "ultra_sport_engines"
+  },
+  {
+    "ID": 2098,
+    "name": "ultra_sport_inductions"
+  },
+  {
+    "ID": 2155,
+    "name": "ultra_sport_parts"
+  },
+  {
+    "ID": 2100,
+    "name": "ultra_sport_suspensions"
+  },
+  {
+    "ID": 2102,
+    "name": "ultra_sport_tires"
+  },
+  {
+    "ID": 2099,
+    "name": "ultra_sport_transmissions"
+  },
+  {
+    "ID": 2107,
+    "name": "ultra_tuned_brakes"
+  },
+  {
+    "ID": 2103,
+    "name": "ultra_tuned_engines"
+  },
+  {
+    "ID": 2104,
+    "name": "ultra_tuned_inductions"
+  },
+  {
+    "ID": 2156,
+    "name": "ultra_tuned_parts"
+  },
+  {
+    "ID": 2106,
+    "name": "ultra_tuned_suspensions"
+  },
+  {
+    "ID": 2108,
+    "name": "ultra_tuned_tires"
+  },
+  {
+    "ID": 2105,
+    "name": "ultra_tuned_transmissions"
+  },
+  {
+    "ID": 29,
+    "name": "world_loop1"
+  },
+  {
+    "ID": 30,
+    "name": "world_loop2"
+  },
+  {
+    "ID": 31,
+    "name": "world_loop3"
+  },
+  {
+    "ID": 32,
+    "name": "world_loop4"
+  }
+]

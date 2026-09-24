@@ -7,7 +7,7 @@ const error = require("../utils/error");
 const personaManager = require("./personaManager");
 const inventoryManager = require("./inventoryManager");
 const catalogManager = () => require("./catalogManager");
-const allCatalogProducts = require("../../config/Assets/catalog.json");
+const allCatalogProducts = require("../../config/Assets/products.json");
 
 let self = module.exports = {
     getCarslots: async (personaId) => {

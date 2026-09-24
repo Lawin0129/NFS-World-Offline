@@ -23,6 +23,7 @@ Need for Speed World is my favourite childhood multiplayer game and I played all
 
 The current existing offline server emulators are very outdated and finicky with a disorganised folder/file structure and a lot of features not accurate to the original game. I decided to develop my own offline server emulator from the ground up for easy setup, new features, modding, and more. My goal is to design this server in a way which accurately behaves and processes things exactly like the game client.
 # Notes
+* This backend is designed specifically for stock/unmodded NFS World, some features may not work properly if you use a modded NFS World client with the default backend data files.
 * Some of the XML file names are deliberately the exact same as existing offline servers to make data and file imports from other servers easier.
 * Basket is located at [`NFS-World-Offline/data/basket/`](data/basket/).
 * Catalog is located at [`NFS-World-Offline/data/catalog/`](data/catalog/).
@@ -42,6 +43,8 @@ The current existing offline server emulators are very outdated and finicky with
     + All original achievements included that once existed in NFS World.
     + Changing your achievement badges in Achievements Log.
 * Economy:
+    + You can level up, earn cash and inventory items by completing events.
+        - All items have rarity levels (weights) so it is more challenging to get valuable items.
     + Cash and SpeedBoost is correctly spent when purchasing any items.
     + Selling any item gives the correct amount of cash.
         - NOTE: Using a modded NFS World client may make the equipped (not inventory) performance/skill part selling prices inaccurate.
@@ -49,6 +52,8 @@ The current existing offline server emulators are very outdated and finicky with
     + All original events included that once existed in NFS World.
     + Launching single player events.
         - You can also launch multiplayer-only events as single player. Select your target event and press multiplayer (this saves the event ID into memory). Now launch any single player event and the multiplayer-only event should load.
+    + Events accurately give you cash, rep and item rewards relative to various factors (like type of event, match stats, difficulty, driver level, etc).
+        - If an event isn't recognized by the backend (like a custom track), you will not be rewarded unless you add the custom event data manually.
     + Pursuit heat level saves on current car.
     + Pursuit heat level resets to 1 if busted.
     + Original Car Durability Loss:
@@ -70,6 +75,7 @@ The current existing offline server emulators are very outdated and finicky with
         - Vinyls Customization.
         - Paints Customization.
 * Inventory:
+    + Earn inventory item rewards by completing events.
     + Equipping inventory parts.
     + Selling inventory parts.
 * Freeroam:
@@ -134,4 +140,5 @@ Once the game has launched, create your driver and play!
 | Name | Helped with |
 | --------------- | ----------- |
 | Lawin | Creator |
-| soapbox-race-offline-1.9.0<br/>by berkay2578 & Nilzao | For catalog and baskets XML files,<br/>For [Server Editor](#server-editor) and XMPP message subject hash algorithm. |
+| soapbox-race-offline-1.9.0<br/>by berkay2578 & Nilzao | For catalog and baskets XML files,<br/>For [Server Editor](#server-editor) and XMPP subject hash algorithm. |
+| Soapbox Race World | For [NFS World data files](config/Assets/) |

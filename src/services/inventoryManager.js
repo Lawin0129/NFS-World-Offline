@@ -129,16 +129,16 @@ let self = module.exports = {
         for (let inventoryItemTrans of inventoryItemTransList) {
             let invenItemHash = parseInt(inventoryItemTrans.Hash?.[0]) || 0;
             let invenItem = {
-                EntitlementTag: [`LAWIN_${invenItemHash}`],
+                EntitlementTag: [inventoryItemTrans.EntitlementTag?.[0] || `LAWIN_${invenItemHash}`],
                 Hash: [`${invenItemHash}`],
                 RemainingUseCount: [`${parseInt(inventoryItemTrans.RemainingUseCount?.[0]) || 1}`],
                 ResellPrice: [`${parseInt(inventoryItemTrans.ResellPrice?.[0]) || 0}`],
                 Status: ["ACTIVE"],
-                VirtualItemType: [inventoryItemTrans.VirtualItemType?.[0] || ""]
+                VirtualItemType: [inventoryItemTrans.VirtualItemType?.[0]?.toLowerCase?.() || ""]
             };
             let findItem;
 
-            if (invenItem.VirtualItemType[0].toLowerCase() == "powerup") {
+            if (invenItem.VirtualItemType[0] == "powerup") {
                 findItem = inventoryItems.InventoryItemTrans.find(i => (parseInt(i.Hash?.[0]) || 0) == invenItemHash);
 
                 if (findItem) {

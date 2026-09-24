@@ -140,7 +140,9 @@ let self = module.exports = {
 
         fs.writeFileSync(path.join(findPersona.data.driverDirectory, "GetPersonaInfo.xml"), xmlParser.buildXML({ ProfileData: personaInfo }, { pretty: true }));
 
-        return response.createSuccess();
+        return response.createSuccess({
+            newAmount: newCash
+        });
     },
     addBoost: async (personaId, boost) => {
         let parsedBoost = parseInt(boost);
@@ -158,7 +160,72 @@ let self = module.exports = {
 
         fs.writeFileSync(path.join(findPersona.data.driverDirectory, "GetPersonaInfo.xml"), xmlParser.buildXML({ ProfileData: personaInfo }, { pretty: true }));
 
-        return response.createSuccess();
+        return response.createSuccess({
+            newAmount: newBoost
+        });
+    },
+    addCashAndRep: async (personaId, cash, rep) => {
+        let parsedCash = parseInt(cash);
+        if (!Number.isInteger(parsedCash)) return error.invalidParameters();
+        
+        let parsedRep = parseInt(rep);
+        if (!Number.isInteger(parsedRep)) return error.invalidParameters();
+
+        const findPersona = await self.getPersonaById(personaId);
+        if (!findPersona.success) return findPersona;
+
+        let personaInfo = findPersona.data.personaInfo;
+
+        let level = parseInt(personaInfo.Level?.[0]) || 1;
+        if (level <= 0) level = 1;
+
+        const expLevelPointsMap = fs.readFileSync(path.join(paths.dataPath, "DriverPersona", "GetExpLevelPointsMap.xml")).toString();
+        const parsedLevelPointsMap = await xmlParser.parseXML(expLevelPointsMap);
+
+        const maxLevel = parsedLevelPointsMap.ArrayOfInt.int?.length || 1;
+
+        let newRep = parseInt(personaInfo.Rep?.[0]) || 0;
+        let newRepAtCurrentLevel = parseInt(personaInfo.RepAtCurrentLevel?.[0]) || 0;
+        let hasLeveledUp = false;
+
+        if (level < maxLevel) {
+            let repLevelCurrent = parseInt(parsedLevelPointsMap.ArrayOfInt.int?.[level - 2]) || 0;
+            let repLevelNext = parseInt(parsedLevelPointsMap.ArrayOfInt.int?.[level - 1]) || 0;
+            let repNeededToLevelUp = (repLevelNext - repLevelCurrent);
+            
+            newRep += parsedRep;
+            newRepAtCurrentLevel += parsedRep;
+            
+            while ((newRepAtCurrentLevel >= repNeededToLevelUp) && (level < maxLevel)) {
+                hasLeveledUp = true;
+                level += 1;
+                
+                newRepAtCurrentLevel -= repNeededToLevelUp;
+                
+                repLevelCurrent = parseInt(parsedLevelPointsMap.ArrayOfInt.int?.[level - 2]) || 0;
+                repLevelNext = parseInt(parsedLevelPointsMap.ArrayOfInt.int?.[level - 1]) || 0;
+                repNeededToLevelUp = (repLevelNext - repLevelCurrent);
+            }
+            
+            personaInfo.Level = [`${level}`];
+            personaInfo.Rep = [`${newRep}`];
+            personaInfo.RepAtCurrentLevel = [`${newRepAtCurrentLevel}`];
+        }
+
+        const oldCash = parseInt(personaInfo.Cash?.[0]) || 0;
+        const newCash = oldCash + parsedCash;
+
+        personaInfo.Cash = [`${newCash}`];
+
+        fs.writeFileSync(path.join(findPersona.data.driverDirectory, "GetPersonaInfo.xml"), xmlParser.buildXML({ ProfileData: personaInfo }, { pretty: true }));
+
+        return response.createSuccess({
+            newLevel: level,
+            newRepAtCurrentLevel: newRepAtCurrentLevel,
+            newCash: newCash,
+            isMaxLevel: (level >= maxLevel),
+            hasLeveledUp: hasLeveledUp
+        });
     },
     createPersona: async (personaName, iconIndex) => {
         let parsedIconIndex = parseInt(iconIndex);
