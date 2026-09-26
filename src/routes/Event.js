@@ -128,4 +128,15 @@ app.post("/event/:eventAction", async (req, res) => {
     res.xml(eventFinish.data);
 });
 
+// Get latest event rewards
+app.get("/events/instancedaccolades", async (req, res) => {
+    const getActivePersona = personaManager.getActivePersona();
+    if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
+
+    const accolades = eventManager.getAccolades(getActivePersona.data.personaId);
+    if (!accolades.success) return res.status(accolades.error.status).send(accolades.error.reason);
+
+    res.xml(accolades.data);
+});
+
 module.exports = app;

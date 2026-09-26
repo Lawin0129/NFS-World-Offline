@@ -13,6 +13,7 @@ const allEvents = require("../../config/Assets/events.json");
 const allEventRewards = require("../../config/Assets/event_rewards.json");
 
 let eventSessions = {};
+let eventAccolades = {};
 
 let self = module.exports = {
     createSinglePlayerEvent: async (personaId, eventId) => {
@@ -43,6 +44,11 @@ let self = module.exports = {
             eventSession: eventSessions[eventSessionId]
         });
     },
+    getAccolades: (personaId) => {
+        return response.createSuccess({
+            Accolades: eventAccolades[personaId]?.accolades || {}
+        });
+    },
     finishEvent: async (personaId, eventSessionId, arbitrationBody, eventAction) => {
         let eventObject = eventSessions[eventSessionId];
         if (!eventObject) return error.eventNotFound();
@@ -68,7 +74,6 @@ let self = module.exports = {
         body = body[bodyRootName];
     
         let event = `${bodyRootName.split("Arbitration")[0]}`;
-        let accolades = [];
     
         switch (eventAction) {
             case "bust": {
@@ -304,15 +309,22 @@ let self = module.exports = {
                         rewardInfo[0].RewardPart.forEach(r => { r.RepPart = ["0"] });
                     }
 
-                    accolades = [{
-                        FinalRewards: [{
-                            Tokens: [`${cashEarnings}`],
-                            Rep: [`${repEarnings}`]
-                        }],
-                        RewardInfo: rewardInfo,
-                        LuckyDrawInfo: luckyDrawInfo,
-                        HasLeveledUp: [`${addMatchRewards.data.hasLeveledUp}`]
-                    }];
+                    eventAccolades[personaId] = {
+                        eventSessionId: eventSessionId,
+                        accolades: {
+                            FinalRewards: [{
+                                Tokens: [`${cashEarnings}`],
+                                Rep: [`${repEarnings}`]
+                            }],
+                            OriginalRewards: [{
+                                Tokens: [`${cashEarnings}`],
+                                Rep: [`${repEarnings}`]
+                            }],
+                            RewardInfo: rewardInfo,
+                            LuckyDrawInfo: luckyDrawInfo,
+                            HasLeveledUp: [`${addMatchRewards.data.hasLeveledUp}`]
+                        }
+                    };
                 }
     
                 if (body.Heat) {
@@ -344,12 +356,16 @@ let self = module.exports = {
                 return error.invalidParameters();
             }
         }
+
+        if (eventAccolades[personaId]?.eventSessionId != eventSessionId) {
+            delete eventAccolades[personaId];
+        }
     
         fs.writeFileSync(getCarslots.data.carslotsPath, xmlParser.buildXML(parsedCarslots, { pretty: true }));
         
         return response.createSuccess({
             [`${event}EventResult`]: {
-                Accolades: accolades,
+                Accolades: [eventAccolades[personaId]?.accolades || {}],
                 Durability: defaultCar.Durability,
                 EventSessionId: [eventSessionId],
                 ExitPath: ["ExitToFreeroam"],
@@ -358,14 +374,16 @@ let self = module.exports = {
                 PersonaId: [personaId],
                 Heat: defaultCar.Heat,
                 Entrants: [{
-                    RouteEntrantResult: [{
-                        EventDurationInMilliseconds: body.EventDurationInMilliseconds,
+                    [`${event}EntrantResult`]: [{
+                        EventDurationInMilliseconds: body.EventDurationInMilliseconds || [],
                         EventSessionId: [eventSessionId],
-                        FinishReason: body.FinishReason,
+                        FinishReason: body.FinishReason || [],
                         PersonaId: [personaId],
-                        Ranking: body.Rank,
-                        BestLapDurationInMilliseconds: body.BestLapDurationInMilliseconds,
-                        TopSpeed: body.TopSpeed
+                        Ranking: body.Rank || [],
+                        BestLapDurationInMilliseconds: body.BestLapDurationInMilliseconds || [],
+                        TopSpeed: body.TopSpeed || [],
+                        DistanceToFinish: body.DistanceToFinish || [],
+                        FractionCompleted: body.FractionCompleted || []
                     }]
                 }]
             }
