@@ -1,0 +1,74 @@
+[
+  {
+    "name": "PURSUIT_COP_CARS_DEPLOYED_CASH_MULTIPLIER",
+    "value": "0.025"
+  },
+  {
+    "name": "PURSUIT_COP_CARS_DEPLOYED_REP_MULTIPLIER",
+    "value": "0.025"
+  },
+  {
+    "name": "PURSUIT_COP_CARS_DISABLED_CASH_MULTIPLIER",
+    "value": "0.1"
+  },
+  {
+    "name": "PURSUIT_COP_CARS_DISABLED_REP_MULTIPLIER",
+    "value": "0.1"
+  },
+  {
+    "name": "PURSUIT_COP_CARS_RAMMED_CASH_MULTIPLIER",
+    "value": "0.05"
+  },
+  {
+    "name": "PURSUIT_COP_CARS_RAMMED_REP_MULTIPLIER",
+    "value": "0.05"
+  },
+  {
+    "name": "PURSUIT_COST_TO_STATE_CASH_MULTIPLIER",
+    "value": "0.00005"
+  },
+  {
+    "name": "PURSUIT_COST_TO_STATE_REP_MULTIPLIER",
+    "value": "0.00005"
+  },
+  {
+    "name": "PURSUIT_HEAT_LEVEL_CASH_MULTIPLIER",
+    "value": "0.2"
+  },
+  {
+    "name": "PURSUIT_HEAT_LEVEL_REP_MULTIPLIER",
+    "value": "0.2"
+  },
+  {
+    "name": "PURSUIT_INFRACTIONS_CASH_MULTIPLIER",
+    "value": "0.001"
+  },
+  {
+    "name": "PURSUIT_INFRACTIONS_REP_MULTIPLIER",
+    "value": "0.001"
+  },
+  {
+    "name": "PURSUIT_PURSUIT_LENGTH_CASH_MULTIPLIER",
+    "value": "0"
+  },
+  {
+    "name": "PURSUIT_PURSUIT_LENGTH_REP_MULTIPLIER",
+    "value": "0"
+  },
+  {
+    "name": "PURSUIT_ROADBLOCKS_DODGED_CASH_MULTIPLIER",
+    "value": "0.2"
+  },
+  {
+    "name": "PURSUIT_ROADBLOCKS_DODGED_REP_MULTIPLIER",
+    "value": "0.2"
+  },
+  {
+    "name": "PURSUIT_SPIKE_STRIPS_DODGED_CASH_MULTIPLIER",
+    "value": "0.3"
+  },
+  {
+    "name": "PURSUIT_SPIKE_STRIPS_DODGED_REP_MULTIPLIER",
+    "value": "0.3"
+  }
+]

@@ -11,6 +11,7 @@ const inventoryManager = require("./inventoryManager");
 const rewardManager = require("../services/rewardManager");
 const allEvents = require("../../config/Assets/events.json");
 const allEventRewards = require("../../config/Assets/event_rewards.json");
+const allParameters = require("../../config/Assets/parameters.json");
 
 let eventSessions = {};
 let eventAccolades = {};
@@ -198,42 +199,54 @@ let self = module.exports = {
                     if ((event == "Pursuit") || (event == "TeamEscape")) {
                         const multipliers = [
                             {
-                                multiplier: (parseInt(body.SpikeStripsDodged?.[0]) || 0) * 0.35,
-                                rewardType: "SpikeStripsDodged"
+                                stat: parseInt(body.CopsDeployed?.[0]) || 0,
+                                rewardType: "Cop_Cars_Deployed"
                             },
                             {
-                                multiplier: (parseInt(body.RoadBlocksDodged?.[0]) || 0) * 0.25,
-                                rewardType: "RoadblocksDodged"
+                                stat: parseInt(body.CopsDisabled?.[0]) || 0,
+                                rewardType: "Cop_Cars_Disabled"
                             },
                             {
-                                multiplier: (parseInt(body.Infractions?.[0]) || 0) * 0.002,
+                                stat: parseInt(body.CopsRammed?.[0]) || 0,
+                                rewardType: "Cop_Cars_Rammed"
+                            },
+                            {
+                                stat: parseInt(body.CostToState?.[0]) || 0,
+                                rewardType: "Cost_To_State"
+                            },
+                            {
+                                stat: parseInt(body.Infractions?.[0]) || 0,
                                 rewardType: "Infractions"
                             },
                             {
-                                multiplier: (parseInt(body.CostToState?.[0]) || 0) * 0.0001,
-                                rewardType: "CostToState"
+                                stat: parseInt(body.RoadBlocksDodged?.[0]) || 0,
+                                rewardType: "Roadblocks_Dodged"
                             },
                             {
-                                multiplier: (parseInt(body.CopsRammed?.[0]) || 0) * 0.05,
-                                rewardType: "CopCarsRammed"
+                                stat: parseInt(body.SpikeStripsDodged?.[0]) || 0,
+                                rewardType: "Spike_Strips_Dodged"
                             },
                             {
-                                multiplier: (parseInt(body.CopsDisabled?.[0]) || 0) * 0.15,
-                                rewardType: "CopCarsDisabled"
+                                stat: parseInt(body.Heat?.[0]) || 0,
+                                rewardType: "Heat_Level"
                             },
                             {
-                                multiplier: (parseInt(body.CopsDeployed?.[0]) || 0) * 0.025,
-                                rewardType: "CopCarsDeployed"
-                            },
-                            {
-                                multiplier: (parseInt(body.Heat?.[0]) || 0) * 0.25,
-                                rewardType: "HeatLevel"
+                                stat: eventDuration,
+                                rewardType: "Pursuit_Length"
                             }
                         ];
 
                         for (let m of multipliers) {
-                            const cashReward = Math.trunc(baseCash * m.multiplier);
-                            const repReward = Math.trunc(baseRep * m.multiplier);
+                            if (m.stat < 0) m.stat = 0;
+
+                            const cashParam = Number(allParameters.find(p => p.name == `PURSUIT_${m.rewardType.toUpperCase()}_CASH_MULTIPLIER`)?.value) || 0;
+                            const repParam = Number(allParameters.find(p => p.name == `PURSUIT_${m.rewardType.toUpperCase()}_REP_MULTIPLIER`)?.value) || 0;
+
+                            const cashMultiplier = m.stat * cashParam;
+                            const repMultiplier = m.stat * repParam;
+
+                            const cashReward = Math.trunc(baseCash * cashMultiplier);
+                            const repReward = Math.trunc(baseRep * repMultiplier);
 
                             if (cashReward || repReward) {
                                 cashEarnings += cashReward;
@@ -243,7 +256,7 @@ let self = module.exports = {
                                     TokenPart: [`${cashReward}`],
                                     RepPart: [`${repReward}`],
                                     RewardCategory: ["Pursuit"],
-                                    RewardType: [m.rewardType]
+                                    RewardType: [m.rewardType.replace(/_/ig, "")]
                                 });
                             }
                         }
@@ -362,6 +375,17 @@ let self = module.exports = {
         }
     
         fs.writeFileSync(getCarslots.data.carslotsPath, xmlParser.buildXML(parsedCarslots, { pretty: true }));
+
+        let allPlayersFinished = true;
+
+        for (let player of eventObject.players) {
+            if (!player.finished) {
+                allPlayersFinished = false;
+                break;
+            }
+        }
+
+        if (allPlayersFinished) delete eventSessions[eventSessionId];
         
         return response.createSuccess({
             [`${event}EventResult`]: {

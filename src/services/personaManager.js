@@ -212,6 +212,12 @@ let self = module.exports = {
             personaInfo.RepAtCurrentLevel = [`${newRepAtCurrentLevel}`];
         }
 
+        const isMaxLevel = (level >= maxLevel);
+
+        if (isMaxLevel && hasLeveledUp) {
+            personaInfo.RepAtCurrentLevel = ["0"];
+        }
+
         const oldCash = parseInt(personaInfo.Cash?.[0]) || 0;
         const newCash = oldCash + parsedCash;
 
@@ -223,7 +229,7 @@ let self = module.exports = {
             newLevel: level,
             newRepAtCurrentLevel: newRepAtCurrentLevel,
             newCash: newCash,
-            isMaxLevel: (level >= maxLevel),
+            isMaxLevel: isMaxLevel,
             hasLeveledUp: hasLeveledUp
         });
     },

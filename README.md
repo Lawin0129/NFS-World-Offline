@@ -45,6 +45,7 @@ The current existing offline server emulators are very outdated and finicky with
 * Economy:
     + You can level up, earn cash and inventory items by completing events.
         - All items have rarity levels (weights) so it is more challenging to get valuable items.
+        - Progression is balanced and also challenging at the same time.
     + Cash and SpeedBoost is correctly spent when purchasing any items.
     + Selling any item gives the correct amount of cash.
         - NOTE: Using a modded NFS World client may make the equipped (not inventory) performance/skill part selling prices inaccurate.
