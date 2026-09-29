@@ -9,6 +9,7 @@ const personaManager = require("../services/personaManager");
 const carManager = require("../services/carManager");
 const inventoryManager = require("./inventoryManager");
 const rewardManager = require("../services/rewardManager");
+const catalogManager = require("./catalogManager");
 const allEvents = require("../../config/Assets/events.json");
 const allEventRewards = require("../../config/Assets/event_rewards.json");
 const allParameters = require("../../config/Assets/parameters.json");
@@ -290,6 +291,32 @@ let self = module.exports = {
                                         };
                                         
                                         await inventoryManager.addInventoryItems(personaId, [invenItem]);
+                                    } else if (finalItem.data.item.productType?.toLowerCase?.() == "presetcar") {
+                                        const basketItem = catalogManager.getBasketItem(finalItem.data.item.productId);
+
+                                        if (basketItem.success) {
+                                            const product = await xmlParser.parseXML(basketItem.data.basketData);
+                                            const ownedCarTrans = product?.OwnedCarTrans;
+
+                                            if (ownedCarTrans) {
+                                                let carId = functions.MakeID();
+
+                                                while (parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.some(c => c.Id?.[0] == carId)) {
+                                                    carId = functions.MakeID();
+                                                }
+
+                                                let carTemplate = {
+                                                    CustomCar: ownedCarTrans.CustomCar,
+                                                    Durability: ["100"],
+                                                    Heat: ["1"],
+                                                    Id: [carId],
+                                                    OwnershipType: ["CustomizedCar"]
+                                                };
+
+                                                carTemplate.CustomCar[0].ResalePrice = [`${finalItem.data.item.resalePrice}`];
+                                                parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.push(carTemplate);
+                                            }
+                                        }
                                     }
                                     
                                     break;
