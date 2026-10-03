@@ -18,6 +18,17 @@ function between(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+function daysBetween(first, second) {
+    const firstDate = new Date(first.getFullYear(), first.getMonth(), first.getDate());
+    const secondDate = new Date(second.getFullYear(), second.getMonth(), second.getDate());
+
+    return Math.round((firstDate - secondDate) / 86400000);
+}
+
+function randomInt32() {
+    return between(-2147483648, 2147483647);
+}
+
 function diffArrays(a, b) {
     const valueCount = (arr) => {
         let valueMap = new Map();
@@ -55,6 +66,8 @@ module.exports = {
     sleep,
     askQuestion,
     between,
+    daysBetween,
+    randomInt32,
     diffArrays,
     MakeID,
     getHost

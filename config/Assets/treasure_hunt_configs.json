@@ -1,0 +1,11 @@
+[
+  {
+    "ID": 1,
+    "base_cash": 2725,
+    "base_rep": 1270,
+    "cash_multiplier": 675,
+    "rep_multiplier": 675,
+    "streak": 1,
+    "reward_table_id": 29
+  }
+]

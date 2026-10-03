@@ -21,6 +21,9 @@ module.exports = {
     eventNotFound: () => response.createError(404, "Event not found."),
     eventNonParticipant: () => response.createError(403, "You are not a part of this event."),
     eventPlayerAlreadyFinished: () => response.createError(403, "You have already finished this event."),
+    treasureHuntCoinsInvalid: () => response.createError(403, "Invalid treasure hunt coins provided."),
+    treasureHuntAlreadyCompleted: () => response.createError(403, "Treasure hunt for today is already completed."),
+    accoladesInvalid: () => response.createError(403, "Invalid accolades."),
     invalidParameters: () => response.createError(400, "Invalid parameters provided."),
     badRequestBody: () => response.createError(400, "Bad request body.")
 }

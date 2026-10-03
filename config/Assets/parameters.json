@@ -70,5 +70,13 @@
   {
     "name": "PURSUIT_SPIKE_STRIPS_DODGED_REP_MULTIPLIER",
     "value": "0.3"
+  },
+  {
+    "name": "TH_CASH_MULTIPLIER",
+    "value": "1"
+  },
+  {
+    "name": "TH_REP_MULTIPLIER",
+    "value": "1"
   }
 ]

@@ -43,7 +43,7 @@ The current existing offline server emulators are very outdated and finicky with
     + All original achievements included that once existed in NFS World.
     + Changing your achievement badges in Achievements Log.
 * Economy:
-    + You can level up, earn cash and inventory items by completing events.
+    + You can level up, earn cash and inventory items by completing events or doing your daily treasure hunt.
         - All items have rarity levels (weights) so it is more challenging to get valuable items.
         - Progression is balanced and also challenging at the same time.
     + Cash and SpeedBoost is correctly spent when purchasing any items.
@@ -79,9 +79,13 @@ The current existing offline server emulators are very outdated and finicky with
     + Earn inventory item rewards by completing events.
     + Equipping inventory parts.
     + Selling inventory parts.
+* Treasure Hunt:
+    + Collect gems to complete your daily treasure hunt and get rewards.
+    + Cash and rep rewards increase relative to your daily streak and driver level.
+    + Treasure hunt is renewed every day.
+    + If it has been 2 days or longer, your streak will be broken and you can pay to revive it or reset to day 1.
 * Freeroam:
     + Freeroam with fake players. Look at [Configuration](#configuration) for more details.
-* Treasure Hunt
 # Command Line Commands
 - `> help {commandName}` - Outputs a list of commands, `commandName` parameter is optional and can be used to show more information about a specific command.
 - `> holiday` - Set the current Need for Speed World holiday type. Upon running this command, a list of holidays will be displayed where you can choose one.

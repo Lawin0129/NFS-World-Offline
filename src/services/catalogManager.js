@@ -7,6 +7,7 @@ const xmlParser = require("../utils/xmlParser");
 const carManager = require("./carManager");
 const personaManager = require("../services/personaManager");
 const inventoryManager = require("../services/inventoryManager");
+const treasureHuntManager = require("../services/treasureHuntManager");
 
 let cachedCatalog;
 
@@ -223,6 +224,9 @@ let self = module.exports = {
             } else if (purchasedItem.categoryName == "productsInCategory_NFSW_NA_EP_REPAIRS") {
                 await carManager.repairDefaultCar(personaId, purchasedItem.quantity);
                 continue;
+            } else if (purchasedItem.categoryName == "productsInCategory_STORE_STREAK_RECOVERY") {
+                await treasureHuntManager.reviveStreak(personaId);
+                continue;
             }
 
             if (productItem.OriginalProductId) {
@@ -248,7 +252,7 @@ let self = module.exports = {
 
                         if (itemResellPrice != null) customFields.ResalePrice = [`${parseInt(itemResellPrice)}`];
 
-                        const addCar = await carManager.addCar(personaId, product.OwnedCarTrans, customFields);
+                        const addCar = await carManager.addCar(personaId, product.OwnedCarTrans, true, customFields);
 
                         if (addCar.success) {
                             commerceTemplate.CommerceResultTrans.PurchasedCars = [{ OwnedCarTrans: [addCar.data] }];

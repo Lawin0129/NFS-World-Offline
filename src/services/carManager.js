@@ -389,7 +389,7 @@ let self = module.exports = {
         
         return response.createSuccess(parsedCarslots.CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans[defaultCarIndex]);
     },
-    addCar: async (personaId, ownedCarTrans, customFields) => {
+    addCar: async (personaId, ownedCarTrans, shouldEquip, customFields) => {
         if ((typeof ownedCarTrans) != "object") return error.invalidParameters();
 
         const getCarslots = await self.getCarslots(personaId);
@@ -423,7 +423,7 @@ let self = module.exports = {
 
         let newCarIdx = (CarSlotInfoTrans.CarsOwnedByPersona[0].OwnedCarTrans.push(carTemplate)) - 1;
         
-        CarSlotInfoTrans.DefaultOwnedCarIndex = [`${newCarIdx}`];
+        if (shouldEquip) CarSlotInfoTrans.DefaultOwnedCarIndex = [`${newCarIdx}`];
         
         fs.writeFileSync(carslotsPath, xmlParser.buildXML(parsedCarslots, { pretty: true }));
         
