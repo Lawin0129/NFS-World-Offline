@@ -24,7 +24,6 @@ let self = module.exports = {
         name: "holiday",
     },
     execute: async (args, readline) => {
-        console.log(`\n${self.commandInfo.info}\n${self.commandInfo.helpInfo}`);
         console.log(`\nSelect a holiday:\n${holidayOptions}`);
 
         let optionSelect = await functions.askQuestion("\nEnter a number: ", readline);

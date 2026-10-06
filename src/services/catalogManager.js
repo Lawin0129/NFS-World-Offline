@@ -4,6 +4,7 @@ const paths = require("../utils/paths");
 const response = require("../utils/response");
 const error = require("../utils/error");
 const xmlParser = require("../utils/xmlParser");
+const num = require("../utils/num");
 const carManager = require("./carManager");
 const personaManager = require("../services/personaManager");
 const inventoryManager = require("../services/inventoryManager");
@@ -62,6 +63,8 @@ let self = module.exports = {
             // deals with duplicate and invalid product ids in catalog to prevent wrong item purchases
             const addProducts = (items) => {
                 for (let p of items) {
+                    delete p.OriginalProductId;
+
                     let origId = p.ProductId?.[0];
                     if ((typeof origId) != "string") {
                         origId = "LAWIN_INVALID_PRODUCT_ID";
@@ -82,8 +85,14 @@ let self = module.exports = {
                     }
 
                     // convert hashes into 32-bit because NFS World is 32-bit
-                    let newHash = (parseInt(p.Hash?.[0]) || 0) | 0;
+                    let newHash = num.parseInt32(p.Hash?.[0]) || 0;
                     p.Hash = [`${newHash}`];
+
+                    // don't allow negative prices
+                    let newPrice = num.parseFloatAndTruncate(p.Price?.[0]) || 0;
+                    if (newPrice < 0) newPrice = 0;
+
+                    p.Price = [`${newPrice}`];
 
                     products.push(p);
                 }
@@ -146,11 +155,11 @@ let self = module.exports = {
                 Wallets: [{
                     WalletTrans: [
                         {
-                            Balance: [parseInt(findPersona.data.personaInfo.Cash?.[0]) || 0],
+                            Balance: [num.parseFloatAndTruncate(findPersona.data.personaInfo.Cash?.[0]) || 0],
                             Currency: ["CASH"]
                         },
                         {
-                            Balance: [parseInt(findPersona.data.personaInfo.Boost?.[0]) || 0],
+                            Balance: [num.parseFloatAndTruncate(findPersona.data.personaInfo.Boost?.[0]) || 0],
                             Currency: ["BOOST"]
                         }
                     ]
@@ -163,19 +172,27 @@ let self = module.exports = {
 
         for (let basketItem of basketItems) {
             let productItem;
+            let itemDetails = {};
+            let purchaseDetails = { quantity: 1 };
 
             for (let catalog of allCatalogs.data) {
                 productItem = catalog.products.find(p => p.ProductId?.[0] == basketItem.productId);
 
                 if (productItem) {
-                    basketItem.categoryName = catalog.categoryName;
+                    purchaseDetails.categoryName = catalog.categoryName;
                     break;
                 }
             }
 
             if (!productItem) continue;
             
-            const totalPrice = (parseInt(productItem.Price?.[0]) * basketItem.quantity) || 0;
+            let totalPrice = parseInt(productItem.Price[0]);
+
+            if (purchaseDetails.categoryName == "productsInCategory_NFSW_NA_EP_REPAIRS") {
+                totalPrice *= basketItem.quantity;
+                purchaseDetails.quantity = basketItem.quantity;
+            }
+
             const cashOnlyCatalogs = [
                 "categories_NFSW_NA_EP_VINYLS_Category",
                 "productsInCategory_NFSW_NA_EP_PAINTS_BODY_Category",
@@ -185,17 +202,33 @@ let self = module.exports = {
                 "productsInCategory_NFSW_NA_EP_SKILLMODPARTS"
             ];
             
-            if ((productItem.Currency?.[0] == "CASH") || cashOnlyCatalogs.includes(basketItem.categoryName)) {
-                productItem.Currency = ["CASH"];
+            if ((productItem.Currency?.[0] == "CASH") || cashOnlyCatalogs.includes(purchaseDetails.categoryName)) {
+                purchaseDetails.currencyPaid = "CASH";
+                purchaseDetails.pricePaid = totalPrice;
                 cashChange -= totalPrice;
             } else {
-                productItem.Currency = ["_NS"];
+                purchaseDetails.currencyPaid = "_NS";
+                purchaseDetails.pricePaid = totalPrice;
                 boostChange -= totalPrice;
             }
 
-            basketItem.productItem = productItem;
+            let originalProductId = productItem.ProductId[0];
 
-            purchasedItems.push(basketItem);
+            if (productItem.OriginalProductId) {
+                originalProductId = productItem.OriginalProductId[0];
+            }
+
+            purchaseDetails.productId = productItem.ProductId[0];
+            purchaseDetails.originalProductId = originalProductId;
+
+            itemDetails.hash = num.parseInt32(productItem.Hash?.[0]) || 0;
+            itemDetails.useCount = parseInt(productItem.UseCount?.[0]) || 1;
+            if (itemDetails.useCount < 0) itemDetails.useCount = 1;
+
+            purchasedItems.push({
+                purchaseDetails: purchaseDetails,
+                itemDetails: itemDetails
+            });
         }
 
         const cashWalletTrans = commerceTemplate.CommerceResultTrans.Wallets[0].WalletTrans.find(w => w.Currency[0] == "CASH");
@@ -215,30 +248,30 @@ let self = module.exports = {
         let addedInventoryItems = [];
 
         for (let purchasedItem of purchasedItems) {
-            const productItem = purchasedItem.productItem;
-            let purchasedProductId = productItem.ProductId[0];
+            let itemAdded = false;
 
-            if (purchasedItem.categoryName == "productsInCategory_NFSW_NA_EP_CARSLOTS") {
-                await carManager.increaseCarSlot(personaId, purchasedItem.quantity);
+            const itemDetails = purchasedItem.itemDetails;
+            const purchaseDetails = purchasedItem.purchaseDetails;
+
+            if (purchaseDetails.categoryName == "productsInCategory_NFSW_NA_EP_CARSLOTS") {
+                await carManager.increaseCarSlot(personaId, purchaseDetails.quantity);
                 continue;
-            } else if (purchasedItem.categoryName == "productsInCategory_NFSW_NA_EP_REPAIRS") {
-                await carManager.repairDefaultCar(personaId, purchasedItem.quantity);
+            } else if (purchaseDetails.categoryName == "productsInCategory_NFSW_NA_EP_REPAIRS") {
+                await carManager.repairDefaultCar(personaId, purchaseDetails.quantity);
                 continue;
-            } else if (purchasedItem.categoryName == "productsInCategory_STORE_STREAK_RECOVERY") {
+            } else if (purchaseDetails.categoryName == "productsInCategory_STORE_STREAK_RECOVERY") {
                 await treasureHuntManager.reviveStreak(personaId);
                 continue;
+            } else if (purchaseDetails.categoryName.includes("PAINTS")) {
+                continue;
             }
 
-            if (productItem.OriginalProductId) {
-                purchasedProductId = productItem.OriginalProductId[0];
-            }
+            let getBasketItem = self.getBasketItem(purchaseDetails.originalProductId);
+            let itemResellPrice = purchaseDetails.pricePaid;
 
-            let getBasketItem = self.getBasketItem(purchasedProductId);
-            let itemResellPrice = parseInt(productItem.Price?.[0]) || 0;
-
-            if (productItem.Currency[0] == "CASH") {
+            if (purchaseDetails.currencyPaid == "CASH") {
                 itemResellPrice *= 0.5;
-            } else {
+            } else if (purchaseDetails.currencyPaid == "_NS") {
                 itemResellPrice = null;
             }
 
@@ -250,12 +283,13 @@ let self = module.exports = {
                     case "OwnedCarTrans": {
                         let customFields = {};
 
-                        if (itemResellPrice != null) customFields.ResalePrice = [`${parseInt(itemResellPrice)}`];
+                        if (itemResellPrice != null) customFields.ResalePrice = [`${Math.trunc(itemResellPrice)}`];
 
                         const addCar = await carManager.addCar(personaId, product.OwnedCarTrans, true, customFields);
 
                         if (addCar.success) {
                             commerceTemplate.CommerceResultTrans.PurchasedCars = [{ OwnedCarTrans: [addCar.data] }];
+                            itemAdded = true;
                         }
 
                         break;
@@ -264,7 +298,7 @@ let self = module.exports = {
             } else {
                 let itemType;
 
-                switch (purchasedItem.categoryName) {
+                switch (purchaseDetails.categoryName) {
                     case "productsInCategory_STORE_POWERUPS": {
                         itemType = "powerup";
                         break;
@@ -284,20 +318,31 @@ let self = module.exports = {
                     }
                 }
 
-                if (purchasedItem.categoryName.includes("VISUALPARTS") || purchasedItem.categoryName.includes("VANITY")) {
+                if (purchaseDetails.categoryName.includes("VISUALPARTS") || purchaseDetails.categoryName.includes("VANITY")) {
                     itemType = "visualpart";
                 }
 
-                if (!itemType) continue;
+                if (itemType) {
+                    let invenItem = {
+                        Hash: [`${itemDetails.hash}`],
+                        RemainingUseCount: [`${itemDetails.useCount}`],
+                        ResellPrice: [`${itemResellPrice}`],
+                        VirtualItemType: [itemType]
+                    };
+                    
+                    addedInventoryItems.push(invenItem);
+                    itemAdded = true;
+                }
+            }
 
-                let invenItem = {
-                    Hash: productItem.Hash,
-                    RemainingUseCount: productItem.UseCount,
-                    ResellPrice: [`${itemResellPrice}`],
-                    VirtualItemType: [itemType]
-                };
-
-                addedInventoryItems.push(invenItem);
+            if (!itemAdded) {
+                if (purchaseDetails.currencyPaid == "CASH") {
+                    cashChange += purchaseDetails.pricePaid;
+                    cashWalletTrans.Balance[0] += purchaseDetails.pricePaid;
+                } else if (purchaseDetails.currencyPaid == "_NS") {
+                    boostChange += purchaseDetails.pricePaid;
+                    boostWalletTrans.Balance[0] += purchaseDetails.pricePaid;
+                }
             }
         }
 
@@ -311,8 +356,15 @@ let self = module.exports = {
             }
         }
 
-        if (cashChange != 0) await personaManager.addCash(personaId, cashChange);
-        if (boostChange != 0) await personaManager.addBoost(personaId, boostChange);
+        if (cashChange != 0) {
+            const cashAdd = await personaManager.addCash(personaId, cashChange);
+            if (cashAdd.success) cashWalletTrans.Balance[0] = cashAdd.data.newCash;
+        }
+
+        if (boostChange != 0) {
+            const boostAdd = await personaManager.addBoost(personaId, boostChange);
+            if (boostAdd.success) boostWalletTrans.Balance[0] = boostAdd.data.newBoost;
+        }
 
         commerceTemplate.CommerceResultTrans.Status = ["Success"];
         

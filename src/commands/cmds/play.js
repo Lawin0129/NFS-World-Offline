@@ -8,10 +8,8 @@ const { spawn } = require("child_process");
 let self = module.exports = {
     commandInfo: {
         info: "This command is used to launch Need for Speed World.",
-        helpInfo: "Upon running this command, two options are displayed where one is for selecting the nfsw.exe file path and the other is to launch Need for Speed World.",
-        extraInfo: "-- Selecting a valid nfsw.exe file path saves into config so you won't need to re-select it again if you restart this offline server.\n"
-                 + "-- Once a valid nfsw.exe file path is selected, you can simply run the \"play\" command again then select \"Launch\" and Need for Speed World will start.\n"
-                 + "-- This command automatically limits NFS World to a maximum of 8 CPU cores (because using above 8 cores makes the game unstable and usually crashes).",
+        helpInfo: "Upon running this command, two options are displayed where one is for selecting the nfsw.exe file path (saves into config) and the other is to launch Need for Speed World.",
+        extraInfo: "-- This command automatically limits NFS World to a maximum of 8 CPU cores (because using above 8 cores makes the game unstable and usually crashes).",
         name: "play",
     },
     execute: async (args, readline) => {
@@ -19,8 +17,6 @@ let self = module.exports = {
             console.log("\nThis command is incompatible with your operating system.");
             return;
         }
-
-        console.log(`\n${self.commandInfo.info}\n\n${self.commandInfo.extraInfo}`);
         
         const configPath = path.join(paths.configPath, "config.json");
         const configData = JSON.parse(fs.readFileSync(configPath).toString());

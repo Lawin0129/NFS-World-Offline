@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const xmlParser = require("../utils/xmlParser");
+const num = require("../utils/num");
 const response = require("../utils/response");
 const error = require("../utils/error");
 const personaManager = require("./personaManager");
@@ -33,7 +34,7 @@ let self = module.exports = {
             let entitlementId = item.EntitlementTag?.[0];
 
             // convert hashes into 32-bit because NFS World is 32-bit
-            let newHash = `${(parseInt(item.Hash?.[0]) || 0) | 0}`;
+            let newHash = `${num.parseInt32(item.Hash?.[0]) || 0}`;
 
             if (item.Hash?.[0] != newHash) {
                 item.Hash = [newHash];
@@ -41,7 +42,7 @@ let self = module.exports = {
             }
 
             let hash = item.Hash?.[0];
-            let resellPrice = parseInt(item.ResellPrice?.[0]);
+            let resellPrice = num.parseFloatAndTruncate(item.ResellPrice?.[0]);
 
             if (!Number.isInteger(resellPrice)) {
                 resellPrice = 0;
@@ -127,19 +128,19 @@ let self = module.exports = {
         let addedItems = [];
 
         for (let inventoryItemTrans of inventoryItemTransList) {
-            let invenItemHash = parseInt(inventoryItemTrans.Hash?.[0]) || 0;
+            let invenItemHash = num.parseInt32(inventoryItemTrans.Hash?.[0]) || 0;
             let invenItem = {
                 EntitlementTag: [inventoryItemTrans.EntitlementTag?.[0] || `LAWIN_${invenItemHash}`],
                 Hash: [`${invenItemHash}`],
                 RemainingUseCount: [`${parseInt(inventoryItemTrans.RemainingUseCount?.[0]) || 1}`],
-                ResellPrice: [`${parseInt(inventoryItemTrans.ResellPrice?.[0]) || 0}`],
+                ResellPrice: [`${num.parseFloatAndTruncate(inventoryItemTrans.ResellPrice?.[0]) || 0}`],
                 Status: ["ACTIVE"],
                 VirtualItemType: [inventoryItemTrans.VirtualItemType?.[0]?.toLowerCase?.() || ""]
             };
             let findItem;
 
             if (invenItem.VirtualItemType[0] == "powerup") {
-                findItem = inventoryItems.InventoryItemTrans.find(i => (parseInt(i.Hash?.[0]) || 0) == invenItemHash);
+                findItem = inventoryItems.InventoryItemTrans.find(i => (num.parseInt32(i.Hash?.[0]) || 0) == invenItemHash);
 
                 if (findItem) {
                     let remainingUseCount = parseInt(findItem.RemainingUseCount?.[0]) || 0;
@@ -174,7 +175,7 @@ let self = module.exports = {
 
         for (let itemInfo of items) {
             let parsedUseCount = parseInt(itemInfo.useCount) || 1;
-            let parsedHash = parseInt(itemInfo.itemHash) || 0;
+            let parsedHash = num.parseInt32(itemInfo.itemHash) || 0;
             let itemType = itemInfo.itemType || "";
 
             let itemFound = false;
@@ -186,7 +187,7 @@ let self = module.exports = {
 
             for (let idx = 0; idx < inventoryItems.InventoryItemTrans.length; idx++) {
                 let item = inventoryItems.InventoryItemTrans[idx];
-                let parsedInventoryItemHash = parseInt(item.Hash?.[0]) || 0;
+                let parsedInventoryItemHash = num.parseInt32(item.Hash?.[0]) || 0;
 
                 if (parsedInventoryItemHash == parsedHash) {
                     itemFound = true;
@@ -256,7 +257,7 @@ let self = module.exports = {
 
             if (itemIndex != -1) {
                 const invItem = inventoryItems.InventoryItemTrans[itemIndex];
-                const resalePrice = parseInt(invItem.ResellPrice?.[0]) || 0;
+                const resalePrice = num.parseFloatAndTruncate(invItem.ResellPrice?.[0]) || 0;
 
                 cashChange += resalePrice;
                 

@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express.Router();
-const sharedState = require("../utils/sharedState");
 const personaManager = require("../services/personaManager");
 
 // Check if name is available
@@ -17,7 +16,6 @@ app.post("/DriverPersona/CreatePersona", async (req, res) => {
     if (createPersona.success) {
         // enable tutorial for newly created drivers by spoofing level
         createPersona.data.ProfileData.Level = ["1"];
-        sharedState.data.newDriver = { personaId: createPersona.data.ProfileData.PersonaId[0], numOfReqs: 0 };
 
         res.xml(createPersona.data);
     } else {

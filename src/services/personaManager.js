@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");
 const xmlParser = require("../utils/xmlParser");
+const num = require("../utils/num");
 const response = require("../utils/response");
 const error = require("../utils/error");
 const xmppManager = require("../services/xmppManager");
@@ -88,9 +89,9 @@ let self = module.exports = {
         
         return response.createSuccess(activePersona);
     },
-    removeActivePersona: () => {
+    removeActivePersona: (isGameClose) => {
         activePersona = { driverDirectory: "", personaId: "" };
-        xmppManager.removeActiveXmppClientData(true);
+        xmppManager.removeActiveXmppClientData(true, isGameClose);
 
         return response.createSuccess();
     },
@@ -133,15 +134,17 @@ let self = module.exports = {
 
         let personaInfo = findPersona.data.personaInfo;
 
-        const oldCash = parseInt(personaInfo.Cash?.[0]) || 0;
-        const newCash = oldCash + parsedCash;
+        const oldCash = num.parseFloatAndTruncate(personaInfo.Cash?.[0]) || 0;
+        let newCash = oldCash + parsedCash;
+        if (newCash > num.constants.INT32.MAX) newCash = num.constants.INT32.MAX;
 
         personaInfo.Cash = [`${newCash}`];
 
         fs.writeFileSync(path.join(findPersona.data.driverDirectory, "GetPersonaInfo.xml"), xmlParser.buildXML({ ProfileData: personaInfo }, { pretty: true }));
 
         return response.createSuccess({
-            newAmount: newCash
+            newCash: newCash,
+            isMaxCash: (newCash == num.constants.INT32.MAX)
         });
     },
     addBoost: async (personaId, boost) => {
@@ -153,15 +156,17 @@ let self = module.exports = {
 
         let personaInfo = findPersona.data.personaInfo;
 
-        const oldBoost = parseInt(personaInfo.Boost?.[0]) || 0;
-        const newBoost = oldBoost + parsedBoost;
+        const oldBoost = num.parseFloatAndTruncate(personaInfo.Boost?.[0]) || 0;
+        let newBoost = oldBoost + parsedBoost;
+        if (newBoost > num.constants.INT32.MAX) newBoost = num.constants.INT32.MAX;
 
         personaInfo.Boost = [`${newBoost}`];
 
         fs.writeFileSync(path.join(findPersona.data.driverDirectory, "GetPersonaInfo.xml"), xmlParser.buildXML({ ProfileData: personaInfo }, { pretty: true }));
 
         return response.createSuccess({
-            newAmount: newBoost
+            newBoost: newBoost,
+            isMaxBoost: (newBoost == num.constants.INT32.MAX)
         });
     },
     addCashAndRep: async (personaId, cash, rep) => {
@@ -218,8 +223,9 @@ let self = module.exports = {
             personaInfo.RepAtCurrentLevel = ["0"];
         }
 
-        const oldCash = parseInt(personaInfo.Cash?.[0]) || 0;
-        const newCash = oldCash + parsedCash;
+        const oldCash = num.parseFloatAndTruncate(personaInfo.Cash?.[0]) || 0;
+        let newCash = oldCash + parsedCash;
+        if (newCash > num.constants.INT32.MAX) newCash = num.constants.INT32.MAX;
 
         personaInfo.Cash = [`${newCash}`];
 
@@ -229,6 +235,7 @@ let self = module.exports = {
             newLevel: level,
             newRepAtCurrentLevel: newRepAtCurrentLevel,
             newCash: newCash,
+            isMaxCash: (newCash == num.constants.INT32.MAX),
             isMaxLevel: isMaxLevel,
             hasLeveledUp: hasLeveledUp
         });

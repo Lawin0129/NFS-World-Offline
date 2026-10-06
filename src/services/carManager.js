@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const xmlParser = require("../utils/xmlParser");
 const functions = require("../utils/functions");
+const num = require("../utils/num");
 const response = require("../utils/response");
 const error = require("../utils/error");
 const personaManager = require("./personaManager");
@@ -182,7 +183,7 @@ let self = module.exports = {
 
                 if (slotIteration > perfPartsMaxSlots) break;
 
-                let itemHash = (parseInt(perfPart.PerformancePartAttribHash?.[0]) || 0) | 0;
+                let itemHash = num.parseInt32(perfPart.PerformancePartAttribHash?.[0]);
 
                 if (!itemHash) continue;
                 if (perfPartsTemplate[0].PerformancePartTrans.some(p => p.PerformancePartAttribHash[0] == itemHash)) continue;
@@ -201,8 +202,8 @@ let self = module.exports = {
 
                 if (slotIteration > visualPartsMaxSlots) break;
 
-                let itemHash = (parseInt(visualPart.PartHash?.[0]) || 0) | 0;
-                let slotHash = (parseInt(visualPart.SlotHash?.[0]) || 0) | 0;
+                let itemHash = num.parseInt32(visualPart.PartHash?.[0]);
+                let slotHash = num.parseInt32(visualPart.SlotHash?.[0]);
 
                 if (!itemHash || !slotHash) continue;
                 if (visualPartsTemplate[0].VisualPartTrans.some(p => p.PartHash[0] == itemHash)) continue;
@@ -223,7 +224,7 @@ let self = module.exports = {
 
                 if (slotIteration > skillPartsMaxSlots) break;
 
-                let itemHash = (parseInt(skillPart.SkillModPartAttribHash?.[0]) || 0) | 0;
+                let itemHash = num.parseInt32(skillPart.SkillModPartAttribHash?.[0]);
                 let isFixed = skillPart.IsFixed?.[0]?.toLowerCase?.() == "true";
 
                 if (!itemHash) continue;
@@ -243,7 +244,7 @@ let self = module.exports = {
 
                 if (slotIteration > vinylsMaxSlots) break;
 
-                let itemHash = (parseInt(customVinyl.Hash?.[0]) || 0) | 0;
+                let itemHash = num.parseInt32(customVinyl.Hash?.[0]);
                 if (!itemHash) continue;
 
                 let hue1Value = parseInt(customVinyl.Hue1?.[0]) || 0;
@@ -310,7 +311,7 @@ let self = module.exports = {
 
             if (Array.isArray(parts)) {
                 for (let idx = 0; parts.length > idx; idx++) {
-                    let partHash = (parseInt(parts[idx]?.[attribName]?.[0]) || 0) | 0;
+                    let partHash = num.parseInt32(parts[idx]?.[attribName]?.[0]);
                     if (!partHash) partHash = "";
 
                     partsList.push(`${partHash}`);
@@ -445,7 +446,7 @@ let self = module.exports = {
         if (findCarIndex == -1) return error.carNotFound();
 
         const currentCar = ownedCars.OwnedCarTrans[findCarIndex];
-        const resalePrice = parseInt(currentCar.CustomCar?.[0]?.ResalePrice?.[0]) || 0;
+        const resalePrice = num.parseFloatAndTruncate(currentCar.CustomCar?.[0]?.ResalePrice?.[0]) || 0;
 
         await personaManager.addCash(personaId, resalePrice);
         

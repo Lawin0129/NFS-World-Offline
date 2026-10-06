@@ -4,7 +4,6 @@ const fs = require("fs");
 const path = require("path");
 const paths = require("../utils/paths");
 const xmlParser = require("../utils/xmlParser");
-const sharedState = require("../utils/sharedState");
 const personaManager = require("../services/personaManager");
 const carManager = require("../services/carManager");
 const catalogManager = require("../services/catalogManager");
@@ -288,18 +287,8 @@ app.get("/DriverPersona/GetPersonaInfo", async (req, res) => {
     const findPersona = await personaManager.getPersonaById(req.query.personaId);
 
     if (findPersona.success) {
-        let personaInfo = findPersona.data.personaInfo;
-
-        if ((sharedState.data.newDriver?.personaId == req.query.personaId) && (sharedState.data.newDriver?.numOfReqs < 2)) {
-            // enable tutorial for newly created drivers by spoofing level
-            if (sharedState.data.newDriver.numOfReqs == 1) {
-                personaInfo.Level = ["1"];
-            }
-            sharedState.data.newDriver.numOfReqs += 1;
-        }
-        
         res.xml({
-            ProfileData: personaInfo
+            ProfileData: findPersona.data.personaInfo
         });
         return;
     }

@@ -4,7 +4,7 @@ const personaManager = require("../services/personaManager");
 
 // Start session
 app.post("/User/GetPermanentSession", async (req, res) => {
-    personaManager.removeActivePersona();
+    personaManager.removeActivePersona(true);
     
     let DefaultPersonaIdx = (await personaManager.getDefaultPersonaIdx()).data;
 
@@ -45,9 +45,16 @@ app.post("/User/SecureLoginPersona", async (req, res) => {
     }
 });
 
-// Log out of driver (game close/changing driver)
-app.post("/User/SecureLogout*", (req, res) => {
-    personaManager.removeActivePersona();
+// Log out of account (game close)
+app.post("/User/SecureLogout", (req, res) => {
+    personaManager.removeActivePersona(true);
+
+    res.status(200).end();
+});
+
+// Log out of driver (changing driver)
+app.post("/User/SecureLogoutPersona", (req, res) => {
+    personaManager.removeActivePersona(false);
 
     res.status(200).end();
 });

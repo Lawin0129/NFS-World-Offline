@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const functions = require("../utils/functions");
+const num = require("../utils/num");
 const xmlParser = require("../utils/xmlParser");
 const error = require("../utils/error");
 const response = require("../utils/response");
@@ -72,7 +73,7 @@ let self = module.exports = {
 
                     if (currentCoins == maxCoins) {
                         treasureHuntInfo.CoinsCollected = ["0"];
-                        treasureHuntInfo.Seed = [`${functions.randomInt32()}`];
+                        treasureHuntInfo.Seed = [`${num.randomInt32()}`];
                         treasureHuntInfo.IsCompletedForToday = ["false"];
                         treasureInfoChanged = true;
                     }
@@ -86,6 +87,7 @@ let self = module.exports = {
 
         if (generateNewDate) {
             treasureHuntInfo.Date = [new Date().toISOString()];
+            treasureHuntInfo.Seed = [`${num.randomInt32()}`];
             treasureHuntInfo.CoinsCollected = ["0"];
             treasureInfoChanged = true;
         }
@@ -246,10 +248,8 @@ let self = module.exports = {
         return response.createSuccess({ Accolades: currentAccolades });
     },
     collectCoins: async (personaId, coins) => {
-        let parsedCoins = parseInt(coins);
+        let parsedCoins = num.parseUInt32(coins);
         if (!Number.isInteger(parsedCoins)) return error.invalidParameters();
-
-        parsedCoins = parsedCoins >>> 0;
 
         const findTreasureInfo = await self.getTreasureHuntInfo(personaId);
         if (!findTreasureInfo.success) return findTreasureInfo;

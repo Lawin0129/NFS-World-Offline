@@ -4,11 +4,6 @@ const log = require("../utils/log");
 const personaManager = require("../services/personaManager");
 const xmppManager = require("../services/xmppManager");
 
-let sentLoginMessage = false;
-const loginMessage = "----------------------------------------------------\n" +
-                     "Welcome to NFS World Offline by Lawin!\n" +
-                     "----------------------------------------------------";
-
 module.exports = async (clientData, msg) => {
     if (clientData.disconnected) return;
     
@@ -62,11 +57,6 @@ module.exports = async (clientData, msg) => {
                     
                     clientData.personaId = username;
                     xmppManager.setActiveXmppClientData(username, clientData.secureSocket);
-
-                    if (!sentLoginMessage) {
-                        xmppManager.sendSystemChat(clientData, loginMessage);
-                        sentLoginMessage = true;
-                    }
                     break;
                 }
             }

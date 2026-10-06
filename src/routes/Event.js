@@ -10,19 +10,26 @@ const allEvents = require("../../config/Assets/events.json");
 const allEventRewards = require("../../config/Assets/event_rewards.json");
 const eventManager = require("../services/eventManager");
 
-let eventId = "";
+let eventSelection = {
+    eventId: "",
+    date_set: 0
+};
 
 // Launch single player event
 app.get("/matchmaking/launchevent/:eventId", async (req, res) => {
     const getActivePersona = personaManager.getActivePersona();
     if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
 
-    if (eventId.length == 0) eventId = req.params.eventId;
+    if (eventSelection.eventId.length == 0) eventSelection.eventId = req.params.eventId;
     else {
-        log.game(`Launching the detected multiplayer event (eventId: ${eventId}).`)
+        if ((new Date().getTime() - eventSelection.date_set) < 60000) {
+            log.game(`Launching the detected multiplayer event (eventId: ${eventSelection.eventId}).`);
+        } else {
+            eventSelection.eventId = req.params.eventId;
+        }
     }
 
-    const createEvent = await eventManager.createSinglePlayerEvent(getActivePersona.data.personaId, eventId);
+    const createEvent = await eventManager.createSinglePlayerEvent(getActivePersona.data.personaId, eventSelection.eventId);
     if (!createEvent.success) return res.status(createEvent.error.status).send(createEvent.error.reason);
 
     let eventTemplate = {
@@ -34,14 +41,20 @@ app.get("/matchmaking/launchevent/:eventId", async (req, res) => {
 
     res.xml(eventTemplate);
 
-    eventId = "";
+    eventSelection = {
+        eventId: "",
+        date_set: 0
+    };
 });
 
 // Multiplayer event
 app.put("/matchmaking/joinqueueevent/:eventId", (req, res) => {
-    eventId = req.params.eventId;
+    eventSelection = {
+        eventId: req.params.eventId,
+        date_set: new Date().getTime()
+    };
 
-    log.game(`Multiplayer event detected (eventId: ${eventId}), launch any single player event to play this.`);
+    log.game(`Multiplayer event detected (eventId: ${eventSelection.eventId}), launch any single player event to play this. Expires after one minute.`);
 
     res.status(200).end();
 });

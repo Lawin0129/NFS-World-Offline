@@ -1,6 +1,6 @@
 const response = require("../utils/response");
 const error = require("../utils/error");
-const functions = require("../utils/functions");
+const num = require("../utils/num");
 const allCatalogProducts = require("../../config/Assets/products.json");
 const allRewardTables = require("../../config/Assets/reward_tables.json");
 const allRewardTableItems = require("../../config/Assets/reward_table_items.json");
@@ -46,7 +46,7 @@ let generator = module.exports = {
     randomDrop: (entitlementTags) => {
         if (!Array.isArray(entitlementTags)) return error.invalidParameters();
 
-        const randomEntitlementIndex = functions.between(0, (entitlementTags.length - 1));
+        const randomEntitlementIndex = num.between(0, (entitlementTags.length - 1));
         const pickedEntitlementTag = entitlementTags[randomEntitlementIndex];
 
         const finalItem = allCatalogProducts.find(i => i.entitlementTag == pickedEntitlementTag);

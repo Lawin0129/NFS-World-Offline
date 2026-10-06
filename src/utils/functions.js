@@ -1,4 +1,5 @@
 const config = require("../../config/config.json");
+const num = require("./num");
 
 async function sleep(ms) {
     await new Promise((resolve, reject) => {
@@ -14,19 +15,11 @@ function askQuestion(question, ReadLine) {
     return qPromise;
 }
 
-function between(min, max) {  
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
 function daysBetween(first, second) {
     const firstDate = new Date(first.getFullYear(), first.getMonth(), first.getDate());
     const secondDate = new Date(second.getFullYear(), second.getMonth(), second.getDate());
 
     return Math.round((firstDate - secondDate) / 86400000);
-}
-
-function randomInt32() {
-    return between(-2147483648, 2147483647);
 }
 
 function diffArrays(a, b) {
@@ -49,7 +42,7 @@ function diffArrays(a, b) {
 }
 
 function MakeID() {
-    return `${between(100000000, 999999999)}`;
+    return `${num.between(1, num.constants.INT32.MAX)}`;
 }
 
 function getHost(hostHeader) {
@@ -65,9 +58,7 @@ function getHost(hostHeader) {
 module.exports = {
     sleep,
     askQuestion,
-    between,
     daysBetween,
-    randomInt32,
     diffArrays,
     MakeID,
     getHost

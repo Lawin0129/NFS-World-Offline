@@ -13,7 +13,7 @@ let self = module.exports = {
         name: "modloader",
     },
     execute: async (args, readline) => {
-        console.log(`\n${self.commandInfo.info}\n\n${self.commandInfo.extraInfo}`);
+        console.log(`\n${self.commandInfo.extraInfo}`);
 
         let getServerList = await sbrwManager.getServerList();
         if (!getServerList.success) {

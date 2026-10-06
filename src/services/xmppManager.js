@@ -4,6 +4,10 @@ const xmlParser = require("../utils/xmlParser");
 const calculateHashFromData = require("../utils/calculateHashFromData");
 
 let activeXmppClientData = {};
+let sentLoginMessage = false;
+const loginMessage = "----------------------------------------------------\n" +
+                     "Welcome to NFS World Offline by Lawin!\n" +
+                     "----------------------------------------------------";
 
 let self = module.exports = {
     getActiveXmppClientData: () => {
@@ -11,20 +15,10 @@ let self = module.exports = {
 
         return response.createSuccess(activeXmppClientData);
     },
-    removeActiveXmppClientData: (shouldDestroy) => {
+    removeActiveXmppClientData: (shouldDestroy, isGameClose) => {
         if (shouldDestroy) activeXmppClientData.secureSocket?.destroy?.();
+        if (isGameClose) sentLoginMessage = false;
         activeXmppClientData = {};
-
-        return response.createSuccess();
-    },
-    setActiveXmppClientData: (personaId, secureSocket) => {
-        if ((typeof personaId) != "string") return error.invalidParameters();
-        if ((typeof secureSocket?.write) != "function") return error.invalidParameters();
-
-        self.removeActiveXmppClientData(true);
-
-        activeXmppClientData.personaId = personaId;
-        activeXmppClientData.secureSocket = secureSocket;
 
         return response.createSuccess();
     },
@@ -72,5 +66,21 @@ let self = module.exports = {
         }));
 
         return attemptSend;
+    },
+    setActiveXmppClientData: (personaId, secureSocket) => {
+        if ((typeof personaId) != "string") return error.invalidParameters();
+        if ((typeof secureSocket?.write) != "function") return error.invalidParameters();
+
+        self.removeActiveXmppClientData(true);
+
+        activeXmppClientData.personaId = personaId;
+        activeXmppClientData.secureSocket = secureSocket;
+
+        if (!sentLoginMessage) {
+            self.sendSystemChat(activeXmppClientData, loginMessage);
+            sentLoginMessage = true;
+        }
+
+        return response.createSuccess();
     }
 }
