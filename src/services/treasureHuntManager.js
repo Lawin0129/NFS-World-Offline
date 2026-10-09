@@ -7,7 +7,7 @@ const error = require("../utils/error");
 const response = require("../utils/response");
 const personaManager = require("../services/personaManager");
 const rewardManager = require("../services/rewardManager");
-const catalogManager = require("../services/catalogManager");
+const catalogManager = () => require("../services/catalogManager");
 const inventoryManager = require("../services/inventoryManager");
 const carManager = require("../services/carManager");
 const treasureHuntConfigs = require("../../config/Assets/treasure_hunt_configs.json");
@@ -191,7 +191,7 @@ let self = module.exports = {
                                 
                                 await inventoryManager.addInventoryItems(personaId, [invenItem]);
                             } else if (finalItem.data.item.productType?.toLowerCase?.() == "presetcar") {
-                                const basketItem = catalogManager.getBasketItem(finalItem.data.item.productId);
+                                const basketItem = catalogManager().getBasketItem(finalItem.data.item.productId);
                                 
                                 if (basketItem.success) {
                                     const product = await xmlParser.parseXML(basketItem.data.basketData);

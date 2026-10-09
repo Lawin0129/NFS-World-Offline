@@ -15,6 +15,17 @@ let eventSelection = {
     date_set: 0
 };
 
+// Get events by persona level
+app.get("/events/availableatlevel", async (req, res) => {
+    const getActivePersona = personaManager.getActivePersona();
+    if (!getActivePersona.success) return res.status(getActivePersona.error.status).send(getActivePersona.error.reason);
+
+    const eventsAtLevel = await eventManager.getEventsByLevel(getActivePersona.data.personaId);
+    if (!eventsAtLevel.success) return res.status(eventsAtLevel.error.status).send(eventsAtLevel.error.reason);
+
+    res.xml(eventsAtLevel.data);
+});
+
 // Launch single player event
 app.get("/matchmaking/launchevent/:eventId", async (req, res) => {
     const getActivePersona = personaManager.getActivePersona();

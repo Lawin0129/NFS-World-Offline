@@ -18,6 +18,36 @@ let eventSessions = {};
 let eventAccolades = {};
 
 let self = module.exports = {
+    getEventsByLevel: async (personaId) => {
+        const findPersona = await personaManager.getPersonaById(personaId);
+        if (!findPersona.success) return findPersona;
+
+        let personaLevel = parseInt(findPersona.data.personaInfo.Level?.[0]) || 0;
+
+        const eventsXml = fs.readFileSync(path.join(paths.dataPath, "events", "availableatlevel.xml")).toString();
+        let parsedEvents = await xmlParser.parseXML(eventsXml);
+        let availableEventsAtLevel = [];
+
+        if (Array.isArray(parsedEvents.EventsPacket.Events?.[0]?.EventDefinition)) {
+            for (let e of parsedEvents.EventsPacket.Events[0].EventDefinition) {
+                let minLevel = parseInt(e.MinLevel?.[0]);
+                let maxLevel = parseInt(e.MaxLevel?.[0]);
+                let passedMinLevel = true;
+                let passedMaxLevel = true;
+
+                if (Number.isInteger(minLevel)) passedMinLevel = (minLevel <= personaLevel);
+                if (Number.isInteger(maxLevel)) passedMaxLevel = (maxLevel >= personaLevel);
+
+                if (passedMinLevel && passedMaxLevel) availableEventsAtLevel.push(e);
+            }
+        }
+
+        return response.createSuccess({
+            EventsPacket: {
+                Events: [{ EventDefinition: availableEventsAtLevel }]
+            }
+        });
+    },
     createSinglePlayerEvent: async (personaId, eventId) => {
         const findPersona = await personaManager.getPersonaById(personaId);
         if (!findPersona.success) return findPersona;
