@@ -139,6 +139,8 @@ let self = module.exports = {
         const findPersona = await personaManager.getPersonaById(personaId);
         if (!findPersona.success) return error.personaNotFound();
 
+        const personaLevel = parseInt(findPersona.data.personaInfo.Level?.[0]) || 0;
+
         let cashChange = 0;
         let boostChange = 0;
 
@@ -185,6 +187,15 @@ let self = module.exports = {
             }
 
             if (!productItem) continue;
+
+            const minimumLevelForProduct = parseInt(productItem.Level?.[0]);
+
+            if (minimumLevelForProduct) {
+                if (personaLevel < minimumLevelForProduct) {
+                    commerceTemplate.CommerceResultTrans.Status = ["Fail_PersonaNotRightLevel"];
+                    return response.createSuccess(commerceTemplate);
+                }
+            }
             
             let totalPrice = parseInt(productItem.Price[0]);
 
