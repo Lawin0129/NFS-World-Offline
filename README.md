@@ -65,6 +65,8 @@ The current existing offline server emulators are very outdated and finicky with
         - Drags: -2% Durability Loss.
 * Cars:
     + All original cars included in the shop that once existed in NFS World.
+        - Every single car style is included (649 unique presets, includes unreleased styles).
+        - All car prices are balanced for steady progression.
     + Changing your car.
     + Repairing your car.
     + Purchasing cars.
@@ -143,5 +145,7 @@ Once the game has launched, create your driver and play!
 | Name | Helped with |
 | --------------- | ----------- |
 | Lawin | Creator |
-| soapbox-race-offline-1.9.0<br/>by berkay2578 & Nilzao | For catalog and baskets XML files,<br/>For [Server Editor](#server-editor) and XMPP subject hash algorithm. |
+| soapbox-race-offline-1.9.0<br/>by berkay2578 & Nilzao | For some catalog and basket XML files,<br/>For [Server Editor](#server-editor) and XMPP subject hash algorithm. |
 | Soapbox Race World | For [NFS World data files](config/Assets/) |
+| [Aaron](https://github.com/NFSTools/Aaron) | Exporting cars from NFS World |
+| [Attribulator](https://github.com/NFSTools/Attribulator) | Exporting data from NFS World |
