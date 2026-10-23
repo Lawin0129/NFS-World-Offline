@@ -3,16 +3,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>SLINGSHOT COOLDOWN</Description>
+		<Description>GM_CATALOG_000048AC</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>-651404759</Hash>
-		<Icon>128_skill_perseverance</Icon>
+		<Hash>-736092853</Hash>
+		<Icon>128_skill_take_off</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Slingshot by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
+		<LongDescription>GM_CATALOG_000048F5</LongDescription>
+		<Price>85218</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL1</ProductId>
-		<ProductTitle>PERSEVERENCE</ProductTitle>
+		<ProductId>launchgrip_5_c</ProductId>
+		<ProductTitle>GM_CATALOG_000048AB</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -24,163 +24,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>EVADE COOLDOWN</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>718660058</Hash>
-		<Icon>128_skill_reload</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Emergency Evade by {0:s}</LongDescription>
-		<Price>7500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL2</ProductId>
-		<ProductTitle>RELOAD</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>SLINGSHOT POWER</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>790466659</Hash>
-		<Icon>128_skill_aerodynamic</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the performance boost from Slingshot by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL3</ProductId>
-		<ProductTitle>AERODYNAMIC</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>PERFECT START DURATION</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>227082963</Hash>
-		<Icon>128_skill_headstart</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the duration of the Perfect Start boost by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL4</ProductId>
-		<ProductTitle>HEADSTART</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>NITROUS COOLDOWN</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>-1532511385</Hash>
-		<Icon>128_skill_rapid_fire</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Nitrous by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL5</ProductId>
-		<ProductTitle>RAPID FIRE</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>EXPLORE CASH</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>-261284782</Hash>
-		<Icon>128_skill_explorer</Icon>
-		<Level>0</Level>
-		<LongDescription/>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL6</ProductId>
-		<ProductTitle>EXPLORER</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>NITROUS DURATION</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>144856670</Hash>
-		<Icon>128_skill_extended_nos</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the duration of Nitrous by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL7</ProductId>
-		<ProductTitle>EXTENDED NOS</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>JUGGERNAUT DURATION</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>-1072621028</Hash>
-		<Icon>128_skill_rampage</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the duration of Juggernaut by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL8</ProductId>
-		<ProductTitle>RAMPAGE</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>LAUNCH GRIP</Description>
+		<Description>GM_CATALOG_000048AC</Description>
 		<DurationMinute>0</DurationMinute>
 		<Hash>966334247</Hash>
 		<Icon>128_skill_take_off</Icon>
 		<Level>0</Level>
-		<LongDescription>Improves initial launch speed by {0:s} in Drag races</LongDescription>
-		<Price>12500.0000</Price>
+		<LongDescription>GM_CATALOG_000048F5</LongDescription>
+		<Price>63125</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL9</ProductId>
-		<ProductTitle>TAKEOFF</ProductTitle>
+		<ProductId>launchgrip_4_b</ProductId>
+		<ProductTitle>GM_CATALOG_000048AB</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -192,16 +45,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>RUN FLATS COOLDOWN</Description>
+		<Description>GM_CATALOG_000048AC</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>-1470082411</Hash>
-		<Icon>128_skill_rapid_refill</Icon>
+		<Hash>1644651446</Hash>
+		<Icon>128_skill_take_off</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Run Flats by {0:s}</LongDescription>
-		<Price>7500.0000</Price>
+		<LongDescription>GM_CATALOG_000048F5</LongDescription>
+		<Price>47815</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL10</ProductId>
-		<ProductTitle>RAPID REFILL</ProductTitle>
+		<ProductId>launchgrip_3_c</ProductId>
+		<ProductTitle>GM_CATALOG_000048AB</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -213,16 +66,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>PERFORMANCE BOOST</Description>
+		<Description>GM_CATALOG_000048AC</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>-477917459</Hash>
-		<Icon>128_skill_catchup</Icon>
+		<Hash>-1176333550</Hash>
+		<Icon>128_skill_take_off</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases your acceleration by {0:s} if you're third place or lower</LongDescription>
-		<Price>12500.0000</Price>
+		<LongDescription>GM_CATALOG_000048F5</LongDescription>
+		<Price>31875</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL11</ProductId>
-		<ProductTitle>CATCH UP</ProductTitle>
+		<ProductId>launchgrip_2_c</ProductId>
+		<ProductTitle>GM_CATALOG_000048AB</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -234,16 +87,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>READY COOLDOWN</Description>
+		<Description>GM_CATALOG_000048AC</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>-1951098126</Hash>
-		<Icon>128_skill_lightning_reflex</Icon>
+		<Hash>2042183711</Hash>
+		<Icon>128_skill_take_off</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Ready by {0:s}</LongDescription>
-		<Price>7500.0000</Price>
+		<LongDescription>GM_CATALOG_000048F5</LongDescription>
+		<Price>15940</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL12</ProductId>
-		<ProductTitle>LIGHTNING REFLEX</ProductTitle>
+		<ProductId>launchgrip_1_c</ProductId>
+		<ProductTitle>GM_CATALOG_000048AB</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -255,58 +108,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>COLLISION FORCE</Description>
+		<Description>GM_CATALOG_00003E10</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>1768657079</Hash>
-		<Icon>128_skill_ram</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the weight of your car in collisions by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL13</ProductId>
-		<ProductTitle>RAM</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>SHIELD DURATION</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>1271611681</Hash>
-		<Icon>128_skill_rolling_fortress</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the duration of Shield by {0:s}</LongDescription>
-		<Price>7500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL14</ProductId>
-		<ProductTitle>ROLLING FORTRESS</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>PERFECT START RPM</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>1378911342</Hash>
+		<Hash>-2090556699</Hash>
 		<Icon>128_skill_redline</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the RPM range to get a Perfect Start by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
+		<LongDescription>GM_CATALOG_00003DBE</LongDescription>
+		<Price>51000</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL15</ProductId>
-		<ProductTitle>REDLINE</ProductTitle>
+		<ProductId>perfectstart_rpm_04_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002E37</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -318,16 +129,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>EMERGENCY EVADE RANGE</Description>
+		<Description>GM_CATALOG_00003E10</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>-158949060</Hash>
-		<Icon>128_skill_overdrive</Icon>
+		<Hash>1723541943</Hash>
+		<Icon>128_skill_redline</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the range of Emergency Evade by {0:s}</LongDescription>
-		<Price>7500.0000</Price>
+		<LongDescription>GM_CATALOG_00003DBE</LongDescription>
+		<Price>38625</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL16</ProductId>
-		<ProductTitle>OVERDRIVE</ProductTitle>
+		<ProductId>perfectstart_rpm_03_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002E37</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -339,16 +150,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>PURSUIT COOLDOWN TIME</Description>
+		<Description>GM_CATALOG_00003E10</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>11672024</Hash>
-		<Icon>128_skill_cooldown</Icon>
+		<Hash>-83411126</Hash>
+		<Icon>128_skill_redline</Icon>
 		<Level>0</Level>
-		<LongDescription>Decreases the time required to escape a pursuit by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
+		<LongDescription>GM_CATALOG_00003DBE</LongDescription>
+		<Price>25500</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL17</ProductId>
-		<ProductTitle>COOLDOWN</ProductTitle>
+		<ProductId>perfectstart_rpm_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002E37</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -360,16 +171,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>JUGGERNAUT COOLDOWN</Description>
+		<Description>GM_CATALOG_00003E10</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>-965220316</Hash>
-		<Icon>128_skill_unrelenting_force</Icon>
+		<Hash>1050555039</Hash>
+		<Icon>128_skill_redline</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Juggernaut by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
+		<LongDescription>GM_CATALOG_00003DBE</LongDescription>
+		<Price>12750</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL18</ProductId>
-		<ProductTitle>UNRELENTING FORCE</ProductTitle>
+		<ProductId>perfectstart_rpm_01_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002E37</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -381,499 +192,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>COP RADAR</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>-359007468</Hash>
-		<Icon>128_skill_radar</Icon>
-		<Level>0</Level>
-		<LongDescription>Detects all Cops within {0:s} on the map</LongDescription>
-		<Price>7500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL19</ProductId>
-		<ProductTitle>RADAR</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>EARLY POWERUPS</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>364535566</Hash>
-		<Icon>128_skill_jumpstart</Icon>
-		<Level>0</Level>
-		<LongDescription>Allows powerups to be used {0:s} sooner at race start </LongDescription>
-		<Price>7500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL20</ProductId>
-		<ProductTitle>JUMPSTART</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>JUGGERNAUT POWER</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>-749436304</Hash>
-		<Icon>128_skill_demolition</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the force of Juggernaut by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL21</ProductId>
-		<ProductTitle>DEMOLITION</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>EVADE POWER</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>-78277877</Hash>
-		<Icon>128_skill_evasion</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the power of Emergency Evade by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL22</ProductId>
-		<ProductTitle>EVASION</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>TRAFFIC MAGNET COOLDOWN</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>-96727800</Hash>
-		<Icon>128_skill_traffic_cop</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Traffic Magnet by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL23</ProductId>
-		<ProductTitle>TRAFFIC COP</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>TRAFFIC MAGNET DURATION</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>576682447</Hash>
-		<Icon>128_skill_magnetized</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the duration of Traffic Magnet on opponents by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL24</ProductId>
-		<ProductTitle>MAGNETIZED</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>PURSUIT CASH</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>1618683071</Hash>
-		<Icon>128_skill_bounty_hunter</Icon>
-		<Level>0</Level>
-		<LongDescription/>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL25</ProductId>
-		<ProductTitle>BOUNTY HUNTER</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>SHIELD COOLDOWN</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>-2147068664</Hash>
-		<Icon>128_skill_safety_first</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Shield by {0:s}</LongDescription>
-		<Price>7500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL26</ProductId>
-		<ProductTitle>SAFETY FIRST</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>SLINGSHOT DURATION</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>-1292825910</Hash>
-		<Icon>128_skill_momentum</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the duration of Slingshot by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL27</ProductId>
-		<ProductTitle>MOMENTUM</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>RACE CASH</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>761092816</Hash>
-		<Icon>128_skill_socialite</Icon>
-		<Level>0</Level>
-		<LongDescription/>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL28</ProductId>
-		<ProductTitle>SOCIALITE</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>NITROUS POWER</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>-284053055</Hash>
-		<Icon>128_skill_super_shot</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the acceleration boost from Nitrous by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL29</ProductId>
-		<ProductTitle>SUPER SHOT</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>GEAR RATIO ENHANCEMENT</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>1430900435</Hash>
-		<Icon>128_skill_well_oiled_machine</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases Good and Perfect Shift ranges by {0:s} in Drag Races</LongDescription>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL30</ProductId>
-		<ProductTitle>WELL OILED MACHINE</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>PERFECT START DURATION</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>1703462600</Hash>
-		<Icon>128_skill_headstart</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the duration of the Perfect Start boost by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL31</ProductId>
-		<ProductTitle>HEADSTART</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>EXPLORE CASH</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>3490763625</Hash>
-		<Icon>128_skill_explorer</Icon>
-		<Level>0</Level>
-		<LongDescription/>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL32</ProductId>
-		<ProductTitle>EXPLORER</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>PURSUIT CASH</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>3898438128</Hash>
-		<Icon>128_skill_bounty_hunter</Icon>
-		<Level>0</Level>
-		<LongDescription/>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL33</ProductId>
-		<ProductTitle>BOUNTY HUNTER</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>RACE CASH</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>3041422387</Hash>
-		<Icon>128_skill_socialite</Icon>
-		<Level>0</Level>
-		<LongDescription/>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL34</ProductId>
-		<ProductTitle>SOCIALITE</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>PERFORMANCE BOOST</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>3001087885</Hash>
-		<Icon>128_skill_catchup</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases your acceleration by {0:s} if you're third place or lower</LongDescription>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL35</ProductId>
-		<ProductTitle>CATCH UP</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>COLLISION FORCE</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>1809978564</Hash>
-		<Icon>128_skill_ram</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the weight of your car in collisions by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL36</ProductId>
-		<ProductTitle>RAM</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>PURSUIT COOLDOWN TIME</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>3514524548</Hash>
-		<Icon>128_skill_cooldown</Icon>
-		<Level>0</Level>
-		<LongDescription>Decreases the time required to escape a pursuit by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL37</ProductId>
-		<ProductTitle>COOLDOWN</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>EVADE COOLDOWN</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>1464879259</Hash>
-		<Icon>128_skill_reload</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Emergency Evade by {0:s}</LongDescription>
-		<Price>7500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL38</ProductId>
-		<ProductTitle>RELOAD</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>EVADE POWER</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>3898960043</Hash>
-		<Icon>128_skill_evasion</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the power of Emergency Evade by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL39</ProductId>
-		<ProductTitle>EVASION</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>EMERGENCY EVADE RANGE</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>3489621432</Hash>
-		<Icon>128_skill_overdrive</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases the range of Emergency Evade by {0:s}</LongDescription>
-		<Price>7500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL40</ProductId>
-		<ProductTitle>OVERDRIVE</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>GEAR RATIO ENHANCEMENT</Description>
-		<DurationMinute>0</DurationMinute>
-		<Hash>2778804998</Hash>
-		<Icon>128_skill_well_oiled_machine</Icon>
-		<Level>0</Level>
-		<LongDescription>Increases Good and Perfect Shift ranges by {0:s} in Drag Races</LongDescription>
-		<Price>12500.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-SKILL41</ProductId>
-		<ProductTitle>WELL OILED MACHINE</ProductTitle>
-		<ProductType>SKILLMODPART</ProductType>
-		<SecondaryIcon/>
-		<UseCount>1</UseCount>
-		<VisualStyle/>
-		<WebIcon/>
-		<WebLocation/>
-	</ProductTrans>
-	<ProductTrans>
-		<BundleItems i:nil="true"/>
-		<CategoryId i:nil="true"/>
-		<Currency>CASH</Currency>
-		<Description>JUGGERNAUT COOLDOWN</Description>
+		<Description>GM_CATALOG_00003E09</Description>
 		<DurationMinute>0</DurationMinute>
 		<Hash>1252208692</Hash>
 		<Icon>128_skill_unrelenting_force</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Juggernaut by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
+		<LongDescription>GM_CATALOG_0000417D</LongDescription>
+		<Price>68175</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL42</ProductId>
-		<ProductTitle>UNRELENTING FORCE</ProductTitle>
+		<ProductId>juggernaut_cooldown_05_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF3</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -885,16 +213,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>JUGGERNAUT DURATION</Description>
+		<Description>GM_CATALOG_00003E09</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3942232397</Hash>
-		<Icon>128_skill_rampage</Icon>
+		<Hash>-965220316</Hash>
+		<Icon>128_skill_unrelenting_force</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the duration of Juggernaut by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
+		<LongDescription>GM_CATALOG_0000417D</LongDescription>
+		<Price>50500</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL43</ProductId>
-		<ProductTitle>RAMPAGE</ProductTitle>
+		<ProductId>juggernaut_cooldown_04_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF3</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -906,16 +234,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>JUGGERNAUT POWER</Description>
+		<Description>GM_CATALOG_00003E09</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>857487601</Hash>
-		<Icon>128_skill_demolition</Icon>
+		<Hash>-10035407</Hash>
+		<Icon>128_skill_unrelenting_force</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the force of Juggernaut by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
+		<LongDescription>GM_CATALOG_0000417D</LongDescription>
+		<Price>38625</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL44</ProductId>
-		<ProductTitle>DEMOLITION</ProductTitle>
+		<ProductId>juggernaut_cooldown_03_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF3</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -927,16 +255,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>EARLY POWERUPS</Description>
+		<Description>GM_CATALOG_00003E09</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>195863236</Hash>
-		<Icon>128_skill_jumpstart</Icon>
+		<Hash>-1473295761</Hash>
+		<Icon>128_skill_unrelenting_force</Icon>
 		<Level>0</Level>
-		<LongDescription>Allows powerups to be used {0:s} sooner at race start </LongDescription>
-		<Price>7500.0000</Price>
+		<LongDescription>GM_CATALOG_0000417D</LongDescription>
+		<Price>25500</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL45</ProductId>
-		<ProductTitle>JUMPSTART</ProductTitle>
+		<ProductId>juggernaut_cooldown_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF3</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -948,16 +276,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>LAUNCH GRIP</Description>
+		<Description>GM_CATALOG_00003E09</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3558874443</Hash>
-		<Icon>128_skill_take_off</Icon>
+		<Hash>1139760063</Hash>
+		<Icon>128_skill_unrelenting_force</Icon>
 		<Level>0</Level>
-		<LongDescription>Improves initial launch speed by {0:s} in Drag races</LongDescription>
-		<Price>12500.0000</Price>
+		<LongDescription>GM_CATALOG_0000417D</LongDescription>
+		<Price>13000</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL46</ProductId>
-		<ProductTitle>TAKEOFF</ProductTitle>
+		<ProductId>juggernaut_cooldown_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF3</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -969,16 +297,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>NITROUS COOLDOWN</Description>
+		<Description>GM_CATALOG_00003E07</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3787899359</Hash>
-		<Icon>128_skill_rapid_fire</Icon>
+		<Hash>-804203671</Hash>
+		<Icon>128_skill_explorer</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Nitrous by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
+		<LongDescription>GM_CATALOG_00004322</LongDescription>
+		<Price>86062</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL47</ProductId>
-		<ProductTitle>RAPID FIRE</ProductTitle>
+		<ProductId>cashreward_explore_05_d</ProductId>
+		<ProductTitle>GM_CATALOG_00003903</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -990,16 +318,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>NITROUS DURATION</Description>
+		<Description>GM_CATALOG_00003E07</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>44864311</Hash>
-		<Icon>128_skill_extended_nos</Icon>
+		<Hash>-261284782</Hash>
+		<Icon>128_skill_explorer</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the duration of Nitrous by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
+		<LongDescription>GM_CATALOG_00004322</LongDescription>
+		<Price>63750</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL48</ProductId>
-		<ProductTitle>EXTENDED NOS</ProductTitle>
+		<ProductId>cashreward_explore_04_c</ProductId>
+		<ProductTitle>GM_CATALOG_00003903</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -1011,16 +339,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>NITROUS POWER</Description>
+		<Description>GM_CATALOG_00003E07</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3293851247</Hash>
-		<Icon>128_skill_super_shot</Icon>
+		<Hash>-751941732</Hash>
+		<Icon>128_skill_explorer</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the acceleration boost from Nitrous by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
+		<LongDescription>GM_CATALOG_00004322</LongDescription>
+		<Price>49220</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL49</ProductId>
-		<ProductTitle>SUPER SHOT</ProductTitle>
+		<ProductId>cashreward_explore_03_f</ProductId>
+		<ProductTitle>GM_CATALOG_00003903</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -1032,16 +360,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>COP RADAR</Description>
+		<Description>GM_CATALOG_00003E07</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>969608442</Hash>
-		<Icon>128_skill_radar</Icon>
+		<Hash>-1544986384</Hash>
+		<Icon>128_skill_explorer</Icon>
 		<Level>0</Level>
-		<LongDescription>Detects all Cops within {0:s} on the map</LongDescription>
-		<Price>7500.0000</Price>
+		<LongDescription>GM_CATALOG_00004322</LongDescription>
+		<Price>31875</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL50</ProductId>
-		<ProductTitle>RADAR</ProductTitle>
+		<ProductId>cashreward_explore_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00003903</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -1053,16 +381,37 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>READY COOLDOWN</Description>
+		<Description>GM_CATALOG_00003E07</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1948827710</Hash>
+		<Icon>128_skill_explorer</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004322</LongDescription>
+		<Price>16250</Price>
+		<Priority>0</Priority>
+		<ProductId>cashreward_explore_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00003903</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E08</Description>
 		<DurationMinute>0</DurationMinute>
 		<Hash>147881768</Hash>
 		<Icon>128_skill_lightning_reflex</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Ready by {0:s}</LongDescription>
-		<Price>7500.0000</Price>
+		<LongDescription>GM_CATALOG_0000417C</LongDescription>
+		<Price>52143</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL51</ProductId>
-		<ProductTitle>LIGHTNING REFLEX</ProductTitle>
+		<ProductId>ready_cooldown_05_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFC</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -1074,16 +423,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>RUN FLATS COOLDOWN</Description>
+		<Description>GM_CATALOG_00003E08</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>158225102</Hash>
-		<Icon>128_skill_rapid_refill</Icon>
+		<Hash>-1951098126</Hash>
+		<Icon>128_skill_lightning_reflex</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Run Flats by {0:s}</LongDescription>
-		<Price>7500.0000</Price>
+		<LongDescription>GM_CATALOG_0000417C</LongDescription>
+		<Price>38625</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL52</ProductId>
-		<ProductTitle>RAPID REFILL</ProductTitle>
+		<ProductId>ready_cooldown_04_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFC</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -1095,16 +444,79 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>SHIELD COOLDOWN</Description>
+		<Description>GM_CATALOG_00003E08</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1960591156</Hash>
+		<Icon>128_skill_lightning_reflex</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000417C</LongDescription>
+		<Price>29815</Price>
+		<Priority>0</Priority>
+		<ProductId>ready_cooldown_03_g</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFC</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E08</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1273456958</Hash>
+		<Icon>128_skill_lightning_reflex</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000417C</LongDescription>
+		<Price>19315</Price>
+		<Priority>0</Priority>
+		<ProductId>ready_cooldown_02_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFC</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E08</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-769563391</Hash>
+		<Icon>128_skill_lightning_reflex</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000417C</LongDescription>
+		<Price>9655</Price>
+		<Priority>0</Priority>
+		<ProductId>ready_cooldown_01_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFC</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E14</Description>
 		<DurationMinute>0</DurationMinute>
 		<Hash>550995685</Hash>
 		<Icon>128_skill_safety_first</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Shield by {0:s}</LongDescription>
-		<Price>7500.0000</Price>
+		<LongDescription>GM_CATALOG_00004181</LongDescription>
+		<Price>52650</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL53</ProductId>
-		<ProductTitle>SAFETY FIRST</ProductTitle>
+		<ProductId>shield_cooldown_05_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFE</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -1116,16 +528,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>SHIELD DURATION</Description>
+		<Description>GM_CATALOG_00003E14</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3362077963</Hash>
-		<Icon>128_skill_rolling_fortress</Icon>
+		<Hash>-2147068664</Hash>
+		<Icon>128_skill_safety_first</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the duration of Shield by {0:s}</LongDescription>
-		<Price>7500.0000</Price>
+		<LongDescription>GM_CATALOG_00004181</LongDescription>
+		<Price>39000</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL54</ProductId>
-		<ProductTitle>ROLLING FORTRESS</ProductTitle>
+		<ProductId>shield_cooldown_04_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFE</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -1137,16 +549,709 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>SLINGSHOT COOLDOWN</Description>
+		<Description>GM_CATALOG_00003E14</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-809771850</Hash>
+		<Icon>128_skill_safety_first</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004181</LongDescription>
+		<Price>29530</Price>
+		<Priority>0</Priority>
+		<ProductId>shield_cooldown_03_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E14</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1030534951</Hash>
+		<Icon>128_skill_safety_first</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004181</LongDescription>
+		<Price>19125</Price>
+		<Priority>0</Priority>
+		<ProductId>shield_cooldown_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E14</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1284930097</Hash>
+		<Icon>128_skill_safety_first</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004181</LongDescription>
+		<Price>9750</Price>
+		<Priority>0</Priority>
+		<ProductId>shield_cooldown_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E13</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>857487601</Hash>
+		<Icon>128_skill_demolition</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC1</LongDescription>
+		<Price>68175</Price>
+		<Priority>0</Priority>
+		<ProductId>juggernaut_power_05_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF5</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E13</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>776473899</Hash>
+		<Icon>128_skill_demolition</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC1</LongDescription>
+		<Price>50500</Price>
+		<Priority>0</Priority>
+		<ProductId>juggernaut_power_04_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF5</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E13</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1603188862</Hash>
+		<Icon>128_skill_demolition</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC1</LongDescription>
+		<Price>38625</Price>
+		<Priority>0</Priority>
+		<ProductId>juggernaut_power_03_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF5</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E13</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1354626012</Hash>
+		<Icon>128_skill_demolition</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC1</LongDescription>
+		<Price>25500</Price>
+		<Priority>0</Priority>
+		<ProductId>juggernaut_power_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF5</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E13</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1780331754</Hash>
+		<Icon>128_skill_demolition</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC1</LongDescription>
+		<Price>12750</Price>
+		<Priority>0</Priority>
+		<ProductId>juggernaut_power_01_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF5</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0B</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1464879259</Hash>
+		<Icon>128_skill_reload</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000417E</LongDescription>
+		<Price>52143</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_cooldown_05_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF0</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0B</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>718660058</Hash>
+		<Icon>128_skill_reload</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000417E</LongDescription>
+		<Price>38625</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_cooldown_04_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF0</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0B</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>465064740</Hash>
+		<Icon>128_skill_reload</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000417E</LongDescription>
+		<Price>29250</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_cooldown_03_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF0</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0B</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>707919292</Hash>
+		<Icon>128_skill_reload</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000417E</LongDescription>
+		<Price>19125</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_cooldown_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF0</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0B</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>957528907</Hash>
+		<Icon>128_skill_reload</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000417E</LongDescription>
+		<Price>9750</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_cooldown_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF0</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E18</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-780442748</Hash>
+		<Icon>128_skill_cooldown</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC6</LongDescription>
+		<Price>70200</Price>
+		<Priority>0</Priority>
+		<ProductId>cooldown_meter_05_f</ProductId>
+		<ProductTitle>GM_CATALOG_00003901</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E18</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>11672024</Hash>
+		<Icon>128_skill_cooldown</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC6</LongDescription>
+		<Price>52000</Price>
+		<Priority>0</Priority>
+		<ProductId>cooldown_meter_04_e</ProductId>
+		<ProductTitle>GM_CATALOG_00003901</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E18</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>819638712</Hash>
+		<Icon>128_skill_cooldown</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC6</LongDescription>
+		<Price>39375</Price>
+		<Priority>0</Priority>
+		<ProductId>cooldown_meter_03_f</ProductId>
+		<ProductTitle>GM_CATALOG_00003901</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000044ED</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1530638167</Hash>
+		<Icon>128_skill_cooldown</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC6</LongDescription>
+		<Price>25500</Price>
+		<Priority>0</Priority>
+		<ProductId>cooldown_meter_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00003901</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000044ED</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-432927578</Hash>
+		<Icon>128_skill_cooldown</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC6</LongDescription>
+		<Price>13000</Price>
+		<Priority>0</Priority>
+		<ProductId>cooldown_meter_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00003901</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E15</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-396529168</Hash>
+		<Icon>128_skill_bounty_hunter</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC3</LongDescription>
+		<Price>86906</Price>
+		<Priority>0</Priority>
+		<ProductId>cashreward_pursuit_05_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEC</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E15</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>264948697</Hash>
+		<Icon>128_skill_bounty_hunter</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC3</LongDescription>
+		<Price>64375</Price>
+		<Priority>0</Priority>
+		<ProductId>cashreward_pursuit_04_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEC</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E15</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1200030819</Hash>
+		<Icon>128_skill_bounty_hunter</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC3</LongDescription>
+		<Price>48280</Price>
+		<Priority>0</Priority>
+		<ProductId>cashreward_pursuit_03_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEC</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E15</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-681117003</Hash>
+		<Icon>128_skill_bounty_hunter</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC3</LongDescription>
+		<Price>31565</Price>
+		<Priority>0</Priority>
+		<ProductId>cashreward_pursuit_02_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEC</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E15</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>2135702575</Hash>
+		<Icon>128_skill_bounty_hunter</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC3</LongDescription>
+		<Price>16095</Price>
+		<Priority>0</Priority>
+		<ProductId>cashreward_pursuit_01_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEC</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004897</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1516162298</Hash>
+		<Icon>128_skill_well_oiled_machine</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004898</LongDescription>
+		<Price>85218</Price>
+		<Priority>0</Priority>
+		<ProductId>gearratio_enhancement_5_b</ProductId>
+		<ProductTitle>GM_CATALOG_00004896</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004897</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1430900435</Hash>
+		<Icon>128_skill_well_oiled_machine</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004898</LongDescription>
+		<Price>63125</Price>
+		<Priority>0</Priority>
+		<ProductId>gearratio_enhancement_4_b</ProductId>
+		<ProductTitle>GM_CATALOG_00004896</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004897</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-956567135</Hash>
+		<Icon>128_skill_well_oiled_machine</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004898</LongDescription>
+		<Price>47345</Price>
+		<Priority>0</Priority>
+		<ProductId>gearratio_enhancement_3_b</ProductId>
+		<ProductTitle>GM_CATALOG_00004896</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004897</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1014017422</Hash>
+		<Icon>128_skill_well_oiled_machine</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004898</LongDescription>
+		<Price>31565</Price>
+		<Priority>0</Priority>
+		<ProductId>gearratio_enhancement_2_b</ProductId>
+		<ProductTitle>GM_CATALOG_00004896</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004897</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-697305010</Hash>
+		<Icon>128_skill_well_oiled_machine</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004898</LongDescription>
+		<Price>15780</Price>
+		<Priority>0</Priority>
+		<ProductId>gearratio_enhancement_1_b</ProductId>
+		<ProductTitle>GM_CATALOG_00004896</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0C</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>969608442</Hash>
+		<Icon>128_skill_radar</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBA</LongDescription>
+		<Price>52143</Price>
+		<Priority>0</Priority>
+		<ProductId>radar_05_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFB</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0C</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-359007468</Hash>
+		<Icon>128_skill_radar</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBA</LongDescription>
+		<Price>38625</Price>
+		<Priority>0</Priority>
+		<ProductId>radar_04_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFB</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0C</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-2094113055</Hash>
+		<Icon>128_skill_radar</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBA</LongDescription>
+		<Price>29250</Price>
+		<Priority>0</Priority>
+		<ProductId>radar_03_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFB</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0C</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>746659538</Hash>
+		<Icon>128_skill_radar</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBA</LongDescription>
+		<Price>19315</Price>
+		<Priority>0</Priority>
+		<ProductId>radar_02_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFB</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0C</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>403857569</Hash>
+		<Icon>128_skill_radar</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBA</LongDescription>
+		<Price>9750</Price>
+		<Priority>0</Priority>
+		<ProductId>radar_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFB</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0E</Description>
 		<DurationMinute>0</DurationMinute>
 		<Hash>583063544</Hash>
 		<Icon>128_skill_perseverance</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Slingshot by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
+		<LongDescription>GM_CATALOG_0000417F</LongDescription>
+		<Price>52650</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL55</ProductId>
-		<ProductTitle>PERSEVERENCE</ProductTitle>
+		<ProductId>slingshot_cooldown_05_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002D00</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -1158,16 +1263,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>SLINGSHOT DURATION</Description>
+		<Description>GM_CATALOG_00003E0E</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3013219734</Hash>
-		<Icon>128_skill_momentum</Icon>
+		<Hash>477893355</Hash>
+		<Icon>128_skill_perseverance</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the duration of Slingshot by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
+		<LongDescription>GM_CATALOG_0000417F</LongDescription>
+		<Price>39000</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL56</ProductId>
-		<ProductTitle>MOMENTUM</ProductTitle>
+		<ProductId>slingshot_cooldown_04_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002D00</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -1179,16 +1284,1024 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>SLINGSHOT POWER</Description>
+		<Description>GM_CATALOG_00003E0E</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-931196413</Hash>
+		<Icon>128_skill_perseverance</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000417F</LongDescription>
+		<Price>39375</Price>
+		<Priority>0</Priority>
+		<ProductId>slingshot_cooldown_03_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002D00</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0E</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1776584474</Hash>
+		<Icon>128_skill_perseverance</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000417F</LongDescription>
+		<Price>25500</Price>
+		<Priority>0</Priority>
+		<ProductId>slingshot_cooldown_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002D00</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0E</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1893716910</Hash>
+		<Icon>128_skill_perseverance</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000417F</LongDescription>
+		<Price>13000</Price>
+		<Priority>0</Priority>
+		<ProductId>slingshot_cooldown_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002D00</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0A</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-348797272</Hash>
+		<Icon>128_skill_magnetized</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB8</LongDescription>
+		<Price>86062</Price>
+		<Priority>0</Priority>
+		<ProductId>trafficmagnet_duration_05_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002D04</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0A</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>576682447</Hash>
+		<Icon>128_skill_magnetized</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB8</LongDescription>
+		<Price>63750</Price>
+		<Priority>0</Priority>
+		<ProductId>trafficmagnet_duration_04_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002D04</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0A</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1754522700</Hash>
+		<Icon>128_skill_magnetized</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB8</LongDescription>
+		<Price>48280</Price>
+		<Priority>0</Priority>
+		<ProductId>trafficmagnet_duration_03_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002D04</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0A</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-261069147</Hash>
+		<Icon>128_skill_magnetized</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB8</LongDescription>
+		<Price>31875</Price>
+		<Priority>0</Priority>
+		<ProductId>trafficmagnet_duration_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002D04</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0A</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>601852614</Hash>
+		<Icon>128_skill_magnetized</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB8</LongDescription>
+		<Price>16250</Price>
+		<Priority>0</Priority>
+		<ProductId>trafficmagnet_duration_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002D04</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E16</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-805345864</Hash>
+		<Icon>128_skill_overdrive</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC4</LongDescription>
+		<Price>51637</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_range_05_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002E3E</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E16</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-158949060</Hash>
+		<Icon>128_skill_overdrive</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC4</LongDescription>
+		<Price>38250</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_range_04_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002E3E</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E16</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1858098160</Hash>
+		<Icon>128_skill_overdrive</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC4</LongDescription>
+		<Price>29250</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_range_03_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002E3E</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E16</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1764046546</Hash>
+		<Icon>128_skill_overdrive</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC4</LongDescription>
+		<Price>19125</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_range_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002E3E</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E16</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1063992131</Hash>
+		<Icon>128_skill_overdrive</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC4</LongDescription>
+		<Price>9750</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_range_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002E3E</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0F</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1882205164</Hash>
+		<Icon>128_skill_traffic_cop</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004180</LongDescription>
+		<Price>70200</Price>
+		<Priority>0</Priority>
+		<ProductId>trafficmagnet_cooldown_05_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002D03</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0F</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-96727800</Hash>
+		<Icon>128_skill_traffic_cop</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004180</LongDescription>
+		<Price>52000</Price>
+		<Priority>0</Priority>
+		<ProductId>trafficmagnet_cooldown_04_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002D03</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0F</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>382689716</Hash>
+		<Icon>128_skill_traffic_cop</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004180</LongDescription>
+		<Price>39375</Price>
+		<Priority>0</Priority>
+		<ProductId>trafficmagnet_cooldown_03_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002D03</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0F</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1422399212</Hash>
+		<Icon>128_skill_traffic_cop</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004180</LongDescription>
+		<Price>25500</Price>
+		<Priority>0</Priority>
+		<ProductId>trafficmagnet_cooldown_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002D03</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0F</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-517165462</Hash>
+		<Icon>128_skill_traffic_cop</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004180</LongDescription>
+		<Price>13000</Price>
+		<Priority>0</Priority>
+		<ProductId>trafficmagnet_cooldown_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002D03</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E01</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-352734899</Hash>
+		<Icon>128_skill_rampage</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAF</LongDescription>
+		<Price>86906</Price>
+		<Priority>0</Priority>
+		<ProductId>juggernaut_duration_05_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF4</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E01</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1072621028</Hash>
+		<Icon>128_skill_rampage</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAF</LongDescription>
+		<Price>64375</Price>
+		<Priority>0</Priority>
+		<ProductId>juggernaut_duration_04_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF4</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E01</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1915990143</Hash>
+		<Icon>128_skill_rampage</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAF</LongDescription>
+		<Price>49220</Price>
+		<Priority>0</Priority>
+		<ProductId>juggernaut_duration_03_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF4</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E01</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1107149744</Hash>
+		<Icon>128_skill_rampage</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAF</LongDescription>
+		<Price>31875</Price>
+		<Priority>0</Priority>
+		<ProductId>juggernaut_duration_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF4</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E01</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-975392036</Hash>
+		<Icon>128_skill_rampage</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAF</LongDescription>
+		<Price>16250</Price>
+		<Priority>0</Priority>
+		<ProductId>juggernaut_duration_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF4</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E17</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-507067937</Hash>
+		<Icon>128_skill_rapid_fire</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004182</LongDescription>
+		<Price>87750</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_cooldown_05_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF7</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E17</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>366769626</Hash>
+		<Icon>128_skill_rapid_fire</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004182</LongDescription>
+		<Price>65000</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_cooldown_04_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF7</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E17</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>419509981</Hash>
+		<Icon>128_skill_rapid_fire</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004182</LongDescription>
+		<Price>49220</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_cooldown_03_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF7</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E17</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1972442843</Hash>
+		<Icon>128_skill_rapid_fire</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004182</LongDescription>
+		<Price>31875</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_cooldown_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF7</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E17</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1760943688</Hash>
+		<Icon>128_skill_rapid_fire</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004182</LongDescription>
+		<Price>16250</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_cooldown_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF7</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E03</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1809978564</Hash>
+		<Icon>128_skill_ram</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB1</LongDescription>
+		<Price>87750</Price>
+		<Priority>0</Priority>
+		<ProductId>collision_mass_05_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEF</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E03</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1768657079</Hash>
+		<Icon>128_skill_ram</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB1</LongDescription>
+		<Price>65000</Price>
+		<Priority>0</Priority>
+		<ProductId>collision_mass_04_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEF</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E03</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>237302790</Hash>
+		<Icon>128_skill_ram</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB1</LongDescription>
+		<Price>49220</Price>
+		<Priority>0</Priority>
+		<ProductId>collision_mass_03_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEF</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E03</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1134722053</Hash>
+		<Icon>128_skill_ram</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB1</LongDescription>
+		<Price>31875</Price>
+		<Priority>0</Priority>
+		<ProductId>collision_mass_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEF</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E03</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-425520459</Hash>
+		<Icon>128_skill_ram</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB1</LongDescription>
+		<Price>16250</Price>
+		<Priority>0</Priority>
+		<ProductId>collision_mass_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEF</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0D</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1001116049</Hash>
+		<Icon>128_skill_super_shot</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBB</LongDescription>
+		<Price>87750</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_power_05_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF9</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0D</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-284053055</Hash>
+		<Icon>128_skill_super_shot</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBB</LongDescription>
+		<Price>65000</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_power_04_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF9</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0D</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1015022454</Hash>
+		<Icon>128_skill_super_shot</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBB</LongDescription>
+		<Price>49220</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_power_03_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF9</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0D</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1108949171</Hash>
+		<Icon>128_skill_super_shot</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBB</LongDescription>
+		<Price>31875</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_power_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF9</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E0D</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-592352147</Hash>
+		<Icon>128_skill_super_shot</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBB</LongDescription>
+		<Price>16250</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_power_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF9</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFF</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>195863236</Hash>
+		<Icon>128_skill_jumpstart</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAD</LongDescription>
+		<Price>51131</Price>
+		<Priority>0</Priority>
+		<ProductId>jumpstart_05_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF6</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFF</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>364535566</Hash>
+		<Icon>128_skill_jumpstart</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAD</LongDescription>
+		<Price>37875</Price>
+		<Priority>0</Priority>
+		<ProductId>jumpstart_04_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF6</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFF</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1755082819</Hash>
+		<Icon>128_skill_jumpstart</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAD</LongDescription>
+		<Price>29250</Price>
+		<Priority>0</Priority>
+		<ProductId>jumpstart_03_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF6</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFF</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>2064938210</Hash>
+		<Icon>128_skill_jumpstart</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAD</LongDescription>
+		<Price>18940</Price>
+		<Priority>0</Priority>
+		<ProductId>jumpstart_02_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF6</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFF</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>980369741</Hash>
+		<Icon>128_skill_jumpstart</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAD</LongDescription>
+		<Price>9565</Price>
+		<Priority>0</Priority>
+		<ProductId>jumpstart_01_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF6</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E00</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-932889333</Hash>
+		<Icon>128_skill_rolling_fortress</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAE</LongDescription>
+		<Price>52650</Price>
+		<Priority>0</Priority>
+		<ProductId>shield_duration_05_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFF</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E00</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1271611681</Hash>
+		<Icon>128_skill_rolling_fortress</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAE</LongDescription>
+		<Price>39000</Price>
+		<Priority>0</Priority>
+		<ProductId>shield_duration_04_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFF</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E00</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>778035056</Hash>
+		<Icon>128_skill_rolling_fortress</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAE</LongDescription>
+		<Price>29530</Price>
+		<Priority>0</Priority>
+		<ProductId>shield_duration_03_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFF</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E00</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1930260014</Hash>
+		<Icon>128_skill_rolling_fortress</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAE</LongDescription>
+		<Price>19125</Price>
+		<Priority>0</Priority>
+		<ProductId>shield_duration_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFF</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E00</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-406746429</Hash>
+		<Icon>128_skill_rolling_fortress</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAE</LongDescription>
+		<Price>9750</Price>
+		<Priority>0</Priority>
+		<ProductId>shield_duration_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFF</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E05</Description>
 		<DurationMinute>0</DurationMinute>
 		<Hash>2006880696</Hash>
 		<Icon>128_skill_aerodynamic</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the performance boost from Slingshot by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
+		<LongDescription>GM_CATALOG_00003DB3</LongDescription>
+		<Price>86062</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL57</ProductId>
-		<ProductTitle>AERODYNAMIC</ProductTitle>
+		<ProductId>slingshot_power_05_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002D02</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -1200,16 +2313,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>TRAFFIC MAGNET COOLDOWN</Description>
+		<Description>GM_CATALOG_00003E05</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>2412762132</Hash>
-		<Icon>128_skill_traffic_cop</Icon>
+		<Hash>790466659</Hash>
+		<Icon>128_skill_aerodynamic</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the cooldown speed of Traffic Magnet by {0:s}</LongDescription>
-		<Price>10000.0000</Price>
+		<LongDescription>GM_CATALOG_00003DB3</LongDescription>
+		<Price>63750</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL58</ProductId>
-		<ProductTitle>TRAFFIC COP</ProductTitle>
+		<ProductId>slingshot_power_04_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002D02</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -1221,16 +2334,814 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>TRAFFIC MAGNET DURATION</Description>
+		<Description>GM_CATALOG_00003E05</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3946170024</Hash>
-		<Icon>128_skill_magnetized</Icon>
+		<Hash>-1643346640</Hash>
+		<Icon>128_skill_aerodynamic</Icon>
 		<Level>0</Level>
-		<LongDescription>Increases the duration of Traffic Magnet on opponents by {0:s}</LongDescription>
-		<Price>12500.0000</Price>
+		<LongDescription>GM_CATALOG_00003DB3</LongDescription>
+		<Price>48280</Price>
 		<Priority>0</Priority>
-		<ProductId>SRV-SKILL59</ProductId>
-		<ProductTitle>MAGNETIZED</ProductTitle>
+		<ProductId>slingshot_power_03_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002D02</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E05</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>301400546</Hash>
+		<Icon>128_skill_aerodynamic</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB3</LongDescription>
+		<Price>31565</Price>
+		<Priority>0</Priority>
+		<ProductId>slingshot_power_02_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002D02</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E05</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>2141734111</Hash>
+		<Icon>128_skill_aerodynamic</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB3</LongDescription>
+		<Price>16095</Price>
+		<Priority>0</Priority>
+		<ProductId>slingshot_power_01_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002D02</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E06</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>158225102</Hash>
+		<Icon>128_skill_rapid_refill</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_000042F2</LongDescription>
+		<Price>52650</Price>
+		<Priority>0</Priority>
+		<ProductId>runflats_cooldown_05_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFD</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E06</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-175671835</Hash>
+		<Icon>128_skill_rapid_refill</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_000042F2</LongDescription>
+		<Price>39000</Price>
+		<Priority>0</Priority>
+		<ProductId>runflats_cooldown_04_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFD</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E06</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-991174305</Hash>
+		<Icon>128_skill_rapid_refill</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_000042F2</LongDescription>
+		<Price>29530</Price>
+		<Priority>0</Priority>
+		<ProductId>runflats_cooldown_03_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFD</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E06</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>902949370</Hash>
+		<Icon>128_skill_rapid_refill</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_000042F2</LongDescription>
+		<Price>19125</Price>
+		<Priority>0</Priority>
+		<ProductId>runflats_cooldown_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFD</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E06</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>2060309533</Hash>
+		<Icon>128_skill_rapid_refill</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_000042F2</LongDescription>
+		<Price>9750</Price>
+		<Priority>0</Priority>
+		<ProductId>runflats_cooldown_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CFD</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E12</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-396007253</Hash>
+		<Icon>128_skill_evasion</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC0</LongDescription>
+		<Price>70200</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_power_05_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF1</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E12</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-78277877</Hash>
+		<Icon>128_skill_evasion</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC0</LongDescription>
+		<Price>52000</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_power_04_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF1</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E12</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1662769208</Hash>
+		<Icon>128_skill_evasion</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC0</LongDescription>
+		<Price>39375</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_power_03_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF1</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E12</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>714649495</Hash>
+		<Icon>128_skill_evasion</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC0</LongDescription>
+		<Price>25500</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_power_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF1</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E12</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1315484710</Hash>
+		<Icon>128_skill_evasion</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DC0</LongDescription>
+		<Price>13000</Price>
+		<Priority>0</Priority>
+		<ProductId>emergency_power_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF1</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E02</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>44864311</Hash>
+		<Icon>128_skill_extended_nos</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB0</LongDescription>
+		<Price>88593</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_duration_05_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF8</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E02</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>144856670</Hash>
+		<Icon>128_skill_extended_nos</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB0</LongDescription>
+		<Price>65625</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_duration_04_f</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF8</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E02</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1270455596</Hash>
+		<Icon>128_skill_extended_nos</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB0</LongDescription>
+		<Price>49690</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_duration_03_g</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF8</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E02</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1548527407</Hash>
+		<Icon>128_skill_extended_nos</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB0</LongDescription>
+		<Price>32190</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_duration_02_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF8</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E02</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-157732030</Hash>
+		<Icon>128_skill_extended_nos</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB0</LongDescription>
+		<Price>16095</Price>
+		<Priority>0</Priority>
+		<ProductId>nitrous_duration_01_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CF8</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFD</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1281747562</Hash>
+		<Icon>128_skill_momentum</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAB</LongDescription>
+		<Price>68175</Price>
+		<Priority>0</Priority>
+		<ProductId>slingshot_duration_05_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002D01</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFD</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1292825910</Hash>
+		<Icon>128_skill_momentum</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAB</LongDescription>
+		<Price>50500</Price>
+		<Priority>0</Priority>
+		<ProductId>slingshot_duration_04_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002D01</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFD</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>446753182</Hash>
+		<Icon>128_skill_momentum</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAB</LongDescription>
+		<Price>38625</Price>
+		<Priority>0</Priority>
+		<ProductId>slingshot_duration_03_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002D01</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFD</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>22076450</Hash>
+		<Icon>128_skill_momentum</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAB</LongDescription>
+		<Price>25500</Price>
+		<Priority>0</Priority>
+		<ProductId>slingshot_duration_02_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002D01</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFD</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1858903884</Hash>
+		<Icon>128_skill_momentum</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAB</LongDescription>
+		<Price>13000</Price>
+		<Priority>0</Priority>
+		<ProductId>slingshot_duration_01_e</ProductId>
+		<ProductTitle>GM_CATALOG_00002D01</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E11</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1293879411</Hash>
+		<Icon>128_skill_catchup</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBF</LongDescription>
+		<Price>85218</Price>
+		<Priority>0</Priority>
+		<ProductId>catchup_05_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E11</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-477917459</Hash>
+		<Icon>128_skill_catchup</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBF</LongDescription>
+		<Price>63125</Price>
+		<Priority>0</Priority>
+		<ProductId>catchup_04_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E11</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1752236730</Hash>
+		<Icon>128_skill_catchup</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBF</LongDescription>
+		<Price>47815</Price>
+		<Priority>0</Priority>
+		<ProductId>catchup_03_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E11</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1684887749</Hash>
+		<Icon>128_skill_catchup</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBF</LongDescription>
+		<Price>31565</Price>
+		<Priority>0</Priority>
+		<ProductId>catchup_02_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E11</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-2112441380</Hash>
+		<Icon>128_skill_catchup</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DBF</LongDescription>
+		<Price>15940</Price>
+		<Priority>0</Priority>
+		<ProductId>catchup_01_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CEE</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFE</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1253544909</Hash>
+		<Icon>128_skill_socialite</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAC</LongDescription>
+		<Price>86062</Price>
+		<Priority>0</Priority>
+		<ProductId>cashreward_race_05_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CED</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFE</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1510853218</Hash>
+		<Icon>128_skill_socialite</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAC</LongDescription>
+		<Price>63750</Price>
+		<Priority>0</Priority>
+		<ProductId>cashreward_race_04_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002CED</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFE</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1298655836</Hash>
+		<Icon>128_skill_socialite</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAC</LongDescription>
+		<Price>48280</Price>
+		<Priority>0</Priority>
+		<ProductId>cashreward_race_03_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CED</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFE</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>208768909</Hash>
+		<Icon>128_skill_socialite</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAC</LongDescription>
+		<Price>31565</Price>
+		<Priority>0</Priority>
+		<ProductId>cashreward_race_02_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002CED</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003DFE</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1512835408</Hash>
+		<Icon>128_skill_socialite</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DAC</LongDescription>
+		<Price>16095</Price>
+		<Priority>0</Priority>
+		<ProductId>cashreward_race_01_d</ProductId>
+		<ProductTitle>GM_CATALOG_00002CED</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000048F2</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1046174792</Hash>
+		<Icon>128_skill_aero_drag</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_000048F3</LongDescription>
+		<Price>92000</Price>
+		<Priority>0</Priority>
+		<ProductId>aerodragreduction_1_a</ProductId>
+		<ProductTitle>GM_CATALOG_000048F1</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E04</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1703462600</Hash>
+		<Icon>128_skill_headstart</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB2</LongDescription>
+		<Price>84375</Price>
+		<Priority>0</Priority>
+		<ProductId>perfectstart_duration_05_a</ProductId>
+		<ProductTitle>GM_CATALOG_00002E30</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E04</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>227082963</Hash>
+		<Icon>128_skill_headstart</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB2</LongDescription>
+		<Price>62500</Price>
+		<Priority>0</Priority>
+		<ProductId>perfectstart_duration_04_a</ProductId>
+		<ProductTitle>GM_CATALOG_00002E30</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E04</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1196331958</Hash>
+		<Icon>128_skill_headstart</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB2</LongDescription>
+		<Price>47815</Price>
+		<Priority>0</Priority>
+		<ProductId>perfectstart_duration_03_c</ProductId>
+		<ProductTitle>GM_CATALOG_00002E30</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E04</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1100418576</Hash>
+		<Icon>128_skill_headstart</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB2</LongDescription>
+		<Price>31565</Price>
+		<Priority>0</Priority>
+		<ProductId>perfectstart_duration_02_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002E30</ProductTitle>
+		<ProductType>SKILLMODPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003E04</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>965835605</Hash>
+		<Icon>128_skill_headstart</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003DB2</LongDescription>
+		<Price>15780</Price>
+		<Priority>0</Priority>
+		<ProductId>perfectstart_duration_01_b</ProductId>
+		<ProductTitle>GM_CATALOG_00002E30</ProductTitle>
 		<ProductType>SKILLMODPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
