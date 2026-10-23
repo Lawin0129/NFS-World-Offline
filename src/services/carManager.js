@@ -123,12 +123,6 @@ let self = module.exports = {
 
         if (!defaultCustomCar) return error.invalidParameters();
 
-        const paintMaxSlots = 8;
-        const perfPartsMaxSlots = 7;
-        const skillPartsMaxSlots = parseInt(defaultCustomCar.SkillModSlotCount?.[0]) || 0;
-        const vinylsMaxSlots = 100;
-        const visualPartsMaxSlots = 8;
-
         let paintsTemplate = [{
             CustomPaintTrans: []
         }];
@@ -150,13 +144,7 @@ let self = module.exports = {
         }];
 
         if (Array.isArray(updatedCustomCar.Paints?.[0]?.CustomPaintTrans)) {
-            let slotIteration = 0;
-
             for (let customPaint of updatedCustomCar.Paints[0].CustomPaintTrans) {
-                slotIteration += 1;
-
-                if (slotIteration > paintMaxSlots) break;
-
                 let groupValue = parseInt(customPaint.Group?.[0]) || 0;
                 let hueValue = parseInt(customPaint.Hue?.[0]) || 0;
                 let satValue = parseInt(customPaint.Sat?.[0]) || 0;
@@ -176,13 +164,7 @@ let self = module.exports = {
         }
 
         if (Array.isArray(updatedCustomCar.PerformanceParts?.[0]?.PerformancePartTrans)) {
-            let slotIteration = 0;
-
             for (let perfPart of updatedCustomCar.PerformanceParts[0].PerformancePartTrans) {
-                slotIteration += 1;
-
-                if (slotIteration > perfPartsMaxSlots) break;
-
                 let itemHash = num.parseInt32(perfPart.PerformancePartAttribHash?.[0]);
 
                 if (!itemHash) continue;
@@ -195,13 +177,7 @@ let self = module.exports = {
         }
 
         if (Array.isArray(updatedCustomCar.VisualParts?.[0]?.VisualPartTrans)) {
-            let slotIteration = 0;
-
             for (let visualPart of updatedCustomCar.VisualParts[0].VisualPartTrans) {
-                slotIteration += 1;
-
-                if (slotIteration > visualPartsMaxSlots) break;
-
                 let itemHash = num.parseInt32(visualPart.PartHash?.[0]);
                 let slotHash = num.parseInt32(visualPart.SlotHash?.[0]);
 
@@ -217,13 +193,7 @@ let self = module.exports = {
         }
 
         if (Array.isArray(updatedCustomCar.SkillModParts?.[0]?.SkillModPartTrans)) {
-            let slotIteration = 0;
-
             for (let skillPart of updatedCustomCar.SkillModParts[0].SkillModPartTrans) {
-                slotIteration += 1;
-
-                if (slotIteration > skillPartsMaxSlots) break;
-
                 let itemHash = num.parseInt32(skillPart.SkillModPartAttribHash?.[0]);
                 let isFixed = skillPart.IsFixed?.[0]?.toLowerCase?.() == "true";
 
@@ -237,13 +207,7 @@ let self = module.exports = {
         }
 
         if (Array.isArray(updatedCustomCar.Vinyls?.[0]?.CustomVinylTrans)) {
-            let slotIteration = 0;
-
             for (let customVinyl of updatedCustomCar.Vinyls[0].CustomVinylTrans) {
-                slotIteration += 1;
-
-                if (slotIteration > vinylsMaxSlots) break;
-
                 let itemHash = num.parseInt32(customVinyl.Hash?.[0]);
                 if (!itemHash) continue;
 

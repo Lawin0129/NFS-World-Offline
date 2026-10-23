@@ -3,16 +3,58 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>ALL CARS</Description>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3610919621</Hash>
+		<Hash>936502953</Hash>
+		<Icon>PART_CCX_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>10000</Price>
+		<Priority>10411</Priority>
+		<ProductId>CARNEONGLOW_BLUE_ECLIPSE</ProductId>
+		<ProductTitle>GM_CATALOG_00003205</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1666360510</Hash>
+		<Icon>PART_CCX_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>10000</Price>
+		<Priority>10410</Priority>
+		<ProductId>CARNEONGLOW_BLUE_CCX</ProductId>
+		<ProductTitle>GM_CATALOG_00003205</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-684047675</Hash>
 		<Icon>PART_R2_NE_BLUE</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>500.0000</Price>
-		<Priority>1120</Priority>
-		<ProductId>SRV-EPNEON1</ProductId>
-		<ProductTitle>BLUE</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10409</Priority>
+		<ProductId>CARNEONGLOW_BLUE</ProductId>
+		<ProductTitle>GM_CATALOG_000028FB</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -24,16 +66,37 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>ALL CARS</Description>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3610969064</Hash>
+		<Hash>350160919</Hash>
+		<Icon>PART_R2_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10408</Priority>
+		<ProductId>CARNEONGLOW_COBALT_GLEAM</ProductId>
+		<ProductTitle>GM_CATALOG_000028EF</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-683998232</Hash>
 		<Icon>PART_R2_NE_CYAN</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>500.0000</Price>
-		<Priority>1120</Priority>
-		<ProductId>SRV-EPNEON2</ProductId>
-		<ProductTitle>CYAN</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10407</Priority>
+		<ProductId>CARNEONGLOW_CYAN</ProductId>
+		<ProductTitle>GM_CATALOG_000028E5</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -45,16 +108,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>ALL CARS</Description>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3611102275</Hash>
+		<Hash>-683865021</Hash>
 		<Icon>PART_R2_NE_GOLD</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>500.0000</Price>
-		<Priority>1120</Priority>
-		<ProductId>SRV-EPNEON3</ProductId>
-		<ProductTitle>GOLD</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10406</Priority>
+		<ProductId>CARNEONGLOW_GOLD</ProductId>
+		<ProductTitle>GM_CATALOG_000028D9</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -66,16 +129,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>ALL CARS</Description>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3202358382</Hash>
+		<Hash>1018590778</Hash>
 		<Icon>PART_R2_NE_GREEN</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>500.0000</Price>
-		<Priority>1120</Priority>
-		<ProductId>SRV-EPNEON4</ProductId>
-		<ProductTitle>GREEN</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10405</Priority>
+		<ProductId>CARNEONGLOW_TEAL_FLORE</ProductId>
+		<ProductTitle>GM_CATALOG_000028F3</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -87,16 +150,37 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>ALL CARS</Description>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>2645747162</Hash>
+		<Hash>-1092608914</Hash>
+		<Icon>PART_R2_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10404</Priority>
+		<ProductId>CARNEONGLOW_GREEN</ProductId>
+		<ProductTitle>GM_CATALOG_000028E0</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1649220134</Hash>
 		<Icon>PART_R2_NE_MAGENTA</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>500.0000</Price>
-		<Priority>1120</Priority>
-		<ProductId>SRV-EPNEON5</ProductId>
-		<ProductTitle>MAGENTA</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10403</Priority>
+		<ProductId>CARNEONGLOW_MAGENTA</ProductId>
+		<ProductTitle>GM_CATALOG_000028DD</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -108,16 +192,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>ALL CARS</Description>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>2911560537</Hash>
+		<Hash>-1383406759</Hash>
 		<Icon>PART_R2_NE_ORANGE</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>500.0000</Price>
-		<Priority>1120</Priority>
-		<ProductId>SRV-EPNEON6</ProductId>
-		<ProductTitle>ORANGE</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10402</Priority>
+		<ProductId>CARNEONGLOW_ORANGE</ProductId>
+		<ProductTitle>GM_CATALOG_00002900</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -129,16 +213,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>ALL CARS</Description>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3611419247</Hash>
+		<Hash>-683548049</Hash>
 		<Icon>PART_R2_NE_PINK</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>500.0000</Price>
-		<Priority>1120</Priority>
-		<ProductId>SRV-EPNEON7</ProductId>
-		<ProductTitle>PINK</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10401</Priority>
+		<ProductId>CARNEONGLOW_PINK</ProductId>
+		<ProductTitle>GM_CATALOG_000028E8</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -150,16 +234,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>ALL CARS</Description>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>2954866965</Hash>
+		<Hash>-1340100331</Hash>
 		<Icon>PART_R2_NE_PURPLE</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>500.0000</Price>
-		<Priority>1120</Priority>
-		<ProductId>SRV-EPNEON8</ProductId>
-		<ProductTitle>PURPLE</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10400</Priority>
+		<ProductId>CARNEONGLOW_PURPLE</ProductId>
+		<ProductTitle>GM_CATALOG_000028EA</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -171,16 +255,16 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>ALL CARS</Description>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3753653656</Hash>
+		<Hash>-541313640</Hash>
 		<Icon>PART_R2_NE_RED</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>500.0000</Price>
-		<Priority>1120</Priority>
-		<ProductId>SRV-EPNEON9</ProductId>
-		<ProductTitle>RED</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10399</Priority>
+		<ProductId>CARNEONGLOW_RED</ProductId>
+		<ProductTitle>GM_CATALOG_000028FF</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -192,16 +276,37 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>ALL CARS</Description>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>2217210940</Hash>
+		<Hash>1805703997</Hash>
+		<Icon>PART_R2_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10398</Priority>
+		<ProductId>CARNEONGLOW_UK</ProductId>
+		<ProductTitle>GM_CATALOG_000028FC</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-2077756356</Hash>
 		<Icon>PART_R2_NE_SKYBLUE</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>500.0000</Price>
-		<Priority>1120</Priority>
-		<ProductId>SRV-EPNEON10</ProductId>
-		<ProductTitle>SKY BLUE</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10397</Priority>
+		<ProductId>CARNEONGLOW_SKYBLUE</ProductId>
+		<ProductTitle>GM_CATALOG_000028F7</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -213,16 +318,37 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>ALL CARS</Description>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3611558211</Hash>
+		<Hash>-1097341241</Hash>
+		<Icon>PART_R2_NE_SKYBLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10396</Priority>
+		<ProductId>CARNEONGLOW_CROSS</ProductId>
+		<ProductTitle>GM_CATALOG_00002903</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-683409085</Hash>
 		<Icon>PART_R2_NE_TEAL</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>500.0000</Price>
-		<Priority>1120</Priority>
-		<ProductId>SRV-EPNEON11</ProductId>
-		<ProductTitle>TEAL</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10395</Priority>
+		<ProductId>CARNEONGLOW_TEAL</ProductId>
+		<ProductTitle>GM_CATALOG_000028E9</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -234,16 +360,2284 @@
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
 		<Currency>CASH</Currency>
-		<Description>ALL CARS</Description>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
-		<Hash>3287890905</Hash>
+		<Hash>-1007076391</Hash>
 		<Icon>PART_R2_NE_YELLOW</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>500.0000</Price>
-		<Priority>1120</Priority>
-		<ProductId>SRV-EPNEON12</ProductId>
-		<ProductTitle>YELLOW</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2500</Price>
+		<Priority>10394</Priority>
+		<ProductId>CARNEONGLOW_YELLOW</ProductId>
+		<ProductTitle>GM_CATALOG_000028FD</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1182177126</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10393</Priority>
+		<ProductId>CARNEONGLOW_ELITE_F1</ProductId>
+		<ProductTitle>GM_CATALOG_0000492F</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-544283858</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10392</Priority>
+		<ProductId>CARNEONGLOW_TUN_EURO</ProductId>
+		<ProductTitle>GM_CATALOG_00003656</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00002B9E</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1666335205</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00002B9E</LongDescription>
+		<Price>5000</Price>
+		<Priority>10391</Priority>
+		<ProductId>CARNEONGLOW_BLUE_ZL1</ProductId>
+		<ProductTitle>GM_CATALOG_00003205</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1728272861</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10390</Priority>
+		<ProductId>CARNEONGLOW_SPO_BLUE_N</ProductId>
+		<ProductTitle>GM_CATALOG_00003646</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-108575120</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10389</Priority>
+		<ProductId>CARNEONGLOW_COP_POL_BLUE</ProductId>
+		<ProductTitle>GM_CATALOG_0000364C</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1915483908</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10388</Priority>
+		<ProductId>CARNEONGLOW_EXO_BLUE_DI</ProductId>
+		<ProductTitle>GM_CATALOG_00003643</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1666358217</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10387</Priority>
+		<ProductId>CARNEONGLOW_BLUE_EGG</ProductId>
+		<ProductTitle>GM_CATALOG_00002D63</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>859213395</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10386</Priority>
+		<ProductId>CARNEONGLOW_BLUE_FLOWER</ProductId>
+		<ProductTitle>GM_CATALOG_00002D81</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>2109487209</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10385</Priority>
+		<ProductId>CARNEONGLOW_BLUE_GHOST</ProductId>
+		<ProductTitle>GM_CATALOG_000028F5</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>2110550040</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10384</Priority>
+		<ProductId>CARNEONGLOW_BLUE_HEART</ProductId>
+		<ProductTitle>GM_CATALOG_00002A5A</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1533530678</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10383</Priority>
+		<ProductId>CARNEONGLOW_MUS_SKULLS_BLUE</ProductId>
+		<ProductTitle>GM_CATALOG_0000489E</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1366991458</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10382</Priority>
+		<ProductId>CARNEONGLOW_BLUE_SKULLS</ProductId>
+		<ProductTitle>GM_CATALOG_000028F4</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1710938598</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10381</Priority>
+		<ProductId>CARNEONGLOW_COP_BLUE</ProductId>
+		<ProductTitle>GM_CATALOG_00003655</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1898572644</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10380</Priority>
+		<ProductId>CARNEONGLOW_BLUE_X</ProductId>
+		<ProductTitle>GM_CATALOG_000028DE</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1460052230</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10379</Priority>
+		<ProductId>CARNEONGLOW_LED_COBALT</ProductId>
+		<ProductTitle>GM_CATALOG_000028ED</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1735625428</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10378</Priority>
+		<ProductId>CARNEONGLOW_FRANCE</ProductId>
+		<ProductTitle>GM_CATALOG_000041A3</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1292520137</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10377</Priority>
+		<ProductId>CARNEONGLOW_FRANCE_FLEUR</ProductId>
+		<ProductTitle>GM_CATALOG_000041A2</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-894682755</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10376</Priority>
+		<ProductId>CARNEONGLOW_STREAMERS_MULTI</ProductId>
+		<ProductTitle>GM_CATALOG_000028EC</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>591329003</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10375</Priority>
+		<ProductId>CARNEONGLOW_SNOW_BLUE</ProductId>
+		<ProductTitle>GM_CATALOG_000028E1</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-541305606</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10374</Priority>
+		<ProductId>CARNEONGLOW_YR2</ProductId>
+		<ProductTitle>GM_CATALOG_000047E3</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1279546900</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10373</Priority>
+		<ProductId>CARNEONGLOW_PUMP_BL</ProductId>
+		<ProductTitle>CARNEONGLOW_PUMP_BL</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1463542473</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10372</Priority>
+		<ProductId>CARNEONGLOW_HALLOWEEN_BL</ProductId>
+		<ProductTitle>CARNEONGLOW_HALLOWEEN_BL</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1340439412</Hash>
+		<Icon>PART_R3_NE_BLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10371</Priority>
+		<ProductId>CARNEONGLOW_BATS_BL</ProductId>
+		<ProductTitle>CARNEONGLOW_BATS_BL</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>198491317</Hash>
+		<Icon>PART_R3_NE_GOLD</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10370</Priority>
+		<ProductId>CARNEONGLOW_GOLD_EGG</ProductId>
+		<ProductTitle>GM_CATALOG_00002D42</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-712770031</Hash>
+		<Icon>PART_R3_NE_GOLD</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10369</Priority>
+		<ProductId>CARNEONGLOW_GOLD_FLOWER</ProductId>
+		<ProductTitle>GM_CATALOG_00002D8A</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1412161558</Hash>
+		<Icon>PART_R3_NE_GOLD</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10368</Priority>
+		<ProductId>CARNEONGLOW_GOLD_HEART</ProductId>
+		<ProductTitle>GM_CATALOG_00002A5B</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1769351113</Hash>
+		<Icon>PART_R3_NE_GOLD</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10367</Priority>
+		<ProductId>CARNEONGLOW_LED_GOLD</ProductId>
+		<ProductTitle>GM_CATALOG_000028D9</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1699662438</Hash>
+		<Icon>PART_R3_NE_GOLD</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10366</Priority>
+		<ProductId>CARNEONGLOW_GOLD_X</ProductId>
+		<ProductTitle>GM_CATALOG_000028E2</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1059551374</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10365</Priority>
+		<ProductId>CARNEONGLOW_SPRING_03</ProductId>
+		<ProductTitle>GM_CATALOG_00004D5B</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>83101050</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10364</Priority>
+		<ProductId>CARNEONGLOW_BRAZIL_FLAG</ProductId>
+		<ProductTitle>GM_CATALOG_0000419C</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>911422703</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10363</Priority>
+		<ProductId>CARNEONGLOW__BRA_SOCCER</ProductId>
+		<ProductTitle>GM_CATALOG_000043DF</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-849062293</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10362</Priority>
+		<ProductId>CARNEONGLOW_LED_EMERALD</ProductId>
+		<ProductTitle>GM_CATALOG_000028E7</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1958745300</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10361</Priority>
+		<ProductId>CARNEONGLOW_SPO_GR_N</ProductId>
+		<ProductTitle>GM_CATALOG_00003659</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>600629572</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10360</Priority>
+		<ProductId>CARNEONGLOW_TRE_GREEN_DI</ProductId>
+		<ProductTitle>GM_CATALOG_00004249</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>831122016</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10359</Priority>
+		<ProductId>CARNEONGLOW_GREEN_EGG</ProductId>
+		<ProductTitle>GM_CATALOG_00002D48</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1694977569</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10358</Priority>
+		<ProductId>CARNEONGLOW_MUS_FLAM_GREEN</ProductId>
+		<ProductTitle>GM_CATALOG_0000365A</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>874762204</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10357</Priority>
+		<ProductId>CARNEONGLOW_GREEN_FLOWER</ProductId>
+		<ProductTitle>GM_CATALOG_00002D84</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1689533450</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10356</Priority>
+		<ProductId>CARNEONGLOW_GIFTS_GREEN</ProductId>
+		<ProductTitle>GM_CATALOG_000028DC</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1657306751</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10355</Priority>
+		<ProductId>CARNEONGLOW_GREEN_GRIP</ProductId>
+		<ProductTitle>GM_CATALOG_000028FA</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1142741887</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10354</Priority>
+		<ProductId>CARNEONGLOW_GREEN_HEART</ProductId>
+		<ProductTitle>GM_CATALOG_00002A57</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>798087335</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10353</Priority>
+		<ProductId>CARNEONGLOW_MUS_SKULLS_GR</ProductId>
+		<ProductTitle>GM_CATALOG_0000364A</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-606402846</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10352</Priority>
+		<ProductId>CARNEONGLOW_HALLOWEEN_G</ProductId>
+		<ProductTitle>CARNEONGLOW_HALLOWEEN_G</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1279546729</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10351</Priority>
+		<ProductId>CARNEONGLOW_PUMP_GR</ProductId>
+		<ProductTitle>CARNEONGLOW_PUMP_GR</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1098941379</Hash>
+		<Icon>PART_R3_NE_GREEN</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10350</Priority>
+		<ProductId>CARNEONGLOW_BF_GR</ProductId>
+		<ProductTitle>CARNEONGLOW_BF_GR</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-2110232561</Hash>
+		<Icon>PART_R3_NE_ORANGE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10349</Priority>
+		<ProductId>CARNEONGLOW_LED_CINNABAR</ProductId>
+		<ProductTitle>GM_CATALOG_000028F8</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1520689220</Hash>
+		<Icon>PART_R3_NE_ORANGE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10348</Priority>
+		<ProductId>CARNEONGLOW_LEOPARD</ProductId>
+		<ProductTitle>GM_CATALOG_000028F9</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>412633964</Hash>
+		<Icon>PART_R3_NE_ORANGE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10347</Priority>
+		<ProductId>CARNEONGLOW_MUS_FLAM_ORANGE</ProductId>
+		<ProductTitle>GM_CATALOG_000028E4</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1969592176</Hash>
+		<Icon>PART_R3_NE_ORANGE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10346</Priority>
+		<ProductId>CARNEONGLOW_ORANGE_FLAMES</ProductId>
+		<ProductTitle>GM_CATALOG_000028E4</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1279546465</Hash>
+		<Icon>PART_R3_NE_ORANGE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10345</Priority>
+		<ProductId>CARNEONGLOW_PUMP_OR</ProductId>
+		<ProductTitle>CARNEONGLOW_PUMP_OR</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1463542908</Hash>
+		<Icon>PART_R3_NE_ORANGE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10344</Priority>
+		<ProductId>CARNEONGLOW_HALLOWEEN_OR</ProductId>
+		<ProductTitle>CARNEONGLOW_HALLOWEEN_OR</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1325684926</Hash>
+		<Icon>PART_R3_NE_PINK</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10343</Priority>
+		<ProductId>CARNEONGLOW_PINK_HEART</ProductId>
+		<ProductTitle>GM_CATALOG_00002A58</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1854869739</Hash>
+		<Icon>PART_R3_NE_PINK</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10342</Priority>
+		<ProductId>CARNEONGLOW_PINK_NFS</ProductId>
+		<ProductTitle>GM_CATALOG_000028F6</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1316039558</Hash>
+		<Icon>PART_R3_NE_PINK</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10341</Priority>
+		<ProductId>CARNEONGLOW_PINK_PINUP</ProductId>
+		<ProductTitle>GM_CATALOG_00004B73</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1659454860</Hash>
+		<Icon>PART_R3_NE_PINK</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10340</Priority>
+		<ProductId>CARNEONGLOW_VALENTINE_PINK</ProductId>
+		<ProductTitle>GM_CATALOG_00004B72</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1354479930</Hash>
+		<Icon>PART_R3_NE_PINK</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10339</Priority>
+		<ProductId>CARNEONGLOW_PINK_X</ProductId>
+		<ProductTitle>GM_CATALOG_000028FE</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-344465761</Hash>
+		<Icon>PART_R3_NE_PINK</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10338</Priority>
+		<ProductId>CARNEONGLOW_LED_SCARLET</ProductId>
+		<ProductTitle>GM_CATALOG_00002902</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-921693824</Hash>
+		<Icon>PART_R3_NE_PURPLE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10337</Priority>
+		<ProductId>CARNEONGLOW_LED_AMETHYST</ProductId>
+		<ProductTitle>GM_CATALOG_000028DB</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>224853042</Hash>
+		<Icon>PART_R3_NE_PURPLE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10336</Priority>
+		<ProductId>CARNEONGLOW_SPO_PUR_N</ProductId>
+		<ProductTitle>GM_CATALOG_00003651</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>630593963</Hash>
+		<Icon>PART_R3_NE_PURPLE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10335</Priority>
+		<ProductId>CARNEONGLOW_EXO_PUR_DI</ProductId>
+		<ProductTitle>GM_CATALOG_00003657</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>742488711</Hash>
+		<Icon>PART_R3_NE_PURPLE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10334</Priority>
+		<ProductId>CARNEONGLOW_PURPLE_EGG</ProductId>
+		<ProductTitle>GM_CATALOG_00002D45</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1769553245</Hash>
+		<Icon>PART_R3_NE_PURPLE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10333</Priority>
+		<ProductId>CARNEONGLOW_PURPLE_FLOWER</ProductId>
+		<ProductTitle>GM_CATALOG_00002D87</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1119836776</Hash>
+		<Icon>PART_R3_NE_PURPLE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10332</Priority>
+		<ProductId>CARNEONGLOW_PURPLE_HEART</ProductId>
+		<ProductTitle>GM_CATALOG_00002A5C</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1261775182</Hash>
+		<Icon>PART_R3_NE_PURPLE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10331</Priority>
+		<ProductId>CARNEONGLOW_PURPLE_SKULLS</ProductId>
+		<ProductTitle>GM_CATALOG_00002901</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1049271898</Hash>
+		<Icon>PART_R3_NE_PURPLE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10330</Priority>
+		<ProductId>CARNEONGLOW_VALENTINE_PURPLE</ProductId>
+		<ProductTitle>GM_CATALOG_00004B6F</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1841110158</Hash>
+		<Icon>PART_R3_NE_PURPLE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10329</Priority>
+		<ProductId>CARNEONGLOW_WINGED_HEART</ProductId>
+		<ProductTitle>GM_CATALOG_00004B70</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-406940146</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10328</Priority>
+		<ProductId>CARNEONGLOW_TUN_JDM</ProductId>
+		<ProductTitle>GM_CATALOG_00003644</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-406927684</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10327</Priority>
+		<ProductId>CARNEONGLOW_TUN_USA</ProductId>
+		<ProductTitle>GM_CATALOG_00003650</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-2041603938</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10326</Priority>
+		<ProductId>CARNEONGLOW</ProductId>
+		<ProductTitle>GM_CATALOG_00004BE2</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1897188267</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10325</Priority>
+		<ProductId>CARNEONGLOW_ELITE_VIPER</ProductId>
+		<ProductTitle>GM_CATALOG_00004247</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1097232686</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10324</Priority>
+		<ProductId>CARNEONGLOW_CUPID</ProductId>
+		<ProductTitle>GM_CATALOG_00002878</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1347447749</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10323</Priority>
+		<ProductId>CARNEONGLOW_POLAND</ProductId>
+		<ProductTitle>GM_CATALOG_0000419D</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>944109413</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10322</Priority>
+		<ProductId>CARNEONGLOW__POL_SOCCER</ProductId>
+		<ProductTitle>GM_CATALOG_000043E0</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>226634646</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10321</Priority>
+		<ProductId>CARNEONGLOW_SPO_RED_N</ProductId>
+		<ProductTitle>GM_CATALOG_0000364E</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>257028067</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10320</Priority>
+		<ProductId>CARNEONGLOW_COP_POL_RED</ProductId>
+		<ProductTitle>GM_CATALOG_0000364F</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>440606981</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10319</Priority>
+		<ProductId>CARNEONGLOW_RED_BUSHIDO</ProductId>
+		<ProductTitle>GM_CATALOG_000028EB</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1747944017</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10318</Priority>
+		<ProductId>CARNEONGLOW_CCANE_RED</ProductId>
+		<ProductTitle>GM_CATALOG_000028DF</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>689386895</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10317</Priority>
+		<ProductId>CARNEONGLOW_EXO_RED_DI</ProductId>
+		<ProductTitle>GM_CATALOG_00003654</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1909524338</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10316</Priority>
+		<ProductId>CARNEONGLOW_RED_DRAGON</ProductId>
+		<ProductTitle>GM_CATALOG_000028DA</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-755671413</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10315</Priority>
+		<ProductId>CARNEONGLOW_MUS_FLAM_RED</ProductId>
+		<ProductTitle>GM_CATALOG_00003649</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>582743339</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10314</Priority>
+		<ProductId>CARNEONGLOW_RED_HEART</ProductId>
+		<ProductTitle>GM_CATALOG_00002A59</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>567089897</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10313</Priority>
+		<ProductId>CARNEONGLOW_MUS_SKULLS_RED</ProductId>
+		<ProductTitle>GM_CATALOG_00003658</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1119490919</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10312</Priority>
+		<ProductId>CARNEONGLOW_COP_RED</ProductId>
+		<ProductTitle>GM_CATALOG_00003645</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1079439897</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10311</Priority>
+		<ProductId>CARNEONGLOW_RUS_1</ProductId>
+		<ProductTitle>GM_CATALOG_0000419E</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1284844897</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10310</Priority>
+		<ProductId>CARNEONGLOW_BATS_RED</ProductId>
+		<ProductTitle>CARNEONGLOW_BATS_RED</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1897042388</Hash>
+		<Icon>PART_R3_NE_RED</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10309</Priority>
+		<ProductId>CARNEONGLOW__RUS_SOCCER</ProductId>
+		<ProductTitle>CARNEONGLOW__RUS_SOCCER</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1059551372</Hash>
+		<Icon>PART_R3_NE_SKYBLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10308</Priority>
+		<ProductId>CARNEONGLOW_SPRING_05</ProductId>
+		<ProductTitle>GM_CATALOG_00004D5D</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1059551375</Hash>
+		<Icon>PART_R3_NE_SKYBLUE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10307</Priority>
+		<ProductId>CARNEONGLOW_SPRING_02</ProductId>
+		<ProductTitle>GM_CATALOG_00004D5A</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>2145902670</Hash>
+		<Icon>PART_R3_NE_TEAL</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10306</Priority>
+		<ProductId>CARNEONGLOW_LED_PRUSSIANBLUE</ProductId>
+		<ProductTitle>GM_CATALOG_000028E6</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1059551373</Hash>
+		<Icon>PART_R3_NE_WHITE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10305</Priority>
+		<ProductId>CARNEONGLOW_SPRING_04</ProductId>
+		<ProductTitle>GM_CATALOG_00004D5C</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1905319993</Hash>
+		<Icon>PART_R3_NE_WHITE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10304</Priority>
+		<ProductId>CARNEONGLOW_BF_NAT</ProductId>
+		<ProductTitle>GM_CATALOG_0000477C</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1230363108</Hash>
+		<Icon>PART_R3_NE_WHITE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10303</Priority>
+		<ProductId>CARNEONGLOW_SOCCER</ProductId>
+		<ProductTitle>GM_CATALOG_00002A10</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1711884674</Hash>
+		<Icon>PART_R3_NE_WHITE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10302</Priority>
+		<ProductId>CARNEONGLOW_WHITE_BROKEN</ProductId>
+		<ProductTitle>GM_CATALOG_00004B71</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>888801308</Hash>
+		<Icon>PART_R3_NE_WHITE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10301</Priority>
+		<ProductId>CARNEONGLOW_EXO_WHI_DI</ProductId>
+		<ProductTitle>GM_CATALOG_00003652</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-755665864</Hash>
+		<Icon>PART_R3_NE_WHITE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10300</Priority>
+		<ProductId>CARNEONGLOW_MUS_FLAM_WHI</ProductId>
+		<ProductTitle>GM_CATALOG_0000364B</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-565844047</Hash>
+		<Icon>PART_R3_NE_WHITE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10299</Priority>
+		<ProductId>CARNEONGLOW_WHITE_HEART</ProductId>
+		<ProductTitle>GM_CATALOG_00004B74</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>567095446</Hash>
+		<Icon>PART_R3_NE_WHITE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10298</Priority>
+		<ProductId>CARNEONGLOW_MUS_SKULLS_WHI</ProductId>
+		<ProductTitle>GM_CATALOG_00003647</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-883293997</Hash>
+		<Icon>PART_R3_NE_WHITE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10297</Priority>
+		<ProductId>CARNEONGLOW_STREAMERS_WHITE</ProductId>
+		<ProductTitle>GM_CATALOG_000028EE</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>651146975</Hash>
+		<Icon>PART_R3_NE_WHITE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10296</Priority>
+		<ProductId>CARNEONGLOW_COP_WHITE</ProductId>
+		<ProductTitle>GM_CATALOG_0000364D</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>1340440101</Hash>
+		<Icon>PART_R3_NE_WHITE</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10295</Priority>
+		<ProductId>CARNEONGLOW_BATS_WH</ProductId>
+		<ProductTitle>CARNEONGLOW_BATS_WH</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1059551376</Hash>
+		<Icon>PART_R3_NE_YELLOW</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10294</Priority>
+		<ProductId>CARNEONGLOW_SPRING_01</ProductId>
+		<ProductTitle>GM_CATALOG_00004D59</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1905315170</Hash>
+		<Icon>PART_R3_NE_YELLOW</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10293</Priority>
+		<ProductId>CARNEONGLOW_BF_ROY</ProductId>
+		<ProductTitle>GM_CATALOG_0000477D</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>278229112</Hash>
+		<Icon>PART_R3_NE_YELLOW</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10292</Priority>
+		<ProductId>CARNEONGLOW__GER_SOCCER</ProductId>
+		<ProductTitle>GM_CATALOG_0000419B</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-638233488</Hash>
+		<Icon>PART_R3_NE_YELLOW</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10291</Priority>
+		<ProductId>CARNEONGLOW_GERMANY</ProductId>
+		<ProductTitle>GM_CATALOG_000041A4</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1211410993</Hash>
+		<Icon>PART_R3_NE_YELLOW</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10290</Priority>
+		<ProductId>CARNEONGLOW_S_BOMB</ProductId>
+		<ProductTitle>GM_CATALOG_00002A0F</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-1086094463</Hash>
+		<Icon>PART_R3_NE_YELLOW</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10289</Priority>
+		<ProductId>CARNEONGLOW_MANGA</ProductId>
+		<ProductTitle>GM_CATALOG_000028F2</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-755663782</Hash>
+		<Icon>PART_R3_NE_YELLOW</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10288</Priority>
+		<ProductId>CARNEONGLOW_MUS_FLAM_YEL</ProductId>
+		<ProductTitle>GM_CATALOG_00003653</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>-360968919</Hash>
+		<Icon>PART_R3_NE_YELLOW</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10287</Priority>
+		<ProductId>CARNEONGLOW_YELLOW_SPEED</ProductId>
+		<ProductTitle>GM_CATALOG_000028F0</ProductTitle>
+		<ProductType>VISUALPART</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle/>
+		<WebIcon/>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>87826234</Hash>
+		<Icon>PART_R3_NE_YELLOW</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>5000</Price>
+		<Priority>10286</Priority>
+		<ProductId>CARNEONGLOW_COP_YELLOW</ProductId>
+		<ProductTitle>GM_CATALOG_00003648</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>

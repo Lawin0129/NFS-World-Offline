@@ -2,17 +2,17 @@
 	<ProductTrans>
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
-		<Currency>_NS</Currency>
-		<Description>ALL CARS</Description>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
 		<Hash>1654998252</Hash>
 		<Icon>PART_R2_LK_1</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>10.0000</Price>
-		<Priority>0</Priority>
-		<ProductId>SRV-LOWKIT1</ProductId>
-		<ProductTitle>STAGE 1 LOWERING KIT</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>1000</Price>
+		<Priority>10269</Priority>
+		<ProductId>SMALL_DROP</ProductId>
+		<ProductTitle>GM_CATALOG_00002985</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -23,17 +23,17 @@
 	<ProductTrans>
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
-		<Currency>_NS</Currency>
-		<Description>ALL CARS</Description>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
 		<Hash>-1674761484</Hash>
 		<Icon>PART_R2_LK_2</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>10.0000</Price>
-		<Priority>2</Priority>
-		<ProductId>SRV-LOWKIT2</ProductId>
-		<ProductTitle>STAGE 2 LOWERING KIT</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>1500</Price>
+		<Priority>10268</Priority>
+		<ProductId>MEDIUM_DROP</ProductId>
+		<ProductTitle>GM_CATALOG_00002986</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
@@ -44,17 +44,17 @@
 	<ProductTrans>
 		<BundleItems i:nil="true"/>
 		<CategoryId i:nil="true"/>
-		<Currency>_NS</Currency>
-		<Description>ALL CARS</Description>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000049F3</Description>
 		<DurationMinute>0</DurationMinute>
 		<Hash>-273819714</Hash>
 		<Icon>PART_R2_LK_3</Icon>
 		<Level>0</Level>
-		<LongDescription/>
-		<Price>10.0000</Price>
-		<Priority>3</Priority>
-		<ProductId>SRV-LOWKIT3</ProductId>
-		<ProductTitle>STAGE 3 LOWERING KIT</ProductTitle>
+		<LongDescription>GM_CATALOG_00000000</LongDescription>
+		<Price>2000</Price>
+		<Priority>10267</Priority>
+		<ProductId>LARGE_DROP</ProductId>
+		<ProductTitle>GM_CATALOG_00002987</ProductTitle>
 		<ProductType>VISUALPART</ProductType>
 		<SecondaryIcon/>
 		<UseCount>1</UseCount>
