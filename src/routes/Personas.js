@@ -177,7 +177,7 @@ app.post("/personas/:personaId/commerce", async (req, res) => {
 
     commerceResult.CommerceSessionResultTrans = commerce.data.CommerceResultTrans;
 
-    if (commerce.data.CommerceResultTrans.Status[0] == "Fail_InsufficientFunds") {
+    if (commerce.data.CommerceResultTrans.Status[0] != "Success") {
         return res.xml(commerceResult);
     }
     

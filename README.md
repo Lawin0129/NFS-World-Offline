@@ -21,14 +21,14 @@ Compatible with Node.js v14.0.0 up to the latest version.
 # Reason For Developing This Program
 Need for Speed World is my favourite childhood multiplayer game and I played all the time from 2012 to 2015 with my family and friends, this game holds a special place in my heart so I wanted to create something useful for it.
 
-The current existing offline server emulators are very outdated and finicky with a disorganised folder/file structure and a lot of features not accurate to the original game. I decided to develop my own offline server emulator from the ground up for easy setup, new features, modding, and more. My goal is to design this server in a way which accurately behaves and processes things exactly like the game client.
+The other existing offline server emulators are very outdated and finicky and a lot of their features are not accurate to the original game. I decided to develop my own offline server emulator from the ground up for easy setup, new features, modding, and more. My goal is to design this server in a way which accurately behaves and processes things like the game client.
 # Notes
 * This backend is designed specifically for stock/unmodded NFS World, some features may not work properly if you use a modded NFS World client with the default backend data files.
-* Some of the XML file names are deliberately the exact same as existing offline servers to make data and file imports from other servers easier.
+* Some of the XML file names are the same as other offline servers to make data and file imports from other servers easier.
 * Basket is located at [`NFS-World-Offline/data/basket/`](data/basket/).
 * Catalog is located at [`NFS-World-Offline/data/catalog/`](data/catalog/).
 * Driver/persona data is located at [`NFS-World-Offline/drivers/`](drivers/).
-    + This is a major step up in folder structure compared to other offline servers, each driver has a unique folder in here with all their files located in there, making it much simpler to modify and replace driver related data like cars.
+    + This is a major improvement in folder structure compared to other offline servers, each driver has a unique folder in here with all their files located in there so it is much simpler to modify and replace driver related data like cars.
 * You can export driver/persona data from SBRW servers using my [`SBRW-Exporter`](https://github.com/Lawin0129/SBRW-Exporter) tool and use it in this offline server with your specific modded NFS World game client (like `modloader` in [Command Line Commands](#command-line-commands)).
 # Features
 * Drivers:
@@ -49,6 +49,11 @@ The current existing offline server emulators are very outdated and finicky with
     + Cash and SpeedBoost is correctly spent when purchasing any items.
     + Selling any item gives the correct amount of cash.
         - NOTE: Using a modded NFS World client may make the equipped (not inventory) performance/skill part selling prices inaccurate.
+* Shop/Catalog:
+    + All original cars are included in the dealership that once existed in NFS World.
+        - Every single car style is included (649 unique presets, includes unreleased styles).
+    + All prices in every category are balanced for steady progression in the game.
+    + Every single functional customization part are included in the shop, including unreleased parts.
 * Events:
     + All original events included that once existed in NFS World.
     + Launching single player events.
@@ -64,9 +69,6 @@ The current existing offline server emulators are very outdated and finicky with
         - Team Escapes: -5% Durability Loss.
         - Drags: -2% Durability Loss.
 * Cars:
-    + All original cars included in the shop that once existed in NFS World.
-        - Every single car style is included (649 unique presets, includes unreleased styles).
-        - All car prices are balanced for steady progression.
     + Changing your car.
     + Repairing your car.
     + Purchasing cars.
@@ -145,7 +147,7 @@ Once the game has launched, create your driver and play!
 | Name | Helped with |
 | --------------- | ----------- |
 | Lawin | Creator |
-| soapbox-race-offline-1.9.0<br/>by berkay2578 & Nilzao | For some catalog and basket XML files,<br/>For [Server Editor](#server-editor) and XMPP subject hash algorithm. |
+| soapbox-race-offline-1.9.0<br/>by berkay2578 & Nilzao | For [Server Editor](#server-editor) and XMPP subject hash algorithm. |
 | Soapbox Race World | For [NFS World data files](config/Assets/) |
 | [Aaron](https://github.com/NFSTools/Aaron) | Exporting cars from NFS World |
 | [Attribulator](https://github.com/NFSTools/Attribulator) | Exporting data from NFS World |
