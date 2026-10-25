@@ -38,7 +38,7 @@ The other existing offline server emulators are very outdated and finicky and a 
     + Editing motto.
 * Power-Ups:
     + Using power-ups.
-    + Recharging/purchasing power-ups from the Power-Up Console.
+    + Recharging/purchasing power-ups from the Power-Up Console using Cash.
 * Achievements:
     + All original achievements included that once existed in NFS World.
     + Changing your achievement badges in Achievements Log.
@@ -54,6 +54,7 @@ The other existing offline server emulators are very outdated and finicky and a 
         - Every single car style is included (649 unique presets, includes unreleased styles).
     + All prices in every category are balanced for steady progression in the game.
     + Every single functional customization part are included in the shop, including unreleased parts.
+    + Powerups and Treasure Hunt Streak Recovery are paid using Cash.
 * Events:
     + All original events included that once existed in NFS World.
     + Launching single player events.
@@ -87,7 +88,7 @@ The other existing offline server emulators are very outdated and finicky and a 
     + Collect gems to complete your daily treasure hunt and get rewards.
     + Cash and rep rewards increase relative to your daily streak and driver level.
     + Treasure hunt is renewed every day.
-    + If it has been 2 days or longer, your streak will be broken and you can pay to revive it or reset to day 1.
+    + If it has been 2 days or longer, your streak will be broken and you can pay to revive it (using Cash) or reset to day 1.
 * Freeroam:
     + Freeroam with fake players. Look at [Configuration](#configuration) for more details.
 # Command Line Commands
