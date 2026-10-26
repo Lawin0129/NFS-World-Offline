@@ -224,15 +224,33 @@
 		</EventDefinition>
 		<EventDefinition>
 			<CarClassHash>607077938</CarClassHash>
+			<EventId>42</EventId>
+			<MinLevel>0</MinLevel>
+			<MaxLevel>1</MaxLevel>
+		</EventDefinition>
+		<EventDefinition>
+			<CarClassHash>607077938</CarClassHash>
 			<EventId>43</EventId>
 			<MinLevel>2</MinLevel>
 			<MaxLevel>9999</MaxLevel>
 		</EventDefinition>
 		<EventDefinition>
 			<CarClassHash>607077938</CarClassHash>
+			<EventId>44</EventId>
+			<MinLevel>0</MinLevel>
+			<MaxLevel>1</MaxLevel>
+		</EventDefinition>
+		<EventDefinition>
+			<CarClassHash>607077938</CarClassHash>
 			<EventId>45</EventId>
 			<MinLevel>2</MinLevel>
 			<MaxLevel>9999</MaxLevel>
+		</EventDefinition>
+		<EventDefinition>
+			<CarClassHash>607077938</CarClassHash>
+			<EventId>46</EventId>
+			<MinLevel>0</MinLevel>
+			<MaxLevel>1</MaxLevel>
 		</EventDefinition>
 		<EventDefinition>
 			<CarClassHash>607077938</CarClassHash>
@@ -243,7 +261,7 @@
 		<EventDefinition>
 			<CarClassHash>607077938</CarClassHash>
 			<EventId>48</EventId>
-			<MinLevel>1</MinLevel>
+			<MinLevel>0</MinLevel>
 			<MaxLevel>1</MaxLevel>
 		</EventDefinition>
 		<EventDefinition>
