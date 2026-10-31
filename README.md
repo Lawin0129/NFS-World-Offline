@@ -101,7 +101,8 @@ The other existing offline server emulators are very outdated and finicky and a 
     + If there is no internet connection, the base game will load instead.
     + NOTE: You need the specific catalog and basket xml files for your selected SBRW server to access the added cars and items in the shop. You can usually get them by asking in the respective SBRW Discord servers. Some servers already have the necessary files dumped and shared for users.
     + You can export driver/persona data from SBRW servers and use them with the modded client, look at [Notes](#notes) for more information.
-- `> play` - Used to launch Need for Speed World. Upon running this command, two options are displayed where one is for selecting the `nfsw.exe` file path (saves into config) and the other is to launch Need for Speed World.
+- `> play {select}` - Used to launch Need for Speed World. Running `play` launches the game right away using the saved `nfsw.exe` file path. If no valid file path is saved yet, a Select File Dialog opens first, the chosen `nfsw.exe` is saved into config and the game launches.
+    + Run `play select` to change the saved `nfsw.exe` file path later, the game launches right after selecting.
     + This command automatically limits NFS World to a maximum of 8 CPU cores (because using above 8 cores makes the game unstable and usually crashes).
 # Configuration
 Located in `config/config.json`. You will need to restart the server if you make any changes to this file.

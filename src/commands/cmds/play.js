@@ -8,9 +8,9 @@ const { spawn } = require("child_process");
 let self = module.exports = {
     commandInfo: {
         info: "This command is used to launch Need for Speed World.",
-        helpInfo: "Upon running this command, two options are displayed where one is for selecting the nfsw.exe file path (saves into config) and the other is to launch Need for Speed World.",
+        helpInfo: "select - Optional, opens a Select File Dialog to change the nfsw.exe file path (saves into config) and then launches Need for Speed World.\n\nWithout a parameter, Need for Speed World launches right away using the saved nfsw.exe file path. If no valid file path is saved yet, you will be asked to select nfsw.exe first.",
         extraInfo: "-- This command automatically limits NFS World to a maximum of 8 CPU cores (because using above 8 cores makes the game unstable and usually crashes).",
-        name: "play",
+        name: "play [select]",
     },
     execute: async (args, readline) => {
         if (process.platform != "win32") {
@@ -21,61 +21,43 @@ let self = module.exports = {
         const configPath = path.join(paths.configPath, "config.json");
         const configData = JSON.parse(fs.readFileSync(configPath).toString());
 
-        console.log(`\nCurrent selected nfsw.exe file path: "${configData.nfswFilePath || "NONE"}".`);
-        console.log(`\nChoose an action:\n [0] Select - Set the nfsw.exe file path.\n [1] Launch - Run Need for Speed World using the current selected nfsw.exe.`);
-        
-        let optionSelect = await functions.askQuestion("\nEnter a number: ", readline);
-        let actionOptionNum = Number.isInteger(parseInt(optionSelect)) ? parseInt(optionSelect) : -1;
+        const wantsSelect = (args[0] || "").toLowerCase() == "select";
 
-        switch (actionOptionNum) {
-            case 0: {
-                let filePath;
+        if (wantsSelect || !checkExeValid(configData.nfswFilePath)) {
+            if (!wantsSelect) console.log(`\nNo valid nfsw.exe file path selected yet (current: "${configData.nfswFilePath || "NONE"}").`);
 
-                try {
-                    console.log("\nAttempting to open a Select File Dialog Window, please go to your NFS World game files and select nfsw.exe.");
+            let filePath;
 
-                    filePath = await selectNfswExe(path.dirname(configData.nfswFilePath || process.cwd()));
-                } catch {
-                    console.log("\nFailed to open Select File Dialog, you will need to enter the path manually.");
-                    console.log('\nProvide a valid nfsw.exe file path (e.g. "C:\\game\\nfsw.exe")');
+            try {
+                console.log("\nAttempting to open a Select File Dialog Window, please go to your NFS World game files and select nfsw.exe.");
 
-                    filePath = (await functions.askQuestion("Enter the file path: ", readline)).trim().replace(/"/ig, "");
-                }
-                
-                if (!checkExeValid(filePath)) {
-                    console.log("\nInvalid nfsw.exe file path, cancelling operation.");
-                    break;
-                }
+                filePath = await selectNfswExe(path.dirname(configData.nfswFilePath || process.cwd()));
+            } catch {
+                console.log("\nFailed to open Select File Dialog, you will need to enter the path manually.");
+                console.log('\nProvide a valid nfsw.exe file path (e.g. "C:\\game\\nfsw.exe")');
 
-                configData.nfswFilePath = filePath;
-
-                fs.writeFileSync(configPath, JSON.stringify(configData, null, 4));
-                
-                console.log(`\nSuccessfully changed the nfsw.exe file path to "${configData.nfswFilePath}".`);
-                console.log(`If you're ready to launch, run the "play" command again and select the "Launch" action.`);
-                break;
+                filePath = (await functions.askQuestion("Enter the file path: ", readline)).trim().replace(/"/ig, "");
+            }
+            
+            if (!checkExeValid(filePath)) {
+                console.log("\nInvalid nfsw.exe file path, cancelling operation.");
+                return;
             }
 
-            case 1: {
-                if (!checkExeValid(configData.nfswFilePath)) {
-                    console.log("\nInvalid nfsw.exe file path, cancelling operation.");
-                    break;
-                }
+            configData.nfswFilePath = filePath;
 
-                console.log(`\nAttempting to launch Need for Speed World at "${configData.nfswFilePath}".`);
+            fs.writeFileSync(configPath, JSON.stringify(configData, null, 4));
+            
+            console.log(`\nSuccessfully changed the nfsw.exe file path to "${configData.nfswFilePath}".`);
+        }
 
-                try {
-                    launchNfsw(configData.nfswFilePath);
-                } catch {
-                    console.log("\nFailed to launch nfsw.exe, please make sure your game files are valid.");
-                }
-                break;
-            }
+        console.log(`\nAttempting to launch Need for Speed World at "${configData.nfswFilePath}".`);
+        console.log(`To change the nfsw.exe file path later, run "play select".`);
 
-            default: {
-                console.log("\nInvalid action, cancelling operation.");
-                break;
-            }
+        try {
+            launchNfsw(configData.nfswFilePath);
+        } catch {
+            console.log("\nFailed to launch nfsw.exe, please make sure your game files are valid.");
         }
     }
 }
