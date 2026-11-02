@@ -1,0 +1,434 @@
+[
+  {
+    "ID": 1,
+    "entitlementTag": "cardpack_aftermarket"
+  },
+  {
+    "ID": 2,
+    "entitlementTag": "cardpack_aftermarket_carstyle_base"
+  },
+  {
+    "ID": 3,
+    "entitlementTag": "cardpack_aftermarket_carstyle_tune"
+  },
+  {
+    "ID": 4,
+    "entitlementTag": "cardpack_aftermarket_carstyle_muscle"
+  },
+  {
+    "ID": 5,
+    "entitlementTag": "cardpack_aftermarket_carstyle_exotic"
+  },
+  {
+    "ID": 6,
+    "entitlementTag": "cardpack_aftermarket_carstyle_luxury"
+  },
+  {
+    "ID": 7,
+    "entitlementTag": "cardpack_aftermarket_carstyle_cop"
+  },
+  {
+    "ID": 8,
+    "entitlementTag": "cardpack_aftermarket_spring"
+  },
+  {
+    "ID": 9,
+    "entitlementTag": "cardpack_aftermarket_spring_ribbon"
+  },
+  {
+    "ID": 10,
+    "entitlementTag": "cardpack_aftermarket_cny"
+  },
+  {
+    "ID": 11,
+    "entitlementTag": "cardpack_aftermarket_val"
+  },
+  {
+    "ID": 12,
+    "entitlementTag": "cardpack_aftermarket_valentine"
+  },
+  {
+    "ID": 13,
+    "entitlementTag": "cardpack_aftermarket_easter"
+  },
+  {
+    "ID": 14,
+    "entitlementTag": "cardpack_aftermarket_xmas"
+  },
+  {
+    "ID": 15,
+    "entitlementTag": "cardpack_aftermarket_country_base"
+  },
+  {
+    "ID": 16,
+    "entitlementTag": "cardpack_aftermarket_country_brazil"
+  },
+  {
+    "ID": 17,
+    "entitlementTag": "cardpack_aftermarket_country_france"
+  },
+  {
+    "ID": 18,
+    "entitlementTag": "cardpack_aftermarket_country_germany"
+  },
+  {
+    "ID": 19,
+    "entitlementTag": "cardpack_aftermarket_country_poland"
+  },
+  {
+    "ID": 20,
+    "entitlementTag": "cardpack_aftermarket_country_russia"
+  },
+  {
+    "ID": 21,
+    "entitlementTag": "cardpack_aftermarket_country_usa"
+  },
+  {
+    "ID": 22,
+    "entitlementTag": "cardpack_t1_bronze"
+  },
+  {
+    "ID": 23,
+    "entitlementTag": "cardpack_t1_silver"
+  },
+  {
+    "ID": 24,
+    "entitlementTag": "cardpack_t1_gold"
+  },
+  {
+    "ID": 25,
+    "entitlementTag": "cardpack_t1_gold_engine"
+  },
+  {
+    "ID": 26,
+    "entitlementTag": "cardpack_t1_gold_forced_induction"
+  },
+  {
+    "ID": 27,
+    "entitlementTag": "cardpack_t1_gold_transmission"
+  },
+  {
+    "ID": 28,
+    "entitlementTag": "cardpack_t1_gold_suspension"
+  },
+  {
+    "ID": 29,
+    "entitlementTag": "cardpack_t1_gold_brakes"
+  },
+  {
+    "ID": 30,
+    "entitlementTag": "cardpack_t1_gold_tires"
+  },
+  {
+    "ID": 31,
+    "entitlementTag": "cardpack_t1_platinumA"
+  },
+  {
+    "ID": 32,
+    "entitlementTag": "cardpack_t1_ultraA_engine"
+  },
+  {
+    "ID": 33,
+    "entitlementTag": "cardpack_t1_ultraA_forced_induction"
+  },
+  {
+    "ID": 34,
+    "entitlementTag": "cardpack_t1_ultraA_transmission"
+  },
+  {
+    "ID": 35,
+    "entitlementTag": "cardpack_t1_ultraA_suspension"
+  },
+  {
+    "ID": 36,
+    "entitlementTag": "cardpack_t1_ultraA_brakes"
+  },
+  {
+    "ID": 37,
+    "entitlementTag": "cardpack_t1_ultraA_tires"
+  },
+  {
+    "ID": 38,
+    "entitlementTag": "cardpack_t2_bronze"
+  },
+  {
+    "ID": 39,
+    "entitlementTag": "cardpack_t2_silver"
+  },
+  {
+    "ID": 40,
+    "entitlementTag": "cardpack_t2_gold"
+  },
+  {
+    "ID": 41,
+    "entitlementTag": "cardpack_t2_gold_engine"
+  },
+  {
+    "ID": 42,
+    "entitlementTag": "cardpack_t2_gold_forced_induction"
+  },
+  {
+    "ID": 43,
+    "entitlementTag": "cardpack_t2_gold_transmission"
+  },
+  {
+    "ID": 44,
+    "entitlementTag": "cardpack_t2_gold_suspension"
+  },
+  {
+    "ID": 45,
+    "entitlementTag": "cardpack_t2_gold_brakes"
+  },
+  {
+    "ID": 46,
+    "entitlementTag": "cardpack_t2_gold_tires"
+  },
+  {
+    "ID": 47,
+    "entitlementTag": "cardpack_t2_platinumA"
+  },
+  {
+    "ID": 48,
+    "entitlementTag": "cardpack_t2_ultraA_engine"
+  },
+  {
+    "ID": 49,
+    "entitlementTag": "cardpack_t2_ultraA_forced_induction"
+  },
+  {
+    "ID": 50,
+    "entitlementTag": "cardpack_t2_ultraA_transmission"
+  },
+  {
+    "ID": 51,
+    "entitlementTag": "cardpack_t2_ultraA_suspension"
+  },
+  {
+    "ID": 52,
+    "entitlementTag": "cardpack_t2_ultraA_brakes"
+  },
+  {
+    "ID": 53,
+    "entitlementTag": "cardpack_t2_ultraA_tires"
+  },
+  {
+    "ID": 54,
+    "entitlementTag": "cardpack_t3_bronze"
+  },
+  {
+    "ID": 55,
+    "entitlementTag": "cardpack_t3_silver"
+  },
+  {
+    "ID": 56,
+    "entitlementTag": "cardpack_t3_gold"
+  },
+  {
+    "ID": 57,
+    "entitlementTag": "cardpack_t3_gold_engine"
+  },
+  {
+    "ID": 58,
+    "entitlementTag": "cardpack_t3_gold_forced_induction"
+  },
+  {
+    "ID": 59,
+    "entitlementTag": "cardpack_t3_gold_transmission"
+  },
+  {
+    "ID": 60,
+    "entitlementTag": "cardpack_t3_gold_suspension"
+  },
+  {
+    "ID": 61,
+    "entitlementTag": "cardpack_t3_gold_brakes"
+  },
+  {
+    "ID": 62,
+    "entitlementTag": "cardpack_t3_gold_tires"
+  },
+  {
+    "ID": 63,
+    "entitlementTag": "cardpack_t3_platinumA"
+  },
+  {
+    "ID": 64,
+    "entitlementTag": "cardpack_t3_ultraA_engine"
+  },
+  {
+    "ID": 65,
+    "entitlementTag": "cardpack_t3_ultraA_forced_induction"
+  },
+  {
+    "ID": 66,
+    "entitlementTag": "cardpack_t3_ultraA_transmission"
+  },
+  {
+    "ID": 67,
+    "entitlementTag": "cardpack_t3_ultraA_suspension"
+  },
+  {
+    "ID": 68,
+    "entitlementTag": "cardpack_t3_ultraA_brakes"
+  },
+  {
+    "ID": 69,
+    "entitlementTag": "cardpack_t3_ultraA_tires"
+  },
+  {
+    "ID": 70,
+    "entitlementTag": "cardpack_mystery"
+  },
+  {
+    "ID": 71,
+    "entitlementTag": "cardpack_bronze"
+  },
+  {
+    "ID": 72,
+    "entitlementTag": "cardpack_silver"
+  },
+  {
+    "ID": 73,
+    "entitlementTag": "cardpack_gold"
+  },
+  {
+    "ID": 74,
+    "entitlementTag": "cardpack_gold_engine"
+  },
+  {
+    "ID": 75,
+    "entitlementTag": "cardpack_gold_forcedinduction"
+  },
+  {
+    "ID": 76,
+    "entitlementTag": "cardpack_gold_transmission"
+  },
+  {
+    "ID": 77,
+    "entitlementTag": "cardpack_gold_suspension"
+  },
+  {
+    "ID": 78,
+    "entitlementTag": "cardpack_gold_brakes"
+  },
+  {
+    "ID": 79,
+    "entitlementTag": "cardpack_gold_tires"
+  },
+  {
+    "ID": 80,
+    "entitlementTag": "cardpack_platinum"
+  },
+  {
+    "ID": 81,
+    "entitlementTag": "cardpack_platinum_engine"
+  },
+  {
+    "ID": 82,
+    "entitlementTag": "cardpack_platinum_forcedinduction"
+  },
+  {
+    "ID": 83,
+    "entitlementTag": "cardpack_platinum_transmission"
+  },
+  {
+    "ID": 84,
+    "entitlementTag": "cardpack_platinum_suspension"
+  },
+  {
+    "ID": 85,
+    "entitlementTag": "cardpack_platinum_brakes"
+  },
+  {
+    "ID": 86,
+    "entitlementTag": "cardpack_platinum_tires"
+  },
+  {
+    "ID": 87,
+    "entitlementTag": "cardpack_blackdiamond"
+  },
+  {
+    "ID": 88,
+    "entitlementTag": "cardpack_blackdiamond_engine"
+  },
+  {
+    "ID": 89,
+    "entitlementTag": "cardpack_blackdiamond_forcedinduction"
+  },
+  {
+    "ID": 90,
+    "entitlementTag": "cardpack_blackdiamond_transmission"
+  },
+  {
+    "ID": 91,
+    "entitlementTag": "cardpack_blackdiamond_suspension"
+  },
+  {
+    "ID": 92,
+    "entitlementTag": "cardpack_blackdiamond_brakes"
+  },
+  {
+    "ID": 93,
+    "entitlementTag": "cardpack_blackdiamond_tires"
+  },
+  {
+    "ID": 94,
+    "entitlementTag": "cardpack_skillmods_mystery"
+  },
+  {
+    "ID": 95,
+    "entitlementTag": "cardpack_skillmods_bronze"
+  },
+  {
+    "ID": 96,
+    "entitlementTag": "cardpack_skillmods_silver"
+  },
+  {
+    "ID": 97,
+    "entitlementTag": "cardpack_skillmods_gold"
+  },
+  {
+    "ID": 98,
+    "entitlementTag": "cardpack_skillmods_gold_race"
+  },
+  {
+    "ID": 99,
+    "entitlementTag": "cardpack_skillmods_gold_pursuit"
+  },
+  {
+    "ID": 100,
+    "entitlementTag": "cardpack_skillmods_gold_explore"
+  },
+  {
+    "ID": 101,
+    "entitlementTag": "cardpack_skillmods_gold_sprint"
+  },
+  {
+    "ID": 102,
+    "entitlementTag": "cardpack_skillmods_gold_circuit"
+  },
+  {
+    "ID": 103,
+    "entitlementTag": "cardpack_skillmods_gold_teamescape"
+  },
+  {
+    "ID": 104,
+    "entitlementTag": "cardpack_skillmods_gold_pursuitoutrun"
+  },
+  {
+    "ID": 105,
+    "entitlementTag": "cardpack_skillmods_gold_rewardsbooster"
+  },
+  {
+    "ID": 106,
+    "entitlementTag": "cardpack_blue"
+  },
+  {
+    "ID": 107,
+    "entitlementTag": "cardpack_carprize"
+  },
+  {
+    "ID": 108,
+    "entitlementTag": "cardpack_achievements_rewards"
+  }
+]

@@ -9,6 +9,8 @@ const carManager = require("./carManager");
 const personaManager = require("../services/personaManager");
 const inventoryManager = require("../services/inventoryManager");
 const treasureHuntManager = require("../services/treasureHuntManager");
+const cardpackManager = require("../services/cardpackManager");
+const allCatalogProducts = require("../../config/Assets/products.json");
 
 let cachedCatalog;
 
@@ -146,6 +148,7 @@ let self = module.exports = {
 
         let commerceTemplate = {
             CommerceResultTrans: {
+                CommerceItems: [{ CommerceItemTrans: [] }],
                 InventoryItems: [{
                     InventoryItemTrans: [{
                         Hash: ["0"],
@@ -154,6 +157,7 @@ let self = module.exports = {
                         ResellPrice: ["0"]
                     }]
                 }],
+                PurchasedCars: [{ OwnedCarTrans: [] }],
                 Wallets: [{
                     WalletTrans: [
                         {
@@ -273,6 +277,59 @@ let self = module.exports = {
             } else if (purchaseDetails.categoryName == "productsInCategory_STORE_STREAK_RECOVERY") {
                 await treasureHuntManager.reviveStreak(personaId);
                 continue;
+            } else if (purchaseDetails.categoryName.toUpperCase().includes("PACK")) {
+                const productItem = allCatalogProducts.find(i => i.productId == purchaseDetails.originalProductId);
+                const itemRewards = cardpackManager.openPack(productItem?.entitlementTag);
+                if (!itemRewards.success) continue;
+
+                for (let finalItem of itemRewards.data) {
+                    commerceTemplate.CommerceResultTrans.CommerceItems[0].CommerceItemTrans.push({
+                        Hash: [`${finalItem.item.hash}`],
+                        Title: [`${finalItem.title}`]
+                    });
+
+                    switch (finalItem.type) {
+                        case "CashReward": {
+                            cashChange += finalItem.quantity;
+                            cashWalletTrans.Balance[0] += finalItem.quantity;
+                            break;
+                        }
+
+                        default: {
+                            if (finalItem.isInventoryItem) {
+                                let invenItem = {
+                                    EntitlementTag: [finalItem.item.entitlementTag],
+                                    Hash: [finalItem.item.hash],
+                                    ResellPrice: [finalItem.item.resalePrice],
+                                    RemainingUseCount: [finalItem.quantity],
+                                    VirtualItemType: [finalItem.item.productType]
+                                };
+
+                                addedInventoryItems.push(invenItem);
+                            } else if (finalItem.item.productType?.toLowerCase?.() == "presetcar") {
+                                const basketItem = self.getBasketItem(finalItem.item.productId);
+
+                                if (basketItem.success) {
+                                    const product = await xmlParser.parseXML(basketItem.data.basketData);
+                                    const ownedCarTrans = product?.OwnedCarTrans;
+
+                                    if (ownedCarTrans) {
+                                        const customFields = { ResalePrice: [`${finalItem.item.resalePrice}`] };
+                                        const newCar = await carManager.addCar(personaId, ownedCarTrans, false, customFields);
+
+                                        if (newCar.success) {
+                                            commerceTemplate.CommerceResultTrans.PurchasedCars[0].OwnedCarTrans.push(newCar.data);
+                                        }
+                                    }
+                                }
+                            }
+
+                            break;
+                        }
+                    }
+                }
+                
+                continue;
             } else if (purchaseDetails.categoryName.includes("PAINTS")) {
                 continue;
             }
@@ -299,7 +356,7 @@ let self = module.exports = {
                         const addCar = await carManager.addCar(personaId, product.OwnedCarTrans, true, customFields);
 
                         if (addCar.success) {
-                            commerceTemplate.CommerceResultTrans.PurchasedCars = [{ OwnedCarTrans: [addCar.data] }];
+                            commerceTemplate.CommerceResultTrans.PurchasedCars[0].OwnedCarTrans.push(addCar.data);
                             itemAdded = true;
                         }
 

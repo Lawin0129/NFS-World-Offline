@@ -1,0 +1,716 @@
+<ArrayOfProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004C91</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004C91</LongDescription>
+		<Price>1000000</Price>
+		<Priority>-1</Priority>
+		<ProductId>SRV-CARDPACK-CARPRIZE</ProductId>
+		<ProductTitle>GM_CATALOG_00004B4A</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>cardpack_carprize</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00000611</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00000611</LongDescription>
+		<Price>40000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-MYSTERY</ProductId>
+		<ProductTitle>GM_CATALOG_000046CF</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>mystery</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000046CD</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_000046CD</LongDescription>
+		<Price>35000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-SKILLMODS-MYSTERY</ProductId>
+		<ProductTitle>GM_CATALOG_000046CC</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>skillmods_mystery</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003BC5</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003BC5</LongDescription>
+		<Price>50000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-SKILLMODS-BRONZE</ProductId>
+		<ProductTitle>GM_CATALOG_00002F26</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>skillmods_bronze</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00003BC4</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00003BC4</LongDescription>
+		<Price>80000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-SKILLMODS-SILVER</ProductId>
+		<ProductTitle>GM_CATALOG_00002F25</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>skillmods_silver</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>Win a guaranteed 4 Star Skill Mod from this pack, more if you're lucky!</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>Win a guaranteed 4 Star Skill Mod from this pack, more if you're lucky!</LongDescription>
+		<Price>120000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-SKILLMODS-GOLD</ProductId>
+		<ProductTitle>GM_CATALOG_00002EE2</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>skillmods_gold</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004A46</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004A46</LongDescription>
+		<Price>120000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-SKILLMODS-GOLD-RACE</ProductId>
+		<ProductTitle>GM_CATALOG_00002F27</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>skillmods_gold_race</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004A44</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004A44</LongDescription>
+		<Price>120000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-SKILLMODS-GOLD-PURSUIT</ProductId>
+		<ProductTitle>GM_CATALOG_00002F23</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>skillmods_gold_pursuit</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004A45</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004A45</LongDescription>
+		<Price>120000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-SKILLMODS-GOLD-EXPLORE</ProductId>
+		<ProductTitle>GM_CATALOG_00002F24</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>skillmods_gold_explore</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004A41</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004A41</LongDescription>
+		<Price>120000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-SKILLMODS-GOLD-REWARDSBOOSTER</ProductId>
+		<ProductTitle>GM_CATALOG_00004A2B</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>skillmods_gold_rewardsbooster</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004804</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004804</LongDescription>
+		<Price>50000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-BRONZE</ProductId>
+		<ProductTitle>GM_CATALOG_00000738</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>bronze</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000047F9</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_000047F9</LongDescription>
+		<Price>80000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-SILVER</ProductId>
+		<ProductTitle>GM_CATALOG_00000750</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>silver</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000047F7</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_000047F7</LongDescription>
+		<Price>120000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-GOLD</ProductId>
+		<ProductTitle>GM_CATALOG_00000749</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>gold</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004857</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004857</LongDescription>
+		<Price>120000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-GOLD-ENGINE</ProductId>
+		<ProductTitle>GM_CATALOG_00004D2B</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>gold_engine</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004859</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004859</LongDescription>
+		<Price>100000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-GOLD-FORCEDINDUCTION</ProductId>
+		<ProductTitle>GM_CATALOG_00004D29</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>gold_forcedinduction</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_0000485F</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000485F</LongDescription>
+		<Price>100000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-GOLD-TRANSMISSION</ProductId>
+		<ProductTitle>GM_CATALOG_00004D28</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>gold_transmission</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_0000485B</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000485B</LongDescription>
+		<Price>100000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-GOLD-SUSPENSION</ProductId>
+		<ProductTitle>GM_CATALOG_00004D27</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>gold_suspension</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004855</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004855</LongDescription>
+		<Price>100000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-GOLD-BRAKES</ProductId>
+		<ProductTitle>GM_CATALOG_00004D2A</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>gold_brakes</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_0000485D</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000485D</LongDescription>
+		<Price>100000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-GOLD-TIRES</ProductId>
+		<ProductTitle>GM_CATALOG_00004D2C</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>gold_tires</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_000047F6</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_000047F6</LongDescription>
+		<Price>150000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-PLATINUM</ProductId>
+		<ProductTitle>GM_CATALOG_000047B9</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>platinum</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_0000484B</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000484B</LongDescription>
+		<Price>150000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-PLATINUM-ENGINE</ProductId>
+		<ProductTitle>GM_CATALOG_0000484A</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>platinum_engine</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_0000484D</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000484D</LongDescription>
+		<Price>130000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-PLATINUM-FORCEDINDUCTION</ProductId>
+		<ProductTitle>GM_CATALOG_0000484C</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>platinum_forcedinduction</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004853</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004853</LongDescription>
+		<Price>130000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-PLATINUM-TRANSMISSION</ProductId>
+		<ProductTitle>GM_CATALOG_00004852</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>platinum_transmission</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_0000484F</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_0000484F</LongDescription>
+		<Price>130000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-PLATINUM-SUSPENSION</ProductId>
+		<ProductTitle>GM_CATALOG_0000484E</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>platinum_suspension</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004849</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004849</LongDescription>
+		<Price>130000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-PLATINUM-BRAKES</ProductId>
+		<ProductTitle>GM_CATALOG_00004848</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>platinum_brakes</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004851</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004851</LongDescription>
+		<Price>130000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-PLATINUM-TIRES</ProductId>
+		<ProductTitle>GM_CATALOG_00004850</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>platinum_tires</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004CDC</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004CDC</LongDescription>
+		<Price>200000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-BLACKDIAMOND</ProductId>
+		<ProductTitle>GM_CATALOG_00004C9C</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>blackdiamond</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004CE0</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004CE0</LongDescription>
+		<Price>200000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-BLACKDIAMOND-ENGINE</ProductId>
+		<ProductTitle>GM_CATALOG_00004C9E</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>blackdiamond_engine</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004CE8</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004CE8</LongDescription>
+		<Price>180000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-BLACKDIAMOND-FORCEDINDUCTION</ProductId>
+		<ProductTitle>GM_CATALOG_00004CA0</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>blackdiamond_forcedinduction</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004CE2</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004CE2</LongDescription>
+		<Price>180000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-BLACKDIAMOND-TRANSMISSION</ProductId>
+		<ProductTitle>GM_CATALOG_00004CA3</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>blackdiamond_transmission</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004CE4</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004CE4</LongDescription>
+		<Price>180000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-BLACKDIAMOND-SUSPENSION</ProductId>
+		<ProductTitle>GM_CATALOG_00004CA1</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>blackdiamond_suspension</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004CDE</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004CDE</LongDescription>
+		<Price>180000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-BLACKDIAMOND-BRAKES</ProductId>
+		<ProductTitle>GM_CATALOG_00004C9F</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>blackdiamond_brakes</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>GM_CATALOG_00004CE6</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>GM_CATALOG_00004CE6</LongDescription>
+		<Price>180000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-BLACKDIAMOND-TIRES</ProductId>
+		<ProductTitle>GM_CATALOG_00004CA2</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>blackdiamond_tires</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+	<ProductTrans>
+		<BundleItems i:nil="true"/>
+		<CategoryId i:nil="true"/>
+		<Currency>CASH</Currency>
+		<Description>Win a full set of Aftermarket Parts (Neon, Window Tint, Wheels, License Plate, Lowering Kit)!</Description>
+		<DurationMinute>0</DurationMinute>
+		<Hash>0</Hash>
+		<Icon>prod_booster_pack</Icon>
+		<Level>0</Level>
+		<LongDescription>Win a full set of Aftermarket Parts (Neon, Window Tint, Wheels, License Plate, Lowering Kit)!</LongDescription>
+		<Price>25000</Price>
+		<Priority>0</Priority>
+		<ProductId>SRV-CARDPACK-AFTERMARKET</ProductId>
+		<ProductTitle>GM_CATALOG_00002849</ProductTitle>
+		<ProductType>BUNDLE</ProductType>
+		<SecondaryIcon/>
+		<UseCount>1</UseCount>
+		<VisualStyle>aftermarket</VisualStyle>
+		<WebIcon>BOOSTERPACK_BLACKDIAMOND</WebIcon>
+		<WebLocation/>
+	</ProductTrans>
+</ArrayOfProductTrans>

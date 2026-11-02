@@ -1364,31 +1364,31 @@
   {
     "ID": 5011,
     "dropWeight": 1,
-    "script": "generator.randomDrop(['cashreward_explore_01_e', 'cashreward_pursuit_01_d', 'cashreward_race_01_d', 'catchup_01_c', 'collision_mass_01_e', 'cooldown_meter_01_e', 'emergency_cooldown_01_e', 'emergency_power_01_e', 'emergency_range_01_e', 'evademeter_01_d', 'gearratio_enhancement_1_b', 'juggernaut_cooldown_01_e', 'juggernaut_duration_01_e', 'juggernaut_power_01_c', 'jumpstart_01_c', 'launchgrip_1_c', 'nitrous_cooldown_01_e', 'nitrous_duration_01_d', 'nitrous_power_01_e', 'perfectstart_duration_01_b', 'perfectstart_rpm_01_c', 'radar_01_e', 'ready_cooldown_01_d', 'runflats_cooldown_01_e', 'slingshot_cooldown_01_e', 'slingshot_duration_01_e', 'slingshot_power_01_d'])\r\n",
+    "script": "generator.randomDrop(['cashreward_explore_01_e', 'cashreward_pursuit_01_d', 'cashreward_race_01_d', 'catchup_01_c', 'collision_mass_01_e', 'cooldown_meter_01_e', 'emergency_cooldown_01_e', 'emergency_power_01_e', 'emergency_range_01_e', 'gearratio_enhancement_1_b', 'juggernaut_cooldown_01_e', 'juggernaut_duration_01_e', 'juggernaut_power_01_c', 'jumpstart_01_c', 'launchgrip_1_c', 'nitrous_cooldown_01_e', 'nitrous_duration_01_d', 'nitrous_power_01_e', 'perfectstart_duration_01_b', 'perfectstart_rpm_01_c', 'radar_01_e', 'ready_cooldown_01_d', 'runflats_cooldown_01_e', 'slingshot_cooldown_01_e', 'slingshot_duration_01_e', 'slingshot_power_01_d'])\r\n",
     "rewardTableEntity_ID": 501
   },
   {
     "ID": 5021,
     "dropWeight": 1,
-    "script": "generator.randomDrop(['cashreward_explore_02_c', 'cashreward_pursuit_02_b', 'cashreward_race_02_b', 'catchup_02_b', 'collision_mass_02_c', 'cooldown_meter_02_c', 'emergency_cooldown_02_c', 'emergency_power_02_c', 'emergency_range_02_c', 'evademeter_02_d', 'gearratio_enhancement_2_b', 'juggernaut_cooldown_02_c', 'juggernaut_duration_02_c', 'juggernaut_power_02_c', 'jumpstart_02_b', 'launchgrip_2_c', 'nitrous_cooldown_02_c', 'nitrous_duration_02_d', 'nitrous_power_02_c', 'perfectstart_duration_02_b', 'perfectstart_rpm_02_c', 'radar_02_d', 'ready_cooldown_02_d', 'runflats_cooldown_02_c', 'slingshot_cooldown_02_c', 'slingshot_duration_02_c', 'slingshot_power_02_b'])\r\n",
+    "script": "generator.randomDrop(['cashreward_explore_02_c', 'cashreward_pursuit_02_b', 'cashreward_race_02_b', 'catchup_02_b', 'collision_mass_02_c', 'cooldown_meter_02_c', 'emergency_cooldown_02_c', 'emergency_power_02_c', 'emergency_range_02_c', 'gearratio_enhancement_2_b', 'juggernaut_cooldown_02_c', 'juggernaut_duration_02_c', 'juggernaut_power_02_c', 'jumpstart_02_b', 'launchgrip_2_c', 'nitrous_cooldown_02_c', 'nitrous_duration_02_d', 'nitrous_power_02_c', 'perfectstart_duration_02_b', 'perfectstart_rpm_02_c', 'radar_02_d', 'ready_cooldown_02_d', 'runflats_cooldown_02_c', 'slingshot_cooldown_02_c', 'slingshot_duration_02_c', 'slingshot_power_02_b'])\r\n",
     "rewardTableEntity_ID": 502
   },
   {
     "ID": 5031,
     "dropWeight": 1,
-    "script": "generator.randomDrop(['cashreward_explore_03_c', 'cashreward_pursuit_03_b', 'cashreward_race_03_b', 'catchup_03_b', 'collision_mass_03_c', 'cooldown_meter_03_c', 'emergency_cooldown_03_c', 'emergency_power_03_c', 'emergency_range_03_c', 'evademeter_03_d', 'gearratio_enhancement_3_a', 'juggernaut_cooldown_03_c', 'juggernaut_duration_03_c', 'juggernaut_power_03_c', 'jumpstart_03_c', 'launchgrip_3_b', 'nitrous_cooldown_03_c', 'nitrous_duration_03_d', 'nitrous_power_03_c', 'perfectstart_duration_03_b', 'perfectstart_rpm_03_b', 'radar_03_c', 'ready_cooldown_03_d', 'runflats_cooldown_03_c', 'slingshot_cooldown_03_c', 'slingshot_duration_03_c', 'slingshot_power_03_b'])\r\n",
+    "script": "generator.randomDrop(['cashreward_explore_03_c', 'cashreward_pursuit_03_b', 'cashreward_race_03_b', 'catchup_03_b', 'collision_mass_03_c', 'cooldown_meter_03_c', 'emergency_cooldown_03_c', 'emergency_power_03_c', 'emergency_range_03_c', 'gearratio_enhancement_3_a', 'juggernaut_cooldown_03_c', 'juggernaut_duration_03_c', 'juggernaut_power_03_c', 'jumpstart_03_c', 'launchgrip_3_b', 'nitrous_cooldown_03_c', 'nitrous_duration_03_d', 'nitrous_power_03_c', 'perfectstart_duration_03_b', 'perfectstart_rpm_03_b', 'radar_03_c', 'ready_cooldown_03_d', 'runflats_cooldown_03_c', 'slingshot_cooldown_03_c', 'slingshot_duration_03_c', 'slingshot_power_03_b'])\r\n",
     "rewardTableEntity_ID": 503
   },
   {
     "ID": 5041,
     "dropWeight": 1,
-    "script": "generator.randomDrop(['cashreward_explore_04_c', 'cashreward_pursuit_04_d', 'cashreward_race_04_c', 'catchup_04_b', 'collision_mass_04_e', 'cooldown_meter_04_e', 'emergency_cooldown_04_d', 'emergency_power_04_e', 'emergency_range_04_c', 'evademeter_04_d', 'gearratio_enhancement_4_b', 'juggernaut_cooldown_04_b', 'juggernaut_duration_04_d', 'juggernaut_power_04_a', 'jumpstart_04_b', 'launchgrip_4_b', 'nitrous_cooldown_04_e', 'nitrous_duration_04_f', 'nitrous_power_04_e', 'perfectstart_duration_04_a', 'perfectstart_rpm_04_c', 'radar_04_d', 'ready_cooldown_04_d', 'runflats_cooldown_04_e', 'slingshot_cooldown_04_e', 'slingshot_duration_04_b', 'slingshot_power_04_c'])\r\n",
+    "script": "generator.randomDrop(['cashreward_explore_04_c', 'cashreward_pursuit_04_d', 'cashreward_race_04_c', 'catchup_04_b', 'collision_mass_04_e', 'cooldown_meter_04_e', 'emergency_cooldown_04_d', 'emergency_power_04_e', 'emergency_range_04_c', 'gearratio_enhancement_4_b', 'juggernaut_cooldown_04_b', 'juggernaut_duration_04_d', 'juggernaut_power_04_a', 'jumpstart_04_b', 'launchgrip_4_b', 'nitrous_cooldown_04_e', 'nitrous_duration_04_f', 'nitrous_power_04_e', 'perfectstart_duration_04_a', 'perfectstart_rpm_04_c', 'radar_04_d', 'ready_cooldown_04_d', 'runflats_cooldown_04_e', 'slingshot_cooldown_04_e', 'slingshot_duration_04_b', 'slingshot_power_04_c'])\r\n",
     "rewardTableEntity_ID": 504
   },
   {
     "ID": 5051,
     "dropWeight": 1,
-    "script": "generator.randomDrop(['cashreward_explore_05_d', 'cashreward_pursuit_05_c', 'cashreward_race_05_d', 'catchup_05_c', 'collision_mass_05_f', 'cooldown_meter_05_f', 'emergency_cooldown_05_e', 'emergency_power_05_f', 'emergency_range_05_e', 'evademeter_05_d', 'gearratio_enhancement_5_b', 'juggernaut_cooldown_05_a', 'juggernaut_duration_05_f', 'juggernaut_power_05_b', 'jumpstart_05_b', 'launchgrip_5_c', 'nitrous_cooldown_05_f', 'nitrous_duration_05_f', 'nitrous_power_05_f', 'perfectstart_duration_05_a', 'perfectstart_rpm_05_d', 'radar_05_f', 'ready_cooldown_05_d', 'runflats_cooldown_05_f', 'slingshot_cooldown_05_f', 'slingshot_duration_05_d', 'slingshot_power_05_d'])\r\n",
+    "script": "generator.randomDrop(['cashreward_explore_05_d', 'cashreward_pursuit_05_c', 'cashreward_race_05_d', 'catchup_05_c', 'collision_mass_05_f', 'cooldown_meter_05_f', 'emergency_cooldown_05_e', 'emergency_power_05_f', 'emergency_range_05_e', 'gearratio_enhancement_5_b', 'juggernaut_cooldown_05_a', 'juggernaut_duration_05_f', 'juggernaut_power_05_b', 'jumpstart_05_b', 'launchgrip_5_c', 'nitrous_cooldown_05_f', 'nitrous_duration_05_f', 'nitrous_power_05_f', 'perfectstart_duration_05_a', 'perfectstart_rpm_05_d', 'radar_05_f', 'ready_cooldown_05_d', 'runflats_cooldown_05_f', 'slingshot_cooldown_05_f', 'slingshot_duration_05_d', 'slingshot_power_05_d'])\r\n",
     "rewardTableEntity_ID": 505
   },
   {
@@ -1454,31 +1454,31 @@
   {
     "ID": 5161,
     "dropWeight": 1,
-    "script": "generator.randomDrop(['collision_mass_01_e', 'cooldown_meter_01_e', 'emergency_cooldown_01_e', 'emergency_power_01_e', 'emergency_range_01_e', 'evademeter_01_d', 'juggernaut_cooldown_01_e', 'juggernaut_duration_01_e', 'juggernaut_power_01_c', 'runflats_cooldown_01_e'])\r\n",
+    "script": "generator.randomDrop(['collision_mass_01_e', 'cooldown_meter_01_e', 'emergency_cooldown_01_e', 'emergency_power_01_e', 'emergency_range_01_e', 'juggernaut_cooldown_01_e', 'juggernaut_duration_01_e', 'juggernaut_power_01_c', 'runflats_cooldown_01_e'])\r\n",
     "rewardTableEntity_ID": 516
   },
   {
     "ID": 5171,
     "dropWeight": 1,
-    "script": "generator.randomDrop(['collision_mass_02_c', 'cooldown_meter_02_c', 'emergency_cooldown_02_c', 'emergency_power_02_c', 'emergency_range_02_c', 'evademeter_02_d', 'juggernaut_cooldown_02_c', 'juggernaut_duration_02_c', 'juggernaut_power_02_c', 'runflats_cooldown_02_c'])\r\n",
+    "script": "generator.randomDrop(['collision_mass_02_c', 'cooldown_meter_02_c', 'emergency_cooldown_02_c', 'emergency_power_02_c', 'emergency_range_02_c', 'juggernaut_cooldown_02_c', 'juggernaut_duration_02_c', 'juggernaut_power_02_c', 'runflats_cooldown_02_c'])\r\n",
     "rewardTableEntity_ID": 517
   },
   {
     "ID": 5181,
     "dropWeight": 1,
-    "script": "generator.randomDrop(['collision_mass_03_c', 'cooldown_meter_03_c', 'emergency_cooldown_03_c', 'emergency_power_03_c', 'emergency_range_03_c', 'evademeter_03_d', 'juggernaut_cooldown_03_c', 'juggernaut_duration_03_c', 'juggernaut_power_03_c', 'runflats_cooldown_03_c'])\r\n",
+    "script": "generator.randomDrop(['collision_mass_03_c', 'cooldown_meter_03_c', 'emergency_cooldown_03_c', 'emergency_power_03_c', 'emergency_range_03_c', 'juggernaut_cooldown_03_c', 'juggernaut_duration_03_c', 'juggernaut_power_03_c', 'runflats_cooldown_03_c'])\r\n",
     "rewardTableEntity_ID": 518
   },
   {
     "ID": 5191,
     "dropWeight": 1,
-    "script": "generator.randomDrop(['collision_mass_04_e', 'cooldown_meter_04_e', 'emergency_cooldown_04_d', 'emergency_power_04_e', 'emergency_range_04_c', 'evademeter_04_d', 'juggernaut_cooldown_04_b', 'juggernaut_duration_04_d', 'juggernaut_power_04_a', 'runflats_cooldown_04_e'])\r\n",
+    "script": "generator.randomDrop(['collision_mass_04_e', 'cooldown_meter_04_e', 'emergency_cooldown_04_d', 'emergency_power_04_e', 'emergency_range_04_c', 'juggernaut_cooldown_04_b', 'juggernaut_duration_04_d', 'juggernaut_power_04_a', 'runflats_cooldown_04_e'])\r\n",
     "rewardTableEntity_ID": 519
   },
   {
     "ID": 5201,
     "dropWeight": 1,
-    "script": "generator.randomDrop(['collision_mass_05_f', 'cooldown_meter_05_f', 'emergency_cooldown_05_e', 'emergency_power_05_f', 'emergency_range_05_e', 'evademeter_05_d', 'juggernaut_cooldown_05_a', 'juggernaut_duration_05_f', 'juggernaut_power_05_b', 'runflats_cooldown_05_f'])\r\n",
+    "script": "generator.randomDrop(['collision_mass_05_f', 'cooldown_meter_05_f', 'emergency_cooldown_05_e', 'emergency_power_05_f', 'emergency_range_05_e', 'juggernaut_cooldown_05_a', 'juggernaut_duration_05_f', 'juggernaut_power_05_b', 'runflats_cooldown_05_f'])\r\n",
     "rewardTableEntity_ID": 520
   },
   {
@@ -3883,7 +3883,7 @@
   },
   {
     "ID": 17466,
-    "dropWeight": 0.975,
+    "dropWeight": 0.875,
     "script": "generator.weightedRandomTableItem('powerups_mystery')",
     "rewardTableEntity_ID": 1746
   },
@@ -3891,6 +3891,12 @@
     "ID": 17467,
     "dropWeight": 0,
     "script": "generator.weightedRandomTableItem('powerups_bronze')",
+    "rewardTableEntity_ID": 1746
+  },
+  {
+    "ID": 17468,
+    "dropWeight": 0.1,
+    "script": "generator.weightedRandomTableItem('cash_mystery')",
     "rewardTableEntity_ID": 1746
   },
   {
@@ -4492,6 +4498,30 @@
     "dropWeight": 0.18,
     "script": "generator.weightedRandomTableItem('powerups_diamond')",
     "rewardTableEntity_ID": 1797
+  },
+  {
+    "ID": 18001,
+    "dropWeight": 0.65,
+    "script": "generator.cashReward(5000)",
+    "rewardTableEntity_ID": 1800
+  },
+  {
+    "ID": 18002,
+    "dropWeight": 0.2,
+    "script": "generator.cashReward(10000)",
+    "rewardTableEntity_ID": 1800
+  },
+  {
+    "ID": 18003,
+    "dropWeight": 0.1,
+    "script": "generator.cashReward(15000)",
+    "rewardTableEntity_ID": 1800
+  },
+  {
+    "ID": 18004,
+    "dropWeight": 0.05,
+    "script": "generator.cashReward(25000)",
+    "rewardTableEntity_ID": 1800
   },
   {
     "ID": 18011,
@@ -5221,7 +5251,7 @@
   },
   {
     "ID": 18666,
-    "dropWeight": 0.975,
+    "dropWeight": 0.875,
     "script": "generator.weightedRandomTableItem('powerups_mystery')",
     "rewardTableEntity_ID": 1866
   },
@@ -5229,6 +5259,12 @@
     "ID": 18667,
     "dropWeight": 0,
     "script": "generator.weightedRandomTableItem('powerups_bronze')",
+    "rewardTableEntity_ID": 1866
+  },
+  {
+    "ID": 18668,
+    "dropWeight": 0.1,
+    "script": "generator.weightedRandomTableItem('cash_mystery')",
     "rewardTableEntity_ID": 1866
   },
   {

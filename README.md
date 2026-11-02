@@ -36,15 +36,18 @@ The other existing offline server emulators are very outdated and finicky and a 
     + Deleting drivers.
     + Changing drivers.
     + Editing motto.
-* Power-Ups:
-    + Using power-ups.
-    + Recharging/purchasing power-ups from the Power-Up Console using Cash.
 * Achievements:
     + All original achievements included that once existed in NFS World.
     + Changing your achievement badges in Achievements Log.
+* Power-Ups:
+    + Using power-ups.
+    + Recharging/purchasing power-ups from the Power-Up Console using Cash.
+* Card Packs:
+    + All original Card Packs are included in the shop and each one has a range of items that you can potentially get.
+    + Card Packs drop items using rarity levels (weights) so it is rarer to get valuable items.
 * Economy:
     + You can level up, earn cash and inventory items by completing events or doing your daily treasure hunt.
-        - All items have rarity levels (weights) so it is more challenging to get valuable items.
+        - All items have rarity levels (weights) so it is rarer to get valuable items.
         - Progression is balanced and also challenging at the same time.
     + Cash and SpeedBoost is correctly spent when purchasing any items.
     + Selling any item gives the correct amount of cash.

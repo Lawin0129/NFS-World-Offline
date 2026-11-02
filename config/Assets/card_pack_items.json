@@ -1,0 +1,2052 @@
+[
+  {
+    "ID": 106,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_bronze_item1')",
+    "cardPackEntity_ID": 22
+  },
+  {
+    "ID": 107,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_bronze_item2')",
+    "cardPackEntity_ID": 22
+  },
+  {
+    "ID": 108,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_bronze_item2')",
+    "cardPackEntity_ID": 22
+  },
+  {
+    "ID": 109,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_bronze_item2')",
+    "cardPackEntity_ID": 22
+  },
+  {
+    "ID": 110,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_bronze_item2')",
+    "cardPackEntity_ID": 22
+  },
+  {
+    "ID": 111,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_silver_item1')",
+    "cardPackEntity_ID": 23
+  },
+  {
+    "ID": 112,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_silver_item2')",
+    "cardPackEntity_ID": 23
+  },
+  {
+    "ID": 113,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_silver_item2')",
+    "cardPackEntity_ID": 23
+  },
+  {
+    "ID": 114,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_silver_item2')",
+    "cardPackEntity_ID": 23
+  },
+  {
+    "ID": 115,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_silver_item2')",
+    "cardPackEntity_ID": 23
+  },
+  {
+    "ID": 116,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_item1')",
+    "cardPackEntity_ID": 24
+  },
+  {
+    "ID": 117,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_item2')",
+    "cardPackEntity_ID": 24
+  },
+  {
+    "ID": 118,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_item2')",
+    "cardPackEntity_ID": 24
+  },
+  {
+    "ID": 119,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_item2')",
+    "cardPackEntity_ID": 24
+  },
+  {
+    "ID": 120,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_item2')",
+    "cardPackEntity_ID": 24
+  },
+  {
+    "ID": 121,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_engine_item1')",
+    "cardPackEntity_ID": 25
+  },
+  {
+    "ID": 122,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_engine_item2')",
+    "cardPackEntity_ID": 25
+  },
+  {
+    "ID": 123,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_engine_item2')",
+    "cardPackEntity_ID": 25
+  },
+  {
+    "ID": 124,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_engine_item2')",
+    "cardPackEntity_ID": 25
+  },
+  {
+    "ID": 125,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_engine_item2')",
+    "cardPackEntity_ID": 25
+  },
+  {
+    "ID": 126,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_forced_induction_item1')",
+    "cardPackEntity_ID": 26
+  },
+  {
+    "ID": 127,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_forced_induction_item2')",
+    "cardPackEntity_ID": 26
+  },
+  {
+    "ID": 128,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_forced_induction_item2')",
+    "cardPackEntity_ID": 26
+  },
+  {
+    "ID": 129,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_forced_induction_item2')",
+    "cardPackEntity_ID": 26
+  },
+  {
+    "ID": 130,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_forced_induction_item2')",
+    "cardPackEntity_ID": 26
+  },
+  {
+    "ID": 131,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_transmission_item1')",
+    "cardPackEntity_ID": 27
+  },
+  {
+    "ID": 132,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_transmission_item2')",
+    "cardPackEntity_ID": 27
+  },
+  {
+    "ID": 133,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_transmission_item2')",
+    "cardPackEntity_ID": 27
+  },
+  {
+    "ID": 134,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_transmission_item2')",
+    "cardPackEntity_ID": 27
+  },
+  {
+    "ID": 135,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_transmission_item2')",
+    "cardPackEntity_ID": 27
+  },
+  {
+    "ID": 136,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_suspension_item1')",
+    "cardPackEntity_ID": 28
+  },
+  {
+    "ID": 137,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_suspension_item2')",
+    "cardPackEntity_ID": 28
+  },
+  {
+    "ID": 138,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_suspension_item2')",
+    "cardPackEntity_ID": 28
+  },
+  {
+    "ID": 139,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_suspension_item2')",
+    "cardPackEntity_ID": 28
+  },
+  {
+    "ID": 140,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_suspension_item2')",
+    "cardPackEntity_ID": 28
+  },
+  {
+    "ID": 141,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_brakes_item1')",
+    "cardPackEntity_ID": 29
+  },
+  {
+    "ID": 142,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_brakes_item2')",
+    "cardPackEntity_ID": 29
+  },
+  {
+    "ID": 143,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_brakes_item2')",
+    "cardPackEntity_ID": 29
+  },
+  {
+    "ID": 144,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_brakes_item2')",
+    "cardPackEntity_ID": 29
+  },
+  {
+    "ID": 145,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_brakes_item2')",
+    "cardPackEntity_ID": 29
+  },
+  {
+    "ID": 146,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_tires_item1')",
+    "cardPackEntity_ID": 30
+  },
+  {
+    "ID": 147,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_tires_item2')",
+    "cardPackEntity_ID": 30
+  },
+  {
+    "ID": 148,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_tires_item2')",
+    "cardPackEntity_ID": 30
+  },
+  {
+    "ID": 149,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_tires_item2')",
+    "cardPackEntity_ID": 30
+  },
+  {
+    "ID": 150,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_gold_tires_item2')",
+    "cardPackEntity_ID": 30
+  },
+  {
+    "ID": 151,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_platinumA_item1')",
+    "cardPackEntity_ID": 31
+  },
+  {
+    "ID": 152,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_platinumA_item2')",
+    "cardPackEntity_ID": 31
+  },
+  {
+    "ID": 153,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_platinumA_item2')",
+    "cardPackEntity_ID": 31
+  },
+  {
+    "ID": 154,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_platinumA_item2')",
+    "cardPackEntity_ID": 31
+  },
+  {
+    "ID": 155,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_platinumA_item2')",
+    "cardPackEntity_ID": 31
+  },
+  {
+    "ID": 156,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_engine_item1')",
+    "cardPackEntity_ID": 32
+  },
+  {
+    "ID": 157,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_engine_item2')",
+    "cardPackEntity_ID": 32
+  },
+  {
+    "ID": 158,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_engine_item2')",
+    "cardPackEntity_ID": 32
+  },
+  {
+    "ID": 159,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_engine_item2')",
+    "cardPackEntity_ID": 32
+  },
+  {
+    "ID": 160,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_engine_item2')",
+    "cardPackEntity_ID": 32
+  },
+  {
+    "ID": 161,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_forced_induction_item1')",
+    "cardPackEntity_ID": 33
+  },
+  {
+    "ID": 162,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_forced_induction_item2')",
+    "cardPackEntity_ID": 33
+  },
+  {
+    "ID": 163,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_forced_induction_item2')",
+    "cardPackEntity_ID": 33
+  },
+  {
+    "ID": 164,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_forced_induction_item2')",
+    "cardPackEntity_ID": 33
+  },
+  {
+    "ID": 165,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_forced_induction_item2')",
+    "cardPackEntity_ID": 33
+  },
+  {
+    "ID": 166,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_transmission_item1')",
+    "cardPackEntity_ID": 34
+  },
+  {
+    "ID": 167,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_transmission_item2')",
+    "cardPackEntity_ID": 34
+  },
+  {
+    "ID": 168,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_transmission_item2')",
+    "cardPackEntity_ID": 34
+  },
+  {
+    "ID": 169,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_transmission_item2')",
+    "cardPackEntity_ID": 34
+  },
+  {
+    "ID": 170,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_transmission_item2')",
+    "cardPackEntity_ID": 34
+  },
+  {
+    "ID": 171,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_suspension_item1')",
+    "cardPackEntity_ID": 35
+  },
+  {
+    "ID": 172,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_suspension_item2')",
+    "cardPackEntity_ID": 35
+  },
+  {
+    "ID": 173,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_suspension_item2')",
+    "cardPackEntity_ID": 35
+  },
+  {
+    "ID": 174,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_suspension_item2')",
+    "cardPackEntity_ID": 35
+  },
+  {
+    "ID": 175,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_suspension_item2')",
+    "cardPackEntity_ID": 35
+  },
+  {
+    "ID": 176,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_brakes_item1')",
+    "cardPackEntity_ID": 36
+  },
+  {
+    "ID": 177,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_brakes_item2')",
+    "cardPackEntity_ID": 36
+  },
+  {
+    "ID": 178,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_brakes_item2')",
+    "cardPackEntity_ID": 36
+  },
+  {
+    "ID": 179,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_brakes_item2')",
+    "cardPackEntity_ID": 36
+  },
+  {
+    "ID": 180,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_brakes_item2')",
+    "cardPackEntity_ID": 36
+  },
+  {
+    "ID": 181,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_tires_item1')",
+    "cardPackEntity_ID": 37
+  },
+  {
+    "ID": 182,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_tires_item2')",
+    "cardPackEntity_ID": 37
+  },
+  {
+    "ID": 183,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_tires_item2')",
+    "cardPackEntity_ID": 37
+  },
+  {
+    "ID": 184,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_tires_item2')",
+    "cardPackEntity_ID": 37
+  },
+  {
+    "ID": 185,
+    "script": "generator.weightedRandomTableItem('cardpack_t1_ultraA_tires_item2')",
+    "cardPackEntity_ID": 37
+  },
+  {
+    "ID": 186,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_bronze_item1')",
+    "cardPackEntity_ID": 38
+  },
+  {
+    "ID": 187,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_bronze_item2')",
+    "cardPackEntity_ID": 38
+  },
+  {
+    "ID": 188,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_bronze_item2')",
+    "cardPackEntity_ID": 38
+  },
+  {
+    "ID": 189,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_bronze_item2')",
+    "cardPackEntity_ID": 38
+  },
+  {
+    "ID": 190,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_bronze_item2')",
+    "cardPackEntity_ID": 38
+  },
+  {
+    "ID": 191,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_silver_item1')",
+    "cardPackEntity_ID": 39
+  },
+  {
+    "ID": 192,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_silver_item2')",
+    "cardPackEntity_ID": 39
+  },
+  {
+    "ID": 193,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_silver_item2')",
+    "cardPackEntity_ID": 39
+  },
+  {
+    "ID": 194,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_silver_item2')",
+    "cardPackEntity_ID": 39
+  },
+  {
+    "ID": 195,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_silver_item2')",
+    "cardPackEntity_ID": 39
+  },
+  {
+    "ID": 196,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_item1')",
+    "cardPackEntity_ID": 40
+  },
+  {
+    "ID": 197,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_item2')",
+    "cardPackEntity_ID": 40
+  },
+  {
+    "ID": 198,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_item2')",
+    "cardPackEntity_ID": 40
+  },
+  {
+    "ID": 199,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_item2')",
+    "cardPackEntity_ID": 40
+  },
+  {
+    "ID": 200,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_item2')",
+    "cardPackEntity_ID": 40
+  },
+  {
+    "ID": 201,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_engine_item1')",
+    "cardPackEntity_ID": 41
+  },
+  {
+    "ID": 202,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_engine_item2')",
+    "cardPackEntity_ID": 41
+  },
+  {
+    "ID": 203,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_engine_item2')",
+    "cardPackEntity_ID": 41
+  },
+  {
+    "ID": 204,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_engine_item2')",
+    "cardPackEntity_ID": 41
+  },
+  {
+    "ID": 205,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_engine_item2')",
+    "cardPackEntity_ID": 41
+  },
+  {
+    "ID": 206,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_forced_induction_item1')",
+    "cardPackEntity_ID": 42
+  },
+  {
+    "ID": 207,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_forced_induction_item2')",
+    "cardPackEntity_ID": 42
+  },
+  {
+    "ID": 208,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_forced_induction_item2')",
+    "cardPackEntity_ID": 42
+  },
+  {
+    "ID": 209,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_forced_induction_item2')",
+    "cardPackEntity_ID": 42
+  },
+  {
+    "ID": 210,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_forced_induction_item2')",
+    "cardPackEntity_ID": 42
+  },
+  {
+    "ID": 211,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_transmission_item1')",
+    "cardPackEntity_ID": 43
+  },
+  {
+    "ID": 212,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_transmission_item2')",
+    "cardPackEntity_ID": 43
+  },
+  {
+    "ID": 213,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_transmission_item2')",
+    "cardPackEntity_ID": 43
+  },
+  {
+    "ID": 214,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_transmission_item2')",
+    "cardPackEntity_ID": 43
+  },
+  {
+    "ID": 215,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_transmission_item2')",
+    "cardPackEntity_ID": 43
+  },
+  {
+    "ID": 216,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_suspension_item1')",
+    "cardPackEntity_ID": 44
+  },
+  {
+    "ID": 217,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_suspension_item2')",
+    "cardPackEntity_ID": 44
+  },
+  {
+    "ID": 218,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_suspension_item2')",
+    "cardPackEntity_ID": 44
+  },
+  {
+    "ID": 219,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_suspension_item2')",
+    "cardPackEntity_ID": 44
+  },
+  {
+    "ID": 220,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_suspension_item2')",
+    "cardPackEntity_ID": 44
+  },
+  {
+    "ID": 221,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_brakes_item1')",
+    "cardPackEntity_ID": 45
+  },
+  {
+    "ID": 222,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_brakes_item2')",
+    "cardPackEntity_ID": 45
+  },
+  {
+    "ID": 223,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_brakes_item2')",
+    "cardPackEntity_ID": 45
+  },
+  {
+    "ID": 224,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_brakes_item2')",
+    "cardPackEntity_ID": 45
+  },
+  {
+    "ID": 225,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_brakes_item2')",
+    "cardPackEntity_ID": 45
+  },
+  {
+    "ID": 226,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_tires_item1')",
+    "cardPackEntity_ID": 46
+  },
+  {
+    "ID": 227,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_tires_item2')",
+    "cardPackEntity_ID": 46
+  },
+  {
+    "ID": 228,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_tires_item2')",
+    "cardPackEntity_ID": 46
+  },
+  {
+    "ID": 229,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_tires_item2')",
+    "cardPackEntity_ID": 46
+  },
+  {
+    "ID": 230,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_gold_tires_item2')",
+    "cardPackEntity_ID": 46
+  },
+  {
+    "ID": 231,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_platinumA_item1')",
+    "cardPackEntity_ID": 47
+  },
+  {
+    "ID": 232,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_platinumA_item2')",
+    "cardPackEntity_ID": 47
+  },
+  {
+    "ID": 233,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_platinumA_item2')",
+    "cardPackEntity_ID": 47
+  },
+  {
+    "ID": 234,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_platinumA_item2')",
+    "cardPackEntity_ID": 47
+  },
+  {
+    "ID": 235,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_platinumA_item2')",
+    "cardPackEntity_ID": 47
+  },
+  {
+    "ID": 236,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_engine_item1')",
+    "cardPackEntity_ID": 48
+  },
+  {
+    "ID": 237,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_engine_item2')",
+    "cardPackEntity_ID": 48
+  },
+  {
+    "ID": 238,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_engine_item2')",
+    "cardPackEntity_ID": 48
+  },
+  {
+    "ID": 239,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_engine_item2')",
+    "cardPackEntity_ID": 48
+  },
+  {
+    "ID": 240,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_engine_item2')",
+    "cardPackEntity_ID": 48
+  },
+  {
+    "ID": 241,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_forced_induction_item1')",
+    "cardPackEntity_ID": 49
+  },
+  {
+    "ID": 242,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_forced_induction_item2')",
+    "cardPackEntity_ID": 49
+  },
+  {
+    "ID": 243,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_forced_induction_item2')",
+    "cardPackEntity_ID": 49
+  },
+  {
+    "ID": 244,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_forced_induction_item2')",
+    "cardPackEntity_ID": 49
+  },
+  {
+    "ID": 245,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_forced_induction_item2')",
+    "cardPackEntity_ID": 49
+  },
+  {
+    "ID": 246,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_transmission_item1')",
+    "cardPackEntity_ID": 50
+  },
+  {
+    "ID": 247,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_transmission_item2')",
+    "cardPackEntity_ID": 50
+  },
+  {
+    "ID": 248,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_transmission_item2')",
+    "cardPackEntity_ID": 50
+  },
+  {
+    "ID": 249,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_transmission_item2')",
+    "cardPackEntity_ID": 50
+  },
+  {
+    "ID": 250,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_transmission_item2')",
+    "cardPackEntity_ID": 50
+  },
+  {
+    "ID": 251,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_suspension_item1')",
+    "cardPackEntity_ID": 51
+  },
+  {
+    "ID": 252,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_suspension_item2')",
+    "cardPackEntity_ID": 51
+  },
+  {
+    "ID": 253,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_suspension_item2')",
+    "cardPackEntity_ID": 51
+  },
+  {
+    "ID": 254,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_suspension_item2')",
+    "cardPackEntity_ID": 51
+  },
+  {
+    "ID": 255,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_suspension_item2')",
+    "cardPackEntity_ID": 51
+  },
+  {
+    "ID": 256,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_brakes_item1')",
+    "cardPackEntity_ID": 52
+  },
+  {
+    "ID": 257,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_brakes_item2')",
+    "cardPackEntity_ID": 52
+  },
+  {
+    "ID": 258,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_brakes_item2')",
+    "cardPackEntity_ID": 52
+  },
+  {
+    "ID": 259,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_brakes_item2')",
+    "cardPackEntity_ID": 52
+  },
+  {
+    "ID": 260,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_brakes_item2')",
+    "cardPackEntity_ID": 52
+  },
+  {
+    "ID": 261,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_tires_item1')",
+    "cardPackEntity_ID": 53
+  },
+  {
+    "ID": 262,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_tires_item2')",
+    "cardPackEntity_ID": 53
+  },
+  {
+    "ID": 263,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_tires_item2')",
+    "cardPackEntity_ID": 53
+  },
+  {
+    "ID": 264,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_tires_item2')",
+    "cardPackEntity_ID": 53
+  },
+  {
+    "ID": 265,
+    "script": "generator.weightedRandomTableItem('cardpack_t2_ultraA_tires_item2')",
+    "cardPackEntity_ID": 53
+  },
+  {
+    "ID": 266,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_bronze_item1')",
+    "cardPackEntity_ID": 54
+  },
+  {
+    "ID": 267,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_bronze_item2')",
+    "cardPackEntity_ID": 54
+  },
+  {
+    "ID": 268,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_bronze_item2')",
+    "cardPackEntity_ID": 54
+  },
+  {
+    "ID": 269,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_bronze_item2')",
+    "cardPackEntity_ID": 54
+  },
+  {
+    "ID": 270,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_bronze_item2')",
+    "cardPackEntity_ID": 54
+  },
+  {
+    "ID": 271,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_silver_item1')",
+    "cardPackEntity_ID": 55
+  },
+  {
+    "ID": 272,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_silver_item2')",
+    "cardPackEntity_ID": 55
+  },
+  {
+    "ID": 273,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_silver_item2')",
+    "cardPackEntity_ID": 55
+  },
+  {
+    "ID": 274,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_silver_item2')",
+    "cardPackEntity_ID": 55
+  },
+  {
+    "ID": 275,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_silver_item2')",
+    "cardPackEntity_ID": 55
+  },
+  {
+    "ID": 276,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_item1')",
+    "cardPackEntity_ID": 56
+  },
+  {
+    "ID": 277,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_item2')",
+    "cardPackEntity_ID": 56
+  },
+  {
+    "ID": 278,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_item2')",
+    "cardPackEntity_ID": 56
+  },
+  {
+    "ID": 279,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_item2')",
+    "cardPackEntity_ID": 56
+  },
+  {
+    "ID": 280,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_item2')",
+    "cardPackEntity_ID": 56
+  },
+  {
+    "ID": 281,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_engine_item1')",
+    "cardPackEntity_ID": 57
+  },
+  {
+    "ID": 282,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_engine_item2')",
+    "cardPackEntity_ID": 57
+  },
+  {
+    "ID": 283,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_engine_item2')",
+    "cardPackEntity_ID": 57
+  },
+  {
+    "ID": 284,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_engine_item2')",
+    "cardPackEntity_ID": 57
+  },
+  {
+    "ID": 285,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_engine_item2')",
+    "cardPackEntity_ID": 57
+  },
+  {
+    "ID": 286,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_forced_induction_item1')",
+    "cardPackEntity_ID": 58
+  },
+  {
+    "ID": 287,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_forced_induction_item2')",
+    "cardPackEntity_ID": 58
+  },
+  {
+    "ID": 288,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_forced_induction_item2')",
+    "cardPackEntity_ID": 58
+  },
+  {
+    "ID": 289,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_forced_induction_item2')",
+    "cardPackEntity_ID": 58
+  },
+  {
+    "ID": 290,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_forced_induction_item2')",
+    "cardPackEntity_ID": 58
+  },
+  {
+    "ID": 291,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_transmission_item1')",
+    "cardPackEntity_ID": 59
+  },
+  {
+    "ID": 292,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_transmission_item2')",
+    "cardPackEntity_ID": 59
+  },
+  {
+    "ID": 293,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_transmission_item2')",
+    "cardPackEntity_ID": 59
+  },
+  {
+    "ID": 294,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_transmission_item2')",
+    "cardPackEntity_ID": 59
+  },
+  {
+    "ID": 295,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_transmission_item2')",
+    "cardPackEntity_ID": 59
+  },
+  {
+    "ID": 296,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_suspension_item1')",
+    "cardPackEntity_ID": 60
+  },
+  {
+    "ID": 297,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_suspension_item2')",
+    "cardPackEntity_ID": 60
+  },
+  {
+    "ID": 298,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_suspension_item2')",
+    "cardPackEntity_ID": 60
+  },
+  {
+    "ID": 299,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_suspension_item2')",
+    "cardPackEntity_ID": 60
+  },
+  {
+    "ID": 300,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_suspension_item2')",
+    "cardPackEntity_ID": 60
+  },
+  {
+    "ID": 301,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_brakes_item1')",
+    "cardPackEntity_ID": 61
+  },
+  {
+    "ID": 302,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_brakes_item2')",
+    "cardPackEntity_ID": 61
+  },
+  {
+    "ID": 303,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_brakes_item2')",
+    "cardPackEntity_ID": 61
+  },
+  {
+    "ID": 304,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_brakes_item2')",
+    "cardPackEntity_ID": 61
+  },
+  {
+    "ID": 305,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_brakes_item2')",
+    "cardPackEntity_ID": 61
+  },
+  {
+    "ID": 306,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_tires_item1')",
+    "cardPackEntity_ID": 62
+  },
+  {
+    "ID": 307,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_tires_item2')",
+    "cardPackEntity_ID": 62
+  },
+  {
+    "ID": 308,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_tires_item2')",
+    "cardPackEntity_ID": 62
+  },
+  {
+    "ID": 309,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_tires_item2')",
+    "cardPackEntity_ID": 62
+  },
+  {
+    "ID": 310,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_gold_tires_item2')",
+    "cardPackEntity_ID": 62
+  },
+  {
+    "ID": 311,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_platinumA_item1')",
+    "cardPackEntity_ID": 63
+  },
+  {
+    "ID": 312,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_platinumA_item2')",
+    "cardPackEntity_ID": 63
+  },
+  {
+    "ID": 313,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_platinumA_item2')",
+    "cardPackEntity_ID": 63
+  },
+  {
+    "ID": 314,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_platinumA_item2')",
+    "cardPackEntity_ID": 63
+  },
+  {
+    "ID": 315,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_platinumA_item2')",
+    "cardPackEntity_ID": 63
+  },
+  {
+    "ID": 316,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_engine_item1')",
+    "cardPackEntity_ID": 64
+  },
+  {
+    "ID": 317,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_engine_item2')",
+    "cardPackEntity_ID": 64
+  },
+  {
+    "ID": 318,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_engine_item2')",
+    "cardPackEntity_ID": 64
+  },
+  {
+    "ID": 319,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_engine_item2')",
+    "cardPackEntity_ID": 64
+  },
+  {
+    "ID": 320,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_engine_item2')",
+    "cardPackEntity_ID": 64
+  },
+  {
+    "ID": 321,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_forced_induction_item1')",
+    "cardPackEntity_ID": 65
+  },
+  {
+    "ID": 322,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_forced_induction_item2')",
+    "cardPackEntity_ID": 65
+  },
+  {
+    "ID": 323,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_forced_induction_item2')",
+    "cardPackEntity_ID": 65
+  },
+  {
+    "ID": 324,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_forced_induction_item2')",
+    "cardPackEntity_ID": 65
+  },
+  {
+    "ID": 325,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_forced_induction_item2')",
+    "cardPackEntity_ID": 65
+  },
+  {
+    "ID": 326,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_transmission_item1')",
+    "cardPackEntity_ID": 66
+  },
+  {
+    "ID": 327,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_transmission_item2')",
+    "cardPackEntity_ID": 66
+  },
+  {
+    "ID": 328,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_transmission_item2')",
+    "cardPackEntity_ID": 66
+  },
+  {
+    "ID": 329,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_transmission_item2')",
+    "cardPackEntity_ID": 66
+  },
+  {
+    "ID": 330,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_transmission_item2')",
+    "cardPackEntity_ID": 66
+  },
+  {
+    "ID": 331,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_suspension_item1')",
+    "cardPackEntity_ID": 67
+  },
+  {
+    "ID": 332,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_suspension_item2')",
+    "cardPackEntity_ID": 67
+  },
+  {
+    "ID": 333,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_suspension_item2')",
+    "cardPackEntity_ID": 67
+  },
+  {
+    "ID": 334,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_suspension_item2')",
+    "cardPackEntity_ID": 67
+  },
+  {
+    "ID": 335,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_suspension_item2')",
+    "cardPackEntity_ID": 67
+  },
+  {
+    "ID": 336,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_brakes_item1')",
+    "cardPackEntity_ID": 68
+  },
+  {
+    "ID": 337,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_brakes_item2')",
+    "cardPackEntity_ID": 68
+  },
+  {
+    "ID": 338,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_brakes_item2')",
+    "cardPackEntity_ID": 68
+  },
+  {
+    "ID": 339,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_brakes_item2')",
+    "cardPackEntity_ID": 68
+  },
+  {
+    "ID": 340,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_brakes_item2')",
+    "cardPackEntity_ID": 68
+  },
+  {
+    "ID": 341,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_tires_item1')",
+    "cardPackEntity_ID": 69
+  },
+  {
+    "ID": 342,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_tires_item2')",
+    "cardPackEntity_ID": 69
+  },
+  {
+    "ID": 343,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_tires_item2')",
+    "cardPackEntity_ID": 69
+  },
+  {
+    "ID": 344,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_tires_item2')",
+    "cardPackEntity_ID": 69
+  },
+  {
+    "ID": 345,
+    "script": "generator.weightedRandomTableItem('cardpack_t3_ultraA_tires_item2')",
+    "cardPackEntity_ID": 69
+  },
+  {
+    "ID": 346,
+    "script": "generator.weightedRandomTableItem('cardpack_mystery_item1')",
+    "cardPackEntity_ID": 70
+  },
+  {
+    "ID": 347,
+    "script": "generator.weightedRandomTableItem('cardpack_mystery_item1')",
+    "cardPackEntity_ID": 70
+  },
+  {
+    "ID": 348,
+    "script": "generator.weightedRandomTableItem('cardpack_mystery_item1')",
+    "cardPackEntity_ID": 70
+  },
+  {
+    "ID": 349,
+    "script": "generator.weightedRandomTableItem('cardpack_mystery_item1')",
+    "cardPackEntity_ID": 70
+  },
+  {
+    "ID": 350,
+    "script": "generator.weightedRandomTableItem('cardpack_mystery_item1')",
+    "cardPackEntity_ID": 70
+  },
+  {
+    "ID": 351,
+    "script": "generator.weightedRandomTableItem('cardpack_bronze_item1')",
+    "cardPackEntity_ID": 71
+  },
+  {
+    "ID": 352,
+    "script": "generator.weightedRandomTableItem('cardpack_bronze_item2')",
+    "cardPackEntity_ID": 71
+  },
+  {
+    "ID": 353,
+    "script": "generator.weightedRandomTableItem('cardpack_bronze_item2')",
+    "cardPackEntity_ID": 71
+  },
+  {
+    "ID": 354,
+    "script": "generator.weightedRandomTableItem('cardpack_bronze_item2')",
+    "cardPackEntity_ID": 71
+  },
+  {
+    "ID": 355,
+    "script": "generator.weightedRandomTableItem('cardpack_bronze_item2')",
+    "cardPackEntity_ID": 71
+  },
+  {
+    "ID": 356,
+    "script": "generator.weightedRandomTableItem('cardpack_silver_item1')",
+    "cardPackEntity_ID": 72
+  },
+  {
+    "ID": 357,
+    "script": "generator.weightedRandomTableItem('cardpack_silver_item2')",
+    "cardPackEntity_ID": 72
+  },
+  {
+    "ID": 358,
+    "script": "generator.weightedRandomTableItem('cardpack_silver_item2')",
+    "cardPackEntity_ID": 72
+  },
+  {
+    "ID": 359,
+    "script": "generator.weightedRandomTableItem('cardpack_silver_item2')",
+    "cardPackEntity_ID": 72
+  },
+  {
+    "ID": 360,
+    "script": "generator.weightedRandomTableItem('cardpack_silver_item2')",
+    "cardPackEntity_ID": 72
+  },
+  {
+    "ID": 361,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_item1')",
+    "cardPackEntity_ID": 73
+  },
+  {
+    "ID": 362,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_item2')",
+    "cardPackEntity_ID": 73
+  },
+  {
+    "ID": 363,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_item2')",
+    "cardPackEntity_ID": 73
+  },
+  {
+    "ID": 364,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_item2')",
+    "cardPackEntity_ID": 73
+  },
+  {
+    "ID": 365,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_item2')",
+    "cardPackEntity_ID": 73
+  },
+  {
+    "ID": 366,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_engine_item1')",
+    "cardPackEntity_ID": 74
+  },
+  {
+    "ID": 367,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_engine_item2')",
+    "cardPackEntity_ID": 74
+  },
+  {
+    "ID": 368,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_engine_item2')",
+    "cardPackEntity_ID": 74
+  },
+  {
+    "ID": 369,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_engine_item2')",
+    "cardPackEntity_ID": 74
+  },
+  {
+    "ID": 370,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_engine_item2')",
+    "cardPackEntity_ID": 74
+  },
+  {
+    "ID": 371,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_forcedinduction_item1')",
+    "cardPackEntity_ID": 75
+  },
+  {
+    "ID": 372,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_forcedinduction_item2')",
+    "cardPackEntity_ID": 75
+  },
+  {
+    "ID": 373,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_forcedinduction_item2')",
+    "cardPackEntity_ID": 75
+  },
+  {
+    "ID": 374,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_forcedinduction_item2')",
+    "cardPackEntity_ID": 75
+  },
+  {
+    "ID": 375,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_forcedinduction_item2')",
+    "cardPackEntity_ID": 75
+  },
+  {
+    "ID": 376,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_transmission_item1')",
+    "cardPackEntity_ID": 76
+  },
+  {
+    "ID": 377,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_transmission_item2')",
+    "cardPackEntity_ID": 76
+  },
+  {
+    "ID": 378,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_transmission_item2')",
+    "cardPackEntity_ID": 76
+  },
+  {
+    "ID": 379,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_transmission_item2')",
+    "cardPackEntity_ID": 76
+  },
+  {
+    "ID": 380,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_transmission_item2')",
+    "cardPackEntity_ID": 76
+  },
+  {
+    "ID": 381,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_suspension_item1')",
+    "cardPackEntity_ID": 77
+  },
+  {
+    "ID": 382,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_suspension_item2')",
+    "cardPackEntity_ID": 77
+  },
+  {
+    "ID": 383,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_suspension_item2')",
+    "cardPackEntity_ID": 77
+  },
+  {
+    "ID": 384,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_suspension_item2')",
+    "cardPackEntity_ID": 77
+  },
+  {
+    "ID": 385,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_suspension_item2')",
+    "cardPackEntity_ID": 77
+  },
+  {
+    "ID": 386,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_brakes_item1')",
+    "cardPackEntity_ID": 78
+  },
+  {
+    "ID": 387,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_brakes_item2')",
+    "cardPackEntity_ID": 78
+  },
+  {
+    "ID": 388,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_brakes_item2')",
+    "cardPackEntity_ID": 78
+  },
+  {
+    "ID": 389,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_brakes_item2')",
+    "cardPackEntity_ID": 78
+  },
+  {
+    "ID": 390,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_brakes_item2')",
+    "cardPackEntity_ID": 78
+  },
+  {
+    "ID": 391,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_tires_item1')",
+    "cardPackEntity_ID": 79
+  },
+  {
+    "ID": 392,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_tires_item2')",
+    "cardPackEntity_ID": 79
+  },
+  {
+    "ID": 393,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_tires_item2')",
+    "cardPackEntity_ID": 79
+  },
+  {
+    "ID": 394,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_tires_item2')",
+    "cardPackEntity_ID": 79
+  },
+  {
+    "ID": 395,
+    "script": "generator.weightedRandomTableItem('cardpack_gold_tires_item2')",
+    "cardPackEntity_ID": 79
+  },
+  {
+    "ID": 396,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_item1')",
+    "cardPackEntity_ID": 80
+  },
+  {
+    "ID": 397,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_item2')",
+    "cardPackEntity_ID": 80
+  },
+  {
+    "ID": 398,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_item2')",
+    "cardPackEntity_ID": 80
+  },
+  {
+    "ID": 399,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_item2')",
+    "cardPackEntity_ID": 80
+  },
+  {
+    "ID": 400,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_item2')",
+    "cardPackEntity_ID": 80
+  },
+  {
+    "ID": 401,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_engine_item1')",
+    "cardPackEntity_ID": 81
+  },
+  {
+    "ID": 402,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_engine_item2')",
+    "cardPackEntity_ID": 81
+  },
+  {
+    "ID": 403,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_engine_item2')",
+    "cardPackEntity_ID": 81
+  },
+  {
+    "ID": 404,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_engine_item2')",
+    "cardPackEntity_ID": 81
+  },
+  {
+    "ID": 405,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_engine_item2')",
+    "cardPackEntity_ID": 81
+  },
+  {
+    "ID": 406,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_forcedinduction_item1')",
+    "cardPackEntity_ID": 82
+  },
+  {
+    "ID": 407,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_forcedinduction_item2')",
+    "cardPackEntity_ID": 82
+  },
+  {
+    "ID": 408,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_forcedinduction_item2')",
+    "cardPackEntity_ID": 82
+  },
+  {
+    "ID": 409,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_forcedinduction_item2')",
+    "cardPackEntity_ID": 82
+  },
+  {
+    "ID": 410,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_forcedinduction_item2')",
+    "cardPackEntity_ID": 82
+  },
+  {
+    "ID": 411,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_transmission_item1')",
+    "cardPackEntity_ID": 83
+  },
+  {
+    "ID": 412,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_transmission_item2')",
+    "cardPackEntity_ID": 83
+  },
+  {
+    "ID": 413,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_transmission_item2')",
+    "cardPackEntity_ID": 83
+  },
+  {
+    "ID": 414,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_transmission_item2')",
+    "cardPackEntity_ID": 83
+  },
+  {
+    "ID": 415,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_transmission_item2')",
+    "cardPackEntity_ID": 83
+  },
+  {
+    "ID": 416,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_suspension_item1')",
+    "cardPackEntity_ID": 84
+  },
+  {
+    "ID": 417,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_suspension_item2')",
+    "cardPackEntity_ID": 84
+  },
+  {
+    "ID": 418,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_suspension_item2')",
+    "cardPackEntity_ID": 84
+  },
+  {
+    "ID": 419,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_suspension_item2')",
+    "cardPackEntity_ID": 84
+  },
+  {
+    "ID": 420,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_suspension_item2')",
+    "cardPackEntity_ID": 84
+  },
+  {
+    "ID": 421,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_brakes_item1')",
+    "cardPackEntity_ID": 85
+  },
+  {
+    "ID": 422,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_brakes_item2')",
+    "cardPackEntity_ID": 85
+  },
+  {
+    "ID": 423,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_brakes_item2')",
+    "cardPackEntity_ID": 85
+  },
+  {
+    "ID": 424,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_brakes_item2')",
+    "cardPackEntity_ID": 85
+  },
+  {
+    "ID": 425,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_brakes_item2')",
+    "cardPackEntity_ID": 85
+  },
+  {
+    "ID": 426,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_tires_item1')",
+    "cardPackEntity_ID": 86
+  },
+  {
+    "ID": 427,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_tires_item2')",
+    "cardPackEntity_ID": 86
+  },
+  {
+    "ID": 428,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_tires_item2')",
+    "cardPackEntity_ID": 86
+  },
+  {
+    "ID": 429,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_tires_item2')",
+    "cardPackEntity_ID": 86
+  },
+  {
+    "ID": 430,
+    "script": "generator.weightedRandomTableItem('cardpack_platinum_tires_item2')",
+    "cardPackEntity_ID": 86
+  },
+  {
+    "ID": 431,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_item1')",
+    "cardPackEntity_ID": 87
+  },
+  {
+    "ID": 432,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_item2')",
+    "cardPackEntity_ID": 87
+  },
+  {
+    "ID": 433,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_item2')",
+    "cardPackEntity_ID": 87
+  },
+  {
+    "ID": 434,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_item2')",
+    "cardPackEntity_ID": 87
+  },
+  {
+    "ID": 435,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_item2')",
+    "cardPackEntity_ID": 87
+  },
+  {
+    "ID": 436,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_engine_item1')",
+    "cardPackEntity_ID": 88
+  },
+  {
+    "ID": 437,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_engine_item2')",
+    "cardPackEntity_ID": 88
+  },
+  {
+    "ID": 438,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_engine_item2')",
+    "cardPackEntity_ID": 88
+  },
+  {
+    "ID": 439,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_engine_item2')",
+    "cardPackEntity_ID": 88
+  },
+  {
+    "ID": 440,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_engine_item2')",
+    "cardPackEntity_ID": 88
+  },
+  {
+    "ID": 441,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_forcedinduction_item1')",
+    "cardPackEntity_ID": 89
+  },
+  {
+    "ID": 442,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_forcedinduction_item2')",
+    "cardPackEntity_ID": 89
+  },
+  {
+    "ID": 443,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_forcedinduction_item2')",
+    "cardPackEntity_ID": 89
+  },
+  {
+    "ID": 444,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_forcedinduction_item2')",
+    "cardPackEntity_ID": 89
+  },
+  {
+    "ID": 445,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_forcedinduction_item2')",
+    "cardPackEntity_ID": 89
+  },
+  {
+    "ID": 446,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_transmission_item1')",
+    "cardPackEntity_ID": 90
+  },
+  {
+    "ID": 447,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_transmission_item2')",
+    "cardPackEntity_ID": 90
+  },
+  {
+    "ID": 448,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_transmission_item2')",
+    "cardPackEntity_ID": 90
+  },
+  {
+    "ID": 449,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_transmission_item2')",
+    "cardPackEntity_ID": 90
+  },
+  {
+    "ID": 450,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_transmission_item2')",
+    "cardPackEntity_ID": 90
+  },
+  {
+    "ID": 451,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_suspension_item1')",
+    "cardPackEntity_ID": 91
+  },
+  {
+    "ID": 452,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_suspension_item2')",
+    "cardPackEntity_ID": 91
+  },
+  {
+    "ID": 453,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_suspension_item2')",
+    "cardPackEntity_ID": 91
+  },
+  {
+    "ID": 454,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_suspension_item2')",
+    "cardPackEntity_ID": 91
+  },
+  {
+    "ID": 455,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_suspension_item2')",
+    "cardPackEntity_ID": 91
+  },
+  {
+    "ID": 456,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_brakes_item1')",
+    "cardPackEntity_ID": 92
+  },
+  {
+    "ID": 457,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_brakes_item2')",
+    "cardPackEntity_ID": 92
+  },
+  {
+    "ID": 458,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_brakes_item2')",
+    "cardPackEntity_ID": 92
+  },
+  {
+    "ID": 459,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_brakes_item2')",
+    "cardPackEntity_ID": 92
+  },
+  {
+    "ID": 460,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_brakes_item2')",
+    "cardPackEntity_ID": 92
+  },
+  {
+    "ID": 461,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_tires_item1')",
+    "cardPackEntity_ID": 93
+  },
+  {
+    "ID": 462,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_tires_item2')",
+    "cardPackEntity_ID": 93
+  },
+  {
+    "ID": 463,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_tires_item2')",
+    "cardPackEntity_ID": 93
+  },
+  {
+    "ID": 464,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_tires_item2')",
+    "cardPackEntity_ID": 93
+  },
+  {
+    "ID": 465,
+    "script": "generator.weightedRandomTableItem('cardpack_blackdiamond_tires_item2')",
+    "cardPackEntity_ID": 93
+  },
+  {
+    "ID": 466,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_mystery_item1')",
+    "cardPackEntity_ID": 94
+  },
+  {
+    "ID": 467,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_mystery_item1')",
+    "cardPackEntity_ID": 94
+  },
+  {
+    "ID": 468,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_mystery_item1')",
+    "cardPackEntity_ID": 94
+  },
+  {
+    "ID": 469,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_mystery_item1')",
+    "cardPackEntity_ID": 94
+  },
+  {
+    "ID": 470,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_mystery_item1')",
+    "cardPackEntity_ID": 94
+  },
+  {
+    "ID": 471,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_bronze_item1')",
+    "cardPackEntity_ID": 95
+  },
+  {
+    "ID": 472,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_bronze_item2')",
+    "cardPackEntity_ID": 95
+  },
+  {
+    "ID": 473,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_bronze_item2')",
+    "cardPackEntity_ID": 95
+  },
+  {
+    "ID": 474,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_bronze_item2')",
+    "cardPackEntity_ID": 95
+  },
+  {
+    "ID": 475,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_bronze_item2')",
+    "cardPackEntity_ID": 95
+  },
+  {
+    "ID": 476,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_silver_item1')",
+    "cardPackEntity_ID": 96
+  },
+  {
+    "ID": 477,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_silver_item2')",
+    "cardPackEntity_ID": 96
+  },
+  {
+    "ID": 478,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_silver_item2')",
+    "cardPackEntity_ID": 96
+  },
+  {
+    "ID": 479,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_silver_item2')",
+    "cardPackEntity_ID": 96
+  },
+  {
+    "ID": 480,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_silver_item2')",
+    "cardPackEntity_ID": 96
+  },
+  {
+    "ID": 481,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_item1')",
+    "cardPackEntity_ID": 97
+  },
+  {
+    "ID": 482,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_item2')",
+    "cardPackEntity_ID": 97
+  },
+  {
+    "ID": 483,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_item2')",
+    "cardPackEntity_ID": 97
+  },
+  {
+    "ID": 484,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_item2')",
+    "cardPackEntity_ID": 97
+  },
+  {
+    "ID": 485,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_item2')",
+    "cardPackEntity_ID": 97
+  },
+  {
+    "ID": 486,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_race_item1')",
+    "cardPackEntity_ID": 98
+  },
+  {
+    "ID": 487,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_race_item2')",
+    "cardPackEntity_ID": 98
+  },
+  {
+    "ID": 488,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_race_item2')",
+    "cardPackEntity_ID": 98
+  },
+  {
+    "ID": 489,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_race_item2')",
+    "cardPackEntity_ID": 98
+  },
+  {
+    "ID": 490,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_race_item2')",
+    "cardPackEntity_ID": 98
+  },
+  {
+    "ID": 491,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_pursuit_item1')",
+    "cardPackEntity_ID": 99
+  },
+  {
+    "ID": 492,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_pursuit_item2')",
+    "cardPackEntity_ID": 99
+  },
+  {
+    "ID": 493,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_pursuit_item2')",
+    "cardPackEntity_ID": 99
+  },
+  {
+    "ID": 494,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_pursuit_item2')",
+    "cardPackEntity_ID": 99
+  },
+  {
+    "ID": 495,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_pursuit_item2')",
+    "cardPackEntity_ID": 99
+  },
+  {
+    "ID": 496,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_explore_item1')",
+    "cardPackEntity_ID": 100
+  },
+  {
+    "ID": 497,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_explore_item2')",
+    "cardPackEntity_ID": 100
+  },
+  {
+    "ID": 498,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_explore_item2')",
+    "cardPackEntity_ID": 100
+  },
+  {
+    "ID": 499,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_explore_item2')",
+    "cardPackEntity_ID": 100
+  },
+  {
+    "ID": 500,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_explore_item2')",
+    "cardPackEntity_ID": 100
+  },
+  {
+    "ID": 521,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_rewardsbooster_item1')",
+    "cardPackEntity_ID": 105
+  },
+  {
+    "ID": 522,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_rewardsbooster_item4')",
+    "cardPackEntity_ID": 105
+  },
+  {
+    "ID": 523,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_rewardsbooster_item4')",
+    "cardPackEntity_ID": 105
+  },
+  {
+    "ID": 524,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_rewardsbooster_item4')",
+    "cardPackEntity_ID": 105
+  },
+  {
+    "ID": 525,
+    "script": "generator.weightedRandomTableItem('cardpack_skillmods_gold_rewardsbooster_item4')",
+    "cardPackEntity_ID": 105
+  },
+  {
+    "ID": 531,
+    "script": "generator.weightedRandomTableItem('cardpack_carprize_item1')",
+    "cardPackEntity_ID": 107
+  },
+  {
+    "ID": 532,
+    "script": "generator.weightedRandomTableItem('cardpack_carprize_item2')",
+    "cardPackEntity_ID": 107
+  },
+  {
+    "ID": 533,
+    "script": "generator.weightedRandomTableItem('cardpack_carprize_item3')",
+    "cardPackEntity_ID": 107
+  },
+  {
+    "ID": 534,
+    "script": "generator.weightedRandomTableItem('cardpack_carprize_item4')",
+    "cardPackEntity_ID": 107
+  },
+  {
+    "ID": 535,
+    "script": "generator.weightedRandomTableItem('cardpack_carprize_item4')",
+    "cardPackEntity_ID": 107
+  },
+  {
+    "ID": 536,
+    "script": "generator.weightedRandomTableItem('cardpack_aftermarket_item1')",
+    "cardPackEntity_ID": 1
+  },
+  {
+    "ID": 537,
+    "script": "generator.weightedRandomTableItem('cardpack_aftermarket_item1')",
+    "cardPackEntity_ID": 1
+  },
+  {
+    "ID": 538,
+    "script": "generator.weightedRandomTableItem('cardpack_aftermarket_item1')",
+    "cardPackEntity_ID": 1
+  },
+  {
+    "ID": 539,
+    "script": "generator.weightedRandomTableItem('cardpack_aftermarket_item1')",
+    "cardPackEntity_ID": 1
+  },
+  {
+    "ID": 540,
+    "script": "generator.weightedRandomTableItem('cardpack_aftermarket_item1')",
+    "cardPackEntity_ID": 1
+  }
+]
