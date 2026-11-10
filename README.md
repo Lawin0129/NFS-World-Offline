@@ -112,6 +112,7 @@ Located in `config/config.json`. You will need to restart the server if you make
 |------------------------|----------|-------------|
 | `LogRequests`          | `false`  | When set to `true`, this will display every request and XMPP message being sent by the game client. |
 | `FakeFreeroamPlayers`  | `false`  | When set to `true`, this will add about 10 fake players driving around the map. |
+| `AutoGameTime`         | `true`   | When set to `true`, this will automatically sync the in-game time shown on the bottom right to your computer's local time. |
 | `nfswFilePath`         |  Empty   | This is where your valid `nfsw.exe` file path will be stored. Changed with the "play" command using [Command Line Commands](#command-line-commands). |
 
 NOTE: The `FakeFreeroamPlayers` feature may be a bit buggy. Players don't appear on the map sometimes and can cause the game to become really slow. If this happens, try entering and exiting the safehouse until they appear.

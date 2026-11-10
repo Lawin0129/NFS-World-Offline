@@ -22,6 +22,30 @@ function daysBetween(first, second) {
     return Math.round((firstDate - secondDate) / 86400000);
 }
 
+function getLocalTimeISO() {
+    const pad = (n, p = 2) => (`${n}`).padStart(p, "0");
+
+    const newDate = new Date();
+    const year = newDate.getFullYear();
+    const month = pad(newDate.getMonth() + 1);
+    const day = pad(newDate.getDate());
+    const hour = pad(newDate.getHours());
+    const minute = pad(newDate.getMinutes());
+    const second = pad(newDate.getSeconds());
+    const millisecond = pad(newDate.getMilliseconds(), 3);
+    
+    const minsOffset = -(newDate.getTimezoneOffset());
+    const sign = minsOffset >= 0 ? "+" : "-";
+    const absNum = Math.abs(minsOffset);
+    const hourOffset = pad(Math.floor(absNum / 60));
+    const minuteOffset = pad(absNum % 60);
+    
+    const timeZoneOffset = `${sign}${hourOffset}:${minuteOffset}`;
+    const isoDate = `${year}-${month}-${day}T${hour}:${minute}:${second}.${millisecond}${timeZoneOffset}`;
+
+    return isoDate;
+}
+
 function diffArrays(a, b) {
     const valueCount = (arr) => {
         let valueMap = new Map();
@@ -59,6 +83,7 @@ module.exports = {
     sleep,
     askQuestion,
     daysBetween,
+    getLocalTimeISO,
     diffArrays,
     MakeID,
     getHost

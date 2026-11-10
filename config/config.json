@@ -1,5 +1,6 @@
 {
     "LogRequests": false,
     "FakeFreeroamPlayers": false,
+    "AutoGameTime": true,
     "nfswFilePath": ""
 }

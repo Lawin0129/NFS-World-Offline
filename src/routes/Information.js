@@ -6,6 +6,7 @@ const path = require("path");
 const paths = require("../utils/paths");
 const functions = require("../utils/functions");
 const log = require("../utils/log");
+const xmlParser = require("../utils/xmlParser");
 const sbrwManager = require("../services/sbrwManager");
 
 // Get Soapbox server information
@@ -53,6 +54,22 @@ app.get("/mods/index.json", (req, res) => {
         built_at: new Date().toISOString(),
         entries: []
     });
+});
+
+// Game system information
+app.get("/systeminfo", async (req, res) => {
+    let systemInfoData = fs.readFileSync(path.join(paths.dataPath, "systeminfo.xml")).toString();
+
+    if (config.AutoGameTime) {
+        let systemInfoParsed = await xmlParser.parseXML(systemInfoData);
+        let isoDate = functions.getLocalTimeISO();
+
+        systemInfoParsed.SystemInfo.Time = [isoDate];
+
+        res.xml(systemInfoParsed);
+    } else {
+        res.xml(systemInfoData);
+    }
 });
 
 module.exports = app;
