@@ -93,6 +93,25 @@ let generator = module.exports = {
             quantity: parsedQuantity
         });
     },
+    findRandomRatedItem: (subType, rarity) => {
+        let parsedRarity = parseInt(rarity);
+
+        if (!Number.isInteger(parsedRarity)) return error.invalidParameters();
+        if ((typeof subType) != "string") return error.invalidParameters();
+
+        const allSpecifiedItems = allCatalogProducts.filter(i => (i.subType?.toLowerCase?.() == subType.toLowerCase()) && (i.rarity == parsedRarity));
+        const randomIndex = num.between(0, allSpecifiedItems.length - 1);
+        const finalItem = allSpecifiedItems[randomIndex];
+        if (!finalItem) return error.productItemNotFound();
+
+        return response.createSuccess({
+            item: finalItem,
+            type: "RatedItem",
+            title: `${finalItem.productTitle}`,
+            isInventoryItem: inventoryProductTypes.includes(finalItem.productType?.toLowerCase?.()),
+            quantity: 1
+        });
+    },
     findRandomRatedItemByProdType: (itemType, rarity) => {
         let parsedRarity = parseInt(rarity);
 
@@ -100,7 +119,8 @@ let generator = module.exports = {
         if ((typeof itemType) != "string") return error.invalidParameters();
 
         const allSpecifiedItems = allCatalogProducts.filter(i => (i.productType?.toLowerCase?.() == itemType.toLowerCase()) && (i.rarity == parsedRarity));
-        const finalItem = getRandomWeightedItem(allSpecifiedItems);
+        const randomIndex = num.between(0, allSpecifiedItems.length - 1);
+        const finalItem = allSpecifiedItems[randomIndex];
         if (!finalItem) return error.productItemNotFound();
 
         return response.createSuccess({
